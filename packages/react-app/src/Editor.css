@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: 500px;
+    background :#333;
+    color: white;
+  }
+  
+  .left {
+    flex: 1;
+    padding: 10px;
+    border: solid 1px #ccc;
+    min-height: 90vh;
+    text-align: left;
+  }
+  
+  .right {
+    flex: 1;
+    padding: 10px;
+    border: solid 1px #ccc;
+    min-height: 90vh;
+  }
