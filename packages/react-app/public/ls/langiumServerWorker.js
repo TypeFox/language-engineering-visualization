@@ -1,6 +1,25 @@
 "use strict";
 (() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b ||= {})
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
   var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
     get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
   }) : x)(function(x) {
@@ -11,6 +30,22 @@
   var __commonJS = (cb, mod) => function __require2() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
 
   // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/ral.js
   var require_ral = __commonJS({
@@ -671,7 +706,7 @@
         }
       };
       exports2.RequestType9 = RequestType9;
-      var NotificationType = class extends AbstractMessageSignature {
+      var NotificationType2 = class extends AbstractMessageSignature {
         constructor(method, _parameterStructures = ParameterStructures.auto) {
           super(method, 1);
           this._parameterStructures = _parameterStructures;
@@ -680,7 +715,7 @@
           return this._parameterStructures;
         }
       };
-      exports2.NotificationType = NotificationType;
+      exports2.NotificationType = NotificationType2;
       var NotificationType0 = class extends AbstractMessageSignature {
         constructor(method) {
           super(method, 0);
@@ -697,12 +732,12 @@
         }
       };
       exports2.NotificationType1 = NotificationType1;
-      var NotificationType2 = class extends AbstractMessageSignature {
+      var NotificationType22 = class extends AbstractMessageSignature {
         constructor(method) {
           super(method, 2);
         }
       };
-      exports2.NotificationType2 = NotificationType2;
+      exports2.NotificationType2 = NotificationType22;
       var NotificationType3 = class extends AbstractMessageSignature {
         constructor(method) {
           super(method, 3);
@@ -1796,7 +1831,7 @@
         ConnectionState2[ConnectionState2["Closed"] = 3] = "Closed";
         ConnectionState2[ConnectionState2["Disposed"] = 4] = "Disposed";
       })(ConnectionState || (ConnectionState = {}));
-      function createMessageConnection(messageReader, messageWriter, _logger, options) {
+      function createMessageConnection(messageReader2, messageWriter2, _logger, options) {
         const logger = _logger !== void 0 ? _logger : exports2.NullLogger;
         let sequenceNumber = 0;
         let notificationSequenceNumber = 0;
@@ -1871,10 +1906,10 @@
         function writeErrorHandler(data) {
           errorEmitter.fire(data);
         }
-        messageReader.onClose(closeHandler);
-        messageReader.onError(readErrorHandler);
-        messageWriter.onClose(closeHandler);
-        messageWriter.onError(writeErrorHandler);
+        messageReader2.onClose(closeHandler);
+        messageReader2.onError(readErrorHandler);
+        messageWriter2.onClose(closeHandler);
+        messageWriter2.onError(writeErrorHandler);
         function triggerMessageQueue() {
           if (timer || messageQueue.size === 0) {
             return;
@@ -1917,7 +1952,7 @@
                   requestTokens.delete(cancelId);
                   response.id = toCancel.id;
                   traceSendingResponse(response, message.method, Date.now());
-                  messageWriter.write(response).catch(() => logger.error(`Sending response for canceled message failed.`));
+                  messageWriter2.write(response).catch(() => logger.error(`Sending response for canceled message failed.`));
                   return;
                 }
               }
@@ -1950,7 +1985,7 @@
               message.result = resultOrError === void 0 ? null : resultOrError;
             }
             traceSendingResponse(message, method, startTime2);
-            messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
           }
           function replyError(error, method, startTime2) {
             const message = {
@@ -1959,7 +1994,7 @@
               error: error.toJson()
             };
             traceSendingResponse(message, method, startTime2);
-            messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
           }
           function replySuccess(result, method, startTime2) {
             if (result === void 0) {
@@ -1971,7 +2006,7 @@
               result
             };
             traceSendingResponse(message, method, startTime2);
-            messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
           }
           traceReceivedRequest(requestMessage);
           const element = requestHandlers.get(requestMessage.method);
@@ -2400,7 +2435,7 @@ ${JSON.stringify(message, null, 4)}`);
           }
           return result;
         }
-        const connection = {
+        const connection2 = {
           sendNotification: (type, ...args) => {
             throwIfClosedOrDisposed();
             let method;
@@ -2441,7 +2476,7 @@ ${JSON.stringify(message, null, 4)}`);
               params: messageParams
             };
             traceSendingNotification(notificationMessage);
-            return messageWriter.write(notificationMessage).catch(() => logger.error(`Sending notification failed.`));
+            return messageWriter2.write(notificationMessage).catch(() => logger.error(`Sending notification failed.`));
           },
           onNotification: (type, handler) => {
             throwIfClosedOrDisposed();
@@ -2479,7 +2514,7 @@ ${JSON.stringify(message, null, 4)}`);
             };
           },
           sendProgress: (_type, token, value) => {
-            return connection.sendNotification(ProgressNotification.type, { token, value });
+            return connection2.sendNotification(ProgressNotification.type, { token, value });
           },
           onUnhandledProgress: unhandledProgressEmitter.event,
           sendRequest: (type, ...args) => {
@@ -2529,7 +2564,7 @@ ${JSON.stringify(message, null, 4)}`);
             let disposable;
             if (token) {
               disposable = token.onCancellationRequested(() => {
-                const p = cancellationStrategy.sender.sendCancellation(connection, id);
+                const p = cancellationStrategy.sender.sendCancellation(connection2, id);
                 if (p === void 0) {
                   logger.log(`Received no promise from cancellation strategy when cancelling id ${id}`);
                   return Promise.resolve();
@@ -2560,7 +2595,7 @@ ${JSON.stringify(message, null, 4)}`);
               let responsePromise = { method, timerStart: Date.now(), resolve: resolveWithCleanup, reject: rejectWithCleanup };
               traceSendingRequest(requestMessage);
               try {
-                messageWriter.write(requestMessage).catch(() => logger.error(`Sending request failed.`));
+                messageWriter2.write(requestMessage).catch(() => logger.error(`Sending request failed.`));
               } catch (e) {
                 responsePromise.reject(new messages_1.ResponseError(messages_1.ErrorCodes.MessageWriteError, e.message ? e.message : "Unknown reason"));
                 responsePromise = null;
@@ -2624,7 +2659,7 @@ ${JSON.stringify(message, null, 4)}`);
               tracer = _tracer;
             }
             if (_sendNotification && !isClosed() && !isDisposed()) {
-              await connection.sendNotification(SetTraceNotification.type, { value: Trace.toString(_value) });
+              await connection2.sendNotification(SetTraceNotification.type, { value: Trace.toString(_value) });
             }
           },
           onError: errorEmitter.event,
@@ -2632,7 +2667,7 @@ ${JSON.stringify(message, null, 4)}`);
           onUnhandledNotification: unhandledNotificationEmitter.event,
           onDispose: disposeEmitter.event,
           end: () => {
-            messageWriter.end();
+            messageWriter2.end();
           },
           dispose: () => {
             if (isDisposed()) {
@@ -2648,31 +2683,31 @@ ${JSON.stringify(message, null, 4)}`);
             requestTokens = /* @__PURE__ */ new Map();
             knownCanceledRequests = /* @__PURE__ */ new Set();
             messageQueue = new linkedMap_1.LinkedMap();
-            if (Is.func(messageWriter.dispose)) {
-              messageWriter.dispose();
+            if (Is.func(messageWriter2.dispose)) {
+              messageWriter2.dispose();
             }
-            if (Is.func(messageReader.dispose)) {
-              messageReader.dispose();
+            if (Is.func(messageReader2.dispose)) {
+              messageReader2.dispose();
             }
           },
           listen: () => {
             throwIfClosedOrDisposed();
             throwIfListening();
             state = ConnectionState.Listening;
-            messageReader.listen(callback);
+            messageReader2.listen(callback);
           },
           inspect: () => {
             (0, ral_1.default)().console.log("inspect");
           }
         };
-        connection.onNotification(LogTraceNotification.type, (params) => {
+        connection2.onNotification(LogTraceNotification.type, (params) => {
           if (trace === Trace.Off || !tracer) {
             return;
           }
           const verbose = trace === Trace.Verbose || trace === Trace.Compact;
           tracer.log(params.message, verbose ? params.verbose : void 0);
         });
-        connection.onNotification(ProgressNotification.type, (params) => {
+        connection2.onNotification(ProgressNotification.type, (params) => {
           const handler = progressHandlers.get(params.token);
           if (handler) {
             handler(params.value);
@@ -2680,7 +2715,7 @@ ${JSON.stringify(message, null, 4)}`);
             unhandledProgressEmitter.fire(params);
           }
         });
-        return connection;
+        return connection2;
       }
       exports2.createMessageConnection = createMessageConnection;
     }
@@ -2904,7 +2939,7 @@ ${JSON.stringify(message, null, 4)}`);
       ril_1.default.install();
       var api_1 = require_api();
       __exportStar(require_api(), exports2);
-      var BrowserMessageReader = class extends api_1.AbstractMessageReader {
+      var BrowserMessageReader2 = class extends api_1.AbstractMessageReader {
         constructor(context) {
           super();
           this._onData = new api_1.Emitter();
@@ -2918,8 +2953,8 @@ ${JSON.stringify(message, null, 4)}`);
           return this._onData.event(callback);
         }
       };
-      exports2.BrowserMessageReader = BrowserMessageReader;
-      var BrowserMessageWriter = class extends api_1.AbstractMessageWriter {
+      exports2.BrowserMessageReader = BrowserMessageReader2;
+      var BrowserMessageWriter2 = class extends api_1.AbstractMessageWriter {
         constructor(context) {
           super();
           this.context = context;
@@ -2942,7 +2977,7 @@ ${JSON.stringify(message, null, 4)}`);
         end() {
         }
       };
-      exports2.BrowserMessageWriter = BrowserMessageWriter;
+      exports2.BrowserMessageWriter = BrowserMessageWriter2;
       function createMessageConnection(reader, writer, logger, options) {
         if (logger === void 0) {
           logger = api_1.NullLogger;
@@ -3188,8 +3223,8 @@ ${JSON.stringify(message, null, 4)}`);
           }
           CodeDescription2.is = is;
         })(CodeDescription = exports3.CodeDescription || (exports3.CodeDescription = {}));
-        var Diagnostic;
-        (function(Diagnostic2) {
+        var Diagnostic2;
+        (function(Diagnostic3) {
           function create(range, message, severity, code, source, relatedInformation) {
             var result = { range, message };
             if (Is.defined(severity)) {
@@ -3206,14 +3241,14 @@ ${JSON.stringify(message, null, 4)}`);
             }
             return result;
           }
-          Diagnostic2.create = create;
+          Diagnostic3.create = create;
           function is(value) {
             var _a;
             var candidate = value;
             return Is.defined(candidate) && Range.is(candidate.range) && Is.string(candidate.message) && (Is.number(candidate.severity) || Is.undefined(candidate.severity)) && (Is.integer(candidate.code) || Is.string(candidate.code) || Is.undefined(candidate.code)) && (Is.undefined(candidate.codeDescription) || Is.string((_a = candidate.codeDescription) === null || _a === void 0 ? void 0 : _a.href)) && (Is.string(candidate.source) || Is.undefined(candidate.source)) && (Is.undefined(candidate.relatedInformation) || Is.typedArray(candidate.relatedInformation, DiagnosticRelatedInformation.is));
           }
-          Diagnostic2.is = is;
-        })(Diagnostic = exports3.Diagnostic || (exports3.Diagnostic = {}));
+          Diagnostic3.is = is;
+        })(Diagnostic2 = exports3.Diagnostic || (exports3.Diagnostic = {}));
         var Command;
         (function(Command2) {
           function create(title, command) {
@@ -3998,7 +4033,7 @@ ${JSON.stringify(message, null, 4)}`);
           CodeActionContext2.create = create;
           function is(value) {
             var candidate = value;
-            return Is.defined(candidate) && Is.typedArray(candidate.diagnostics, Diagnostic.is) && (candidate.only === void 0 || Is.typedArray(candidate.only, Is.string)) && (candidate.triggerKind === void 0 || candidate.triggerKind === CodeActionTriggerKind.Invoked || candidate.triggerKind === CodeActionTriggerKind.Automatic);
+            return Is.defined(candidate) && Is.typedArray(candidate.diagnostics, Diagnostic2.is) && (candidate.only === void 0 || Is.typedArray(candidate.only, Is.string)) && (candidate.triggerKind === void 0 || candidate.triggerKind === CodeActionTriggerKind.Invoked || candidate.triggerKind === CodeActionTriggerKind.Automatic);
           }
           CodeActionContext2.is = is;
         })(CodeActionContext = exports3.CodeActionContext || (exports3.CodeActionContext = {}));
@@ -4023,7 +4058,7 @@ ${JSON.stringify(message, null, 4)}`);
           CodeAction2.create = create;
           function is(value) {
             var candidate = value;
-            return candidate && Is.string(candidate.title) && (candidate.diagnostics === void 0 || Is.typedArray(candidate.diagnostics, Diagnostic.is)) && (candidate.kind === void 0 || Is.string(candidate.kind)) && (candidate.edit !== void 0 || candidate.command !== void 0) && (candidate.command === void 0 || Command.is(candidate.command)) && (candidate.isPreferred === void 0 || Is.boolean(candidate.isPreferred)) && (candidate.edit === void 0 || WorkspaceEdit.is(candidate.edit));
+            return candidate && Is.string(candidate.title) && (candidate.diagnostics === void 0 || Is.typedArray(candidate.diagnostics, Diagnostic2.is)) && (candidate.kind === void 0 || Is.string(candidate.kind)) && (candidate.edit !== void 0 || candidate.command !== void 0) && (candidate.command === void 0 || Command.is(candidate.command)) && (candidate.isPreferred === void 0 || Is.boolean(candidate.isPreferred)) && (candidate.edit === void 0 || WorkspaceEdit.is(candidate.edit));
           }
           CodeAction2.is = is;
         })(CodeAction = exports3.CodeAction || (exports3.CodeAction = {}));
@@ -6173,10 +6208,10 @@ ${JSON.stringify(message, null, 4)}`);
          *
          * @param connection The connection to listen on.
          */
-        listen(connection) {
-          connection.__textDocumentSync = vscode_languageserver_protocol_1.TextDocumentSyncKind.Incremental;
+        listen(connection2) {
+          connection2.__textDocumentSync = vscode_languageserver_protocol_1.TextDocumentSyncKind.Incremental;
           const disposables = [];
-          disposables.push(connection.onDidOpenTextDocument((event) => {
+          disposables.push(connection2.onDidOpenTextDocument((event) => {
             const td = event.textDocument;
             const document = this._configuration.create(td.uri, td.languageId, td.version, td.text);
             this._syncedDocuments.set(td.uri, document);
@@ -6184,7 +6219,7 @@ ${JSON.stringify(message, null, 4)}`);
             this._onDidOpen.fire(toFire);
             this._onDidChangeContent.fire(toFire);
           }));
-          disposables.push(connection.onDidChangeTextDocument((event) => {
+          disposables.push(connection2.onDidChangeTextDocument((event) => {
             const td = event.textDocument;
             const changes = event.contentChanges;
             if (changes.length === 0) {
@@ -6201,20 +6236,20 @@ ${JSON.stringify(message, null, 4)}`);
               this._onDidChangeContent.fire(Object.freeze({ document: syncedDocument }));
             }
           }));
-          disposables.push(connection.onDidCloseTextDocument((event) => {
+          disposables.push(connection2.onDidCloseTextDocument((event) => {
             let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
             if (syncedDocument !== void 0) {
               this._syncedDocuments.delete(event.textDocument.uri);
               this._onDidClose.fire(Object.freeze({ document: syncedDocument }));
             }
           }));
-          disposables.push(connection.onWillSaveTextDocument((event) => {
+          disposables.push(connection2.onWillSaveTextDocument((event) => {
             let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
             if (syncedDocument !== void 0) {
               this._onWillSave.fire(Object.freeze({ document: syncedDocument, reason: event.reason }));
             }
           }));
-          disposables.push(connection.onWillSaveTextDocumentWaitUntil((event, token) => {
+          disposables.push(connection2.onWillSaveTextDocumentWaitUntil((event, token) => {
             let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
             if (syncedDocument !== void 0 && this._willSaveWaitUntil) {
               return this._willSaveWaitUntil(Object.freeze({ document: syncedDocument, reason: event.reason }), token);
@@ -6222,7 +6257,7 @@ ${JSON.stringify(message, null, 4)}`);
               return [];
             }
           }));
-          disposables.push(connection.onDidSaveTextDocument((event) => {
+          disposables.push(connection2.onDidSaveTextDocument((event) => {
             let syncedDocument = this._syncedDocuments.get(event.textDocument.uri);
             if (syncedDocument !== void 0) {
               this._onDidSave.fire(Object.freeze({ document: syncedDocument }));
@@ -6369,11 +6404,11 @@ ${JSON.stringify(message, null, 4)}`);
          *
          * @param connection The connection to listen on.
          */
-        listen(connection) {
+        listen(connection2) {
           const cellTextDocumentConnection = new CellTextDocumentConnection();
           const disposables = [];
           disposables.push(this.cellTextDocuments.listen(cellTextDocumentConnection));
-          disposables.push(connection.notebooks.synchronization.onDidOpenNotebookDocument((params) => {
+          disposables.push(connection2.notebooks.synchronization.onDidOpenNotebookDocument((params) => {
             this.notebookDocuments.set(params.notebookDocument.uri, params.notebookDocument);
             for (const cellTextDocument of params.cellTextDocuments) {
               cellTextDocumentConnection.openTextDocument({ textDocument: cellTextDocument });
@@ -6381,7 +6416,7 @@ ${JSON.stringify(message, null, 4)}`);
             this.updateCellMap(params.notebookDocument);
             this._onDidOpen.fire(params.notebookDocument);
           }));
-          disposables.push(connection.notebooks.synchronization.onDidChangeNotebookDocument((params) => {
+          disposables.push(connection2.notebooks.synchronization.onDidChangeNotebookDocument((params) => {
             const notebookDocument = this.notebookDocuments.get(params.notebookDocument.uri);
             if (notebookDocument === void 0) {
               return;
@@ -6461,14 +6496,14 @@ ${JSON.stringify(message, null, 4)}`);
               this._onDidChange.fire(changeEvent);
             }
           }));
-          disposables.push(connection.notebooks.synchronization.onDidSaveNotebookDocument((params) => {
+          disposables.push(connection2.notebooks.synchronization.onDidSaveNotebookDocument((params) => {
             const notebookDocument = this.notebookDocuments.get(params.notebookDocument.uri);
             if (notebookDocument === void 0) {
               return;
             }
             this._onDidSave.fire(notebookDocument);
           }));
-          disposables.push(connection.notebooks.synchronization.onDidCloseNotebookDocument((params) => {
+          disposables.push(connection2.notebooks.synchronization.onDidCloseNotebookDocument((params) => {
             const notebookDocument = this.notebookDocuments.get(params.notebookDocument.uri);
             if (notebookDocument === void 0) {
               return;
@@ -6677,8 +6712,8 @@ ${JSON.stringify(message, null, 4)}`);
       };
       WorkDoneProgressReporterImpl.Instances = /* @__PURE__ */ new Map();
       var WorkDoneProgressServerReporterImpl = class extends WorkDoneProgressReporterImpl {
-        constructor(connection, token) {
-          super(connection, token);
+        constructor(connection2, token) {
+          super(connection2, token);
           this._source = new vscode_languageserver_protocol_1.CancellationTokenSource();
         }
         get token() {
@@ -6717,13 +6752,13 @@ ${JSON.stringify(message, null, 4)}`);
           this._source.cancel();
         }
       };
-      function attachWorkDone(connection, params) {
+      function attachWorkDone(connection2, params) {
         if (params === void 0 || params.workDoneToken === void 0) {
           return new NullProgressReporter();
         }
         const token = params.workDoneToken;
         delete params.workDoneToken;
-        return new WorkDoneProgressReporterImpl(connection, token);
+        return new WorkDoneProgressReporterImpl(connection2, token);
       }
       exports2.attachWorkDone = attachWorkDone;
       var ProgressFeature = (Base) => {
@@ -6778,13 +6813,13 @@ ${JSON.stringify(message, null, 4)}`);
           this._connection.sendProgress(ResultProgress.type, this._token, data);
         }
       };
-      function attachPartialResult(connection, params) {
+      function attachPartialResult(connection2, params) {
         if (params === void 0 || params.partialResultToken === void 0) {
           return void 0;
         }
         const token = params.partialResultToken;
         delete params.partialResultToken;
-        return new ResultProgressReporterImpl(connection, token);
+        return new ResultProgressReporterImpl(connection2, token);
       }
       exports2.attachPartialResult = attachPartialResult;
     }
@@ -7195,9 +7230,9 @@ ${JSON.stringify(message, null, 4)}`);
          *
          * @param connection The connection established between client and server.
          */
-        sendErrors(connection) {
+        sendErrors(connection2) {
           Object.keys(this._messages).forEach((message) => {
-            connection.window.showErrorMessage(message);
+            connection2.window.showErrorMessage(message);
           });
         }
       };
@@ -7205,11 +7240,11 @@ ${JSON.stringify(message, null, 4)}`);
       var RemoteConsoleImpl = class {
         constructor() {
         }
-        rawAttach(connection) {
-          this._rawConnection = connection;
+        rawAttach(connection2) {
+          this._rawConnection = connection2;
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7244,8 +7279,8 @@ ${JSON.stringify(message, null, 4)}`);
       var _RemoteWindowImpl = class {
         constructor() {
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7320,8 +7355,8 @@ ${JSON.stringify(message, null, 4)}`);
         get isAttached() {
           return !!this._connection;
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         add(unregistration) {
           this._unregistrations.set(unregistration.method, unregistration);
@@ -7356,8 +7391,8 @@ ${JSON.stringify(message, null, 4)}`);
         }
       };
       var RemoteClientImpl = class {
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7435,8 +7470,8 @@ ${JSON.stringify(message, null, 4)}`);
       var _RemoteWorkspaceImpl = class {
         constructor() {
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7461,8 +7496,8 @@ ${JSON.stringify(message, null, 4)}`);
         constructor() {
           this._trace = vscode_languageserver_protocol_1.Trace.Off;
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7491,8 +7526,8 @@ ${JSON.stringify(message, null, 4)}`);
       var TelemetryImpl = class {
         constructor() {
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7513,8 +7548,8 @@ ${JSON.stringify(message, null, 4)}`);
       var _LanguagesImpl = class {
         constructor() {
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7538,8 +7573,8 @@ ${JSON.stringify(message, null, 4)}`);
       var _NotebooksImpl = class {
         constructor() {
         }
-        attach(connection) {
-          this._connection = connection;
+        attach(connection2) {
+          this._connection = connection2;
         }
         get connection() {
           if (!this._connection) {
@@ -7632,10 +7667,10 @@ ${JSON.stringify(message, null, 4)}`);
         return result;
       }
       exports2.combineFeatures = combineFeatures;
-      function createConnection(connectionFactory, watchDog, factories) {
+      function createConnection2(connectionFactory, watchDog, factories) {
         const logger = factories && factories.console ? new (factories.console(RemoteConsoleImpl))() : new RemoteConsoleImpl();
-        const connection = connectionFactory(logger);
-        logger.rawAttach(connection);
+        const connection2 = connectionFactory(logger);
+        logger.rawAttach(connection2);
         const tracer = factories && factories.tracer ? new (factories.tracer(TracerImpl))() : new TracerImpl();
         const telemetry = factories && factories.telemetry ? new (factories.telemetry(TelemetryImpl))() : new TelemetryImpl();
         const client = factories && factories.client ? new (factories.client(RemoteClientImpl))() : new RemoteClientImpl();
@@ -7659,20 +7694,20 @@ ${JSON.stringify(message, null, 4)}`);
         let initializeHandler = void 0;
         let exitHandler = void 0;
         let protocolConnection = {
-          listen: () => connection.listen(),
-          sendRequest: (type, ...params) => connection.sendRequest(Is.string(type) ? type : type.method, ...params),
-          onRequest: (type, handler) => connection.onRequest(type, handler),
+          listen: () => connection2.listen(),
+          sendRequest: (type, ...params) => connection2.sendRequest(Is.string(type) ? type : type.method, ...params),
+          onRequest: (type, handler) => connection2.onRequest(type, handler),
           sendNotification: (type, param) => {
             const method = Is.string(type) ? type : type.method;
             if (arguments.length === 1) {
-              return connection.sendNotification(method);
+              return connection2.sendNotification(method);
             } else {
-              return connection.sendNotification(method, param);
+              return connection2.sendNotification(method, param);
             }
           },
-          onNotification: (type, handler) => connection.onNotification(type, handler),
-          onProgress: connection.onProgress,
-          sendProgress: connection.sendProgress,
+          onNotification: (type, handler) => connection2.onNotification(type, handler),
+          onProgress: connection2.onProgress,
+          sendProgress: connection2.sendProgress,
           onInitialize: (handler) => {
             initializeHandler = handler;
             return {
@@ -7681,7 +7716,7 @@ ${JSON.stringify(message, null, 4)}`);
               }
             };
           },
-          onInitialized: (handler) => connection.onNotification(vscode_languageserver_protocol_1.InitializedNotification.type, handler),
+          onInitialized: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.InitializedNotification.type, handler),
           onShutdown: (handler) => {
             shutdownHandler = handler;
             return {
@@ -7722,105 +7757,105 @@ ${JSON.stringify(message, null, 4)}`);
           get notebooks() {
             return notebooks;
           },
-          onDidChangeConfiguration: (handler) => connection.onNotification(vscode_languageserver_protocol_1.DidChangeConfigurationNotification.type, handler),
-          onDidChangeWatchedFiles: (handler) => connection.onNotification(vscode_languageserver_protocol_1.DidChangeWatchedFilesNotification.type, handler),
+          onDidChangeConfiguration: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidChangeConfigurationNotification.type, handler),
+          onDidChangeWatchedFiles: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidChangeWatchedFilesNotification.type, handler),
           __textDocumentSync: void 0,
-          onDidOpenTextDocument: (handler) => connection.onNotification(vscode_languageserver_protocol_1.DidOpenTextDocumentNotification.type, handler),
-          onDidChangeTextDocument: (handler) => connection.onNotification(vscode_languageserver_protocol_1.DidChangeTextDocumentNotification.type, handler),
-          onDidCloseTextDocument: (handler) => connection.onNotification(vscode_languageserver_protocol_1.DidCloseTextDocumentNotification.type, handler),
-          onWillSaveTextDocument: (handler) => connection.onNotification(vscode_languageserver_protocol_1.WillSaveTextDocumentNotification.type, handler),
-          onWillSaveTextDocumentWaitUntil: (handler) => connection.onRequest(vscode_languageserver_protocol_1.WillSaveTextDocumentWaitUntilRequest.type, handler),
-          onDidSaveTextDocument: (handler) => connection.onNotification(vscode_languageserver_protocol_1.DidSaveTextDocumentNotification.type, handler),
-          sendDiagnostics: (params) => connection.sendNotification(vscode_languageserver_protocol_1.PublishDiagnosticsNotification.type, params),
-          onHover: (handler) => connection.onRequest(vscode_languageserver_protocol_1.HoverRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), void 0);
+          onDidOpenTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidOpenTextDocumentNotification.type, handler),
+          onDidChangeTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidChangeTextDocumentNotification.type, handler),
+          onDidCloseTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidCloseTextDocumentNotification.type, handler),
+          onWillSaveTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.WillSaveTextDocumentNotification.type, handler),
+          onWillSaveTextDocumentWaitUntil: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.WillSaveTextDocumentWaitUntilRequest.type, handler),
+          onDidSaveTextDocument: (handler) => connection2.onNotification(vscode_languageserver_protocol_1.DidSaveTextDocumentNotification.type, handler),
+          sendDiagnostics: (params) => connection2.sendNotification(vscode_languageserver_protocol_1.PublishDiagnosticsNotification.type, params),
+          onHover: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.HoverRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
           }),
-          onCompletion: (handler) => connection.onRequest(vscode_languageserver_protocol_1.CompletionRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onCompletion: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CompletionRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onCompletionResolve: (handler) => connection.onRequest(vscode_languageserver_protocol_1.CompletionResolveRequest.type, handler),
-          onSignatureHelp: (handler) => connection.onRequest(vscode_languageserver_protocol_1.SignatureHelpRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), void 0);
+          onCompletionResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CompletionResolveRequest.type, handler),
+          onSignatureHelp: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.SignatureHelpRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
           }),
-          onDeclaration: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DeclarationRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onDeclaration: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DeclarationRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onDefinition: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DefinitionRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onDefinition: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DefinitionRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onTypeDefinition: (handler) => connection.onRequest(vscode_languageserver_protocol_1.TypeDefinitionRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onTypeDefinition: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.TypeDefinitionRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onImplementation: (handler) => connection.onRequest(vscode_languageserver_protocol_1.ImplementationRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onImplementation: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ImplementationRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onReferences: (handler) => connection.onRequest(vscode_languageserver_protocol_1.ReferencesRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onReferences: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ReferencesRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onDocumentHighlight: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentHighlightRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onDocumentHighlight: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentHighlightRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onDocumentSymbol: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentSymbolRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onDocumentSymbol: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentSymbolRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onWorkspaceSymbol: (handler) => connection.onRequest(vscode_languageserver_protocol_1.WorkspaceSymbolRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onWorkspaceSymbol: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.WorkspaceSymbolRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onWorkspaceSymbolResolve: (handler) => connection.onRequest(vscode_languageserver_protocol_1.WorkspaceSymbolResolveRequest.type, handler),
-          onCodeAction: (handler) => connection.onRequest(vscode_languageserver_protocol_1.CodeActionRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onWorkspaceSymbolResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.WorkspaceSymbolResolveRequest.type, handler),
+          onCodeAction: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeActionRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onCodeActionResolve: (handler) => connection.onRequest(vscode_languageserver_protocol_1.CodeActionResolveRequest.type, (params, cancel) => {
+          onCodeActionResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeActionResolveRequest.type, (params, cancel) => {
             return handler(params, cancel);
           }),
-          onCodeLens: (handler) => connection.onRequest(vscode_languageserver_protocol_1.CodeLensRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onCodeLens: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeLensRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onCodeLensResolve: (handler) => connection.onRequest(vscode_languageserver_protocol_1.CodeLensResolveRequest.type, (params, cancel) => {
+          onCodeLensResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.CodeLensResolveRequest.type, (params, cancel) => {
             return handler(params, cancel);
           }),
-          onDocumentFormatting: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentFormattingRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), void 0);
+          onDocumentFormatting: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentFormattingRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
           }),
-          onDocumentRangeFormatting: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentRangeFormattingRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), void 0);
+          onDocumentRangeFormatting: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentRangeFormattingRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
           }),
-          onDocumentOnTypeFormatting: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentOnTypeFormattingRequest.type, (params, cancel) => {
+          onDocumentOnTypeFormatting: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentOnTypeFormattingRequest.type, (params, cancel) => {
             return handler(params, cancel);
           }),
-          onRenameRequest: (handler) => connection.onRequest(vscode_languageserver_protocol_1.RenameRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), void 0);
+          onRenameRequest: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.RenameRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
           }),
-          onPrepareRename: (handler) => connection.onRequest(vscode_languageserver_protocol_1.PrepareRenameRequest.type, (params, cancel) => {
+          onPrepareRename: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.PrepareRenameRequest.type, (params, cancel) => {
             return handler(params, cancel);
           }),
-          onDocumentLinks: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentLinkRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onDocumentLinks: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentLinkRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onDocumentLinkResolve: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentLinkResolveRequest.type, (params, cancel) => {
+          onDocumentLinkResolve: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentLinkResolveRequest.type, (params, cancel) => {
             return handler(params, cancel);
           }),
-          onDocumentColor: (handler) => connection.onRequest(vscode_languageserver_protocol_1.DocumentColorRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onDocumentColor: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.DocumentColorRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onColorPresentation: (handler) => connection.onRequest(vscode_languageserver_protocol_1.ColorPresentationRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onColorPresentation: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ColorPresentationRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onFoldingRanges: (handler) => connection.onRequest(vscode_languageserver_protocol_1.FoldingRangeRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onFoldingRanges: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.FoldingRangeRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onSelectionRanges: (handler) => connection.onRequest(vscode_languageserver_protocol_1.SelectionRangeRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), (0, progress_1.attachPartialResult)(connection, params));
+          onSelectionRanges: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.SelectionRangeRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), (0, progress_1.attachPartialResult)(connection2, params));
           }),
-          onExecuteCommand: (handler) => connection.onRequest(vscode_languageserver_protocol_1.ExecuteCommandRequest.type, (params, cancel) => {
-            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection, params), void 0);
+          onExecuteCommand: (handler) => connection2.onRequest(vscode_languageserver_protocol_1.ExecuteCommandRequest.type, (params, cancel) => {
+            return handler(params, cancel, (0, progress_1.attachWorkDone)(connection2, params), void 0);
           }),
-          dispose: () => connection.dispose()
+          dispose: () => connection2.dispose()
         };
         for (let remote of allRemotes) {
           remote.attach(protocolConnection);
         }
-        connection.onRequest(vscode_languageserver_protocol_1.InitializeRequest.type, (params) => {
+        connection2.onRequest(vscode_languageserver_protocol_1.InitializeRequest.type, (params) => {
           watchDog.initialize(params);
           if (Is.string(params.trace)) {
             tracer.trace = vscode_languageserver_protocol_1.Trace.fromString(params.trace);
@@ -7829,7 +7864,7 @@ ${JSON.stringify(message, null, 4)}`);
             remote.initialize(params.capabilities);
           }
           if (initializeHandler) {
-            let result = initializeHandler(params, new vscode_languageserver_protocol_1.CancellationTokenSource().token, (0, progress_1.attachWorkDone)(connection, params), void 0);
+            let result = initializeHandler(params, new vscode_languageserver_protocol_1.CancellationTokenSource().token, (0, progress_1.attachWorkDone)(connection2, params), void 0);
             return asPromise(result).then((value) => {
               if (value instanceof vscode_languageserver_protocol_1.ResponseError) {
                 return value;
@@ -7861,7 +7896,7 @@ ${JSON.stringify(message, null, 4)}`);
             return result;
           }
         });
-        connection.onRequest(vscode_languageserver_protocol_1.ShutdownRequest.type, () => {
+        connection2.onRequest(vscode_languageserver_protocol_1.ShutdownRequest.type, () => {
           watchDog.shutdownReceived = true;
           if (shutdownHandler) {
             return shutdownHandler(new vscode_languageserver_protocol_1.CancellationTokenSource().token);
@@ -7869,7 +7904,7 @@ ${JSON.stringify(message, null, 4)}`);
             return void 0;
           }
         });
-        connection.onNotification(vscode_languageserver_protocol_1.ExitNotification.type, () => {
+        connection2.onNotification(vscode_languageserver_protocol_1.ExitNotification.type, () => {
           try {
             if (exitHandler) {
               exitHandler();
@@ -7882,12 +7917,12 @@ ${JSON.stringify(message, null, 4)}`);
             }
           }
         });
-        connection.onNotification(vscode_languageserver_protocol_1.SetTraceNotification.type, (params) => {
+        connection2.onNotification(vscode_languageserver_protocol_1.SetTraceNotification.type, (params) => {
           tracer.trace = vscode_languageserver_protocol_1.Trace.fromString(params.value);
         });
         return protocolConnection;
       }
-      exports2.createConnection = createConnection;
+      exports2.createConnection = createConnection2;
     }
   });
 
@@ -7990,7 +8025,7 @@ ${JSON.stringify(message, null, 4)}`);
         exit: (_code) => {
         }
       };
-      function createConnection(arg1, arg2, arg3, arg4) {
+      function createConnection2(arg1, arg2, arg3, arg4) {
         let factories;
         let reader;
         let writer;
@@ -8013,7 +8048,7 @@ ${JSON.stringify(message, null, 4)}`);
         };
         return (0, api_1.createConnection)(connectionFactory, watchDog, factories);
       }
-      exports2.createConnection = createConnection;
+      exports2.createConnection = createConnection2;
     }
   });
 
@@ -13280,14 +13315,14 @@ ${JSON.stringify(message, null, 4)}`);
         }
       }
       exports2.resolveTransitiveImports = resolveTransitiveImports;
-      function resolveTransitiveImportsInternal(documents, grammar, initialGrammar = grammar, visited = /* @__PURE__ */ new Set(), grammars = /* @__PURE__ */ new Set()) {
-        const doc = (0, ast_util_1.getDocument)(grammar);
-        if (initialGrammar !== grammar) {
-          grammars.add(grammar);
+      function resolveTransitiveImportsInternal(documents, grammar2, initialGrammar = grammar2, visited = /* @__PURE__ */ new Set(), grammars = /* @__PURE__ */ new Set()) {
+        const doc = (0, ast_util_1.getDocument)(grammar2);
+        if (initialGrammar !== grammar2) {
+          grammars.add(grammar2);
         }
         if (!visited.has(doc.uri)) {
           visited.add(doc.uri);
-          for (const imp of grammar.imports) {
+          for (const imp of grammar2.imports) {
             const importedGrammar = resolveImport(documents, imp);
             if (importedGrammar) {
               resolveTransitiveImportsInternal(documents, importedGrammar, initialGrammar, visited, grammars);
@@ -14156,13 +14191,13 @@ ${JSON.stringify(message, null, 4)}`);
       function collectAllAstResources(grammars, documents, visited = /* @__PURE__ */ new Set(), astResources = { parserRules: [], datatypeRules: [], interfaces: [], types: [] }) {
         if (!Array.isArray(grammars))
           grammars = [grammars];
-        for (const grammar of grammars) {
-          const doc = (0, ast_util_1.getDocument)(grammar);
+        for (const grammar2 of grammars) {
+          const doc = (0, ast_util_1.getDocument)(grammar2);
           if (visited.has(doc.uri)) {
             continue;
           }
           visited.add(doc.uri);
-          for (const rule of grammar.rules) {
+          for (const rule of grammar2.rules) {
             if ((0, ast_1.isParserRule)(rule) && !rule.fragment) {
               if ((0, internal_grammar_util_1.isDataTypeRule)(rule)) {
                 astResources.datatypeRules.push(rule);
@@ -14171,10 +14206,10 @@ ${JSON.stringify(message, null, 4)}`);
               }
             }
           }
-          grammar.interfaces.forEach((e) => astResources.interfaces.push(e));
-          grammar.types.forEach((e) => astResources.types.push(e));
+          grammar2.interfaces.forEach((e) => astResources.interfaces.push(e));
+          grammar2.types.forEach((e) => astResources.types.push(e));
           if (documents) {
-            const importedGrammars = grammar.imports.map((e) => (0, internal_grammar_util_1.resolveImport)(documents, e)).filter((e) => e !== void 0);
+            const importedGrammars = grammar2.imports.map((e) => (0, internal_grammar_util_1.resolveImport)(documents, e)).filter((e) => e !== void 0);
             collectAllAstResources(importedGrammars, documents, visited, astResources);
           }
         }
@@ -18410,7 +18445,7 @@ ${JSON.stringify(message, null, 4)}`);
         }
       };
       exports2.RequestType9 = RequestType9;
-      var NotificationType = class extends AbstractMessageSignature {
+      var NotificationType2 = class extends AbstractMessageSignature {
         constructor(method, _parameterStructures = ParameterStructures.auto) {
           super(method, 1);
           this._parameterStructures = _parameterStructures;
@@ -18419,7 +18454,7 @@ ${JSON.stringify(message, null, 4)}`);
           return this._parameterStructures;
         }
       };
-      exports2.NotificationType = NotificationType;
+      exports2.NotificationType = NotificationType2;
       var NotificationType0 = class extends AbstractMessageSignature {
         constructor(method) {
           super(method, 0);
@@ -18436,12 +18471,12 @@ ${JSON.stringify(message, null, 4)}`);
         }
       };
       exports2.NotificationType1 = NotificationType1;
-      var NotificationType2 = class extends AbstractMessageSignature {
+      var NotificationType22 = class extends AbstractMessageSignature {
         constructor(method) {
           super(method, 2);
         }
       };
-      exports2.NotificationType2 = NotificationType2;
+      exports2.NotificationType2 = NotificationType22;
       var NotificationType3 = class extends AbstractMessageSignature {
         constructor(method) {
           super(method, 3);
@@ -19953,7 +19988,7 @@ ${JSON.stringify(message, null, 4)}`);
         ConnectionState2[ConnectionState2["Closed"] = 3] = "Closed";
         ConnectionState2[ConnectionState2["Disposed"] = 4] = "Disposed";
       })(ConnectionState || (ConnectionState = {}));
-      function createMessageConnection(messageReader, messageWriter, _logger, options) {
+      function createMessageConnection(messageReader2, messageWriter2, _logger, options) {
         const logger = _logger !== void 0 ? _logger : exports2.NullLogger;
         let sequenceNumber = 0;
         let notificationSequenceNumber = 0;
@@ -20028,10 +20063,10 @@ ${JSON.stringify(message, null, 4)}`);
         function writeErrorHandler(data) {
           errorEmitter.fire(data);
         }
-        messageReader.onClose(closeHandler);
-        messageReader.onError(readErrorHandler);
-        messageWriter.onClose(closeHandler);
-        messageWriter.onError(writeErrorHandler);
+        messageReader2.onClose(closeHandler);
+        messageReader2.onError(readErrorHandler);
+        messageWriter2.onClose(closeHandler);
+        messageWriter2.onError(writeErrorHandler);
         function triggerMessageQueue() {
           if (timer || messageQueue.size === 0) {
             return;
@@ -20082,7 +20117,7 @@ ${JSON.stringify(message, null, 4)}`);
                   requestTokens.delete(cancelId);
                   response.id = toCancel.id;
                   traceSendingResponse(response, message.method, Date.now());
-                  messageWriter.write(response).catch(() => logger.error(`Sending response for canceled message failed.`));
+                  messageWriter2.write(response).catch(() => logger.error(`Sending response for canceled message failed.`));
                   return;
                 }
               }
@@ -20115,7 +20150,7 @@ ${JSON.stringify(message, null, 4)}`);
               message.result = resultOrError === void 0 ? null : resultOrError;
             }
             traceSendingResponse(message, method, startTime2);
-            messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
           }
           function replyError(error, method, startTime2) {
             const message = {
@@ -20124,7 +20159,7 @@ ${JSON.stringify(message, null, 4)}`);
               error: error.toJson()
             };
             traceSendingResponse(message, method, startTime2);
-            messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
           }
           function replySuccess(result, method, startTime2) {
             if (result === void 0) {
@@ -20136,7 +20171,7 @@ ${JSON.stringify(message, null, 4)}`);
               result
             };
             traceSendingResponse(message, method, startTime2);
-            messageWriter.write(message).catch(() => logger.error(`Sending response failed.`));
+            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
           }
           traceReceivedRequest(requestMessage);
           const element = requestHandlers.get(requestMessage.method);
@@ -20565,7 +20600,7 @@ ${JSON.stringify(message, null, 4)}`);
           }
           return result;
         }
-        const connection = {
+        const connection2 = {
           sendNotification: (type, ...args) => {
             throwIfClosedOrDisposed();
             let method;
@@ -20606,7 +20641,7 @@ ${JSON.stringify(message, null, 4)}`);
               params: messageParams
             };
             traceSendingNotification(notificationMessage);
-            return messageWriter.write(notificationMessage).catch((error) => {
+            return messageWriter2.write(notificationMessage).catch((error) => {
               logger.error(`Sending notification failed.`);
               throw error;
             });
@@ -20647,7 +20682,7 @@ ${JSON.stringify(message, null, 4)}`);
             };
           },
           sendProgress: (_type, token, value) => {
-            return connection.sendNotification(ProgressNotification.type, { token, value });
+            return connection2.sendNotification(ProgressNotification.type, { token, value });
           },
           onUnhandledProgress: unhandledProgressEmitter.event,
           sendRequest: (type, ...args) => {
@@ -20697,7 +20732,7 @@ ${JSON.stringify(message, null, 4)}`);
             let disposable;
             if (token) {
               disposable = token.onCancellationRequested(() => {
-                const p = cancellationStrategy.sender.sendCancellation(connection, id);
+                const p = cancellationStrategy.sender.sendCancellation(connection2, id);
                 if (p === void 0) {
                   logger.log(`Received no promise from cancellation strategy when cancelling id ${id}`);
                   return Promise.resolve();
@@ -20731,7 +20766,7 @@ ${JSON.stringify(message, null, 4)}`);
               };
               const responsePromise = { method, timerStart: Date.now(), resolve: resolveWithCleanup, reject: rejectWithCleanup };
               try {
-                await messageWriter.write(requestMessage);
+                await messageWriter2.write(requestMessage);
                 responsePromises.set(id, responsePromise);
               } catch (error) {
                 logger.error(`Sending request failed.`);
@@ -20793,7 +20828,7 @@ ${JSON.stringify(message, null, 4)}`);
               tracer = _tracer;
             }
             if (_sendNotification && !isClosed() && !isDisposed()) {
-              await connection.sendNotification(SetTraceNotification.type, { value: Trace.toString(_value) });
+              await connection2.sendNotification(SetTraceNotification.type, { value: Trace.toString(_value) });
             }
           },
           onError: errorEmitter.event,
@@ -20801,7 +20836,7 @@ ${JSON.stringify(message, null, 4)}`);
           onUnhandledNotification: unhandledNotificationEmitter.event,
           onDispose: disposeEmitter.event,
           end: () => {
-            messageWriter.end();
+            messageWriter2.end();
           },
           dispose: () => {
             if (isDisposed()) {
@@ -20817,31 +20852,31 @@ ${JSON.stringify(message, null, 4)}`);
             requestTokens = /* @__PURE__ */ new Map();
             knownCanceledRequests = /* @__PURE__ */ new Set();
             messageQueue = new linkedMap_1.LinkedMap();
-            if (Is.func(messageWriter.dispose)) {
-              messageWriter.dispose();
+            if (Is.func(messageWriter2.dispose)) {
+              messageWriter2.dispose();
             }
-            if (Is.func(messageReader.dispose)) {
-              messageReader.dispose();
+            if (Is.func(messageReader2.dispose)) {
+              messageReader2.dispose();
             }
           },
           listen: () => {
             throwIfClosedOrDisposed();
             throwIfListening();
             state = ConnectionState.Listening;
-            messageReader.listen(callback);
+            messageReader2.listen(callback);
           },
           inspect: () => {
             (0, ral_1.default)().console.log("inspect");
           }
         };
-        connection.onNotification(LogTraceNotification.type, (params) => {
+        connection2.onNotification(LogTraceNotification.type, (params) => {
           if (trace === Trace.Off || !tracer) {
             return;
           }
           const verbose = trace === Trace.Verbose || trace === Trace.Compact;
           tracer.log(params.message, verbose ? params.verbose : void 0);
         });
-        connection.onNotification(ProgressNotification.type, (params) => {
+        connection2.onNotification(ProgressNotification.type, (params) => {
           const handler = progressHandlers.get(params.token);
           if (handler) {
             handler(params.value);
@@ -20849,7 +20884,7 @@ ${JSON.stringify(message, null, 4)}`);
             unhandledProgressEmitter.fire(params);
           }
         });
-        return connection;
+        return connection2;
       }
       exports2.createMessageConnection = createMessageConnection;
     }
@@ -21242,7 +21277,7 @@ ${JSON.stringify(message, null, 4)}`);
       ril_1.default.install();
       var api_1 = require_api4();
       __exportStar(require_api4(), exports2);
-      var BrowserMessageReader = class extends api_1.AbstractMessageReader {
+      var BrowserMessageReader2 = class extends api_1.AbstractMessageReader {
         constructor(port) {
           super();
           this._onData = new api_1.Emitter();
@@ -21256,8 +21291,8 @@ ${JSON.stringify(message, null, 4)}`);
           return this._onData.event(callback);
         }
       };
-      exports2.BrowserMessageReader = BrowserMessageReader;
-      var BrowserMessageWriter = class extends api_1.AbstractMessageWriter {
+      exports2.BrowserMessageReader = BrowserMessageReader2;
+      var BrowserMessageWriter2 = class extends api_1.AbstractMessageWriter {
         constructor(port) {
           super();
           this.port = port;
@@ -21280,7 +21315,7 @@ ${JSON.stringify(message, null, 4)}`);
         end() {
         }
       };
-      exports2.BrowserMessageWriter = BrowserMessageWriter;
+      exports2.BrowserMessageWriter = BrowserMessageWriter2;
       function createMessageConnection(reader, writer, logger, options) {
         if (logger === void 0) {
           logger = api_1.NullLogger;
@@ -21632,11 +21667,11 @@ ${JSON.stringify(message, null, 4)}`);
           }
         }
         getGlobalScope(referenceType, context) {
-          const grammar = (0, ast_util_1.getContainerOfType)(context.container, ast_1.isGrammar);
-          if (!grammar) {
+          const grammar2 = (0, ast_util_1.getContainerOfType)(context.container, ast_1.isGrammar);
+          if (!grammar2) {
             return scope_provider_1.EMPTY_SCOPE;
           }
-          const importedUris = (0, stream_1.stream)(grammar.imports).map(internal_grammar_util_1.resolveImportUri).nonNullable();
+          const importedUris = (0, stream_1.stream)(grammar2.imports).map(internal_grammar_util_1.resolveImportUri).nonNullable();
           let importedElements = this.indexManager.allElements(referenceType).filter((des) => importedUris.some((importedUri) => (0, uri_util_1.equalURI)(des.documentUri, importedUri)));
           if (referenceType === ast_1.AbstractType) {
             importedElements = importedElements.filter((des) => des.type === ast_1.Interface || des.type === ast_1.Type);
@@ -21857,27 +21892,27 @@ ${JSON.stringify(message, null, 4)}`);
           this.references = services.references.References;
           this.documents = services.shared.workspace.LangiumDocuments;
         }
-        checkGrammarName(grammar, accept) {
-          if (grammar.name) {
-            const firstChar = grammar.name.substring(0, 1);
+        checkGrammarName(grammar2, accept) {
+          if (grammar2.name) {
+            const firstChar = grammar2.name.substring(0, 1);
             if (firstChar.toUpperCase() !== firstChar) {
-              accept("warning", "Grammar name should start with an upper case letter.", { node: grammar, property: "name", code: IssueCodes.GrammarNameUppercase });
+              accept("warning", "Grammar name should start with an upper case letter.", { node: grammar2, property: "name", code: IssueCodes.GrammarNameUppercase });
             }
           }
         }
-        checkEntryGrammarRule(grammar, accept) {
-          if (grammar.isDeclared && !grammar.name) {
+        checkEntryGrammarRule(grammar2, accept) {
+          if (grammar2.isDeclared && !grammar2.name) {
             return;
           }
-          const entryRules = grammar.rules.filter((e) => ast.isParserRule(e) && e.entry);
-          if (grammar.isDeclared && entryRules.length === 0) {
-            const possibleEntryRule = grammar.rules.find((e) => ast.isParserRule(e) && !(0, internal_grammar_util_1.isDataTypeRule)(e));
+          const entryRules = grammar2.rules.filter((e) => ast.isParserRule(e) && e.entry);
+          if (grammar2.isDeclared && entryRules.length === 0) {
+            const possibleEntryRule = grammar2.rules.find((e) => ast.isParserRule(e) && !(0, internal_grammar_util_1.isDataTypeRule)(e));
             if (possibleEntryRule) {
               accept("error", "The grammar is missing an entry parser rule. This rule can be an entry one.", { node: possibleEntryRule, property: "name", code: IssueCodes.EntryRuleTokenSyntax });
             } else {
-              accept("error", "This grammar is missing an entry parser rule.", { node: grammar, property: "name" });
+              accept("error", "This grammar is missing an entry parser rule.", { node: grammar2, property: "name" });
             }
-          } else if (!grammar.isDeclared && entryRules.length >= 1) {
+          } else if (!grammar2.isDeclared && entryRules.length >= 1) {
             entryRules.forEach((rule) => accept("error", "Cannot declare entry rules for unnamed grammars.", { node: rule, property: "name" }));
           } else if (entryRules.length > 1) {
             entryRules.forEach((rule) => accept("error", "The entry rule has to be unique.", { node: rule, property: "name" }));
@@ -21888,20 +21923,20 @@ ${JSON.stringify(message, null, 4)}`);
         /**
          * Check whether any rule defined in this grammar is a duplicate of an already defined rule or an imported rule
          */
-        checkUniqueRuleName(grammar, accept) {
-          const extractor = (grammar2) => (0, stream_1.stream)(grammar2.rules).filter((rule) => !isEmptyRule(rule));
-          this.checkUniqueName(grammar, accept, extractor, "rule");
+        checkUniqueRuleName(grammar2, accept) {
+          const extractor = (grammar3) => (0, stream_1.stream)(grammar3.rules).filter((rule) => !isEmptyRule(rule));
+          this.checkUniqueName(grammar2, accept, extractor, "rule");
         }
         /**
          * Check whether any type defined in this grammar is a duplicate of an already defined type or an imported type
          */
-        checkUniqueTypeName(grammar, accept) {
-          const extractor = (grammar2) => (0, stream_1.stream)(grammar2.types).concat(grammar2.interfaces);
-          this.checkUniqueName(grammar, accept, extractor, "type");
+        checkUniqueTypeName(grammar2, accept) {
+          const extractor = (grammar3) => (0, stream_1.stream)(grammar3.types).concat(grammar3.interfaces);
+          this.checkUniqueName(grammar2, accept, extractor, "type");
         }
-        checkUniqueName(grammar, accept, extractor, uniqueObjName) {
+        checkUniqueName(grammar2, accept, extractor, uniqueObjName) {
           const map = new collections_1.MultiMap();
-          extractor(grammar).forEach((e) => map.add(e.name, e));
+          extractor(grammar2).forEach((e) => map.add(e.name, e));
           for (const [, types] of map.entriesGroupedByKey()) {
             if (types.length > 1) {
               types.forEach((e) => {
@@ -21910,7 +21945,7 @@ ${JSON.stringify(message, null, 4)}`);
             }
           }
           const imported = /* @__PURE__ */ new Set();
-          const resolvedGrammars = (0, internal_grammar_util_1.resolveTransitiveImports)(this.documents, grammar);
+          const resolvedGrammars = (0, internal_grammar_util_1.resolveTransitiveImports)(this.documents, grammar2);
           for (const resolvedGrammar of resolvedGrammars) {
             extractor(resolvedGrammar).forEach((e) => imported.add(e.name));
           }
@@ -21923,9 +21958,9 @@ ${JSON.stringify(message, null, 4)}`);
             }
           }
         }
-        checkDuplicateImportedGrammar(grammar, accept) {
+        checkDuplicateImportedGrammar(grammar2, accept) {
           const importMap = new collections_1.MultiMap();
-          for (const imp of grammar.imports) {
+          for (const imp of grammar2.imports) {
             const resolvedGrammar = (0, internal_grammar_util_1.resolveImport)(this.documents, imp);
             if (resolvedGrammar) {
               importMap.add(resolvedGrammar, imp);
@@ -21944,16 +21979,16 @@ ${JSON.stringify(message, null, 4)}`);
         /**
          * Compared to the validation above, this validation only checks whether two imported grammars export the same grammar rule.
          */
-        checkUniqueImportedRules(grammar, accept) {
+        checkUniqueImportedRules(grammar2, accept) {
           const imports = /* @__PURE__ */ new Map();
-          for (const imp of grammar.imports) {
+          for (const imp of grammar2.imports) {
             const importedGrammars = (0, internal_grammar_util_1.resolveTransitiveImports)(this.documents, imp);
             imports.set(imp, importedGrammars);
           }
           const allDuplicates = new collections_1.MultiMap();
-          for (const outerImport of grammar.imports) {
+          for (const outerImport of grammar2.imports) {
             const outerGrammars = imports.get(outerImport);
-            for (const innerImport of grammar.imports) {
+            for (const innerImport of grammar2.imports) {
               if (outerImport === innerImport) {
                 continue;
               }
@@ -21964,7 +21999,7 @@ ${JSON.stringify(message, null, 4)}`);
               }
             }
           }
-          for (const imp of grammar.imports) {
+          for (const imp of grammar2.imports) {
             const duplicates = allDuplicates.get(imp);
             if (duplicates.length > 0) {
               accept("error", "Some rules exported by this grammar are also included in other imports: " + (0, stream_1.stream)(duplicates).distinct().join(", "), { node: imp, property: "path" });
@@ -21987,20 +22022,20 @@ ${JSON.stringify(message, null, 4)}`);
           }
           return duplicates;
         }
-        checkGrammarTypeInfer(grammar, accept) {
+        checkGrammarTypeInfer(grammar2, accept) {
           var _a, _b, _c;
           const types = /* @__PURE__ */ new Set();
-          for (const type of grammar.types) {
+          for (const type of grammar2.types) {
             types.add(type.name);
           }
-          for (const interfaceType of grammar.interfaces) {
+          for (const interfaceType of grammar2.interfaces) {
             types.add(interfaceType.name);
           }
-          (0, internal_grammar_util_1.resolveTransitiveImports)(this.documents, grammar).forEach((grammar2) => {
-            grammar2.types.forEach((type) => types.add(type.name));
-            grammar2.interfaces.forEach((iface) => types.add(iface.name));
+          (0, internal_grammar_util_1.resolveTransitiveImports)(this.documents, grammar2).forEach((grammar3) => {
+            grammar3.types.forEach((type) => types.add(type.name));
+            grammar3.interfaces.forEach((iface) => types.add(iface.name));
           });
-          for (const rule of grammar.rules.filter(ast.isParserRule)) {
+          for (const rule of grammar2.rules.filter(ast.isParserRule)) {
             if (isEmptyRule(rule)) {
               continue;
             }
@@ -22033,7 +22068,7 @@ ${JSON.stringify(message, null, 4)}`);
               });
             }
           }
-          for (const action of (0, ast_util_1.streamAllContents)(grammar).filter(ast.isAction)) {
+          for (const action of (0, ast_util_1.streamAllContents)(grammar2).filter(ast.isAction)) {
             const actionType = this.getActionType(action);
             if (actionType) {
               const isInfers = Boolean(action.inferredType);
@@ -22082,9 +22117,9 @@ ${JSON.stringify(message, null, 4)}`);
           }
           return void 0;
         }
-        checkGrammarHiddenTokens(grammar, accept) {
-          if (grammar.definesHiddenTokens) {
-            accept("error", "Hidden terminals are declared at the terminal definition.", { node: grammar, property: "definesHiddenTokens", code: IssueCodes.HiddenGrammarTokens });
+        checkGrammarHiddenTokens(grammar2, accept) {
+          if (grammar2.definesHiddenTokens) {
+            accept("error", "Hidden terminals are declared at the terminal definition.", { node: grammar2, property: "definesHiddenTokens", code: IssueCodes.HiddenGrammarTokens });
           }
         }
         checkHiddenTerminalRule(terminalRule, accept) {
@@ -22152,9 +22187,9 @@ ${JSON.stringify(message, null, 4)}`);
             }
           }
         }
-        checkGrammarForUnusedRules(grammar, accept) {
-          const reachableRules = (0, grammar_util_1.getAllReachableRules)(grammar, true);
-          for (const rule of grammar.rules) {
+        checkGrammarForUnusedRules(grammar2, accept) {
+          const reachableRules = (0, grammar_util_1.getAllReachableRules)(grammar2, true);
+          for (const rule of grammar2.rules) {
             if (ast.isTerminalRule(rule) && rule.hidden || isEmptyRule(rule)) {
               continue;
             }
@@ -22167,10 +22202,10 @@ ${JSON.stringify(message, null, 4)}`);
             }
           }
         }
-        checkClashingTerminalNames(grammar, accept) {
+        checkClashingTerminalNames(grammar2, accept) {
           const localTerminals = new collections_1.MultiMap();
           const localKeywords = /* @__PURE__ */ new Set();
-          for (const rule of grammar.rules) {
+          for (const rule of grammar2.rules) {
             if (ast.isTerminalRule(rule) && rule.name) {
               localTerminals.add(rule.name, rule);
             }
@@ -22181,7 +22216,7 @@ ${JSON.stringify(message, null, 4)}`);
           }
           const importedTerminals = new collections_1.MultiMap();
           const importedKeywords = new collections_1.MultiMap();
-          for (const importNode of grammar.imports) {
+          for (const importNode of grammar2.imports) {
             const importedGrammars = (0, internal_grammar_util_1.resolveTransitiveImports)(this.documents, importNode);
             for (const importedGrammar of importedGrammars) {
               for (const rule of importedGrammar.rules) {
@@ -23005,14 +23040,14 @@ ${JSON.stringify(message, null, 4)}`);
           };
         }
         fixHiddenTerminals(diagnostic, document) {
-          const grammar = document.parseResult.value;
-          const hiddenTokens = grammar.hiddenTokens;
+          const grammar2 = document.parseResult.value;
+          const hiddenTokens = grammar2.hiddenTokens;
           const changes = [];
-          const hiddenNode = (0, grammar_util_1.findNodeForProperty)(grammar.$cstNode, "definesHiddenTokens");
+          const hiddenNode = (0, grammar_util_1.findNodeForProperty)(grammar2.$cstNode, "definesHiddenTokens");
           if (hiddenNode) {
             const start = hiddenNode.range.start;
             const offset = hiddenNode.offset;
-            const end = grammar.$cstNode.text.indexOf(")", offset) + 1;
+            const end = grammar2.$cstNode.text.indexOf(")", offset) + 1;
             changes.push({
               newText: "",
               range: {
@@ -23097,17 +23132,17 @@ ${JSON.stringify(message, null, 4)}`);
             const importPath = getRelativeImport(document.uri, candidate.documentUri);
             let position;
             let suffix = "";
-            const grammar = document.parseResult.value;
-            const nextImport = grammar.imports.find((imp) => imp.path && importPath < imp.path);
+            const grammar2 = document.parseResult.value;
+            const nextImport = grammar2.imports.find((imp) => imp.path && importPath < imp.path);
             if (nextImport) {
               position = (_a = nextImport.$cstNode) === null || _a === void 0 ? void 0 : _a.range.start;
-            } else if (grammar.imports.length > 0) {
-              const rangeEnd = grammar.imports[grammar.imports.length - 1].$cstNode.range.end;
+            } else if (grammar2.imports.length > 0) {
+              const rangeEnd = grammar2.imports[grammar2.imports.length - 1].$cstNode.range.end;
               if (rangeEnd) {
                 position = { line: rangeEnd.line + 1, character: 0 };
               }
-            } else if (grammar.rules.length > 0) {
-              position = (_b = grammar.rules[0].$cstNode) === null || _b === void 0 ? void 0 : _b.range.start;
+            } else if (grammar2.rules.length > 0) {
+              position = (_b = grammar2.rules[0].$cstNode) === null || _b === void 0 ? void 0 : _b.range.start;
               suffix = "\n";
             }
             if (position) {
@@ -25703,16 +25738,16 @@ ${suffix}`
       var vscode_languageserver_textdocument_1 = require_main5();
       var vscode_uri_1 = require_umd();
       var stream_1 = require_stream();
-      var DocumentState;
-      (function(DocumentState2) {
-        DocumentState2[DocumentState2["Changed"] = 0] = "Changed";
-        DocumentState2[DocumentState2["Parsed"] = 1] = "Parsed";
-        DocumentState2[DocumentState2["IndexedContent"] = 2] = "IndexedContent";
-        DocumentState2[DocumentState2["ComputedScopes"] = 3] = "ComputedScopes";
-        DocumentState2[DocumentState2["Linked"] = 4] = "Linked";
-        DocumentState2[DocumentState2["IndexedReferences"] = 5] = "IndexedReferences";
-        DocumentState2[DocumentState2["Validated"] = 6] = "Validated";
-      })(DocumentState = exports2.DocumentState || (exports2.DocumentState = {}));
+      var DocumentState2;
+      (function(DocumentState3) {
+        DocumentState3[DocumentState3["Changed"] = 0] = "Changed";
+        DocumentState3[DocumentState3["Parsed"] = 1] = "Parsed";
+        DocumentState3[DocumentState3["IndexedContent"] = 2] = "IndexedContent";
+        DocumentState3[DocumentState3["ComputedScopes"] = 3] = "ComputedScopes";
+        DocumentState3[DocumentState3["Linked"] = 4] = "Linked";
+        DocumentState3[DocumentState3["IndexedReferences"] = 5] = "IndexedReferences";
+        DocumentState3[DocumentState3["Validated"] = 6] = "Validated";
+      })(DocumentState2 = exports2.DocumentState || (exports2.DocumentState = {}));
       var DefaultLangiumDocumentFactory = class {
         constructor(services) {
           this.serviceRegistry = services.ServiceRegistry;
@@ -25759,7 +25794,7 @@ ${suffix}`
             document = {
               parseResult,
               uri,
-              state: DocumentState.Parsed,
+              state: DocumentState2.Parsed,
               references: [],
               textDocument
             };
@@ -25768,7 +25803,7 @@ ${suffix}`
             document = {
               parseResult,
               uri,
-              state: DocumentState.Parsed,
+              state: DocumentState2.Parsed,
               references: [],
               get textDocument() {
                 return textDocumentGetter();
@@ -25793,7 +25828,7 @@ ${suffix}`
           }
           document.parseResult = this.parse(document.uri, text);
           document.parseResult.value.$document = document;
-          document.state = DocumentState.Parsed;
+          document.state = DocumentState2.Parsed;
           return document;
         }
         getContentFromFileSystem(uri) {
@@ -25844,7 +25879,7 @@ ${suffix}`
           const uriString = uri.toString();
           const langiumDoc = this.documentMap.get(uriString);
           if (langiumDoc) {
-            langiumDoc.state = DocumentState.Changed;
+            langiumDoc.state = DocumentState2.Changed;
             langiumDoc.references = [];
             langiumDoc.precomputedScopes = void 0;
             langiumDoc.diagnostics = [];
@@ -25855,7 +25890,7 @@ ${suffix}`
           const uriString = uri.toString();
           const langiumDoc = this.documentMap.get(uriString);
           if (langiumDoc) {
-            langiumDoc.state = DocumentState.Changed;
+            langiumDoc.state = DocumentState2.Changed;
             this.documentMap.delete(uriString);
           }
           return langiumDoc;
@@ -26038,46 +26073,46 @@ ${suffix}`
         }
       };
       exports2.DefaultLanguageServer = DefaultLanguageServer;
-      function startLanguageServer(services) {
-        const connection = services.lsp.Connection;
-        if (!connection) {
+      function startLanguageServer2(services) {
+        const connection2 = services.lsp.Connection;
+        if (!connection2) {
           throw new Error("Starting a language server requires the languageServer.Connection service to be set.");
         }
-        addDocumentsHandler(connection, services);
-        addDiagnosticsHandler(connection, services);
-        addCompletionHandler(connection, services);
-        addFindReferencesHandler(connection, services);
-        addDocumentSymbolHandler(connection, services);
-        addGotoDefinitionHandler(connection, services);
-        addGoToTypeDefinitionHandler(connection, services);
-        addGoToImplementationHandler(connection, services);
-        addDocumentHighlightsHandler(connection, services);
-        addFoldingRangeHandler(connection, services);
-        addFormattingHandler(connection, services);
-        addCodeActionHandler(connection, services);
-        addRenameHandler(connection, services);
-        addHoverHandler(connection, services);
-        addInlayHintHandler(connection, services);
-        addSemanticTokenHandler(connection, services);
-        addExecuteCommandHandler(connection, services);
-        addSignatureHelpHandler(connection, services);
-        addCallHierarchyHandler(connection, services);
-        addCodeLensHandler(connection, services);
-        addDocumentLinkHandler(connection, services);
-        addConfigurationChangeHandler(connection, services);
-        addGoToDeclarationHandler(connection, services);
-        connection.onInitialize((params) => {
+        addDocumentsHandler(connection2, services);
+        addDiagnosticsHandler(connection2, services);
+        addCompletionHandler(connection2, services);
+        addFindReferencesHandler(connection2, services);
+        addDocumentSymbolHandler(connection2, services);
+        addGotoDefinitionHandler(connection2, services);
+        addGoToTypeDefinitionHandler(connection2, services);
+        addGoToImplementationHandler(connection2, services);
+        addDocumentHighlightsHandler(connection2, services);
+        addFoldingRangeHandler(connection2, services);
+        addFormattingHandler(connection2, services);
+        addCodeActionHandler(connection2, services);
+        addRenameHandler(connection2, services);
+        addHoverHandler(connection2, services);
+        addInlayHintHandler(connection2, services);
+        addSemanticTokenHandler(connection2, services);
+        addExecuteCommandHandler(connection2, services);
+        addSignatureHelpHandler(connection2, services);
+        addCallHierarchyHandler(connection2, services);
+        addCodeLensHandler(connection2, services);
+        addDocumentLinkHandler(connection2, services);
+        addConfigurationChangeHandler(connection2, services);
+        addGoToDeclarationHandler(connection2, services);
+        connection2.onInitialize((params) => {
           return services.lsp.LanguageServer.initialize(params);
         });
-        connection.onInitialized((params) => {
+        connection2.onInitialized((params) => {
           return services.lsp.LanguageServer.initialized(params);
         });
         const documents = services.workspace.TextDocuments;
-        documents.listen(connection);
-        connection.listen();
+        documents.listen(connection2);
+        connection2.listen();
       }
-      exports2.startLanguageServer = startLanguageServer;
-      function addDocumentsHandler(connection, services) {
+      exports2.startLanguageServer = startLanguageServer2;
+      function addDocumentsHandler(connection2, services) {
         const documentBuilder = services.workspace.DocumentBuilder;
         const mutex = services.workspace.MutexLock;
         function onDidChange(changed, deleted) {
@@ -26087,7 +26122,7 @@ ${suffix}`
         documents.onDidChangeContent((change) => {
           onDidChange([vscode_uri_1.URI.parse(change.document.uri)], []);
         });
-        connection.onDidChangeWatchedFiles((params) => {
+        connection2.onDidChangeWatchedFiles((params) => {
           const changedUris = [];
           const deletedUris = [];
           for (const change of params.changes) {
@@ -26102,12 +26137,12 @@ ${suffix}`
         });
       }
       exports2.addDocumentsHandler = addDocumentsHandler;
-      function addDiagnosticsHandler(connection, services) {
+      function addDiagnosticsHandler(connection2, services) {
         const documentBuilder = services.workspace.DocumentBuilder;
         documentBuilder.onBuildPhase(documents_1.DocumentState.Validated, async (documents, cancelToken) => {
           for (const document of documents) {
             if (document.diagnostics) {
-              connection.sendDiagnostics({
+              connection2.sendDiagnostics({
                 uri: document.uri.toString(),
                 diagnostics: document.diagnostics
               });
@@ -26119,117 +26154,117 @@ ${suffix}`
         });
       }
       exports2.addDiagnosticsHandler = addDiagnosticsHandler;
-      function addCompletionHandler(connection, services) {
-        connection.onCompletion(createRequestHandler((services2, document, params, cancelToken) => {
+      function addCompletionHandler(connection2, services) {
+        connection2.onCompletion(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.CompletionProvider) === null || _a === void 0 ? void 0 : _a.getCompletion(document, params, cancelToken);
         }, services));
       }
       exports2.addCompletionHandler = addCompletionHandler;
-      function addFindReferencesHandler(connection, services) {
-        connection.onReferences(createRequestHandler((services2, document, params, cancelToken) => {
+      function addFindReferencesHandler(connection2, services) {
+        connection2.onReferences(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.ReferencesProvider) === null || _a === void 0 ? void 0 : _a.findReferences(document, params, cancelToken);
         }, services));
       }
       exports2.addFindReferencesHandler = addFindReferencesHandler;
-      function addCodeActionHandler(connection, services) {
-        connection.onCodeAction(createRequestHandler((services2, document, params, cancelToken) => {
+      function addCodeActionHandler(connection2, services) {
+        connection2.onCodeAction(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.CodeActionProvider) === null || _a === void 0 ? void 0 : _a.getCodeActions(document, params, cancelToken);
         }, services));
       }
       exports2.addCodeActionHandler = addCodeActionHandler;
-      function addDocumentSymbolHandler(connection, services) {
-        connection.onDocumentSymbol(createRequestHandler((services2, document, params, cancelToken) => {
+      function addDocumentSymbolHandler(connection2, services) {
+        connection2.onDocumentSymbol(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.DocumentSymbolProvider) === null || _a === void 0 ? void 0 : _a.getSymbols(document, params, cancelToken);
         }, services));
       }
       exports2.addDocumentSymbolHandler = addDocumentSymbolHandler;
-      function addGotoDefinitionHandler(connection, services) {
-        connection.onDefinition(createRequestHandler((services2, document, params, cancelToken) => {
+      function addGotoDefinitionHandler(connection2, services) {
+        connection2.onDefinition(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.DefinitionProvider) === null || _a === void 0 ? void 0 : _a.getDefinition(document, params, cancelToken);
         }, services));
       }
       exports2.addGotoDefinitionHandler = addGotoDefinitionHandler;
-      function addGoToTypeDefinitionHandler(connection, services) {
-        connection.onTypeDefinition(createRequestHandler((services2, document, params, cancelToken) => {
+      function addGoToTypeDefinitionHandler(connection2, services) {
+        connection2.onTypeDefinition(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.TypeProvider) === null || _a === void 0 ? void 0 : _a.getTypeDefinition(document, params, cancelToken);
         }, services));
       }
       exports2.addGoToTypeDefinitionHandler = addGoToTypeDefinitionHandler;
-      function addGoToImplementationHandler(connection, services) {
-        connection.onImplementation(createRequestHandler((services2, document, params, cancelToken) => {
+      function addGoToImplementationHandler(connection2, services) {
+        connection2.onImplementation(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.ImplementationProvider) === null || _a === void 0 ? void 0 : _a.getImplementation(document, params, cancelToken);
         }, services));
       }
       exports2.addGoToImplementationHandler = addGoToImplementationHandler;
-      function addGoToDeclarationHandler(connection, services) {
-        connection.onDeclaration(createRequestHandler((services2, document, params, cancelToken) => {
+      function addGoToDeclarationHandler(connection2, services) {
+        connection2.onDeclaration(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.DeclarationProvider) === null || _a === void 0 ? void 0 : _a.getDeclaration(document, params, cancelToken);
         }, services));
       }
       exports2.addGoToDeclarationHandler = addGoToDeclarationHandler;
-      function addDocumentHighlightsHandler(connection, services) {
-        connection.onDocumentHighlight(createRequestHandler((services2, document, params, cancelToken) => {
+      function addDocumentHighlightsHandler(connection2, services) {
+        connection2.onDocumentHighlight(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.DocumentHighlightProvider) === null || _a === void 0 ? void 0 : _a.getDocumentHighlight(document, params, cancelToken);
         }, services));
       }
       exports2.addDocumentHighlightsHandler = addDocumentHighlightsHandler;
-      function addHoverHandler(connection, services) {
-        connection.onHover(createRequestHandler((services2, document, params, cancelToken) => {
+      function addHoverHandler(connection2, services) {
+        connection2.onHover(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.HoverProvider) === null || _a === void 0 ? void 0 : _a.getHoverContent(document, params, cancelToken);
         }, services));
       }
       exports2.addHoverHandler = addHoverHandler;
-      function addFoldingRangeHandler(connection, services) {
-        connection.onFoldingRanges(createRequestHandler((services2, document, params, cancelToken) => {
+      function addFoldingRangeHandler(connection2, services) {
+        connection2.onFoldingRanges(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.FoldingRangeProvider) === null || _a === void 0 ? void 0 : _a.getFoldingRanges(document, params, cancelToken);
         }, services));
       }
       exports2.addFoldingRangeHandler = addFoldingRangeHandler;
-      function addFormattingHandler(connection, services) {
-        connection.onDocumentFormatting(createRequestHandler((services2, document, params, cancelToken) => {
+      function addFormattingHandler(connection2, services) {
+        connection2.onDocumentFormatting(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.Formatter) === null || _a === void 0 ? void 0 : _a.formatDocument(document, params, cancelToken);
         }, services));
-        connection.onDocumentRangeFormatting(createRequestHandler((services2, document, params, cancelToken) => {
+        connection2.onDocumentRangeFormatting(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.Formatter) === null || _a === void 0 ? void 0 : _a.formatDocumentRange(document, params, cancelToken);
         }, services));
-        connection.onDocumentOnTypeFormatting(createRequestHandler((services2, document, params, cancelToken) => {
+        connection2.onDocumentOnTypeFormatting(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.Formatter) === null || _a === void 0 ? void 0 : _a.formatDocumentOnType(document, params, cancelToken);
         }, services));
       }
       exports2.addFormattingHandler = addFormattingHandler;
-      function addRenameHandler(connection, services) {
-        connection.onRenameRequest(createRequestHandler((services2, document, params, cancelToken) => {
+      function addRenameHandler(connection2, services) {
+        connection2.onRenameRequest(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.RenameProvider) === null || _a === void 0 ? void 0 : _a.rename(document, params, cancelToken);
         }, services));
-        connection.onPrepareRename(createRequestHandler((services2, document, params, cancelToken) => {
+        connection2.onPrepareRename(createRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.RenameProvider) === null || _a === void 0 ? void 0 : _a.prepareRename(document, params, cancelToken);
         }, services));
       }
       exports2.addRenameHandler = addRenameHandler;
-      function addInlayHintHandler(connection, services) {
+      function addInlayHintHandler(connection2, services) {
         var _a;
         const inlayHintProvider = services.lsp.InlayHintProvider;
         if (inlayHintProvider) {
-          connection.languages.inlayHint.on(createServerRequestHandler((_, document, params, cancelToken) => inlayHintProvider.getInlayHints(document, params, cancelToken), services));
+          connection2.languages.inlayHint.on(createServerRequestHandler((_, document, params, cancelToken) => inlayHintProvider.getInlayHints(document, params, cancelToken), services));
           const resolveInlayHint = (_a = inlayHintProvider.resolveInlayHint) === null || _a === void 0 ? void 0 : _a.bind(inlayHintProvider);
           if (resolveInlayHint) {
-            connection.languages.inlayHint.resolve(async (inlayHint, token) => {
+            connection2.languages.inlayHint.resolve(async (inlayHint, token) => {
               try {
                 return await resolveInlayHint(inlayHint, token);
               } catch (err) {
@@ -26240,21 +26275,21 @@ ${suffix}`
         }
       }
       exports2.addInlayHintHandler = addInlayHintHandler;
-      function addSemanticTokenHandler(connection, services) {
+      function addSemanticTokenHandler(connection2, services) {
         const emptyResult = { data: [] };
-        connection.languages.semanticTokens.on(createServerRequestHandler((services2, document, params, cancelToken) => {
+        connection2.languages.semanticTokens.on(createServerRequestHandler((services2, document, params, cancelToken) => {
           if (services2.lsp.SemanticTokenProvider) {
             return services2.lsp.SemanticTokenProvider.semanticHighlight(document, params, cancelToken);
           }
           return emptyResult;
         }, services));
-        connection.languages.semanticTokens.onDelta(createServerRequestHandler((services2, document, params, cancelToken) => {
+        connection2.languages.semanticTokens.onDelta(createServerRequestHandler((services2, document, params, cancelToken) => {
           if (services2.lsp.SemanticTokenProvider) {
             return services2.lsp.SemanticTokenProvider.semanticHighlightDelta(document, params, cancelToken);
           }
           return emptyResult;
         }, services));
-        connection.languages.semanticTokens.onRange(createServerRequestHandler((services2, document, params, cancelToken) => {
+        connection2.languages.semanticTokens.onRange(createServerRequestHandler((services2, document, params, cancelToken) => {
           if (services2.lsp.SemanticTokenProvider) {
             return services2.lsp.SemanticTokenProvider.semanticHighlightRange(document, params, cancelToken);
           }
@@ -26262,18 +26297,18 @@ ${suffix}`
         }, services));
       }
       exports2.addSemanticTokenHandler = addSemanticTokenHandler;
-      function addConfigurationChangeHandler(connection, services) {
-        connection.onDidChangeConfiguration((change) => {
+      function addConfigurationChangeHandler(connection2, services) {
+        connection2.onDidChangeConfiguration((change) => {
           if (change.settings) {
             services.workspace.ConfigurationProvider.updateConfiguration(change);
           }
         });
       }
       exports2.addConfigurationChangeHandler = addConfigurationChangeHandler;
-      function addExecuteCommandHandler(connection, services) {
+      function addExecuteCommandHandler(connection2, services) {
         const commandHandler = services.lsp.ExecuteCommandHandler;
         if (commandHandler) {
-          connection.onExecuteCommand(async (params, token) => {
+          connection2.onExecuteCommand(async (params, token) => {
             var _a;
             try {
               return await commandHandler.executeCommand(params.command, (_a = params.arguments) !== null && _a !== void 0 ? _a : [], token);
@@ -26284,14 +26319,14 @@ ${suffix}`
         }
       }
       exports2.addExecuteCommandHandler = addExecuteCommandHandler;
-      function addDocumentLinkHandler(connection, services) {
+      function addDocumentLinkHandler(connection2, services) {
         var _a;
         const documentLinkProvider = services.lsp.DocumentLinkProvider;
         if (documentLinkProvider) {
-          connection.onDocumentLinks(createServerRequestHandler((_, document, params, cancelToken) => documentLinkProvider.getDocumentLinks(document, params, cancelToken), services));
+          connection2.onDocumentLinks(createServerRequestHandler((_, document, params, cancelToken) => documentLinkProvider.getDocumentLinks(document, params, cancelToken), services));
           const resolveDocumentLink = (_a = documentLinkProvider.resolveDocumentLink) === null || _a === void 0 ? void 0 : _a.bind(documentLinkProvider);
           if (resolveDocumentLink) {
-            connection.onDocumentLinkResolve(async (documentLink, token) => {
+            connection2.onDocumentLinkResolve(async (documentLink, token) => {
               try {
                 return await resolveDocumentLink(documentLink, token);
               } catch (err) {
@@ -26302,21 +26337,21 @@ ${suffix}`
         }
       }
       exports2.addDocumentLinkHandler = addDocumentLinkHandler;
-      function addSignatureHelpHandler(connection, services) {
-        connection.onSignatureHelp(createServerRequestHandler((services2, document, params, cancelToken) => {
+      function addSignatureHelpHandler(connection2, services) {
+        connection2.onSignatureHelp(createServerRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           return (_a = services2.lsp.SignatureHelp) === null || _a === void 0 ? void 0 : _a.provideSignatureHelp(document, params, cancelToken);
         }, services));
       }
       exports2.addSignatureHelpHandler = addSignatureHelpHandler;
-      function addCodeLensHandler(connection, services) {
+      function addCodeLensHandler(connection2, services) {
         var _a;
         const codeLensProvider = services.lsp.CodeLensProvider;
         if (codeLensProvider) {
-          connection.onCodeLens(createServerRequestHandler((_, document, params, cancelToken) => codeLensProvider.provideCodeLens(document, params, cancelToken), services));
+          connection2.onCodeLens(createServerRequestHandler((_, document, params, cancelToken) => codeLensProvider.provideCodeLens(document, params, cancelToken), services));
           const resolveCodeLens = (_a = codeLensProvider.resolveCodeLens) === null || _a === void 0 ? void 0 : _a.bind(codeLensProvider);
           if (resolveCodeLens) {
-            connection.onCodeLensResolve(async (codeLens, token) => {
+            connection2.onCodeLensResolve(async (codeLens, token) => {
               try {
                 return await resolveCodeLens(codeLens, token);
               } catch (err) {
@@ -26327,22 +26362,22 @@ ${suffix}`
         }
       }
       exports2.addCodeLensHandler = addCodeLensHandler;
-      function addCallHierarchyHandler(connection, services) {
-        connection.languages.callHierarchy.onPrepare(createServerRequestHandler((services2, document, params, cancelToken) => {
+      function addCallHierarchyHandler(connection2, services) {
+        connection2.languages.callHierarchy.onPrepare(createServerRequestHandler((services2, document, params, cancelToken) => {
           var _a;
           if (services2.lsp.CallHierarchyProvider) {
             return (_a = services2.lsp.CallHierarchyProvider.prepareCallHierarchy(document, params, cancelToken)) !== null && _a !== void 0 ? _a : null;
           }
           return null;
         }, services));
-        connection.languages.callHierarchy.onIncomingCalls(createCallHierarchyRequestHandler((services2, params, cancelToken) => {
+        connection2.languages.callHierarchy.onIncomingCalls(createCallHierarchyRequestHandler((services2, params, cancelToken) => {
           var _a;
           if (services2.lsp.CallHierarchyProvider) {
             return (_a = services2.lsp.CallHierarchyProvider.incomingCalls(params, cancelToken)) !== null && _a !== void 0 ? _a : null;
           }
           return null;
         }, services));
-        connection.languages.callHierarchy.onOutgoingCalls(createCallHierarchyRequestHandler((services2, params, cancelToken) => {
+        connection2.languages.callHierarchy.onOutgoingCalls(createCallHierarchyRequestHandler((services2, params, cancelToken) => {
           var _a;
           if (services2.lsp.CallHierarchyProvider) {
             return (_a = services2.lsp.CallHierarchyProvider.outgoingCalls(params, cancelToken)) !== null && _a !== void 0 ? _a : null;
@@ -26769,8 +26804,8 @@ ${suffix}`
         constructor(services) {
           this.documents = services.shared.workspace.LangiumDocuments;
         }
-        collectValidationResources(grammar) {
-          const typeResources = (0, ast_collector_1.collectValidationAst)(grammar, this.documents);
+        collectValidationResources(grammar2) {
+          const typeResources = (0, ast_collector_1.collectValidationAst)(grammar2, this.documents);
           return {
             typeToValidationInfo: this.collectValidationInfo(typeResources),
             typeToSuperProperties: this.collectSuperProperties(typeResources)
@@ -26917,9 +26952,9 @@ ${suffix}`
       }
       exports2.registerTypeValidationChecks = registerTypeValidationChecks;
       var LangiumGrammarTypesValidator = class {
-        checkDeclaredTypesConsistency(grammar, accept) {
+        checkDeclaredTypesConsistency(grammar2, accept) {
           var _a;
-          const validationResources = (_a = grammar.$document) === null || _a === void 0 ? void 0 : _a.validationResources;
+          const validationResources = (_a = grammar2.$document) === null || _a === void 0 ? void 0 : _a.validationResources;
           if (validationResources) {
             for (const typeInfo of validationResources.typeToValidationInfo.values()) {
               if ((0, documents_1.isDeclared)(typeInfo) && (0, types_1.isInterfaceType)(typeInfo.declared) && ast.isInterface(typeInfo.declaredNode)) {
@@ -26930,9 +26965,9 @@ ${suffix}`
             }
           }
         }
-        checkDeclaredAndInferredTypesConsistency(grammar, accept) {
+        checkDeclaredAndInferredTypesConsistency(grammar2, accept) {
           var _a;
-          const validationResources = (_a = grammar.$document) === null || _a === void 0 ? void 0 : _a.validationResources;
+          const validationResources = (_a = grammar2.$document) === null || _a === void 0 ? void 0 : _a.validationResources;
           if (validationResources) {
             for (const typeInfo of validationResources.typeToValidationInfo.values()) {
               if ((0, documents_1.isInferred)(typeInfo) && typeInfo.inferred instanceof types_1.InterfaceType) {
@@ -27172,24 +27207,24 @@ ${suffix}`
           NameProvider: () => new grammar_naming_1.LangiumGrammarNameProvider()
         }
       };
-      function createLangiumGrammarServices(context, sharedModule) {
-        const shared = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultSharedModule)(context), module_1.LangiumGrammarGeneratedSharedModule, sharedModule);
-        const grammar = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultModule)({ shared }), module_1.LangiumGrammarGeneratedModule, exports2.LangiumGrammarModule);
-        addTypeCollectionPhase(shared, grammar);
-        shared.ServiceRegistry.register(grammar);
-        (0, validator_1.registerValidationChecks)(grammar);
-        (0, types_validator_1.registerTypeValidationChecks)(grammar);
-        return { shared, grammar };
+      function createLangiumGrammarServices2(context, sharedModule) {
+        const shared2 = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultSharedModule)(context), module_1.LangiumGrammarGeneratedSharedModule, sharedModule);
+        const grammar2 = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultModule)({ shared: shared2 }), module_1.LangiumGrammarGeneratedModule, exports2.LangiumGrammarModule);
+        addTypeCollectionPhase(shared2, grammar2);
+        shared2.ServiceRegistry.register(grammar2);
+        (0, validator_1.registerValidationChecks)(grammar2);
+        (0, types_validator_1.registerTypeValidationChecks)(grammar2);
+        return { shared: shared2, grammar: grammar2 };
       }
-      exports2.createLangiumGrammarServices = createLangiumGrammarServices;
+      exports2.createLangiumGrammarServices = createLangiumGrammarServices2;
       function addTypeCollectionPhase(sharedServices, grammarServices) {
         const documentBuilder = sharedServices.workspace.DocumentBuilder;
         documentBuilder.onBuildPhase(documents_1.DocumentState.IndexedReferences, async (documents, cancelToken) => {
           for (const document of documents) {
             await (0, promise_util_1.interruptAndCheck)(cancelToken);
             const typeCollector = grammarServices.validation.ValidationResourcesCollector;
-            const grammar = document.parseResult.value;
-            document.validationResources = typeCollector.collectValidationResources(grammar);
+            const grammar2 = document.parseResult.value;
+            document.validationResources = typeCollector.collectValidationResources(grammar2);
           }
         });
       }
@@ -27269,26 +27304,26 @@ ${suffix}`
       var ast_util_1 = require_ast_util();
       var cst_util_1 = require_cst_util();
       var file_system_provider_1 = require_file_system_provider();
-      function getEntryRule(grammar) {
-        return grammar.rules.find((e) => ast.isParserRule(e) && e.entry);
+      function getEntryRule(grammar2) {
+        return grammar2.rules.find((e) => ast.isParserRule(e) && e.entry);
       }
       exports2.getEntryRule = getEntryRule;
-      function getHiddenRules(grammar) {
-        return grammar.rules.filter((e) => ast.isTerminalRule(e) && e.hidden);
+      function getHiddenRules(grammar2) {
+        return grammar2.rules.filter((e) => ast.isTerminalRule(e) && e.hidden);
       }
       exports2.getHiddenRules = getHiddenRules;
-      function getAllReachableRules(grammar, allTerminals) {
+      function getAllReachableRules(grammar2, allTerminals) {
         const ruleNames = /* @__PURE__ */ new Set();
-        const entryRule = getEntryRule(grammar);
+        const entryRule = getEntryRule(grammar2);
         if (!entryRule) {
-          return new Set(grammar.rules);
+          return new Set(grammar2.rules);
         }
-        const topMostRules = [entryRule].concat(getHiddenRules(grammar));
+        const topMostRules = [entryRule].concat(getHiddenRules(grammar2));
         for (const rule of topMostRules) {
           ruleDfs(rule, ruleNames, allTerminals);
         }
         const rules = /* @__PURE__ */ new Set();
-        for (const rule of grammar.rules) {
+        for (const rule of grammar2.rules) {
           if (ruleNames.has(rule.name) || ast.isTerminalRule(rule) && rule.hidden) {
             rules.add(rule);
           }
@@ -27486,9 +27521,9 @@ ${suffix}`
             ParserConfig: () => parserConfig
           }
         };
-        const shared = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultSharedModule)(file_system_provider_1.EmptyFileSystem), generatedSharedModule, config.sharedModule);
-        const services = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultModule)({ shared }), generatedModule, config.module);
-        shared.ServiceRegistry.register(services);
+        const shared2 = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultSharedModule)(file_system_provider_1.EmptyFileSystem), generatedSharedModule, config.sharedModule);
+        const services = (0, dependency_injection_1.inject)((0, default_module_1.createDefaultModule)({ shared: shared2 }), generatedModule, config.module);
+        shared2.ServiceRegistry.register(services);
         return services;
       }
       exports2.createServicesForGrammar = createServicesForGrammar;
@@ -27508,8 +27543,8 @@ ${suffix}`
       var internal_grammar_util_1 = require_internal_grammar_util();
       function createGrammarConfig(services) {
         const rules = [];
-        const grammar = services.Grammar;
-        for (const rule of grammar.rules) {
+        const grammar2 = services.Grammar;
+        for (const rule of grammar2.rules) {
           if ((0, ast_1.isTerminalRule)(rule) && (0, grammar_util_1.isCommentTerminal)(rule) && (0, regex_util_1.isMultilineComment)((0, internal_grammar_util_1.terminalRegex)(rule))) {
             rules.push(rule.name);
           }
@@ -39229,13 +39264,13 @@ ${suffix}`
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.createSyntaxDiagramsCode = void 0;
       var version_1 = require_version();
-      function createSyntaxDiagramsCode(grammar, _a) {
+      function createSyntaxDiagramsCode(grammar2, _a) {
         var _b = _a === void 0 ? {} : _a, _c = _b.resourceBase, resourceBase = _c === void 0 ? "https://unpkg.com/chevrotain@".concat(version_1.VERSION, "/diagrams/") : _c, _d = _b.css, css = _d === void 0 ? "https://unpkg.com/chevrotain@".concat(version_1.VERSION, "/diagrams/diagrams.css") : _d;
         var header = '\n<!-- This is a generated file -->\n<!DOCTYPE html>\n<meta charset="utf-8">\n<style>\n  body {\n    background-color: hsl(30, 20%, 95%)\n  }\n</style>\n\n';
         var cssHtml = "\n<link rel='stylesheet' href='".concat(css, "'>\n");
         var scripts = "\n<script src='".concat(resourceBase, "vendor/railroad-diagrams.js'><\/script>\n<script src='").concat(resourceBase, "src/diagrams_builder.js'><\/script>\n<script src='").concat(resourceBase, "src/diagrams_behavior.js'><\/script>\n<script src='").concat(resourceBase, "src/main.js'><\/script>\n");
         var diagramsDiv = '\n<div id="diagrams" align="center"></div>    \n';
-        var serializedGrammar = "\n<script>\n    window.serializedGrammar = ".concat(JSON.stringify(grammar, null, "  "), ";\n<\/script>\n");
+        var serializedGrammar = "\n<script>\n    window.serializedGrammar = ".concat(JSON.stringify(grammar2, null, "  "), ";\n<\/script>\n");
         var initLogic = '\n<script>\n    var diagramsDiv = document.getElementById("diagrams");\n    main.drawDiagramsFromSerializedGrammar(serializedGrammar, diagramsDiv);\n<\/script>\n';
         return header + cssHtml + scripts + diagramsDiv + serializedGrammar + initLogic;
       }
@@ -41080,7 +41115,7 @@ For Further details.`;
       var stream_1 = require_stream();
       var internal_grammar_util_1 = require_internal_grammar_util();
       var grammar_util_1 = require_grammar_util();
-      function createParser(grammar, parser, tokens) {
+      function createParser(grammar2, parser, tokens) {
         const rules = /* @__PURE__ */ new Map();
         const parserContext = {
           parser,
@@ -41088,13 +41123,13 @@ For Further details.`;
           rules,
           ruleNames: /* @__PURE__ */ new Map()
         };
-        buildRules(parserContext, grammar);
+        buildRules(parserContext, grammar2);
         return parser;
       }
       exports2.createParser = createParser;
-      function buildRules(parserContext, grammar) {
-        const reachable = (0, grammar_util_1.getAllReachableRules)(grammar, false);
-        const parserRules = (0, stream_1.stream)(grammar.rules).filter(ast_1.isParserRule).filter((rule) => reachable.has(rule));
+      function buildRules(parserContext, grammar2) {
+        const reachable = (0, grammar_util_1.getAllReachableRules)(grammar2, false);
+        const parserRules = (0, stream_1.stream)(grammar2.rules).filter(ast_1.isParserRule).filter((rule) => reachable.has(rule));
         for (const rule of parserRules) {
           const ctx = Object.assign(Object.assign({}, parserContext), { consume: 1, optional: 1, subrule: 1, many: 1, or: 1 });
           ctx.rules.set(rule.name, parserContext.parser.rule(rule, buildElement(ctx, rule.definition)));
@@ -41412,10 +41447,10 @@ For Further details.`;
       var langium_parser_1 = require_langium_parser();
       var parser_builder_base_1 = require_parser_builder_base();
       function createCompletionParser(services) {
-        const grammar = services.Grammar;
+        const grammar2 = services.Grammar;
         const lexer = services.parser.Lexer;
         const parser = new langium_parser_1.LangiumCompletionParser(services);
-        (0, parser_builder_base_1.createParser)(grammar, parser, lexer.definition);
+        (0, parser_builder_base_1.createParser)(grammar2, parser, lexer.definition);
         parser.finalize();
         return parser;
       }
@@ -41438,10 +41473,10 @@ For Further details.`;
       }
       exports2.createLangiumParser = createLangiumParser;
       function prepareLangiumParser(services) {
-        const grammar = services.Grammar;
+        const grammar2 = services.Grammar;
         const lexer = services.parser.Lexer;
         const parser = new langium_parser_1.LangiumParser(services);
-        return (0, parser_builder_base_1.createParser)(grammar, parser, lexer.definition);
+        return (0, parser_builder_base_1.createParser)(grammar2, parser, lexer.definition);
       }
       exports2.prepareLangiumParser = prepareLangiumParser;
     }
@@ -41461,8 +41496,8 @@ For Further details.`;
       var regex_util_1 = require_regex_util();
       var stream_1 = require_stream();
       var DefaultTokenBuilder = class {
-        buildTokens(grammar, options) {
-          const reachableRules = (0, stream_1.stream)((0, grammar_util_1.getAllReachableRules)(grammar, false));
+        buildTokens(grammar2, options) {
+          const reachableRules = (0, stream_1.stream)((0, grammar_util_1.getAllReachableRules)(grammar2, false));
           const terminalTokens = this.buildTerminalTokens(reachableRules);
           const tokens = this.buildKeywordTokens(reachableRules, terminalTokens, options);
           terminalTokens.forEach((terminalToken) => {
@@ -43705,569 +43740,26 @@ ${content}`;
     }
   });
 
-  // ../../node_modules/langium-statemachine-dsl/out/language-server/generated/ast.js
-  var require_ast2 = __commonJS({
-    "../../node_modules/langium-statemachine-dsl/out/language-server/generated/ast.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.reflection = exports2.StatemachineAstReflection = exports2.isTransition = exports2.Transition = exports2.isStatemachine = exports2.Statemachine = exports2.isState = exports2.State = exports2.isEvent = exports2.Event = exports2.isCommand = exports2.Command = void 0;
-      var langium_1 = require_lib2();
-      exports2.Command = "Command";
-      function isCommand(item) {
-        return exports2.reflection.isInstance(item, exports2.Command);
-      }
-      exports2.isCommand = isCommand;
-      exports2.Event = "Event";
-      function isEvent(item) {
-        return exports2.reflection.isInstance(item, exports2.Event);
-      }
-      exports2.isEvent = isEvent;
-      exports2.State = "State";
-      function isState(item) {
-        return exports2.reflection.isInstance(item, exports2.State);
-      }
-      exports2.isState = isState;
-      exports2.Statemachine = "Statemachine";
-      function isStatemachine(item) {
-        return exports2.reflection.isInstance(item, exports2.Statemachine);
-      }
-      exports2.isStatemachine = isStatemachine;
-      exports2.Transition = "Transition";
-      function isTransition(item) {
-        return exports2.reflection.isInstance(item, exports2.Transition);
-      }
-      exports2.isTransition = isTransition;
-      var StatemachineAstReflection = class extends langium_1.AbstractAstReflection {
-        getAllTypes() {
-          return ["Command", "Event", "State", "Statemachine", "Transition"];
-        }
-        computeIsSubtype(subtype, supertype) {
-          switch (subtype) {
-            default: {
-              return false;
-            }
-          }
-        }
-        getReferenceType(refInfo) {
-          const referenceId = `${refInfo.container.$type}:${refInfo.property}`;
-          switch (referenceId) {
-            case "State:actions": {
-              return exports2.Command;
-            }
-            case "Statemachine:init":
-            case "Transition:state": {
-              return exports2.State;
-            }
-            case "Transition:event": {
-              return exports2.Event;
-            }
-            default: {
-              throw new Error(`${referenceId} is not a valid reference id.`);
-            }
-          }
-        }
-        getTypeMetaData(type) {
-          switch (type) {
-            case "State": {
-              return {
-                name: "State",
-                mandatory: [
-                  { name: "actions", type: "array" },
-                  { name: "transitions", type: "array" }
-                ]
-              };
-            }
-            case "Statemachine": {
-              return {
-                name: "Statemachine",
-                mandatory: [
-                  { name: "commands", type: "array" },
-                  { name: "events", type: "array" },
-                  { name: "states", type: "array" }
-                ]
-              };
-            }
-            default: {
-              return {
-                name: type,
-                mandatory: []
-              };
-            }
-          }
-        }
-      };
-      exports2.StatemachineAstReflection = StatemachineAstReflection;
-      exports2.reflection = new StatemachineAstReflection();
-    }
-  });
-
-  // ../../node_modules/langium-statemachine-dsl/out/language-server/generated/grammar.js
-  var require_grammar3 = __commonJS({
-    "../../node_modules/langium-statemachine-dsl/out/language-server/generated/grammar.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.StatemachineGrammar = void 0;
-      var langium_1 = require_lib2();
-      var loadedStatemachineGrammar;
-      var StatemachineGrammar = () => loadedStatemachineGrammar !== null && loadedStatemachineGrammar !== void 0 ? loadedStatemachineGrammar : loadedStatemachineGrammar = (0, langium_1.loadGrammarFromJson)(`{
-  "$type": "Grammar",
-  "isDeclared": true,
-  "name": "Statemachine",
-  "rules": [
-    {
-      "$type": "ParserRule",
-      "name": "Statemachine",
-      "entry": true,
-      "definition": {
-        "$type": "Group",
-        "elements": [
-          {
-            "$type": "Keyword",
-            "value": "statemachine"
-          },
-          {
-            "$type": "Assignment",
-            "feature": "name",
-            "operator": "=",
-            "terminal": {
-              "$type": "RuleCall",
-              "rule": {
-                "$ref": "#/rules@6"
-              },
-              "arguments": []
-            }
-          },
-          {
-            "$type": "Group",
-            "elements": [
-              {
-                "$type": "Keyword",
-                "value": "events"
-              },
-              {
-                "$type": "Assignment",
-                "feature": "events",
-                "operator": "+=",
-                "terminal": {
-                  "$type": "RuleCall",
-                  "rule": {
-                    "$ref": "#/rules@1"
-                  },
-                  "arguments": []
-                },
-                "cardinality": "+"
-              }
-            ],
-            "cardinality": "?"
-          },
-          {
-            "$type": "Group",
-            "elements": [
-              {
-                "$type": "Keyword",
-                "value": "commands"
-              },
-              {
-                "$type": "Assignment",
-                "feature": "commands",
-                "operator": "+=",
-                "terminal": {
-                  "$type": "RuleCall",
-                  "rule": {
-                    "$ref": "#/rules@2"
-                  },
-                  "arguments": []
-                },
-                "cardinality": "+"
-              }
-            ],
-            "cardinality": "?"
-          },
-          {
-            "$type": "Keyword",
-            "value": "initialState"
-          },
-          {
-            "$type": "Assignment",
-            "feature": "init",
-            "operator": "=",
-            "terminal": {
-              "$type": "CrossReference",
-              "type": {
-                "$ref": "#/rules@3"
-              },
-              "deprecatedSyntax": false
-            }
-          },
-          {
-            "$type": "Assignment",
-            "feature": "states",
-            "operator": "+=",
-            "terminal": {
-              "$type": "RuleCall",
-              "rule": {
-                "$ref": "#/rules@3"
-              },
-              "arguments": []
-            },
-            "cardinality": "*"
-          }
-        ]
-      },
-      "definesHiddenTokens": false,
-      "fragment": false,
-      "hiddenTokens": [],
-      "parameters": [],
-      "wildcard": false
-    },
-    {
-      "$type": "ParserRule",
-      "name": "Event",
-      "definition": {
-        "$type": "Assignment",
-        "feature": "name",
-        "operator": "=",
-        "terminal": {
-          "$type": "RuleCall",
-          "rule": {
-            "$ref": "#/rules@6"
-          },
-          "arguments": []
-        }
-      },
-      "definesHiddenTokens": false,
-      "entry": false,
-      "fragment": false,
-      "hiddenTokens": [],
-      "parameters": [],
-      "wildcard": false
-    },
-    {
-      "$type": "ParserRule",
-      "name": "Command",
-      "definition": {
-        "$type": "Assignment",
-        "feature": "name",
-        "operator": "=",
-        "terminal": {
-          "$type": "RuleCall",
-          "rule": {
-            "$ref": "#/rules@6"
-          },
-          "arguments": []
-        }
-      },
-      "definesHiddenTokens": false,
-      "entry": false,
-      "fragment": false,
-      "hiddenTokens": [],
-      "parameters": [],
-      "wildcard": false
-    },
-    {
-      "$type": "ParserRule",
-      "name": "State",
-      "definition": {
-        "$type": "Group",
-        "elements": [
-          {
-            "$type": "Keyword",
-            "value": "state"
-          },
-          {
-            "$type": "Assignment",
-            "feature": "name",
-            "operator": "=",
-            "terminal": {
-              "$type": "RuleCall",
-              "rule": {
-                "$ref": "#/rules@6"
-              },
-              "arguments": []
-            }
-          },
-          {
-            "$type": "Group",
-            "elements": [
-              {
-                "$type": "Keyword",
-                "value": "actions"
-              },
-              {
-                "$type": "Keyword",
-                "value": "{"
-              },
-              {
-                "$type": "Assignment",
-                "feature": "actions",
-                "operator": "+=",
-                "terminal": {
-                  "$type": "CrossReference",
-                  "type": {
-                    "$ref": "#/rules@2"
-                  },
-                  "deprecatedSyntax": false
-                },
-                "cardinality": "+"
-              },
-              {
-                "$type": "Keyword",
-                "value": "}"
-              }
-            ],
-            "cardinality": "?"
-          },
-          {
-            "$type": "Assignment",
-            "feature": "transitions",
-            "operator": "+=",
-            "terminal": {
-              "$type": "RuleCall",
-              "rule": {
-                "$ref": "#/rules@4"
-              },
-              "arguments": []
-            },
-            "cardinality": "*"
-          },
-          {
-            "$type": "Keyword",
-            "value": "end"
-          }
-        ]
-      },
-      "definesHiddenTokens": false,
-      "entry": false,
-      "fragment": false,
-      "hiddenTokens": [],
-      "parameters": [],
-      "wildcard": false
-    },
-    {
-      "$type": "ParserRule",
-      "name": "Transition",
-      "definition": {
-        "$type": "Group",
-        "elements": [
-          {
-            "$type": "Assignment",
-            "feature": "event",
-            "operator": "=",
-            "terminal": {
-              "$type": "CrossReference",
-              "type": {
-                "$ref": "#/rules@1"
-              },
-              "deprecatedSyntax": false
-            }
-          },
-          {
-            "$type": "Keyword",
-            "value": "=>"
-          },
-          {
-            "$type": "Assignment",
-            "feature": "state",
-            "operator": "=",
-            "terminal": {
-              "$type": "CrossReference",
-              "type": {
-                "$ref": "#/rules@3"
-              },
-              "deprecatedSyntax": false
-            }
-          }
-        ]
-      },
-      "definesHiddenTokens": false,
-      "entry": false,
-      "fragment": false,
-      "hiddenTokens": [],
-      "parameters": [],
-      "wildcard": false
-    },
-    {
-      "$type": "TerminalRule",
-      "hidden": true,
-      "name": "WS",
-      "definition": {
-        "$type": "RegexToken",
-        "regex": "\\\\s+"
-      },
-      "fragment": false
-    },
-    {
-      "$type": "TerminalRule",
-      "name": "ID",
-      "definition": {
-        "$type": "RegexToken",
-        "regex": "[_a-zA-Z][\\\\w_]*"
-      },
-      "fragment": false,
-      "hidden": false
-    },
-    {
-      "$type": "TerminalRule",
-      "hidden": true,
-      "name": "ML_COMMENT",
-      "definition": {
-        "$type": "RegexToken",
-        "regex": "\\\\/\\\\*[\\\\s\\\\S]*?\\\\*\\\\/"
-      },
-      "fragment": false
-    },
-    {
-      "$type": "TerminalRule",
-      "hidden": true,
-      "name": "SL_COMMENT",
-      "definition": {
-        "$type": "RegexToken",
-        "regex": "\\\\/\\\\/[^\\\\n\\\\r]*"
-      },
-      "fragment": false
-    }
-  ],
-  "definesHiddenTokens": false,
-  "hiddenTokens": [],
-  "imports": [],
-  "interfaces": [],
-  "types": [],
-  "usedGrammars": []
-}`);
-      exports2.StatemachineGrammar = StatemachineGrammar;
-    }
-  });
-
-  // ../../node_modules/langium-statemachine-dsl/out/language-server/generated/module.js
-  var require_module2 = __commonJS({
-    "../../node_modules/langium-statemachine-dsl/out/language-server/generated/module.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.StatemachineGeneratedModule = exports2.StatemachineGeneratedSharedModule = exports2.StatemachineLanguageMetaData = void 0;
-      var ast_1 = require_ast2();
-      var grammar_1 = require_grammar3();
-      exports2.StatemachineLanguageMetaData = {
-        languageId: "statemachine",
-        fileExtensions: [".statemachine"],
-        caseInsensitive: false
-      };
-      exports2.StatemachineGeneratedSharedModule = {
-        AstReflection: () => new ast_1.StatemachineAstReflection()
-      };
-      exports2.StatemachineGeneratedModule = {
-        Grammar: () => (0, grammar_1.StatemachineGrammar)(),
-        LanguageMetaData: () => exports2.StatemachineLanguageMetaData,
-        parser: {}
-      };
-    }
-  });
-
-  // ../../node_modules/langium-statemachine-dsl/out/language-server/statemachine-validator.js
-  var require_statemachine_validator = __commonJS({
-    "../../node_modules/langium-statemachine-dsl/out/language-server/statemachine-validator.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.StatemachineValidator = exports2.registerValidationChecks = void 0;
-      var langium_1 = require_lib2();
-      function registerValidationChecks(services) {
-        const registry = services.validation.ValidationRegistry;
-        const validator = services.validation.StatemachineValidator;
-        const checks = {
-          State: validator.checkStateNameStartsWithCapital,
-          Statemachine: validator.checkUniqueStatesAndEvents
-        };
-        registry.register(checks, validator);
-      }
-      exports2.registerValidationChecks = registerValidationChecks;
-      var StatemachineValidator = class {
-        /**
-         * Checks if the state name starts with a capital letter.
-         * @param state the state to check
-         * @param accept the acceptor to report errors
-         */
-        checkStateNameStartsWithCapital(state, accept) {
-          if (state.name) {
-            const firstChar = state.name.substring(0, 1);
-            if (firstChar.toUpperCase() !== firstChar) {
-              accept("warning", "State name should start with a capital letter.", { node: state, property: "name" });
-            }
-          }
-        }
-        /**
-         * Checks if there are duplicate state and event names.
-         * @param statemachine the statemachine to check
-         * @param accept the acceptor to report errors
-         */
-        checkUniqueStatesAndEvents(statemachine, accept) {
-          const names = new langium_1.MultiMap();
-          const allSymbols = [...statemachine.states, ...statemachine.events];
-          for (const symbol of allSymbols) {
-            names.add(symbol.name, symbol);
-          }
-          for (const [name, symbols] of names.entriesGroupedByKey()) {
-            if (symbols.length > 1) {
-              for (const symbol of symbols) {
-                accept("error", `Duplicate identifier name: ${name}`, { node: symbol, property: "name" });
-              }
-            }
-          }
-        }
-      };
-      exports2.StatemachineValidator = StatemachineValidator;
-    }
-  });
-
-  // ../../node_modules/langium-statemachine-dsl/out/language-server/statemachine-module.js
-  var require_statemachine_module = __commonJS({
-    "../../node_modules/langium-statemachine-dsl/out/language-server/statemachine-module.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.createStatemachineServices = exports2.StatemachineModule = void 0;
-      var langium_1 = require_lib2();
-      var module_1 = require_module2();
-      var statemachine_validator_1 = require_statemachine_validator();
-      exports2.StatemachineModule = {
-        validation: {
-          StatemachineValidator: () => new statemachine_validator_1.StatemachineValidator()
-        }
-      };
-      function createStatemachineServices(context) {
-        const shared = (0, langium_1.inject)((0, langium_1.createDefaultSharedModule)(context), module_1.StatemachineGeneratedSharedModule);
-        const statemachine = (0, langium_1.inject)((0, langium_1.createDefaultModule)({ shared }), module_1.StatemachineGeneratedModule, exports2.StatemachineModule);
-        shared.ServiceRegistry.register(statemachine);
-        (0, statemachine_validator_1.registerValidationChecks)(statemachine);
-        return { shared, statemachine };
-      }
-      exports2.createStatemachineServices = createStatemachineServices;
-    }
-  });
-
-  // ../../node_modules/langium-statemachine-dsl/out/language-server/main-browser.js
-  var require_main_browser = __commonJS({
-    "../../node_modules/langium-statemachine-dsl/out/language-server/main-browser.js"(exports2) {
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      var langium_1 = require_lib2();
-      var browser_1 = require_browser3();
-      var statemachine_module_1 = require_statemachine_module();
-      var messageReader = new browser_1.BrowserMessageReader(self);
-      var messageWriter = new browser_1.BrowserMessageWriter(self);
-      var connection = (0, browser_1.createConnection)(messageReader, messageWriter);
-      var { shared, statemachine } = (0, statemachine_module_1.createStatemachineServices)(Object.assign({ connection }, langium_1.EmptyFileSystem));
-      (0, langium_1.startLanguageServer)(shared);
-      var documentChangeNotification = new browser_1.NotificationType("browser/DocumentChange");
-      var jsonSerializer = statemachine.serializer.JsonSerializer;
-      shared.workspace.DocumentBuilder.onBuildPhase(langium_1.DocumentState.Validated, (documents) => {
-        var _a;
-        for (const document of documents) {
-          const json = jsonSerializer.serialize(document.parseResult.value);
-          connection.sendNotification(documentChangeNotification, {
-            uri: document.uri.toString(),
-            content: json,
-            diagnostics: (_a = document.diagnostics) !== null && _a !== void 0 ? _a : []
-          });
-        }
+  // src/langium-worker.ts
+  var import_langium = __toESM(require_lib2());
+  var import_browser = __toESM(require_browser3());
+  var messageReader = new import_browser.BrowserMessageReader(self);
+  var messageWriter = new import_browser.BrowserMessageWriter(self);
+  var connection = (0, import_browser.createConnection)(messageReader, messageWriter);
+  var { shared, grammar } = (0, import_langium.createLangiumGrammarServices)(__spreadValues({ connection }, import_langium.EmptyFileSystem));
+  var documentChangeNotification = new import_browser.NotificationType("browser/DocumentChange");
+  var jsonSerializer = grammar.serializer.JsonSerializer;
+  shared.workspace.DocumentBuilder.onBuildPhase(import_langium.DocumentState.Validated, (documents) => {
+    var _a;
+    for (const document of documents) {
+      const json = jsonSerializer.serialize(document.parseResult.value);
+      connection.sendNotification(documentChangeNotification, {
+        uri: document.uri.toString(),
+        content: json,
+        diagnostics: (_a = document.diagnostics) != null ? _a : []
       });
     }
+    return Promise.resolve();
   });
-  require_main_browser();
+  (0, import_langium.startLanguageServer)(shared);
 })();

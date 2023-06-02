@@ -1,17 +1,16 @@
-import './Editor.css';
-import { MonacoEditorReactComp } from '@typefox/monaco-editor-react/bundle';
-import { buildWorkerDefinition } from "monaco-editor-workers";
+import './StateMachineVisualizer.css';
+import { MonacoEditorReactComp } from '@typefox/monaco-editor-react';
 import { UserConfig } from 'monaco-editor-wrapper';
 import React, { createRef } from 'react';
-import { DocumentChangeResponse, LangiumAST } from '@visuallangium/langium-utils';
+import { DocumentChangeResponse, LangiumAST } from '../../../../langium-hat/dist';
 import { Graphviz } from 'graphviz-react';
 
-interface EditorState {
+interface StateMachineVisualizerState {
     asyncUserConfig: UserConfig;
     graph: any;
 }
 // Class that extends a react component with a render method
-export class Editor extends React.Component<{}, EditorState> {
+export class StateMachineVisualizer extends React.Component<{}, StateMachineVisualizerState> {
 
     monacoEditor: React.RefObject<MonacoEditorReactComp>;
 
@@ -242,6 +241,7 @@ end`;
 
         return (
             <>
+                <style ref="../../@typefox/monaco-editor-react/bundle/assets/style.css"/>
                 <div className="left" id="leftroot">
                     <MonacoEditorReactComp
                         ref={this.monacoEditor}
@@ -257,4 +257,4 @@ end`;
     }
 }
 
-export default Editor;
+export default StateMachineVisualizer;

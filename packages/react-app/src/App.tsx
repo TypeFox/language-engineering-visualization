@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import Editor from './Editor';
+import LangiumGrammarVisualizer from './components/LangiumGrammarVisualizer/LangiumGrammarVisualizer';
 
 function App() {
   return (
     <div className="App container">
-      <Editor/>
+      <LangiumGrammarVisualizer/>
     </div>
   );
 }

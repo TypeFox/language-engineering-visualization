@@ -1,5 +1,5 @@
 {
-    "name": "@visuallangium/langium-utils",
+    "name": "@visuallangium/langium-hat",
     "version": "0.0.1",
     "private": true,
     "main": "dist/index.js",

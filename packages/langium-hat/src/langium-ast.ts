@@ -316,7 +316,7 @@ export type DocumentChangeResponse = {
 };
 
 /**
-* Approximation of a langium AST, capturing the most relevant information
+* Approximation of a Langium AST, capturing the most relevant information
 */
 export interface AstNode {
     $type: string;
@@ -325,6 +325,9 @@ export interface AstNode {
     $containerIndex?: number;
 }
 
+/**
+ * Reference type, which defaults to AstNode
+ */
 export interface Reference<T extends AstNode = AstNode> {
     ref?: T;
     $ref: string
