@@ -27,10 +27,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "copy:sc": "npx shx cp ../../node_modules/langium-statemachine-dsl/language-configuration.json ./public/ls/statemachine-configuration.json && npx shx cp ../../node_modules/langium-statemachine-dsl/syntaxes/statemachine.tmLanguage.json ./public/ls/statemachine-grammar.json",
-    "build:worker": "esbuild ../../node_modules/langium-statemachine-dsl/out/language-server/main-browser.js --bundle --format=iife --outfile=./public/ls/statemachineServerWorker.js",
     "build:langium": "esbuild ./src/langium-worker.ts --bundle --format=iife --outfile=./public/ls/langiumServerWorker.js",
-    "build": "npm run copy:sc && npm run build:worker && npm run build:langium && react-scripts build",
+    "build": "npm run build:langium && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -2,7 +2,7 @@ import './LangiumGrammarVisualizer.css';
 import { MonacoEditorReactComp } from '@typefox/monaco-editor-react';
 import { UserConfig } from 'monaco-editor-wrapper';
 import React, { createRef } from 'react';
-import { DocumentChangeResponse, LangiumAST } from '../../../../langium-hat/dist';
+import { DocumentChangeResponse, LangiumAST } from '@visuallangium/langium-hat';
 import { Graphviz } from 'graphviz-react';
 
 interface EditorState {
@@ -390,14 +390,10 @@ hidden terminal SL_COMMENT: /\\/\\/[^\\n\\r]*/;
      */
     onDocumentChange(resp: DocumentChangeResponse) {
         // decode the received Ast
-        console.info('DOCUMENT CHANGE RECEIVED!');
-        const astUtils = new LangiumAST();
-        const ast = astUtils.deserializeAST(resp.content);
-        console.info('* deserialized...');
-        const graph = astUtils.astToGraph(ast);
-        console.info('* graph constructed...');
-        const dot = astUtils.graphToDOT(graph);
-        console.info('* DOT spec produced, displaying');
+        const langiumAst = new LangiumAST();
+        const ast = langiumAst.deserializeAST(resp.content);
+        const graph = langiumAst.astToGraph(ast);
+        const dot = langiumAst.graphToDOT(graph);
         this.setState({ graph: dot });
     }
 
