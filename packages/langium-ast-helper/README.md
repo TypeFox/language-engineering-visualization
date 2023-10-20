@@ -34,6 +34,8 @@ const dot = convertGraphtoDOT(graph);
 // do something with your program!
 ```
 
+You can see the [examples](./packages/examples/src/index.ts) for more details.
+
 Here's an example of taking a MiniLogo program that draws a series of squares, applying the steps above, and then rendering the resulting DOT program into a graph.
 
 ![MiniLogo program graph generated from a DOT specification, which in turn was derived from the StateMachine grammar.](./assets/minilogo-program-example.png)
