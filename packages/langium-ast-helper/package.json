@@ -1,6 +1,6 @@
 {
     "name": "langium-ast-helper",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "author": {
         "name": "TypeFox",
         "url": "https://typefox.io",
@@ -57,8 +57,8 @@
         "build:min:esm": "esbuild --minify --sourcemap --format=esm --bundle dist/mjs/index.js --outfile=dist/mjs/index.min.js",
         "clean": "npx shx rm -rf build && npx shx rm -rf dist",
         "watch": "npm run build",
-        "dry": "npm pack --dry",
-        "prepublish": "git push origin --follow-tags"
+        "dry": "npm publish --dry-run",
+        "prepublish": "npm run prepare"
     },
     "devDependencies": {
         "esbuild": "^0.19.5"
