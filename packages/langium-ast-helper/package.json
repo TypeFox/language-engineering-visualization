@@ -1,24 +1,36 @@
 {
     "name": "langium-ast-helper",
+    "version": "0.0.2",
     "author": {
         "name": "TypeFox",
-        "url": "https://typefox.io"
+        "url": "https://typefox.io",
+        "email": "benjamin.wilson@typefox.io"
+    },
+    "keywords": [
+        "langium",
+        "language",
+        "graph",
+        "treemap"
+    ],
+    "volta": {
+        "node": "18.16.0",
+        "npm": "9.6.6"
     },
     "license": "MIT",
-    "version": "0.0.1",
     "private": false,
-    "main": "dist/index.js",
+    "main": "dist/helpers/index.js",
     "types": "dist/index.d.ts",
     "exports": {
-        ".": "./dist/index.js",
-        "./deserializer": "./dist/deserializer.js",
-        "./langium-types": "./dist/langium-types.js",
-        "./helpers": "./dist/helpers/index.js"
+        ".": "./dist/index.js"
     },
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "build": "tsc",
+        "build": "tsc -p tsconfig.json",
         "clean": "npx shx rm -rf dist",
         "start": "echo 'No start script defined'",
-        "watch": "npm run build"
+        "watch": "npm run build",
+        "dry": "npm pack --dry"
     }
 }
