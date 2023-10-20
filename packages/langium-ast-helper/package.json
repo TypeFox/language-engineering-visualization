@@ -9,8 +9,9 @@
     "keywords": [
         "langium",
         "language",
-        "graph",
-        "treemap"
+        "engineering",
+        "data",
+        "structures"
     ],
     "volta": {
         "node": "18.16.0",
@@ -18,19 +19,48 @@
     },
     "license": "MIT",
     "private": false,
-    "main": "dist/helpers/index.js",
-    "types": "dist/index.d.ts",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/mjs/index.js",
     "exports": {
-        ".": "./dist/index.js"
+        "./min": {
+            "import": {
+                "types": "./dist/mjs/index.d.ts",
+                "default": "./dist/mjs/index.min.js"
+            },
+            "require": {
+                "types": "./dist/cjs/index.d.ts",
+                "default": "./dist/cjs/index.min.js"
+            }
+        },
+        ".": {
+            "import": {
+                "types": "./dist/mjs/index.d.ts",
+                "default": "./dist/mjs/index.js"
+            },
+            "require": {
+                "types": "./dist/cjs/index.d.ts",
+                "default": "./dist/cjs/index.js"
+            }
+        }
     },
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "tsc -p tsconfig.json",
-        "clean": "npx shx rm -rf dist",
-        "start": "echo 'No start script defined'",
+        "preprepare": "npm run clean",
+        "prepare": "npm run build",
+        "postprepare": "npm run dry",
+        "build": "npm run build:cjs && npm run build:esm && npm run build:min:cjs && npm run build:min:esm",
+        "build:cjs": "tsc -p tsconfig.json",
+        "build:esm": "tsc -p tsconfig.esm.json",
+        "build:min:cjs": "esbuild --minify --sourcemap --format=cjs --bundle dist/cjs/index.js --outfile=dist/cjs/index.min.js",
+        "build:min:esm": "esbuild --minify --sourcemap --format=esm --bundle dist/mjs/index.js --outfile=dist/mjs/index.min.js",
+        "clean": "npx shx rm -rf build && npx shx rm -rf dist",
         "watch": "npm run build",
-        "dry": "npm pack --dry"
+        "dry": "npm pack --dry",
+        "prepublish": "git push origin --follow-tags"
+    },
+    "devDependencies": {
+        "esbuild": "^0.19.5"
     }
 }

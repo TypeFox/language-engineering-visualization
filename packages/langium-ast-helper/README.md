@@ -38,12 +38,12 @@ You can see the [examples](../../packages/examples/src/index.ts) for more detail
 
 Here's an example of taking a MiniLogo program that draws a series of squares, applying the steps above, and then rendering the resulting DOT program into a graph.
 
-![MiniLogo program graph generated from a DOT specification, which in turn was derived from the StateMachine grammar.](./assets/minilogo-program-example.png)
+![MiniLogo program graph generated from a DOT specification, which in turn was derived from the StateMachine grammar.](https://github.com/TypeFox/language-engineering-visualization/blob/main/packages/langium-ast-helper/assets/minilogo-program-example.png)
 
 Because Langium is written in its own language, we can also parse Langium grammars and generate DOT programs from them.
 
 As an example, here's a DOT program that corresponds to transforming the grammar for the StateMachine example language into a DOT graph.
-![StateMachine graph generated from a DOT specification, which in turn was derived from the StateMachine grammar.](./assets/statemachine-graph-example.png)
+![StateMachine graph generated from a DOT specification, which in turn was derived from the StateMachine grammar.](https://github.com/TypeFox/language-engineering-visualization/blob/main/packages/langium-ast-helper/assets/statemachine-graph-example.png)
 
 ## Contributing
 
