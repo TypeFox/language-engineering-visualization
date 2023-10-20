@@ -34,7 +34,15 @@ const dot = convertGraphtoDOT(graph);
 // do something with your program!
 ```
 
-As an example, here's a DOT program that corresponds to Langium's own language (parsing itself):
+Here's an example of taking a MiniLogo program that draws a series of squares, applying the steps above, and then rendering the resulting DOT program into a graph.
 
-// TODO ADD THIS IN!!
-![Langium AST](./assets/langium-ast.png)
+![MiniLogo program graph generated from a DOT specification, which in turn was derived from the StateMachine grammar.](./assets/minilogo-program-example.png)
+
+Because Langium is written in its own language, we can also parse Langium grammars and generate DOT programs from them.
+
+As an example, here's a DOT program that corresponds to transforming the grammar for the StateMachine example language into a DOT graph.
+![StateMachine graph generated from a DOT specification, which in turn was derived from the StateMachine grammar.](./assets/statemachine-graph-example.png)
+
+## Contributing
+
+Additions are welcome! If you see a helpful transformation that is missing from this package, and would be useful for a large enough audience, feel free to make a PR to add it in.

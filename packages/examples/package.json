@@ -1,0 +1,20 @@
+{
+    "name": "@language-engineering-visualization/examples",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "langium-ast-helper": "file:../langium-ast-helper"
+    },
+    "volta": {
+        "node": "18.16.0",
+        "npm": "9.6.6"
+    },
+    "scripts": {
+        "start": "node ./dist/index.js",
+        "build": "tsc",
+        "clean": "shx rm -rf ./dist",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "watch": "npm run build"
+    }
+}

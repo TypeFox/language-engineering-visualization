@@ -27,8 +27,15 @@
       return require.apply(this, arguments);
     throw new Error('Dynamic require of "' + x + '" is not supported');
   });
+  var __esm = (fn, res) => function __init() {
+    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+  };
   var __commonJS = (cb, mod) => function __require2() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
   };
   var __copyProps = (to, from, except, desc) => {
     if (from && typeof from === "object" || typeof from === "function") {
@@ -46,10 +53,11 @@
     isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
     mod
   ));
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/ral.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/ral.js
   var require_ral = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/ral.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/ral.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       var _ral;
@@ -72,9 +80,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/disposable.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/disposable.js
   var require_disposable = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/disposable.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/disposable.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.Disposable = void 0;
@@ -90,9 +98,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/events.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/events.js
   var require_events = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/events.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/events.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.Emitter = exports2.Event = void 0;
@@ -219,9 +227,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messageBuffer.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/messageBuffer.js
   var require_messageBuffer = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messageBuffer.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/messageBuffer.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.AbstractMessageBuffer = void 0;
@@ -368,9 +376,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/browser/ril.js
+  // ../../node_modules/vscode-jsonrpc/lib/browser/ril.js
   var require_ril = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/browser/ril.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/browser/ril.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       var ral_1 = require_ral();
@@ -526,9 +534,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/is.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/is.js
   var require_is = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/is.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/is.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.stringArray = exports2.array = exports2.func = exports2.error = exports2.number = exports2.string = exports2.boolean = void 0;
@@ -563,9 +571,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messages.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/messages.js
   var require_messages = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messages.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/messages.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.Message = exports2.NotificationType9 = exports2.NotificationType8 = exports2.NotificationType7 = exports2.NotificationType6 = exports2.NotificationType5 = exports2.NotificationType4 = exports2.NotificationType3 = exports2.NotificationType2 = exports2.NotificationType1 = exports2.NotificationType0 = exports2.NotificationType = exports2.RequestType9 = exports2.RequestType8 = exports2.RequestType7 = exports2.RequestType6 = exports2.RequestType5 = exports2.RequestType4 = exports2.RequestType3 = exports2.RequestType2 = exports2.RequestType1 = exports2.RequestType = exports2.RequestType0 = exports2.AbstractMessageSignature = exports2.ParameterStructures = exports2.ResponseError = exports2.ErrorCodes = void 0;
@@ -801,9 +809,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/linkedMap.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/linkedMap.js
   var require_linkedMap = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/linkedMap.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/linkedMap.js"(exports2) {
       "use strict";
       var _a;
       Object.defineProperty(exports2, "__esModule", { value: true });
@@ -1171,9 +1179,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/cancellation.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/cancellation.js
   var require_cancellation = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/cancellation.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/cancellation.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.CancellationTokenSource = exports2.CancellationToken = void 0;
@@ -1260,9 +1268,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messageReader.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/messageReader.js
   var require_messageReader = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messageReader.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/messageReader.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.ReadableStreamMessageReader = exports2.AbstractMessageReader = exports2.MessageReader = void 0;
@@ -1448,9 +1456,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/semaphore.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/semaphore.js
   var require_semaphore = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/semaphore.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/semaphore.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.Semaphore = void 0;
@@ -1516,9 +1524,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messageWriter.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/messageWriter.js
   var require_messageWriter = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/messageWriter.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/messageWriter.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.WriteableStreamMessageWriter = exports2.AbstractMessageWriter = exports2.MessageWriter = void 0;
@@ -1628,9 +1636,9 @@
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/connection.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/connection.js
   var require_connection = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/connection.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/connection.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.createMessageConnection = exports2.ConnectionOptions = exports2.CancellationStrategy = exports2.CancellationSenderStrategy = exports2.CancellationReceiverStrategy = exports2.ConnectionStrategy = exports2.ConnectionError = exports2.ConnectionErrors = exports2.LogTraceNotification = exports2.SetTraceNotification = exports2.TraceFormat = exports2.TraceValues = exports2.Trace = exports2.NullLogger = exports2.ProgressType = exports2.ProgressToken = void 0;
@@ -2721,9 +2729,9 @@ ${JSON.stringify(message, null, 4)}`);
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/api.js
+  // ../../node_modules/vscode-jsonrpc/lib/common/api.js
   var require_api = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/common/api.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/common/api.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.TraceFormat = exports2.TraceValues = exports2.Trace = exports2.ProgressType = exports2.ProgressToken = exports2.createMessageConnection = exports2.NullLogger = exports2.ConnectionOptions = exports2.ConnectionStrategy = exports2.WriteableStreamMessageWriter = exports2.AbstractMessageWriter = exports2.MessageWriter = exports2.ReadableStreamMessageReader = exports2.AbstractMessageReader = exports2.MessageReader = exports2.CancellationToken = exports2.CancellationTokenSource = exports2.Emitter = exports2.Event = exports2.Disposable = exports2.LRUCache = exports2.Touch = exports2.LinkedMap = exports2.ParameterStructures = exports2.NotificationType9 = exports2.NotificationType8 = exports2.NotificationType7 = exports2.NotificationType6 = exports2.NotificationType5 = exports2.NotificationType4 = exports2.NotificationType3 = exports2.NotificationType2 = exports2.NotificationType1 = exports2.NotificationType0 = exports2.NotificationType = exports2.ErrorCodes = exports2.ResponseError = exports2.RequestType9 = exports2.RequestType8 = exports2.RequestType7 = exports2.RequestType6 = exports2.RequestType5 = exports2.RequestType4 = exports2.RequestType3 = exports2.RequestType2 = exports2.RequestType1 = exports2.RequestType0 = exports2.RequestType = exports2.Message = exports2.RAL = void 0;
@@ -2909,9 +2917,9 @@ ${JSON.stringify(message, null, 4)}`);
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/browser/main.js
+  // ../../node_modules/vscode-jsonrpc/lib/browser/main.js
   var require_main = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/lib/browser/main.js"(exports2) {
+    "../../node_modules/vscode-jsonrpc/lib/browser/main.js"(exports2) {
       "use strict";
       var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
         if (k2 === void 0)
@@ -2991,9 +2999,9 @@ ${JSON.stringify(message, null, 4)}`);
     }
   });
 
-  // ../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/browser.js
+  // ../../node_modules/vscode-jsonrpc/browser.js
   var require_browser = __commonJS({
-    "../../node_modules/vscode-languageserver-protocol/node_modules/vscode-jsonrpc/browser.js"(exports2, module2) {
+    "../../node_modules/vscode-jsonrpc/browser.js"(exports2, module2) {
       "use strict";
       module2.exports = require_main();
     }
@@ -4255,20 +4263,20 @@ ${JSON.stringify(message, null, 4)}`);
           WorkspaceFolder2.is = is;
         })(WorkspaceFolder = exports3.WorkspaceFolder || (exports3.WorkspaceFolder = {}));
         exports3.EOL = ["\n", "\r\n", "\r"];
-        var TextDocument;
-        (function(TextDocument2) {
+        var TextDocument2;
+        (function(TextDocument3) {
           function create(uri, languageId, version, content) {
-            return new FullTextDocument(uri, languageId, version, content);
+            return new FullTextDocument2(uri, languageId, version, content);
           }
-          TextDocument2.create = create;
+          TextDocument3.create = create;
           function is(value) {
             var candidate = value;
             return Is.defined(candidate) && Is.string(candidate.uri) && (Is.undefined(candidate.languageId) || Is.string(candidate.languageId)) && Is.uinteger(candidate.lineCount) && Is.func(candidate.getText) && Is.func(candidate.positionAt) && Is.func(candidate.offsetAt) ? true : false;
           }
-          TextDocument2.is = is;
+          TextDocument3.is = is;
           function applyEdits(document, edits) {
             var text = document.getText();
-            var sortedEdits = mergeSort(edits, function(a, b) {
+            var sortedEdits = mergeSort2(edits, function(a, b) {
               var diff = a.range.start.line - b.range.start.line;
               if (diff === 0) {
                 return a.range.start.character - b.range.start.character;
@@ -4289,16 +4297,16 @@ ${JSON.stringify(message, null, 4)}`);
             }
             return text;
           }
-          TextDocument2.applyEdits = applyEdits;
-          function mergeSort(data, compare) {
+          TextDocument3.applyEdits = applyEdits;
+          function mergeSort2(data, compare) {
             if (data.length <= 1) {
               return data;
             }
             var p = data.length / 2 | 0;
             var left = data.slice(0, p);
             var right = data.slice(p);
-            mergeSort(left, compare);
-            mergeSort(right, compare);
+            mergeSort2(left, compare);
+            mergeSort2(right, compare);
             var leftIdx = 0;
             var rightIdx = 0;
             var i = 0;
@@ -4318,39 +4326,39 @@ ${JSON.stringify(message, null, 4)}`);
             }
             return data;
           }
-        })(TextDocument = exports3.TextDocument || (exports3.TextDocument = {}));
-        var FullTextDocument = (
+        })(TextDocument2 = exports3.TextDocument || (exports3.TextDocument = {}));
+        var FullTextDocument2 = (
           /** @class */
           function() {
-            function FullTextDocument2(uri, languageId, version, content) {
+            function FullTextDocument3(uri, languageId, version, content) {
               this._uri = uri;
               this._languageId = languageId;
               this._version = version;
               this._content = content;
               this._lineOffsets = void 0;
             }
-            Object.defineProperty(FullTextDocument2.prototype, "uri", {
+            Object.defineProperty(FullTextDocument3.prototype, "uri", {
               get: function() {
                 return this._uri;
               },
               enumerable: false,
               configurable: true
             });
-            Object.defineProperty(FullTextDocument2.prototype, "languageId", {
+            Object.defineProperty(FullTextDocument3.prototype, "languageId", {
               get: function() {
                 return this._languageId;
               },
               enumerable: false,
               configurable: true
             });
-            Object.defineProperty(FullTextDocument2.prototype, "version", {
+            Object.defineProperty(FullTextDocument3.prototype, "version", {
               get: function() {
                 return this._version;
               },
               enumerable: false,
               configurable: true
             });
-            FullTextDocument2.prototype.getText = function(range) {
+            FullTextDocument3.prototype.getText = function(range) {
               if (range) {
                 var start = this.offsetAt(range.start);
                 var end = this.offsetAt(range.end);
@@ -4358,12 +4366,12 @@ ${JSON.stringify(message, null, 4)}`);
               }
               return this._content;
             };
-            FullTextDocument2.prototype.update = function(event, version) {
+            FullTextDocument3.prototype.update = function(event, version) {
               this._content = event.text;
               this._version = version;
               this._lineOffsets = void 0;
             };
-            FullTextDocument2.prototype.getLineOffsets = function() {
+            FullTextDocument3.prototype.getLineOffsets = function() {
               if (this._lineOffsets === void 0) {
                 var lineOffsets = [];
                 var text = this._content;
@@ -4386,7 +4394,7 @@ ${JSON.stringify(message, null, 4)}`);
               }
               return this._lineOffsets;
             };
-            FullTextDocument2.prototype.positionAt = function(offset) {
+            FullTextDocument3.prototype.positionAt = function(offset) {
               offset = Math.max(Math.min(offset, this._content.length), 0);
               var lineOffsets = this.getLineOffsets();
               var low = 0, high = lineOffsets.length;
@@ -4404,7 +4412,7 @@ ${JSON.stringify(message, null, 4)}`);
               var line = low - 1;
               return Position.create(line, offset - lineOffsets[line]);
             };
-            FullTextDocument2.prototype.offsetAt = function(position) {
+            FullTextDocument3.prototype.offsetAt = function(position) {
               var lineOffsets = this.getLineOffsets();
               if (position.line >= lineOffsets.length) {
                 return this._content.length;
@@ -4415,14 +4423,14 @@ ${JSON.stringify(message, null, 4)}`);
               var nextLineOffset = position.line + 1 < lineOffsets.length ? lineOffsets[position.line + 1] : this._content.length;
               return Math.max(Math.min(lineOffset + position.character, nextLineOffset), lineOffset);
             };
-            Object.defineProperty(FullTextDocument2.prototype, "lineCount", {
+            Object.defineProperty(FullTextDocument3.prototype, "lineCount", {
               get: function() {
                 return this.getLineOffsets().length;
               },
               enumerable: false,
               configurable: true
             });
-            return FullTextDocument2;
+            return FullTextDocument3;
           }()
         );
         var Is;
@@ -8052,266 +8060,222 @@ ${JSON.stringify(message, null, 4)}`);
     }
   });
 
-  // ../../node_modules/vscode-languageserver-textdocument/lib/umd/main.js
-  var require_main5 = __commonJS({
-    "../../node_modules/vscode-languageserver-textdocument/lib/umd/main.js"(exports2, module2) {
-      var __spreadArray = exports2 && exports2.__spreadArray || function(to, from, pack) {
-        if (pack || arguments.length === 2)
-          for (var i = 0, l = from.length, ar; i < l; i++) {
-            if (ar || !(i in from)) {
-              if (!ar)
-                ar = Array.prototype.slice.call(from, 0, i);
-              ar[i] = from[i];
-            }
-          }
-        return to.concat(ar || Array.prototype.slice.call(from));
-      };
-      (function(factory) {
-        if (typeof module2 === "object" && typeof module2.exports === "object") {
-          var v = factory(__require, exports2);
-          if (v !== void 0)
-            module2.exports = v;
-        } else if (typeof define === "function" && define.amd) {
-          define(["require", "exports"], factory);
+  // ../../node_modules/vscode-languageserver-textdocument/lib/esm/main.js
+  var main_exports = {};
+  __export(main_exports, {
+    TextDocument: () => TextDocument
+  });
+  function mergeSort(data, compare) {
+    if (data.length <= 1) {
+      return data;
+    }
+    const p = data.length / 2 | 0;
+    const left = data.slice(0, p);
+    const right = data.slice(p);
+    mergeSort(left, compare);
+    mergeSort(right, compare);
+    let leftIdx = 0;
+    let rightIdx = 0;
+    let i = 0;
+    while (leftIdx < left.length && rightIdx < right.length) {
+      let ret = compare(left[leftIdx], right[rightIdx]);
+      if (ret <= 0) {
+        data[i++] = left[leftIdx++];
+      } else {
+        data[i++] = right[rightIdx++];
+      }
+    }
+    while (leftIdx < left.length) {
+      data[i++] = left[leftIdx++];
+    }
+    while (rightIdx < right.length) {
+      data[i++] = right[rightIdx++];
+    }
+    return data;
+  }
+  function computeLineOffsets(text, isAtLineStart, textOffset = 0) {
+    const result = isAtLineStart ? [textOffset] : [];
+    for (let i = 0; i < text.length; i++) {
+      let ch = text.charCodeAt(i);
+      if (ch === 13 || ch === 10) {
+        if (ch === 13 && i + 1 < text.length && text.charCodeAt(i + 1) === 10) {
+          i++;
         }
-      })(function(require2, exports3) {
-        "use strict";
-        Object.defineProperty(exports3, "__esModule", { value: true });
-        exports3.TextDocument = void 0;
-        var FullTextDocument = (
-          /** @class */
-          function() {
-            function FullTextDocument2(uri, languageId, version, content) {
-              this._uri = uri;
-              this._languageId = languageId;
-              this._version = version;
-              this._content = content;
+        result.push(textOffset + i + 1);
+      }
+    }
+    return result;
+  }
+  function getWellformedRange(range) {
+    const start = range.start;
+    const end = range.end;
+    if (start.line > end.line || start.line === end.line && start.character > end.character) {
+      return { start: end, end: start };
+    }
+    return range;
+  }
+  function getWellformedEdit(textEdit) {
+    const range = getWellformedRange(textEdit.range);
+    if (range !== textEdit.range) {
+      return { newText: textEdit.newText, range };
+    }
+    return textEdit;
+  }
+  var FullTextDocument, TextDocument;
+  var init_main = __esm({
+    "../../node_modules/vscode-languageserver-textdocument/lib/esm/main.js"() {
+      "use strict";
+      FullTextDocument = class {
+        constructor(uri, languageId, version, content) {
+          this._uri = uri;
+          this._languageId = languageId;
+          this._version = version;
+          this._content = content;
+          this._lineOffsets = void 0;
+        }
+        get uri() {
+          return this._uri;
+        }
+        get languageId() {
+          return this._languageId;
+        }
+        get version() {
+          return this._version;
+        }
+        getText(range) {
+          if (range) {
+            const start = this.offsetAt(range.start);
+            const end = this.offsetAt(range.end);
+            return this._content.substring(start, end);
+          }
+          return this._content;
+        }
+        update(changes, version) {
+          for (let change of changes) {
+            if (FullTextDocument.isIncremental(change)) {
+              const range = getWellformedRange(change.range);
+              const startOffset = this.offsetAt(range.start);
+              const endOffset = this.offsetAt(range.end);
+              this._content = this._content.substring(0, startOffset) + change.text + this._content.substring(endOffset, this._content.length);
+              const startLine = Math.max(range.start.line, 0);
+              const endLine = Math.max(range.end.line, 0);
+              let lineOffsets = this._lineOffsets;
+              const addedLineOffsets = computeLineOffsets(change.text, false, startOffset);
+              if (endLine - startLine === addedLineOffsets.length) {
+                for (let i = 0, len = addedLineOffsets.length; i < len; i++) {
+                  lineOffsets[i + startLine + 1] = addedLineOffsets[i];
+                }
+              } else {
+                if (addedLineOffsets.length < 1e4) {
+                  lineOffsets.splice(startLine + 1, endLine - startLine, ...addedLineOffsets);
+                } else {
+                  this._lineOffsets = lineOffsets = lineOffsets.slice(0, startLine + 1).concat(addedLineOffsets, lineOffsets.slice(endLine + 1));
+                }
+              }
+              const diff = change.text.length - (endOffset - startOffset);
+              if (diff !== 0) {
+                for (let i = startLine + 1 + addedLineOffsets.length, len = lineOffsets.length; i < len; i++) {
+                  lineOffsets[i] = lineOffsets[i] + diff;
+                }
+              }
+            } else if (FullTextDocument.isFull(change)) {
+              this._content = change.text;
               this._lineOffsets = void 0;
-            }
-            Object.defineProperty(FullTextDocument2.prototype, "uri", {
-              get: function() {
-                return this._uri;
-              },
-              enumerable: false,
-              configurable: true
-            });
-            Object.defineProperty(FullTextDocument2.prototype, "languageId", {
-              get: function() {
-                return this._languageId;
-              },
-              enumerable: false,
-              configurable: true
-            });
-            Object.defineProperty(FullTextDocument2.prototype, "version", {
-              get: function() {
-                return this._version;
-              },
-              enumerable: false,
-              configurable: true
-            });
-            FullTextDocument2.prototype.getText = function(range) {
-              if (range) {
-                var start = this.offsetAt(range.start);
-                var end = this.offsetAt(range.end);
-                return this._content.substring(start, end);
-              }
-              return this._content;
-            };
-            FullTextDocument2.prototype.update = function(changes, version) {
-              for (var _i = 0, changes_1 = changes; _i < changes_1.length; _i++) {
-                var change = changes_1[_i];
-                if (FullTextDocument2.isIncremental(change)) {
-                  var range = getWellformedRange(change.range);
-                  var startOffset = this.offsetAt(range.start);
-                  var endOffset = this.offsetAt(range.end);
-                  this._content = this._content.substring(0, startOffset) + change.text + this._content.substring(endOffset, this._content.length);
-                  var startLine = Math.max(range.start.line, 0);
-                  var endLine = Math.max(range.end.line, 0);
-                  var lineOffsets = this._lineOffsets;
-                  var addedLineOffsets = computeLineOffsets(change.text, false, startOffset);
-                  if (endLine - startLine === addedLineOffsets.length) {
-                    for (var i = 0, len = addedLineOffsets.length; i < len; i++) {
-                      lineOffsets[i + startLine + 1] = addedLineOffsets[i];
-                    }
-                  } else {
-                    if (addedLineOffsets.length < 1e4) {
-                      lineOffsets.splice.apply(lineOffsets, __spreadArray([startLine + 1, endLine - startLine], addedLineOffsets, false));
-                    } else {
-                      this._lineOffsets = lineOffsets = lineOffsets.slice(0, startLine + 1).concat(addedLineOffsets, lineOffsets.slice(endLine + 1));
-                    }
-                  }
-                  var diff = change.text.length - (endOffset - startOffset);
-                  if (diff !== 0) {
-                    for (var i = startLine + 1 + addedLineOffsets.length, len = lineOffsets.length; i < len; i++) {
-                      lineOffsets[i] = lineOffsets[i] + diff;
-                    }
-                  }
-                } else if (FullTextDocument2.isFull(change)) {
-                  this._content = change.text;
-                  this._lineOffsets = void 0;
-                } else {
-                  throw new Error("Unknown change event received");
-                }
-              }
-              this._version = version;
-            };
-            FullTextDocument2.prototype.getLineOffsets = function() {
-              if (this._lineOffsets === void 0) {
-                this._lineOffsets = computeLineOffsets(this._content, true);
-              }
-              return this._lineOffsets;
-            };
-            FullTextDocument2.prototype.positionAt = function(offset) {
-              offset = Math.max(Math.min(offset, this._content.length), 0);
-              var lineOffsets = this.getLineOffsets();
-              var low = 0, high = lineOffsets.length;
-              if (high === 0) {
-                return { line: 0, character: offset };
-              }
-              while (low < high) {
-                var mid = Math.floor((low + high) / 2);
-                if (lineOffsets[mid] > offset) {
-                  high = mid;
-                } else {
-                  low = mid + 1;
-                }
-              }
-              var line = low - 1;
-              return { line, character: offset - lineOffsets[line] };
-            };
-            FullTextDocument2.prototype.offsetAt = function(position) {
-              var lineOffsets = this.getLineOffsets();
-              if (position.line >= lineOffsets.length) {
-                return this._content.length;
-              } else if (position.line < 0) {
-                return 0;
-              }
-              var lineOffset = lineOffsets[position.line];
-              var nextLineOffset = position.line + 1 < lineOffsets.length ? lineOffsets[position.line + 1] : this._content.length;
-              return Math.max(Math.min(lineOffset + position.character, nextLineOffset), lineOffset);
-            };
-            Object.defineProperty(FullTextDocument2.prototype, "lineCount", {
-              get: function() {
-                return this.getLineOffsets().length;
-              },
-              enumerable: false,
-              configurable: true
-            });
-            FullTextDocument2.isIncremental = function(event) {
-              var candidate = event;
-              return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range !== void 0 && (candidate.rangeLength === void 0 || typeof candidate.rangeLength === "number");
-            };
-            FullTextDocument2.isFull = function(event) {
-              var candidate = event;
-              return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range === void 0 && candidate.rangeLength === void 0;
-            };
-            return FullTextDocument2;
-          }()
-        );
-        var TextDocument;
-        (function(TextDocument2) {
-          function create(uri, languageId, version, content) {
-            return new FullTextDocument(uri, languageId, version, content);
-          }
-          TextDocument2.create = create;
-          function update(document, changes, version) {
-            if (document instanceof FullTextDocument) {
-              document.update(changes, version);
-              return document;
             } else {
-              throw new Error("TextDocument.update: document must be created by TextDocument.create");
+              throw new Error("Unknown change event received");
             }
           }
-          TextDocument2.update = update;
-          function applyEdits(document, edits) {
-            var text = document.getText();
-            var sortedEdits = mergeSort(edits.map(getWellformedEdit), function(a, b) {
-              var diff = a.range.start.line - b.range.start.line;
-              if (diff === 0) {
-                return a.range.start.character - b.range.start.character;
-              }
-              return diff;
-            });
-            var lastModifiedOffset = 0;
-            var spans = [];
-            for (var _i = 0, sortedEdits_1 = sortedEdits; _i < sortedEdits_1.length; _i++) {
-              var e = sortedEdits_1[_i];
-              var startOffset = document.offsetAt(e.range.start);
-              if (startOffset < lastModifiedOffset) {
-                throw new Error("Overlapping edit");
-              } else if (startOffset > lastModifiedOffset) {
-                spans.push(text.substring(lastModifiedOffset, startOffset));
-              }
-              if (e.newText.length) {
-                spans.push(e.newText);
-              }
-              lastModifiedOffset = document.offsetAt(e.range.end);
-            }
-            spans.push(text.substr(lastModifiedOffset));
-            return spans.join("");
+          this._version = version;
+        }
+        getLineOffsets() {
+          if (this._lineOffsets === void 0) {
+            this._lineOffsets = computeLineOffsets(this._content, true);
           }
-          TextDocument2.applyEdits = applyEdits;
-        })(TextDocument = exports3.TextDocument || (exports3.TextDocument = {}));
-        function mergeSort(data, compare) {
-          if (data.length <= 1) {
-            return data;
+          return this._lineOffsets;
+        }
+        positionAt(offset) {
+          offset = Math.max(Math.min(offset, this._content.length), 0);
+          let lineOffsets = this.getLineOffsets();
+          let low = 0, high = lineOffsets.length;
+          if (high === 0) {
+            return { line: 0, character: offset };
           }
-          var p = data.length / 2 | 0;
-          var left = data.slice(0, p);
-          var right = data.slice(p);
-          mergeSort(left, compare);
-          mergeSort(right, compare);
-          var leftIdx = 0;
-          var rightIdx = 0;
-          var i = 0;
-          while (leftIdx < left.length && rightIdx < right.length) {
-            var ret = compare(left[leftIdx], right[rightIdx]);
-            if (ret <= 0) {
-              data[i++] = left[leftIdx++];
+          while (low < high) {
+            let mid = Math.floor((low + high) / 2);
+            if (lineOffsets[mid] > offset) {
+              high = mid;
             } else {
-              data[i++] = right[rightIdx++];
+              low = mid + 1;
             }
           }
-          while (leftIdx < left.length) {
-            data[i++] = left[leftIdx++];
-          }
-          while (rightIdx < right.length) {
-            data[i++] = right[rightIdx++];
-          }
-          return data;
+          let line = low - 1;
+          return { line, character: offset - lineOffsets[line] };
         }
-        function computeLineOffsets(text, isAtLineStart, textOffset) {
-          if (textOffset === void 0) {
-            textOffset = 0;
+        offsetAt(position) {
+          let lineOffsets = this.getLineOffsets();
+          if (position.line >= lineOffsets.length) {
+            return this._content.length;
+          } else if (position.line < 0) {
+            return 0;
           }
-          var result = isAtLineStart ? [textOffset] : [];
-          for (var i = 0; i < text.length; i++) {
-            var ch = text.charCodeAt(i);
-            if (ch === 13 || ch === 10) {
-              if (ch === 13 && i + 1 < text.length && text.charCodeAt(i + 1) === 10) {
-                i++;
-              }
-              result.push(textOffset + i + 1);
+          let lineOffset = lineOffsets[position.line];
+          let nextLineOffset = position.line + 1 < lineOffsets.length ? lineOffsets[position.line + 1] : this._content.length;
+          return Math.max(Math.min(lineOffset + position.character, nextLineOffset), lineOffset);
+        }
+        get lineCount() {
+          return this.getLineOffsets().length;
+        }
+        static isIncremental(event) {
+          let candidate = event;
+          return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range !== void 0 && (candidate.rangeLength === void 0 || typeof candidate.rangeLength === "number");
+        }
+        static isFull(event) {
+          let candidate = event;
+          return candidate !== void 0 && candidate !== null && typeof candidate.text === "string" && candidate.range === void 0 && candidate.rangeLength === void 0;
+        }
+      };
+      (function(TextDocument2) {
+        function create(uri, languageId, version, content) {
+          return new FullTextDocument(uri, languageId, version, content);
+        }
+        TextDocument2.create = create;
+        function update(document, changes, version) {
+          if (document instanceof FullTextDocument) {
+            document.update(changes, version);
+            return document;
+          } else {
+            throw new Error("TextDocument.update: document must be created by TextDocument.create");
+          }
+        }
+        TextDocument2.update = update;
+        function applyEdits(document, edits) {
+          let text = document.getText();
+          let sortedEdits = mergeSort(edits.map(getWellformedEdit), (a, b) => {
+            let diff = a.range.start.line - b.range.start.line;
+            if (diff === 0) {
+              return a.range.start.character - b.range.start.character;
             }
+            return diff;
+          });
+          let lastModifiedOffset = 0;
+          const spans = [];
+          for (const e of sortedEdits) {
+            let startOffset = document.offsetAt(e.range.start);
+            if (startOffset < lastModifiedOffset) {
+              throw new Error("Overlapping edit");
+            } else if (startOffset > lastModifiedOffset) {
+              spans.push(text.substring(lastModifiedOffset, startOffset));
+            }
+            if (e.newText.length) {
+              spans.push(e.newText);
+            }
+            lastModifiedOffset = document.offsetAt(e.range.end);
           }
-          return result;
+          spans.push(text.substr(lastModifiedOffset));
+          return spans.join("");
         }
-        function getWellformedRange(range) {
-          var start = range.start;
-          var end = range.end;
-          if (start.line > end.line || start.line === end.line && start.character > end.character) {
-            return { start: end, end: start };
-          }
-          return range;
-        }
-        function getWellformedEdit(textEdit) {
-          var range = getWellformedRange(textEdit.range);
-          if (range !== textEdit.range) {
-            return { newText: textEdit.newText, range };
-          }
-          return textEdit;
-        }
-      });
+        TextDocument2.applyEdits = applyEdits;
+      })(TextDocument || (TextDocument = {}));
     }
   });
 
@@ -9134,58 +9098,58 @@ ${JSON.stringify(message, null, 4)}`);
               throw new TypeError("Path must be a string. Received " + JSON.stringify(t3));
           }
           function r2(t3, e3) {
-            for (var r3, n3 = "", o = 0, i = -1, a = 0, s = 0; s <= t3.length; ++s) {
-              if (s < t3.length)
-                r3 = t3.charCodeAt(s);
+            for (var r3, n3 = "", i = 0, o = -1, s = 0, a = 0; a <= t3.length; ++a) {
+              if (a < t3.length)
+                r3 = t3.charCodeAt(a);
               else {
                 if (47 === r3)
                   break;
                 r3 = 47;
               }
               if (47 === r3) {
-                if (i === s - 1 || 1 === a)
+                if (o === a - 1 || 1 === s)
                   ;
-                else if (i !== s - 1 && 2 === a) {
-                  if (n3.length < 2 || 2 !== o || 46 !== n3.charCodeAt(n3.length - 1) || 46 !== n3.charCodeAt(n3.length - 2)) {
+                else if (o !== a - 1 && 2 === s) {
+                  if (n3.length < 2 || 2 !== i || 46 !== n3.charCodeAt(n3.length - 1) || 46 !== n3.charCodeAt(n3.length - 2)) {
                     if (n3.length > 2) {
                       var h = n3.lastIndexOf("/");
                       if (h !== n3.length - 1) {
-                        -1 === h ? (n3 = "", o = 0) : o = (n3 = n3.slice(0, h)).length - 1 - n3.lastIndexOf("/"), i = s, a = 0;
+                        -1 === h ? (n3 = "", i = 0) : i = (n3 = n3.slice(0, h)).length - 1 - n3.lastIndexOf("/"), o = a, s = 0;
                         continue;
                       }
                     } else if (2 === n3.length || 1 === n3.length) {
-                      n3 = "", o = 0, i = s, a = 0;
+                      n3 = "", i = 0, o = a, s = 0;
                       continue;
                     }
                   }
-                  e3 && (n3.length > 0 ? n3 += "/.." : n3 = "..", o = 2);
+                  e3 && (n3.length > 0 ? n3 += "/.." : n3 = "..", i = 2);
                 } else
-                  n3.length > 0 ? n3 += "/" + t3.slice(i + 1, s) : n3 = t3.slice(i + 1, s), o = s - i - 1;
-                i = s, a = 0;
+                  n3.length > 0 ? n3 += "/" + t3.slice(o + 1, a) : n3 = t3.slice(o + 1, a), i = a - o - 1;
+                o = a, s = 0;
               } else
-                46 === r3 && -1 !== a ? ++a : a = -1;
+                46 === r3 && -1 !== s ? ++s : s = -1;
             }
             return n3;
           }
           var n2 = { resolve: function() {
-            for (var t3, n3 = "", o = false, i = arguments.length - 1; i >= -1 && !o; i--) {
-              var a;
-              i >= 0 ? a = arguments[i] : (void 0 === t3 && (t3 = process.cwd()), a = t3), e2(a), 0 !== a.length && (n3 = a + "/" + n3, o = 47 === a.charCodeAt(0));
+            for (var t3, n3 = "", i = false, o = arguments.length - 1; o >= -1 && !i; o--) {
+              var s;
+              o >= 0 ? s = arguments[o] : (void 0 === t3 && (t3 = process.cwd()), s = t3), e2(s), 0 !== s.length && (n3 = s + "/" + n3, i = 47 === s.charCodeAt(0));
             }
-            return n3 = r2(n3, !o), o ? n3.length > 0 ? "/" + n3 : "/" : n3.length > 0 ? n3 : ".";
+            return n3 = r2(n3, !i), i ? n3.length > 0 ? "/" + n3 : "/" : n3.length > 0 ? n3 : ".";
           }, normalize: function(t3) {
             if (e2(t3), 0 === t3.length)
               return ".";
-            var n3 = 47 === t3.charCodeAt(0), o = 47 === t3.charCodeAt(t3.length - 1);
-            return 0 !== (t3 = r2(t3, !n3)).length || n3 || (t3 = "."), t3.length > 0 && o && (t3 += "/"), n3 ? "/" + t3 : t3;
+            var n3 = 47 === t3.charCodeAt(0), i = 47 === t3.charCodeAt(t3.length - 1);
+            return 0 !== (t3 = r2(t3, !n3)).length || n3 || (t3 = "."), t3.length > 0 && i && (t3 += "/"), n3 ? "/" + t3 : t3;
           }, isAbsolute: function(t3) {
             return e2(t3), t3.length > 0 && 47 === t3.charCodeAt(0);
           }, join: function() {
             if (0 === arguments.length)
               return ".";
             for (var t3, r3 = 0; r3 < arguments.length; ++r3) {
-              var o = arguments[r3];
-              e2(o), o.length > 0 && (void 0 === t3 ? t3 = o : t3 += "/" + o);
+              var i = arguments[r3];
+              e2(i), i.length > 0 && (void 0 === t3 ? t3 = i : t3 += "/" + i);
             }
             return void 0 === t3 ? "." : n2.normalize(t3);
           }, relative: function(t3, r3) {
@@ -9193,86 +9157,86 @@ ${JSON.stringify(message, null, 4)}`);
               return "";
             if ((t3 = n2.resolve(t3)) === (r3 = n2.resolve(r3)))
               return "";
-            for (var o = 1; o < t3.length && 47 === t3.charCodeAt(o); ++o)
+            for (var i = 1; i < t3.length && 47 === t3.charCodeAt(i); ++i)
               ;
-            for (var i = t3.length, a = i - o, s = 1; s < r3.length && 47 === r3.charCodeAt(s); ++s)
+            for (var o = t3.length, s = o - i, a = 1; a < r3.length && 47 === r3.charCodeAt(a); ++a)
               ;
-            for (var h = r3.length - s, c = a < h ? a : h, f = -1, u = 0; u <= c; ++u) {
+            for (var h = r3.length - a, c = s < h ? s : h, f = -1, u = 0; u <= c; ++u) {
               if (u === c) {
                 if (h > c) {
-                  if (47 === r3.charCodeAt(s + u))
-                    return r3.slice(s + u + 1);
+                  if (47 === r3.charCodeAt(a + u))
+                    return r3.slice(a + u + 1);
                   if (0 === u)
-                    return r3.slice(s + u);
+                    return r3.slice(a + u);
                 } else
-                  a > c && (47 === t3.charCodeAt(o + u) ? f = u : 0 === u && (f = 0));
+                  s > c && (47 === t3.charCodeAt(i + u) ? f = u : 0 === u && (f = 0));
                 break;
               }
-              var l = t3.charCodeAt(o + u);
-              if (l !== r3.charCodeAt(s + u))
+              var l = t3.charCodeAt(i + u);
+              if (l !== r3.charCodeAt(a + u))
                 break;
               47 === l && (f = u);
             }
-            var p = "";
-            for (u = o + f + 1; u <= i; ++u)
-              u !== i && 47 !== t3.charCodeAt(u) || (0 === p.length ? p += ".." : p += "/..");
-            return p.length > 0 ? p + r3.slice(s + f) : (s += f, 47 === r3.charCodeAt(s) && ++s, r3.slice(s));
+            var d = "";
+            for (u = i + f + 1; u <= o; ++u)
+              u !== o && 47 !== t3.charCodeAt(u) || (0 === d.length ? d += ".." : d += "/..");
+            return d.length > 0 ? d + r3.slice(a + f) : (a += f, 47 === r3.charCodeAt(a) && ++a, r3.slice(a));
           }, _makeLong: function(t3) {
             return t3;
           }, dirname: function(t3) {
             if (e2(t3), 0 === t3.length)
               return ".";
-            for (var r3 = t3.charCodeAt(0), n3 = 47 === r3, o = -1, i = true, a = t3.length - 1; a >= 1; --a)
-              if (47 === (r3 = t3.charCodeAt(a))) {
-                if (!i) {
-                  o = a;
+            for (var r3 = t3.charCodeAt(0), n3 = 47 === r3, i = -1, o = true, s = t3.length - 1; s >= 1; --s)
+              if (47 === (r3 = t3.charCodeAt(s))) {
+                if (!o) {
+                  i = s;
                   break;
                 }
               } else
-                i = false;
-            return -1 === o ? n3 ? "/" : "." : n3 && 1 === o ? "//" : t3.slice(0, o);
+                o = false;
+            return -1 === i ? n3 ? "/" : "." : n3 && 1 === i ? "//" : t3.slice(0, i);
           }, basename: function(t3, r3) {
             if (void 0 !== r3 && "string" != typeof r3)
               throw new TypeError('"ext" argument must be a string');
             e2(t3);
-            var n3, o = 0, i = -1, a = true;
+            var n3, i = 0, o = -1, s = true;
             if (void 0 !== r3 && r3.length > 0 && r3.length <= t3.length) {
               if (r3.length === t3.length && r3 === t3)
                 return "";
-              var s = r3.length - 1, h = -1;
+              var a = r3.length - 1, h = -1;
               for (n3 = t3.length - 1; n3 >= 0; --n3) {
                 var c = t3.charCodeAt(n3);
                 if (47 === c) {
-                  if (!a) {
-                    o = n3 + 1;
+                  if (!s) {
+                    i = n3 + 1;
                     break;
                   }
                 } else
-                  -1 === h && (a = false, h = n3 + 1), s >= 0 && (c === r3.charCodeAt(s) ? -1 == --s && (i = n3) : (s = -1, i = h));
+                  -1 === h && (s = false, h = n3 + 1), a >= 0 && (c === r3.charCodeAt(a) ? -1 == --a && (o = n3) : (a = -1, o = h));
               }
-              return o === i ? i = h : -1 === i && (i = t3.length), t3.slice(o, i);
+              return i === o ? o = h : -1 === o && (o = t3.length), t3.slice(i, o);
             }
             for (n3 = t3.length - 1; n3 >= 0; --n3)
               if (47 === t3.charCodeAt(n3)) {
-                if (!a) {
-                  o = n3 + 1;
+                if (!s) {
+                  i = n3 + 1;
                   break;
                 }
               } else
-                -1 === i && (a = false, i = n3 + 1);
-            return -1 === i ? "" : t3.slice(o, i);
+                -1 === o && (s = false, o = n3 + 1);
+            return -1 === o ? "" : t3.slice(i, o);
           }, extname: function(t3) {
             e2(t3);
-            for (var r3 = -1, n3 = 0, o = -1, i = true, a = 0, s = t3.length - 1; s >= 0; --s) {
-              var h = t3.charCodeAt(s);
+            for (var r3 = -1, n3 = 0, i = -1, o = true, s = 0, a = t3.length - 1; a >= 0; --a) {
+              var h = t3.charCodeAt(a);
               if (47 !== h)
-                -1 === o && (i = false, o = s + 1), 46 === h ? -1 === r3 ? r3 = s : 1 !== a && (a = 1) : -1 !== r3 && (a = -1);
-              else if (!i) {
-                n3 = s + 1;
+                -1 === i && (o = false, i = a + 1), 46 === h ? -1 === r3 ? r3 = a : 1 !== s && (s = 1) : -1 !== r3 && (s = -1);
+              else if (!o) {
+                n3 = a + 1;
                 break;
               }
             }
-            return -1 === r3 || -1 === o || 0 === a || 1 === a && r3 === o - 1 && r3 === n3 + 1 ? "" : t3.slice(r3, o);
+            return -1 === r3 || -1 === i || 0 === s || 1 === s && r3 === i - 1 && r3 === n3 + 1 ? "" : t3.slice(r3, i);
           }, format: function(t3) {
             if (null === t3 || "object" != typeof t3)
               throw new TypeError('The "pathObject" argument must be of type Object. Received type ' + typeof t3);
@@ -9285,230 +9249,248 @@ ${JSON.stringify(message, null, 4)}`);
             var r3 = { root: "", dir: "", base: "", ext: "", name: "" };
             if (0 === t3.length)
               return r3;
-            var n3, o = t3.charCodeAt(0), i = 47 === o;
-            i ? (r3.root = "/", n3 = 1) : n3 = 0;
-            for (var a = -1, s = 0, h = -1, c = true, f = t3.length - 1, u = 0; f >= n3; --f)
-              if (47 !== (o = t3.charCodeAt(f)))
-                -1 === h && (c = false, h = f + 1), 46 === o ? -1 === a ? a = f : 1 !== u && (u = 1) : -1 !== a && (u = -1);
+            var n3, i = t3.charCodeAt(0), o = 47 === i;
+            o ? (r3.root = "/", n3 = 1) : n3 = 0;
+            for (var s = -1, a = 0, h = -1, c = true, f = t3.length - 1, u = 0; f >= n3; --f)
+              if (47 !== (i = t3.charCodeAt(f)))
+                -1 === h && (c = false, h = f + 1), 46 === i ? -1 === s ? s = f : 1 !== u && (u = 1) : -1 !== s && (u = -1);
               else if (!c) {
-                s = f + 1;
+                a = f + 1;
                 break;
               }
-            return -1 === a || -1 === h || 0 === u || 1 === u && a === h - 1 && a === s + 1 ? -1 !== h && (r3.base = r3.name = 0 === s && i ? t3.slice(1, h) : t3.slice(s, h)) : (0 === s && i ? (r3.name = t3.slice(1, a), r3.base = t3.slice(1, h)) : (r3.name = t3.slice(s, a), r3.base = t3.slice(s, h)), r3.ext = t3.slice(a, h)), s > 0 ? r3.dir = t3.slice(0, s - 1) : i && (r3.dir = "/"), r3;
+            return -1 === s || -1 === h || 0 === u || 1 === u && s === h - 1 && s === a + 1 ? -1 !== h && (r3.base = r3.name = 0 === a && o ? t3.slice(1, h) : t3.slice(a, h)) : (0 === a && o ? (r3.name = t3.slice(1, s), r3.base = t3.slice(1, h)) : (r3.name = t3.slice(a, s), r3.base = t3.slice(a, h)), r3.ext = t3.slice(s, h)), a > 0 ? r3.dir = t3.slice(0, a - 1) : o && (r3.dir = "/"), r3;
           }, sep: "/", delimiter: ":", win32: null, posix: null };
           n2.posix = n2, t2.exports = n2;
         }, 674: (t2, e2) => {
           if (Object.defineProperty(e2, "__esModule", { value: true }), e2.isWindows = void 0, "object" == typeof process)
             e2.isWindows = "win32" === process.platform;
           else if ("object" == typeof navigator) {
-            var r2 = navigator.userAgent;
-            e2.isWindows = r2.indexOf("Windows") >= 0;
+            let t3 = navigator.userAgent;
+            e2.isWindows = t3.indexOf("Windows") >= 0;
           }
-        }, 796: function(t2, e2, r2) {
-          var n2, o, i = this && this.__extends || (n2 = function(t3, e3) {
-            return n2 = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(t4, e4) {
-              t4.__proto__ = e4;
-            } || function(t4, e4) {
-              for (var r3 in e4)
-                Object.prototype.hasOwnProperty.call(e4, r3) && (t4[r3] = e4[r3]);
-            }, n2(t3, e3);
-          }, function(t3, e3) {
-            if ("function" != typeof e3 && null !== e3)
-              throw new TypeError("Class extends value " + String(e3) + " is not a constructor or null");
-            function r3() {
-              this.constructor = t3;
-            }
-            n2(t3, e3), t3.prototype = null === e3 ? Object.create(e3) : (r3.prototype = e3.prototype, new r3());
-          });
+        }, 796: (t2, e2, r2) => {
           Object.defineProperty(e2, "__esModule", { value: true }), e2.uriToFsPath = e2.URI = void 0;
-          var a = r2(674), s = /^\w[\w\d+.-]*$/, h = /^\//, c = /^\/\//;
-          function f(t3, e3) {
+          const n2 = r2(674), i = /^\w[\w\d+.-]*$/, o = /^\//, s = /^\/\//;
+          function a(t3, e3) {
             if (!t3.scheme && e3)
-              throw new Error('[UriError]: Scheme is missing: {scheme: "", authority: "'.concat(t3.authority, '", path: "').concat(t3.path, '", query: "').concat(t3.query, '", fragment: "').concat(t3.fragment, '"}'));
-            if (t3.scheme && !s.test(t3.scheme))
+              throw new Error(`[UriError]: Scheme is missing: {scheme: "", authority: "${t3.authority}", path: "${t3.path}", query: "${t3.query}", fragment: "${t3.fragment}"}`);
+            if (t3.scheme && !i.test(t3.scheme))
               throw new Error("[UriError]: Scheme contains illegal characters.");
             if (t3.path) {
               if (t3.authority) {
-                if (!h.test(t3.path))
+                if (!o.test(t3.path))
                   throw new Error('[UriError]: If a URI contains an authority component, then the path component must either be empty or begin with a slash ("/") character');
-              } else if (c.test(t3.path))
+              } else if (s.test(t3.path))
                 throw new Error('[UriError]: If a URI does not contain an authority component, then the path cannot begin with two slash characters ("//")');
             }
           }
-          var u = "", l = "/", p = /^(([^:/?#]+?):)?(\/\/([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?/, d = function() {
-            function t3(t4, e3, r3, n3, o2, i2) {
-              void 0 === i2 && (i2 = false), "object" == typeof t4 ? (this.scheme = t4.scheme || u, this.authority = t4.authority || u, this.path = t4.path || u, this.query = t4.query || u, this.fragment = t4.fragment || u) : (this.scheme = function(t5, e4) {
-                return t5 || e4 ? t5 : "file";
-              }(t4, i2), this.authority = e3 || u, this.path = function(t5, e4) {
-                switch (t5) {
+          const h = "", c = "/", f = /^(([^:/?#]+?):)?(\/\/([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?/;
+          class u {
+            static isUri(t3) {
+              return t3 instanceof u || !!t3 && "string" == typeof t3.authority && "string" == typeof t3.fragment && "string" == typeof t3.path && "string" == typeof t3.query && "string" == typeof t3.scheme && "string" == typeof t3.fsPath && "function" == typeof t3.with && "function" == typeof t3.toString;
+            }
+            scheme;
+            authority;
+            path;
+            query;
+            fragment;
+            constructor(t3, e3, r3, n3, i2, o2 = false) {
+              "object" == typeof t3 ? (this.scheme = t3.scheme || h, this.authority = t3.authority || h, this.path = t3.path || h, this.query = t3.query || h, this.fragment = t3.fragment || h) : (this.scheme = function(t4, e4) {
+                return t4 || e4 ? t4 : "file";
+              }(t3, o2), this.authority = e3 || h, this.path = function(t4, e4) {
+                switch (t4) {
                   case "https":
                   case "http":
                   case "file":
-                    e4 ? e4[0] !== l && (e4 = l + e4) : e4 = l;
+                    e4 ? e4[0] !== c && (e4 = c + e4) : e4 = c;
                 }
                 return e4;
-              }(this.scheme, r3 || u), this.query = n3 || u, this.fragment = o2 || u, f(this, i2));
+              }(this.scheme, r3 || h), this.query = n3 || h, this.fragment = i2 || h, a(this, o2));
             }
-            return t3.isUri = function(e3) {
-              return e3 instanceof t3 || !!e3 && "string" == typeof e3.authority && "string" == typeof e3.fragment && "string" == typeof e3.path && "string" == typeof e3.query && "string" == typeof e3.scheme && "string" == typeof e3.fsPath && "function" == typeof e3.with && "function" == typeof e3.toString;
-            }, Object.defineProperty(t3.prototype, "fsPath", { get: function() {
-              return C(this, false);
-            }, enumerable: false, configurable: true }), t3.prototype.with = function(t4) {
-              if (!t4)
+            get fsPath() {
+              return v(this, false);
+            }
+            with(t3) {
+              if (!t3)
                 return this;
-              var e3 = t4.scheme, r3 = t4.authority, n3 = t4.path, o2 = t4.query, i2 = t4.fragment;
-              return void 0 === e3 ? e3 = this.scheme : null === e3 && (e3 = u), void 0 === r3 ? r3 = this.authority : null === r3 && (r3 = u), void 0 === n3 ? n3 = this.path : null === n3 && (n3 = u), void 0 === o2 ? o2 = this.query : null === o2 && (o2 = u), void 0 === i2 ? i2 = this.fragment : null === i2 && (i2 = u), e3 === this.scheme && r3 === this.authority && n3 === this.path && o2 === this.query && i2 === this.fragment ? this : new v(e3, r3, n3, o2, i2);
-            }, t3.parse = function(t4, e3) {
-              void 0 === e3 && (e3 = false);
-              var r3 = p.exec(t4);
-              return r3 ? new v(r3[2] || u, x(r3[4] || u), x(r3[5] || u), x(r3[7] || u), x(r3[9] || u), e3) : new v(u, u, u, u, u);
-            }, t3.file = function(t4) {
-              var e3 = u;
-              if (a.isWindows && (t4 = t4.replace(/\\/g, l)), t4[0] === l && t4[1] === l) {
-                var r3 = t4.indexOf(l, 2);
-                -1 === r3 ? (e3 = t4.substring(2), t4 = l) : (e3 = t4.substring(2, r3), t4 = t4.substring(r3) || l);
+              let { scheme: e3, authority: r3, path: n3, query: i2, fragment: o2 } = t3;
+              return void 0 === e3 ? e3 = this.scheme : null === e3 && (e3 = h), void 0 === r3 ? r3 = this.authority : null === r3 && (r3 = h), void 0 === n3 ? n3 = this.path : null === n3 && (n3 = h), void 0 === i2 ? i2 = this.query : null === i2 && (i2 = h), void 0 === o2 ? o2 = this.fragment : null === o2 && (o2 = h), e3 === this.scheme && r3 === this.authority && n3 === this.path && i2 === this.query && o2 === this.fragment ? this : new d(e3, r3, n3, i2, o2);
+            }
+            static parse(t3, e3 = false) {
+              const r3 = f.exec(t3);
+              return r3 ? new d(r3[2] || h, w(r3[4] || h), w(r3[5] || h), w(r3[7] || h), w(r3[9] || h), e3) : new d(h, h, h, h, h);
+            }
+            static file(t3) {
+              let e3 = h;
+              if (n2.isWindows && (t3 = t3.replace(/\\/g, c)), t3[0] === c && t3[1] === c) {
+                const r3 = t3.indexOf(c, 2);
+                -1 === r3 ? (e3 = t3.substring(2), t3 = c) : (e3 = t3.substring(2, r3), t3 = t3.substring(r3) || c);
               }
-              return new v("file", e3, t4, u, u);
-            }, t3.from = function(t4) {
-              var e3 = new v(t4.scheme, t4.authority, t4.path, t4.query, t4.fragment);
-              return f(e3, true), e3;
-            }, t3.prototype.toString = function(t4) {
-              return void 0 === t4 && (t4 = false), A(this, t4);
-            }, t3.prototype.toJSON = function() {
+              return new d("file", e3, t3, h, h);
+            }
+            static from(t3) {
+              const e3 = new d(t3.scheme, t3.authority, t3.path, t3.query, t3.fragment);
+              return a(e3, true), e3;
+            }
+            toString(t3 = false) {
+              return y(this, t3);
+            }
+            toJSON() {
               return this;
-            }, t3.revive = function(e3) {
-              if (e3) {
-                if (e3 instanceof t3)
-                  return e3;
-                var r3 = new v(e3);
-                return r3._formatted = e3.external, r3._fsPath = e3._sep === g ? e3.fsPath : null, r3;
-              }
-              return e3;
-            }, t3;
-          }();
-          e2.URI = d;
-          var g = a.isWindows ? 1 : void 0, v = function(t3) {
-            function e3() {
-              var e4 = null !== t3 && t3.apply(this, arguments) || this;
-              return e4._formatted = null, e4._fsPath = null, e4;
             }
-            return i(e3, t3), Object.defineProperty(e3.prototype, "fsPath", { get: function() {
-              return this._fsPath || (this._fsPath = C(this, false)), this._fsPath;
-            }, enumerable: false, configurable: true }), e3.prototype.toString = function(t4) {
-              return void 0 === t4 && (t4 = false), t4 ? A(this, true) : (this._formatted || (this._formatted = A(this, false)), this._formatted);
-            }, e3.prototype.toJSON = function() {
-              var t4 = { $mid: 1 };
-              return this._fsPath && (t4.fsPath = this._fsPath, t4._sep = g), this._formatted && (t4.external = this._formatted), this.path && (t4.path = this.path), this.scheme && (t4.scheme = this.scheme), this.authority && (t4.authority = this.authority), this.query && (t4.query = this.query), this.fragment && (t4.fragment = this.fragment), t4;
-            }, e3;
-          }(d), y = ((o = {})[58] = "%3A", o[47] = "%2F", o[63] = "%3F", o[35] = "%23", o[91] = "%5B", o[93] = "%5D", o[64] = "%40", o[33] = "%21", o[36] = "%24", o[38] = "%26", o[39] = "%27", o[40] = "%28", o[41] = "%29", o[42] = "%2A", o[43] = "%2B", o[44] = "%2C", o[59] = "%3B", o[61] = "%3D", o[32] = "%20", o);
-          function m(t3, e3, r3) {
-            for (var n3 = void 0, o2 = -1, i2 = 0; i2 < t3.length; i2++) {
-              var a2 = t3.charCodeAt(i2);
-              if (a2 >= 97 && a2 <= 122 || a2 >= 65 && a2 <= 90 || a2 >= 48 && a2 <= 57 || 45 === a2 || 46 === a2 || 95 === a2 || 126 === a2 || e3 && 47 === a2 || r3 && 91 === a2 || r3 && 93 === a2 || r3 && 58 === a2)
-                -1 !== o2 && (n3 += encodeURIComponent(t3.substring(o2, i2)), o2 = -1), void 0 !== n3 && (n3 += t3.charAt(i2));
-              else {
-                void 0 === n3 && (n3 = t3.substr(0, i2));
-                var s2 = y[a2];
-                void 0 !== s2 ? (-1 !== o2 && (n3 += encodeURIComponent(t3.substring(o2, i2)), o2 = -1), n3 += s2) : -1 === o2 && (o2 = i2);
+            static revive(t3) {
+              if (t3) {
+                if (t3 instanceof u)
+                  return t3;
+                {
+                  const e3 = new d(t3);
+                  return e3._formatted = t3.external, e3._fsPath = t3._sep === l ? t3.fsPath : null, e3;
+                }
               }
+              return t3;
             }
-            return -1 !== o2 && (n3 += encodeURIComponent(t3.substring(o2))), void 0 !== n3 ? n3 : t3;
           }
-          function b(t3) {
-            for (var e3 = void 0, r3 = 0; r3 < t3.length; r3++) {
-              var n3 = t3.charCodeAt(r3);
-              35 === n3 || 63 === n3 ? (void 0 === e3 && (e3 = t3.substr(0, r3)), e3 += y[n3]) : void 0 !== e3 && (e3 += t3[r3]);
+          e2.URI = u;
+          const l = n2.isWindows ? 1 : void 0;
+          class d extends u {
+            _formatted = null;
+            _fsPath = null;
+            get fsPath() {
+              return this._fsPath || (this._fsPath = v(this, false)), this._fsPath;
+            }
+            toString(t3 = false) {
+              return t3 ? y(this, true) : (this._formatted || (this._formatted = y(this, false)), this._formatted);
+            }
+            toJSON() {
+              const t3 = { $mid: 1 };
+              return this._fsPath && (t3.fsPath = this._fsPath, t3._sep = l), this._formatted && (t3.external = this._formatted), this.path && (t3.path = this.path), this.scheme && (t3.scheme = this.scheme), this.authority && (t3.authority = this.authority), this.query && (t3.query = this.query), this.fragment && (t3.fragment = this.fragment), t3;
+            }
+          }
+          const p = { 58: "%3A", 47: "%2F", 63: "%3F", 35: "%23", 91: "%5B", 93: "%5D", 64: "%40", 33: "%21", 36: "%24", 38: "%26", 39: "%27", 40: "%28", 41: "%29", 42: "%2A", 43: "%2B", 44: "%2C", 59: "%3B", 61: "%3D", 32: "%20" };
+          function g(t3, e3, r3) {
+            let n3, i2 = -1;
+            for (let o2 = 0; o2 < t3.length; o2++) {
+              const s2 = t3.charCodeAt(o2);
+              if (s2 >= 97 && s2 <= 122 || s2 >= 65 && s2 <= 90 || s2 >= 48 && s2 <= 57 || 45 === s2 || 46 === s2 || 95 === s2 || 126 === s2 || e3 && 47 === s2 || r3 && 91 === s2 || r3 && 93 === s2 || r3 && 58 === s2)
+                -1 !== i2 && (n3 += encodeURIComponent(t3.substring(i2, o2)), i2 = -1), void 0 !== n3 && (n3 += t3.charAt(o2));
+              else {
+                void 0 === n3 && (n3 = t3.substr(0, o2));
+                const e4 = p[s2];
+                void 0 !== e4 ? (-1 !== i2 && (n3 += encodeURIComponent(t3.substring(i2, o2)), i2 = -1), n3 += e4) : -1 === i2 && (i2 = o2);
+              }
+            }
+            return -1 !== i2 && (n3 += encodeURIComponent(t3.substring(i2))), void 0 !== n3 ? n3 : t3;
+          }
+          function m(t3) {
+            let e3;
+            for (let r3 = 0; r3 < t3.length; r3++) {
+              const n3 = t3.charCodeAt(r3);
+              35 === n3 || 63 === n3 ? (void 0 === e3 && (e3 = t3.substr(0, r3)), e3 += p[n3]) : void 0 !== e3 && (e3 += t3[r3]);
             }
             return void 0 !== e3 ? e3 : t3;
           }
-          function C(t3, e3) {
-            var r3;
-            return r3 = t3.authority && t3.path.length > 1 && "file" === t3.scheme ? "//".concat(t3.authority).concat(t3.path) : 47 === t3.path.charCodeAt(0) && (t3.path.charCodeAt(1) >= 65 && t3.path.charCodeAt(1) <= 90 || t3.path.charCodeAt(1) >= 97 && t3.path.charCodeAt(1) <= 122) && 58 === t3.path.charCodeAt(2) ? e3 ? t3.path.substr(1) : t3.path[1].toLowerCase() + t3.path.substr(2) : t3.path, a.isWindows && (r3 = r3.replace(/\//g, "\\")), r3;
+          function v(t3, e3) {
+            let r3;
+            return r3 = t3.authority && t3.path.length > 1 && "file" === t3.scheme ? `//${t3.authority}${t3.path}` : 47 === t3.path.charCodeAt(0) && (t3.path.charCodeAt(1) >= 65 && t3.path.charCodeAt(1) <= 90 || t3.path.charCodeAt(1) >= 97 && t3.path.charCodeAt(1) <= 122) && 58 === t3.path.charCodeAt(2) ? e3 ? t3.path.substr(1) : t3.path[1].toLowerCase() + t3.path.substr(2) : t3.path, n2.isWindows && (r3 = r3.replace(/\//g, "\\")), r3;
           }
-          function A(t3, e3) {
-            var r3 = e3 ? b : m, n3 = "", o2 = t3.scheme, i2 = t3.authority, a2 = t3.path, s2 = t3.query, h2 = t3.fragment;
-            if (o2 && (n3 += o2, n3 += ":"), (i2 || "file" === o2) && (n3 += l, n3 += l), i2) {
-              var c2 = i2.indexOf("@");
-              if (-1 !== c2) {
-                var f2 = i2.substr(0, c2);
-                i2 = i2.substr(c2 + 1), -1 === (c2 = f2.lastIndexOf(":")) ? n3 += r3(f2, false, false) : (n3 += r3(f2.substr(0, c2), false, false), n3 += ":", n3 += r3(f2.substr(c2 + 1), false, true)), n3 += "@";
+          function y(t3, e3) {
+            const r3 = e3 ? m : g;
+            let n3 = "", { scheme: i2, authority: o2, path: s2, query: a2, fragment: h2 } = t3;
+            if (i2 && (n3 += i2, n3 += ":"), (o2 || "file" === i2) && (n3 += c, n3 += c), o2) {
+              let t4 = o2.indexOf("@");
+              if (-1 !== t4) {
+                const e4 = o2.substr(0, t4);
+                o2 = o2.substr(t4 + 1), t4 = e4.lastIndexOf(":"), -1 === t4 ? n3 += r3(e4, false, false) : (n3 += r3(e4.substr(0, t4), false, false), n3 += ":", n3 += r3(e4.substr(t4 + 1), false, true)), n3 += "@";
               }
-              -1 === (c2 = (i2 = i2.toLowerCase()).lastIndexOf(":")) ? n3 += r3(i2, false, true) : (n3 += r3(i2.substr(0, c2), false, true), n3 += i2.substr(c2));
+              o2 = o2.toLowerCase(), t4 = o2.lastIndexOf(":"), -1 === t4 ? n3 += r3(o2, false, true) : (n3 += r3(o2.substr(0, t4), false, true), n3 += o2.substr(t4));
             }
-            if (a2) {
-              if (a2.length >= 3 && 47 === a2.charCodeAt(0) && 58 === a2.charCodeAt(2))
-                (u2 = a2.charCodeAt(1)) >= 65 && u2 <= 90 && (a2 = "/".concat(String.fromCharCode(u2 + 32), ":").concat(a2.substr(3)));
-              else if (a2.length >= 2 && 58 === a2.charCodeAt(1)) {
-                var u2;
-                (u2 = a2.charCodeAt(0)) >= 65 && u2 <= 90 && (a2 = "".concat(String.fromCharCode(u2 + 32), ":").concat(a2.substr(2)));
+            if (s2) {
+              if (s2.length >= 3 && 47 === s2.charCodeAt(0) && 58 === s2.charCodeAt(2)) {
+                const t4 = s2.charCodeAt(1);
+                t4 >= 65 && t4 <= 90 && (s2 = `/${String.fromCharCode(t4 + 32)}:${s2.substr(3)}`);
+              } else if (s2.length >= 2 && 58 === s2.charCodeAt(1)) {
+                const t4 = s2.charCodeAt(0);
+                t4 >= 65 && t4 <= 90 && (s2 = `${String.fromCharCode(t4 + 32)}:${s2.substr(2)}`);
               }
-              n3 += r3(a2, true, false);
+              n3 += r3(s2, true, false);
             }
-            return s2 && (n3 += "?", n3 += r3(s2, false, false)), h2 && (n3 += "#", n3 += e3 ? h2 : m(h2, false, false)), n3;
+            return a2 && (n3 += "?", n3 += r3(a2, false, false)), h2 && (n3 += "#", n3 += e3 ? h2 : g(h2, false, false)), n3;
           }
-          function w(t3) {
+          function b(t3) {
             try {
               return decodeURIComponent(t3);
-            } catch (e3) {
-              return t3.length > 3 ? t3.substr(0, 3) + w(t3.substr(3)) : t3;
+            } catch {
+              return t3.length > 3 ? t3.substr(0, 3) + b(t3.substr(3)) : t3;
             }
           }
-          e2.uriToFsPath = C;
-          var _ = /(%[0-9A-Za-z][0-9A-Za-z])+/g;
-          function x(t3) {
-            return t3.match(_) ? t3.replace(_, function(t4) {
-              return w(t4);
-            }) : t3;
+          e2.uriToFsPath = v;
+          const C = /(%[0-9A-Za-z][0-9A-Za-z])+/g;
+          function w(t3) {
+            return t3.match(C) ? t3.replace(C, (t4) => b(t4)) : t3;
           }
         }, 679: function(t2, e2, r2) {
-          var n2 = this && this.__spreadArray || function(t3, e3, r3) {
-            if (r3 || 2 === arguments.length)
-              for (var n3, o2 = 0, i2 = e3.length; o2 < i2; o2++)
-                !n3 && o2 in e3 || (n3 || (n3 = Array.prototype.slice.call(e3, 0, o2)), n3[o2] = e3[o2]);
-            return t3.concat(n3 || Array.prototype.slice.call(e3));
+          var n2 = this && this.__createBinding || (Object.create ? function(t3, e3, r3, n3) {
+            void 0 === n3 && (n3 = r3);
+            var i2 = Object.getOwnPropertyDescriptor(e3, r3);
+            i2 && !("get" in i2 ? !e3.__esModule : i2.writable || i2.configurable) || (i2 = { enumerable: true, get: function() {
+              return e3[r3];
+            } }), Object.defineProperty(t3, n3, i2);
+          } : function(t3, e3, r3, n3) {
+            void 0 === n3 && (n3 = r3), t3[n3] = e3[r3];
+          }), i = this && this.__setModuleDefault || (Object.create ? function(t3, e3) {
+            Object.defineProperty(t3, "default", { enumerable: true, value: e3 });
+          } : function(t3, e3) {
+            t3.default = e3;
+          }), o = this && this.__importStar || function(t3) {
+            if (t3 && t3.__esModule)
+              return t3;
+            var e3 = {};
+            if (null != t3)
+              for (var r3 in t3)
+                "default" !== r3 && Object.prototype.hasOwnProperty.call(t3, r3) && n2(e3, t3, r3);
+            return i(e3, t3), e3;
           };
           Object.defineProperty(e2, "__esModule", { value: true }), e2.Utils = void 0;
-          var o, i = r2(470), a = i.posix || i, s = "/";
-          (o = e2.Utils || (e2.Utils = {})).joinPath = function(t3) {
-            for (var e3 = [], r3 = 1; r3 < arguments.length; r3++)
-              e3[r3 - 1] = arguments[r3];
-            return t3.with({ path: a.join.apply(a, n2([t3.path], e3, false)) });
-          }, o.resolvePath = function(t3) {
-            for (var e3 = [], r3 = 1; r3 < arguments.length; r3++)
-              e3[r3 - 1] = arguments[r3];
-            var o2 = t3.path, i2 = false;
-            o2[0] !== s && (o2 = s + o2, i2 = true);
-            var h = a.resolve.apply(a, n2([o2], e3, false));
-            return i2 && h[0] === s && !t3.authority && (h = h.substring(1)), t3.with({ path: h });
-          }, o.dirname = function(t3) {
-            if (0 === t3.path.length || t3.path === s)
-              return t3;
-            var e3 = a.dirname(t3.path);
-            return 1 === e3.length && 46 === e3.charCodeAt(0) && (e3 = ""), t3.with({ path: e3 });
-          }, o.basename = function(t3) {
-            return a.basename(t3.path);
-          }, o.extname = function(t3) {
-            return a.extname(t3.path);
-          };
+          const s = o(r2(470)), a = s.posix || s, h = "/";
+          var c;
+          !function(t3) {
+            t3.joinPath = function(t4, ...e3) {
+              return t4.with({ path: a.join(t4.path, ...e3) });
+            }, t3.resolvePath = function(t4, ...e3) {
+              let r3 = t4.path, n3 = false;
+              r3[0] !== h && (r3 = h + r3, n3 = true);
+              let i2 = a.resolve(r3, ...e3);
+              return n3 && i2[0] === h && !t4.authority && (i2 = i2.substring(1)), t4.with({ path: i2 });
+            }, t3.dirname = function(t4) {
+              if (0 === t4.path.length || t4.path === h)
+                return t4;
+              let e3 = a.dirname(t4.path);
+              return 1 === e3.length && 46 === e3.charCodeAt(0) && (e3 = ""), t4.with({ path: e3 });
+            }, t3.basename = function(t4) {
+              return a.basename(t4.path);
+            }, t3.extname = function(t4) {
+              return a.extname(t4.path);
+            };
+          }(c || (e2.Utils = c = {}));
         } }, e = {};
         function r(n2) {
-          var o = e[n2];
-          if (void 0 !== o)
-            return o.exports;
-          var i = e[n2] = { exports: {} };
-          return t[n2].call(i.exports, i, i.exports, r), i.exports;
+          var i = e[n2];
+          if (void 0 !== i)
+            return i.exports;
+          var o = e[n2] = { exports: {} };
+          return t[n2].call(o.exports, o, o.exports, r), o.exports;
         }
         var n = {};
         return (() => {
           var t2 = n;
           Object.defineProperty(t2, "__esModule", { value: true }), t2.Utils = t2.URI = void 0;
-          var e2 = r(796);
+          const e2 = r(796);
           Object.defineProperty(t2, "URI", { enumerable: true, get: function() {
             return e2.URI;
           } });
-          var o = r(679);
+          const i = r(679);
           Object.defineProperty(t2, "Utils", { enumerable: true, get: function() {
-            return o.Utils;
+            return i.Utils;
           } });
         })(), n;
       })());
@@ -9555,7 +9537,7 @@ ${JSON.stringify(message, null, 4)}`);
             throw new Error("Construction failure. Please make sure that your dependencies are constructable.", { cause: obj[prop] });
           }
           if (obj[prop] === __requested__) {
-            throw new Error('Cycle detected. Please make "' + String(prop) + '" lazy. See https://langium.org/docs/di/cyclic-dependencies');
+            throw new Error('Cycle detected. Please make "' + String(prop) + '" lazy. See https://langium.org/docs/configuration-services/#resolving-cyclic-dependencies');
           }
           return obj[prop];
         } else if (prop in module3) {
@@ -9740,9 +9722,17 @@ ${JSON.stringify(message, null, 4)}`);
     "../../node_modules/langium/lib/grammar/generated/ast.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.isTypeAttribute = exports2.TypeAttribute = exports2.isType = exports2.Type = exports2.isTerminalRule = exports2.TerminalRule = exports2.isSimpleType = exports2.SimpleType = exports2.isReturnType = exports2.ReturnType = exports2.isReferenceType = exports2.ReferenceType = exports2.isParserRule = exports2.ParserRule = exports2.isParameterReference = exports2.ParameterReference = exports2.isParameter = exports2.Parameter = exports2.isNegation = exports2.Negation = exports2.isNamedArgument = exports2.NamedArgument = exports2.isLiteralCondition = exports2.LiteralCondition = exports2.isInterface = exports2.Interface = exports2.isInferredType = exports2.InferredType = exports2.isGrammarImport = exports2.GrammarImport = exports2.isGrammar = exports2.Grammar = exports2.isDisjunction = exports2.Disjunction = exports2.isConjunction = exports2.Conjunction = exports2.isArrayType = exports2.ArrayType = exports2.isAbstractElement = exports2.AbstractElement = exports2.isTypeDefinition = exports2.TypeDefinition = exports2.isPrimitiveType = exports2.isFeatureName = exports2.isCondition = exports2.Condition = exports2.isAbstractType = exports2.AbstractType = exports2.isAbstractRule = exports2.AbstractRule = void 0;
-      exports2.reflection = exports2.LangiumGrammarAstReflection = exports2.isWildcard = exports2.Wildcard = exports2.isUntilToken = exports2.UntilToken = exports2.isUnorderedGroup = exports2.UnorderedGroup = exports2.isTerminalRuleCall = exports2.TerminalRuleCall = exports2.isTerminalGroup = exports2.TerminalGroup = exports2.isTerminalAlternatives = exports2.TerminalAlternatives = exports2.isRuleCall = exports2.RuleCall = exports2.isRegexToken = exports2.RegexToken = exports2.isNegatedToken = exports2.NegatedToken = exports2.isKeyword = exports2.Keyword = exports2.isGroup = exports2.Group = exports2.isCrossReference = exports2.CrossReference = exports2.isCharacterRange = exports2.CharacterRange = exports2.isAssignment = exports2.Assignment = exports2.isAlternatives = exports2.Alternatives = exports2.isAction = exports2.Action = exports2.isUnionType = exports2.UnionType = void 0;
+      exports2.TypeAttribute = exports2.isType = exports2.Type = exports2.isTerminalRule = exports2.TerminalRule = exports2.isSimpleType = exports2.SimpleType = exports2.isReturnType = exports2.ReturnType = exports2.isReferenceType = exports2.ReferenceType = exports2.isParserRule = exports2.ParserRule = exports2.isParameterReference = exports2.ParameterReference = exports2.isParameter = exports2.Parameter = exports2.isNegation = exports2.Negation = exports2.isNamedArgument = exports2.NamedArgument = exports2.isLiteralCondition = exports2.LiteralCondition = exports2.isInterface = exports2.Interface = exports2.isInferredType = exports2.InferredType = exports2.isGrammarImport = exports2.GrammarImport = exports2.isGrammar = exports2.Grammar = exports2.isDisjunction = exports2.Disjunction = exports2.isConjunction = exports2.Conjunction = exports2.isArrayType = exports2.ArrayType = exports2.isAbstractElement = exports2.AbstractElement = exports2.isTypeDefinition = exports2.TypeDefinition = exports2.isPrimitiveType = exports2.isFeatureName = exports2.isCondition = exports2.Condition = exports2.isAbstractType = exports2.AbstractType = exports2.isAbstractRule = exports2.AbstractRule = exports2.LangiumGrammarTerminals = void 0;
+      exports2.reflection = exports2.LangiumGrammarAstReflection = exports2.isWildcard = exports2.Wildcard = exports2.isUntilToken = exports2.UntilToken = exports2.isUnorderedGroup = exports2.UnorderedGroup = exports2.isTerminalRuleCall = exports2.TerminalRuleCall = exports2.isTerminalGroup = exports2.TerminalGroup = exports2.isTerminalAlternatives = exports2.TerminalAlternatives = exports2.isRuleCall = exports2.RuleCall = exports2.isRegexToken = exports2.RegexToken = exports2.isNegatedToken = exports2.NegatedToken = exports2.isKeyword = exports2.Keyword = exports2.isGroup = exports2.Group = exports2.isCrossReference = exports2.CrossReference = exports2.isCharacterRange = exports2.CharacterRange = exports2.isAssignment = exports2.Assignment = exports2.isAlternatives = exports2.Alternatives = exports2.isAction = exports2.Action = exports2.isUnionType = exports2.UnionType = exports2.isTypeAttribute = void 0;
       var syntax_tree_1 = require_syntax_tree();
+      exports2.LangiumGrammarTerminals = {
+        ID: /\^?[_a-zA-Z][\w_]*/,
+        STRING: /"(\\.|[^"\\])*"|'(\\.|[^'\\])*'/,
+        RegexLiteral: /\/(?![*+?])(?:[^\r\n\[/\\]|\\.|\[(?:[^\r\n\]\\]|\\.)*\])+\/[a-z]*/,
+        WS: /\s+/,
+        ML_COMMENT: /\/\*[\s\S]*?\*\//,
+        SL_COMMENT: /\/\/[^\n\r]*/
+      };
       exports2.AbstractRule = "AbstractRule";
       function isAbstractRule(item) {
         return exports2.reflection.isInstance(item, exports2.AbstractRule);
@@ -10585,6 +10575,7 @@ ${JSON.stringify(message, null, 4)}`);
         }
         resetCurrentLine() {
           this.lines[this.currentLineNumber] = [];
+          this.pendingIndent = true;
         }
         addNewLine() {
           this.pendingIndent = true;
@@ -10814,7 +10805,7 @@ ${JSON.stringify(message, null, 4)}`);
       var template_string_1 = require_template_string();
       function expandToNode(staticParts, ...substitutions) {
         const templateProps = findIndentationAndTemplateStructure(staticParts);
-        const splitAndMerged = splitTemplateLinesAndMergeWithSubstitions(staticParts, substitutions, templateProps);
+        const splitAndMerged = splitTemplateLinesAndMergeWithSubstitutions(staticParts, substitutions, templateProps);
         return composeFinalGeneratorNode(splitAndMerged);
       }
       exports2.expandToNode = expandToNode;
@@ -10847,13 +10838,13 @@ ${JSON.stringify(message, null, 4)}`);
           return {
             indentation,
             omitFirstLine,
-            // in the subsequent steps omit the last line only if it is empty or if it only contains white space of which the common indentation is not a valid prefix;
+            // in the subsequent steps omit the last line only if it is empty or if it only contains whitespace of which the common indentation is not a valid prefix;
             //  in other words: keep the last line if it matches the common indentation (and maybe contains non-whitespace), a non-match may be due to mistaken usage of tabs and spaces
             omitLastLine: omitLastLine && (lines[lines.length - 1].length < indentation || !lines[lines.length - 1].startsWith(sliced[0].substring(0, indentation)))
           };
         }
       }
-      function splitTemplateLinesAndMergeWithSubstitions(staticParts, substitutions, { indentation, omitFirstLine, omitLastLine, trimLastLine }) {
+      function splitTemplateLinesAndMergeWithSubstitutions(staticParts, substitutions, { indentation, omitFirstLine, omitLastLine, trimLastLine }) {
         const splitAndMerged = [];
         staticParts.forEach((part, i) => {
           splitAndMerged.push(...part.split(template_string_1.NEWLINE_REGEXP).map((e, j) => j === 0 || e.length < indentation ? e : e.substring(indentation)).reduce(
@@ -10880,7 +10871,7 @@ ${JSON.stringify(message, null, 4)}`);
           ).concat(
             // append the corresponding substitution after each segment (part),
             //  note that 'substitutions[i]' will be undefined for the last segment
-            (0, generator_node_1.isGeneratorNode)(substitutions[i]) ? substitutions[i] : substitutions[i] !== void 0 ? new generator_node_1.CompositeGeneratorNode(String(substitutions[i])) : i < substitutions.length ? UNDEFINED_SEGMENT : []
+            (0, generator_node_1.isGeneratorNode)(substitutions[i]) ? substitutions[i] : substitutions[i] !== void 0 ? { content: String(substitutions[i]) } : i < substitutions.length ? UNDEFINED_SEGMENT : []
             /* don't concat anything as we passed behind the last substitution, since 'i' enumerates the indices of 'staticParts',
                     but 'substitutions' has one entry less and 'substitutions[staticParts.length -1 ]' will always be undefined */
           ));
@@ -10901,19 +10892,46 @@ ${JSON.stringify(message, null, 4)}`);
       var UNDEFINED_SEGMENT = { isUndefinedSegment: true };
       var isNewLineMarker = (nl) => nl === NEWLINE;
       var isUndefinedSegmentMarker = (us) => us === UNDEFINED_SEGMENT;
+      var isSubstitutionWrapper = (s) => s.content !== void 0;
       function composeFinalGeneratorNode(splitAndMerged) {
         const result = splitAndMerged.reduce((res, segment, i) => isUndefinedSegmentMarker(segment) ? res : isNewLineMarker(segment) ? {
-          node: i === 0 || isNewLineMarker(splitAndMerged[i - 1]) || typeof splitAndMerged[i - 1] === "string" ? res.node.appendNewLine() : res.node.appendNewLineIfNotEmpty()
+          // in case of a newLine marker append an 'ifNotEmpty' newLine by default, but
+          //  append an unconditional newLine if and only if:
+          //   * the template starts with the current line break, i.e. the first line is empty
+          //   * the current newLine marker directly follows another one, i.e. the current line is empty
+          //   * the current newline marker directly follows a substitution contributing a string (or some non-GeneratorNode being converted to a string)
+          //   * the current newline marker directly follows a (template static) string that
+          //      * is the initial token of the template
+          //      * is the initial token of the line, maybe just indentation
+          //      * follows a a substitution contributing a string (or some non-GeneratorNode being converted to a string), maybe is just irrelevant trailing whitespace
+          // in particular do _not_ append an unconditional newLine if the last substitution of a line contributes 'undefined' or an instance of 'GeneratorNode'
+          //  which may be a newline itself or be empty or (transitively) contain a trailing newline itself
+          // node: i === 0
+          //     || isNewLineMarker(splitAndMerged[i - 1]) || isSubstitutionWrapper(splitAndMerged[i - 1]) /* implies: typeof content === 'string', esp. !undefined */
+          //     || typeof splitAndMerged[i - 1] === 'string' && (
+          //         i === 1 || isNewLineMarker(splitAndMerged[i - 2]) || isSubstitutionWrapper(splitAndMerged[i - 2]) /* implies: typeof content === 'string', esp. !undefined */
+          //     )
+          //     ? res.node.appendNewLine() : res.node.appendNewLineIfNotEmpty()
+          //
+          // UPDATE cs: inverting the logic leads to the following, I hope I didn't miss anything:
+          // in case of a newLine marker append an unconditional newLine by default, but
+          //  append an 'ifNotEmpty' newLine if and only if:
+          //   * the template doesn't start with a newLine marker and
+          //      * the current newline marker directly follows a substitution contributing an `undefined` or an instance of 'GeneratorNode', or
+          //      * the current newline marker directly follows a (template static) string (containing potentially unintended trailing whitespace)
+          //          that in turn directly follows a substitution contributing an `undefined` or an instance of 'GeneratorNode'
+          node: i !== 0 && (isUndefinedSegmentMarker(splitAndMerged[i - 1]) || (0, generator_node_1.isGeneratorNode)(splitAndMerged[i - 1])) || i > 1 && typeof splitAndMerged[i - 1] === "string" && (isUndefinedSegmentMarker(splitAndMerged[i - 2]) || (0, generator_node_1.isGeneratorNode)(splitAndMerged[i - 2])) ? res.node.appendNewLineIfNotEmpty() : res.node.appendNewLine()
         } : (() => {
           var _a;
-          const indent = (i === 0 || isNewLineMarker(splitAndMerged[i - 1])) && typeof segment === "string" && segment.length !== 0 ? "".padStart(segment.length - segment.trimLeft().length) : "";
+          const indent = (i === 0 || isNewLineMarker(splitAndMerged[i - 1])) && typeof segment === "string" && segment.length !== 0 ? "".padStart(segment.length - segment.trimStart().length) : "";
+          const content = isSubstitutionWrapper(segment) ? segment.content : segment;
           let indented;
           return {
-            node: res.indented ? res.node : indent.length !== 0 ? res.node.indent({ indentation: indent, indentImmediately: false, indentedChildren: (ind) => indented = ind.append(segment) }) : res.node.append(segment),
+            node: res.indented ? res.node : indent.length !== 0 ? res.node.indent({ indentation: indent, indentImmediately: false, indentedChildren: (ind) => indented = ind.append(content) }) : res.node.append(content),
             indented: (
               // if an indentNode has been created in this cycle, just register it,
               //  otherwise check for a earlier registered indentNode and add the current segment to that one
-              indented !== null && indented !== void 0 ? indented : (_a = res.indented) === null || _a === void 0 ? void 0 : _a.append(segment)
+              indented !== null && indented !== void 0 ? indented : (_a = res.indented) === null || _a === void 0 ? void 0 : _a.append(content)
             )
           };
         })(), { node: new generator_node_1.CompositeGeneratorNode() });
@@ -11424,44 +11442,57 @@ ${JSON.stringify(message, null, 4)}`);
       };
       exports2.TypeResolutionError = TypeResolutionError;
       function isTypeAssignable(from, to) {
-        if (isPropertyUnion(from)) {
-          return from.types.every((fromType) => isTypeAssignable(fromType, to));
-        } else if (isPropertyUnion(to)) {
-          return to.types.some((toType) => isTypeAssignable(from, toType));
-        } else if (isValueType(to) && isUnionType(to.value)) {
-          if (isValueType(from) && isUnionType(from.value) && to.value.name === from.value.name) {
-            return true;
-          }
-          return isTypeAssignable(from, to.value.type);
-        } else if (isReferenceType(from)) {
-          return isReferenceType(to) && isTypeAssignable(from.referenceType, to.referenceType);
-        } else if (isArrayType(from)) {
-          return isArrayType(to) && isTypeAssignable(from.elementType, to.elementType);
-        } else if (isValueType(from)) {
-          if (isUnionType(from.value)) {
-            return isTypeAssignable(from.value.type, to);
-          }
-          if (!isValueType(to)) {
-            return false;
-          }
-          if (isUnionType(to.value)) {
-            return isTypeAssignable(from, to.value.type);
-          } else {
-            return isInterfaceAssignable(from.value, to.value, /* @__PURE__ */ new Set());
-          }
-        } else if (isPrimitiveType(from)) {
-          return isPrimitiveType(to) && from.primitive === to.primitive;
-        } else if (isStringType(from)) {
-          return isPrimitiveType(to) && to.primitive === "string" || isStringType(to) && to.string === from.string;
-        }
-        return false;
+        return isTypeAssignableInternal(from, to, /* @__PURE__ */ new Map());
       }
       exports2.isTypeAssignable = isTypeAssignable;
+      function isTypeAssignableInternal(from, to, visited) {
+        const key = `${propertyTypeToKeyString(from)}\xBB${propertyTypeToKeyString(to)}`;
+        let result = visited.get(key);
+        if (result !== void 0) {
+          return result;
+        }
+        visited.set(key, false);
+        result = false;
+        if (isPropertyUnion(from)) {
+          result = from.types.every((fromType) => isTypeAssignableInternal(fromType, to, visited));
+        } else if (isPropertyUnion(to)) {
+          result = to.types.some((toType) => isTypeAssignableInternal(from, toType, visited));
+        } else if (isValueType(to) && isUnionType(to.value)) {
+          if (isValueType(from) && isUnionType(from.value) && to.value.name === from.value.name) {
+            result = true;
+          } else {
+            result = isTypeAssignableInternal(from, to.value.type, visited);
+          }
+        } else if (isReferenceType(from)) {
+          result = isReferenceType(to) && isTypeAssignableInternal(from.referenceType, to.referenceType, visited);
+        } else if (isArrayType(from)) {
+          result = isArrayType(to) && isTypeAssignableInternal(from.elementType, to.elementType, visited);
+        } else if (isValueType(from)) {
+          if (isUnionType(from.value)) {
+            result = isTypeAssignableInternal(from.value.type, to, visited);
+          } else if (!isValueType(to)) {
+            result = false;
+          } else if (isUnionType(to.value)) {
+            result = isTypeAssignableInternal(from, to.value.type, visited);
+          } else {
+            result = isInterfaceAssignable(from.value, to.value, /* @__PURE__ */ new Set());
+          }
+        } else if (isPrimitiveType(from)) {
+          result = isPrimitiveType(to) && from.primitive === to.primitive;
+        } else if (isStringType(from)) {
+          result = isPrimitiveType(to) && to.primitive === "string" || isStringType(to) && to.string === from.string;
+        }
+        if (result) {
+          visited.set(key, result);
+        }
+        return result;
+      }
       function isInterfaceAssignable(from, to, visited) {
-        if (visited.has(from.name)) {
-          return true;
+        const key = from.name;
+        if (visited.has(key)) {
+          return false;
         } else {
-          visited.add(from.name);
+          visited.add(key);
         }
         if (from.name === to.name) {
           return true;
@@ -11472,6 +11503,26 @@ ${JSON.stringify(message, null, 4)}`);
           }
         }
         return false;
+      }
+      function propertyTypeToKeyString(type) {
+        if (isReferenceType(type)) {
+          return `@(${propertyTypeToKeyString(type.referenceType)})}`;
+        } else if (isArrayType(type)) {
+          return `(${propertyTypeToKeyString(type.elementType)})[]`;
+        } else if (isPropertyUnion(type)) {
+          const union = type.types.map((e) => propertyTypeToKeyString(e)).join(" | ");
+          if (type.types.length <= 1) {
+            return `Union<${union}>`;
+          }
+          return union;
+        } else if (isValueType(type)) {
+          return `Value<${type.value.name}>`;
+        } else if (isPrimitiveType(type)) {
+          return type.primitive;
+        } else if (isStringType(type)) {
+          return `'${type.string}'`;
+        }
+        throw new Error("Invalid type");
       }
       function propertyTypeToString(type, mode = "AstType") {
         if (isReferenceType(type)) {
@@ -11600,7 +11651,7 @@ ${JSON.stringify(message, null, 4)}`);
           ...strings.map((e) => `item === '${e}'`)
         ];
         if (regexes.length > 0) {
-          const joinedRegexes = regexes.map((e) => `/${e}/.test(item)`).join(" || ");
+          const joinedRegexes = regexes.map((e) => `${e}.test(item)`).join(" || ");
           allArray.push(`(typeof item === 'string' && (${joinedRegexes}))`);
         }
         return allArray.join(" || ");
@@ -12808,10 +12859,10 @@ ${JSON.stringify(message, null, 4)}`);
       exports2.getTerminalParts = getTerminalParts;
       function isMultilineComment(regex) {
         try {
-          if (typeof regex !== "string") {
-            regex = regex.source;
+          if (typeof regex === "string") {
+            regex = new RegExp(regex);
           }
-          regex = `/${regex}/`;
+          regex = regex.toString();
           visitor.reset(regex);
           visitor.visit(regexParser.pattern(regex));
           return visitor.multiline;
@@ -13009,14 +13060,14 @@ ${JSON.stringify(message, null, 4)}`);
         return result;
       };
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.isPrimitiveType = exports2.extractAssignments = exports2.resolveTransitiveImports = exports2.resolveImport = exports2.resolveImportUri = exports2.terminalRegex = exports2.getRuleType = exports2.getActionType = exports2.getExplicitRuleType = exports2.getTypeNameWithoutError = exports2.getTypeName = exports2.getActionAtElement = exports2.isDataType = exports2.hasDataTypeReturn = exports2.isDataTypeRule = exports2.isArrayOperator = exports2.isArrayCardinality = exports2.isOptionalCardinality = void 0;
+      exports2.isPrimitiveType = exports2.extractAssignments = exports2.resolveTransitiveImports = exports2.resolveImport = exports2.resolveImportUri = exports2.terminalRegex = exports2.getRuleType = exports2.getActionType = exports2.getExplicitRuleType = exports2.getTypeNameWithoutError = exports2.getTypeName = exports2.getActionAtElement = exports2.isStringType = exports2.isDataType = exports2.hasDataTypeReturn = exports2.isDataTypeRule = exports2.isArrayOperator = exports2.isArrayCardinality = exports2.isOptionalCardinality = void 0;
       var ast = __importStar(require_ast());
       var vscode_uri_1 = require_umd();
       var ast_util_1 = require_ast_util();
       var types_1 = require_types();
       var regex_util_1 = require_regex_util();
-      function isOptionalCardinality(cardinality) {
-        return cardinality === "?" || cardinality === "*";
+      function isOptionalCardinality(cardinality, element) {
+        return cardinality === "?" || cardinality === "*" || ast.isGroup(element) && Boolean(element.guardCondition);
       }
       exports2.isOptionalCardinality = isOptionalCardinality;
       function isArrayCardinality(cardinality) {
@@ -13093,6 +13144,43 @@ ${JSON.stringify(message, null, 4)}`);
         } else {
           return false;
         }
+      }
+      function isStringType(type) {
+        return isStringTypeInternal(type, /* @__PURE__ */ new Set());
+      }
+      exports2.isStringType = isStringType;
+      function isStringTypeInternal(type, visited) {
+        var _a, _b;
+        if (visited.has(type)) {
+          return true;
+        } else {
+          visited.add(type);
+        }
+        if (ast.isParserRule(type)) {
+          if (type.dataType) {
+            return type.dataType === "string";
+          }
+          if ((_a = type.returnType) === null || _a === void 0 ? void 0 : _a.ref) {
+            return isStringTypeInternal(type.returnType.ref, visited);
+          }
+        } else if (ast.isType(type)) {
+          return isStringTypeInternal(type.type, visited);
+        } else if (ast.isArrayType(type)) {
+          return false;
+        } else if (ast.isReferenceType(type)) {
+          return false;
+        } else if (ast.isUnionType(type)) {
+          return type.types.every((e) => isStringTypeInternal(e, visited));
+        } else if (ast.isSimpleType(type)) {
+          if (type.primitiveType === "string") {
+            return true;
+          } else if (type.stringType) {
+            return true;
+          } else if ((_b = type.typeRef) === null || _b === void 0 ? void 0 : _b.ref) {
+            return isStringTypeInternal(type.typeRef.ref, visited);
+          }
+        }
+        return false;
       }
       function getActionAtElement(element) {
         const parent = element.$container;
@@ -13184,11 +13272,18 @@ ${JSON.stringify(message, null, 4)}`);
       }
       exports2.getRuleType = getRuleType;
       function terminalRegex(terminalRule) {
-        return abstractElementToRegex(terminalRule.definition);
+        const flags = {
+          s: false,
+          i: false,
+          u: false
+        };
+        const source = abstractElementToRegex(terminalRule.definition, flags);
+        const flagText = Object.entries(flags).filter(([, value]) => value).map(([name]) => name).join("");
+        return new RegExp(source, flagText);
       }
       exports2.terminalRegex = terminalRegex;
       var WILDCARD = /[\s\S]/.source;
-      function abstractElementToRegex(element) {
+      function abstractElementToRegex(element, flags) {
         if (ast.isTerminalAlternatives(element)) {
           return terminalAlternativesToRegex(element);
         } else if (ast.isTerminalGroup(element)) {
@@ -13200,7 +13295,7 @@ ${JSON.stringify(message, null, 4)}`);
           if (!rule) {
             throw new Error("Missing rule reference.");
           }
-          return withCardinality(terminalRegex(rule), {
+          return withCardinality(abstractElementToRegex(rule.definition), {
             cardinality: element.cardinality,
             lookahead: element.lookahead
           });
@@ -13209,7 +13304,15 @@ ${JSON.stringify(message, null, 4)}`);
         } else if (ast.isUntilToken(element)) {
           return untilTokenToRegex(element);
         } else if (ast.isRegexToken(element)) {
-          return withCardinality(element.regex, {
+          const lastSlash = element.regex.lastIndexOf("/");
+          const source = element.regex.substring(1, lastSlash);
+          const regexFlags = element.regex.substring(lastSlash + 1);
+          if (flags) {
+            flags.i = regexFlags.includes("i");
+            flags.s = regexFlags.includes("s");
+            flags.u = regexFlags.includes("u");
+          }
+          return withCardinality(source, {
             cardinality: element.cardinality,
             lookahead: element.lookahead,
             wrap: false
@@ -13224,13 +13327,13 @@ ${JSON.stringify(message, null, 4)}`);
         }
       }
       function terminalAlternativesToRegex(alternatives) {
-        return withCardinality(alternatives.elements.map(abstractElementToRegex).join("|"), {
+        return withCardinality(alternatives.elements.map((e) => abstractElementToRegex(e)).join("|"), {
           cardinality: alternatives.cardinality,
           lookahead: alternatives.lookahead
         });
       }
       function terminalGroupToRegex(group) {
-        return withCardinality(group.elements.map(abstractElementToRegex).join(""), {
+        return withCardinality(group.elements.map((e) => abstractElementToRegex(e)).join(""), {
           cardinality: group.cardinality,
           lookahead: group.lookahead
         });
@@ -13750,7 +13853,7 @@ ${JSON.stringify(message, null, 4)}`);
             if ((0, ast_1.isTerminalRule)(ref)) {
               return {
                 primitive: (_c = (_b = ref.type) === null || _b === void 0 ? void 0 : _b.name) !== null && _c !== void 0 ? _c : "string",
-                regex: (0, internal_grammar_util_1.terminalRegex)(ref)
+                regex: (0, internal_grammar_util_1.terminalRegex)(ref).toString()
               };
             } else {
               return {
@@ -13786,7 +13889,7 @@ ${JSON.stringify(message, null, 4)}`);
         };
       }
       function collectElement(graph, current, element) {
-        const optional = (0, internal_grammar_util_1.isOptionalCardinality)(element.cardinality);
+        const optional = (0, internal_grammar_util_1.isOptionalCardinality)(element.cardinality, element);
         if ((0, ast_1.isAlternatives)(element)) {
           const children = [];
           if (optional) {
@@ -18131,7 +18234,7 @@ ${JSON.stringify(message, null, 4)}`);
       "name": "ID",
       "definition": {
         "$type": "RegexToken",
-        "regex": "\\\\^?[_a-zA-Z][\\\\w_]*"
+        "regex": "/\\\\^?[_a-zA-Z][\\\\w_]*/"
       },
       "fragment": false,
       "hidden": false
@@ -18141,7 +18244,7 @@ ${JSON.stringify(message, null, 4)}`);
       "name": "STRING",
       "definition": {
         "$type": "RegexToken",
-        "regex": "\\"(\\\\\\\\.|[^\\"\\\\\\\\])*\\"|'(\\\\\\\\.|[^'\\\\\\\\])*'"
+        "regex": "/\\"(\\\\\\\\.|[^\\"\\\\\\\\])*\\"|'(\\\\\\\\.|[^'\\\\\\\\])*'/"
       },
       "fragment": false,
       "hidden": false
@@ -18155,7 +18258,7 @@ ${JSON.stringify(message, null, 4)}`);
       },
       "definition": {
         "$type": "RegexToken",
-        "regex": "\\\\/(?![*+?])(?:[^\\\\r\\\\n\\\\[/\\\\\\\\]|\\\\\\\\.|\\\\[(?:[^\\\\r\\\\n\\\\]\\\\\\\\]|\\\\\\\\.)*\\\\])+\\\\/"
+        "regex": "/\\\\/(?![*+?])(?:[^\\\\r\\\\n\\\\[/\\\\\\\\]|\\\\\\\\.|\\\\[(?:[^\\\\r\\\\n\\\\]\\\\\\\\]|\\\\\\\\.)*\\\\])+\\\\/[a-z]*/"
       },
       "fragment": false,
       "hidden": false
@@ -18166,7 +18269,7 @@ ${JSON.stringify(message, null, 4)}`);
       "name": "WS",
       "definition": {
         "$type": "RegexToken",
-        "regex": "\\\\s+"
+        "regex": "/\\\\s+/"
       },
       "fragment": false
     },
@@ -18176,7 +18279,7 @@ ${JSON.stringify(message, null, 4)}`);
       "name": "ML_COMMENT",
       "definition": {
         "$type": "RegexToken",
-        "regex": "\\\\/\\\\*[\\\\s\\\\S]*?\\\\*\\\\/"
+        "regex": "/\\\\/\\\\*[\\\\s\\\\S]*?\\\\*\\\\//"
       },
       "fragment": false
     },
@@ -18186,7 +18289,7 @@ ${JSON.stringify(message, null, 4)}`);
       "name": "SL_COMMENT",
       "definition": {
         "$type": "RegexToken",
-        "regex": "\\\\/\\\\/[^\\\\n\\\\r]*"
+        "regex": "/\\\\/\\\\/[^\\\\n\\\\r]*/"
       },
       "fragment": false
     }
@@ -18265,3067 +18368,78 @@ ${JSON.stringify(message, null, 4)}`);
     }
   });
 
-  // ../../node_modules/vscode-jsonrpc/lib/common/is.js
-  var require_is4 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/is.js"(exports2) {
+  // ../../node_modules/langium/lib/references/scope.js
+  var require_scope = __commonJS({
+    "../../node_modules/langium/lib/references/scope.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.stringArray = exports2.array = exports2.func = exports2.error = exports2.number = exports2.string = exports2.boolean = void 0;
-      function boolean(value) {
-        return value === true || value === false;
-      }
-      exports2.boolean = boolean;
-      function string(value) {
-        return typeof value === "string" || value instanceof String;
-      }
-      exports2.string = string;
-      function number(value) {
-        return typeof value === "number" || value instanceof Number;
-      }
-      exports2.number = number;
-      function error(value) {
-        return value instanceof Error;
-      }
-      exports2.error = error;
-      function func(value) {
-        return typeof value === "function";
-      }
-      exports2.func = func;
-      function array(value) {
-        return Array.isArray(value);
-      }
-      exports2.array = array;
-      function stringArray(value) {
-        return array(value) && value.every((elem) => string(elem));
-      }
-      exports2.stringArray = stringArray;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/messages.js
-  var require_messages3 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/messages.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.Message = exports2.NotificationType9 = exports2.NotificationType8 = exports2.NotificationType7 = exports2.NotificationType6 = exports2.NotificationType5 = exports2.NotificationType4 = exports2.NotificationType3 = exports2.NotificationType2 = exports2.NotificationType1 = exports2.NotificationType0 = exports2.NotificationType = exports2.RequestType9 = exports2.RequestType8 = exports2.RequestType7 = exports2.RequestType6 = exports2.RequestType5 = exports2.RequestType4 = exports2.RequestType3 = exports2.RequestType2 = exports2.RequestType1 = exports2.RequestType = exports2.RequestType0 = exports2.AbstractMessageSignature = exports2.ParameterStructures = exports2.ResponseError = exports2.ErrorCodes = void 0;
-      var is = require_is4();
-      var ErrorCodes;
-      (function(ErrorCodes2) {
-        ErrorCodes2.ParseError = -32700;
-        ErrorCodes2.InvalidRequest = -32600;
-        ErrorCodes2.MethodNotFound = -32601;
-        ErrorCodes2.InvalidParams = -32602;
-        ErrorCodes2.InternalError = -32603;
-        ErrorCodes2.jsonrpcReservedErrorRangeStart = -32099;
-        ErrorCodes2.serverErrorStart = -32099;
-        ErrorCodes2.MessageWriteError = -32099;
-        ErrorCodes2.MessageReadError = -32098;
-        ErrorCodes2.PendingResponseRejected = -32097;
-        ErrorCodes2.ConnectionInactive = -32096;
-        ErrorCodes2.ServerNotInitialized = -32002;
-        ErrorCodes2.UnknownErrorCode = -32001;
-        ErrorCodes2.jsonrpcReservedErrorRangeEnd = -32e3;
-        ErrorCodes2.serverErrorEnd = -32e3;
-      })(ErrorCodes = exports2.ErrorCodes || (exports2.ErrorCodes = {}));
-      var ResponseError = class extends Error {
-        constructor(code, message, data) {
-          super(message);
-          this.code = is.number(code) ? code : ErrorCodes.UnknownErrorCode;
-          this.data = data;
-          Object.setPrototypeOf(this, ResponseError.prototype);
+      exports2.EMPTY_SCOPE = exports2.MapScope = exports2.StreamScope = void 0;
+      var stream_1 = require_stream();
+      var StreamScope = class {
+        constructor(elements, outerScope, options) {
+          var _a;
+          this.elements = elements;
+          this.outerScope = outerScope;
+          this.caseInsensitive = (_a = options === null || options === void 0 ? void 0 : options.caseInsensitive) !== null && _a !== void 0 ? _a : false;
         }
-        toJson() {
-          const result = {
-            code: this.code,
-            message: this.message
-          };
-          if (this.data !== void 0) {
-            result.data = this.data;
-          }
-          return result;
-        }
-      };
-      exports2.ResponseError = ResponseError;
-      var ParameterStructures = class {
-        constructor(kind) {
-          this.kind = kind;
-        }
-        static is(value) {
-          return value === ParameterStructures.auto || value === ParameterStructures.byName || value === ParameterStructures.byPosition;
-        }
-        toString() {
-          return this.kind;
-        }
-      };
-      exports2.ParameterStructures = ParameterStructures;
-      ParameterStructures.auto = new ParameterStructures("auto");
-      ParameterStructures.byPosition = new ParameterStructures("byPosition");
-      ParameterStructures.byName = new ParameterStructures("byName");
-      var AbstractMessageSignature = class {
-        constructor(method, numberOfParams) {
-          this.method = method;
-          this.numberOfParams = numberOfParams;
-        }
-        get parameterStructures() {
-          return ParameterStructures.auto;
-        }
-      };
-      exports2.AbstractMessageSignature = AbstractMessageSignature;
-      var RequestType0 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 0);
-        }
-      };
-      exports2.RequestType0 = RequestType0;
-      var RequestType = class extends AbstractMessageSignature {
-        constructor(method, _parameterStructures = ParameterStructures.auto) {
-          super(method, 1);
-          this._parameterStructures = _parameterStructures;
-        }
-        get parameterStructures() {
-          return this._parameterStructures;
-        }
-      };
-      exports2.RequestType = RequestType;
-      var RequestType1 = class extends AbstractMessageSignature {
-        constructor(method, _parameterStructures = ParameterStructures.auto) {
-          super(method, 1);
-          this._parameterStructures = _parameterStructures;
-        }
-        get parameterStructures() {
-          return this._parameterStructures;
-        }
-      };
-      exports2.RequestType1 = RequestType1;
-      var RequestType2 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 2);
-        }
-      };
-      exports2.RequestType2 = RequestType2;
-      var RequestType3 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 3);
-        }
-      };
-      exports2.RequestType3 = RequestType3;
-      var RequestType4 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 4);
-        }
-      };
-      exports2.RequestType4 = RequestType4;
-      var RequestType5 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 5);
-        }
-      };
-      exports2.RequestType5 = RequestType5;
-      var RequestType6 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 6);
-        }
-      };
-      exports2.RequestType6 = RequestType6;
-      var RequestType7 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 7);
-        }
-      };
-      exports2.RequestType7 = RequestType7;
-      var RequestType8 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 8);
-        }
-      };
-      exports2.RequestType8 = RequestType8;
-      var RequestType9 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 9);
-        }
-      };
-      exports2.RequestType9 = RequestType9;
-      var NotificationType2 = class extends AbstractMessageSignature {
-        constructor(method, _parameterStructures = ParameterStructures.auto) {
-          super(method, 1);
-          this._parameterStructures = _parameterStructures;
-        }
-        get parameterStructures() {
-          return this._parameterStructures;
-        }
-      };
-      exports2.NotificationType = NotificationType2;
-      var NotificationType0 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 0);
-        }
-      };
-      exports2.NotificationType0 = NotificationType0;
-      var NotificationType1 = class extends AbstractMessageSignature {
-        constructor(method, _parameterStructures = ParameterStructures.auto) {
-          super(method, 1);
-          this._parameterStructures = _parameterStructures;
-        }
-        get parameterStructures() {
-          return this._parameterStructures;
-        }
-      };
-      exports2.NotificationType1 = NotificationType1;
-      var NotificationType22 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 2);
-        }
-      };
-      exports2.NotificationType2 = NotificationType22;
-      var NotificationType3 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 3);
-        }
-      };
-      exports2.NotificationType3 = NotificationType3;
-      var NotificationType4 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 4);
-        }
-      };
-      exports2.NotificationType4 = NotificationType4;
-      var NotificationType5 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 5);
-        }
-      };
-      exports2.NotificationType5 = NotificationType5;
-      var NotificationType6 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 6);
-        }
-      };
-      exports2.NotificationType6 = NotificationType6;
-      var NotificationType7 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 7);
-        }
-      };
-      exports2.NotificationType7 = NotificationType7;
-      var NotificationType8 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 8);
-        }
-      };
-      exports2.NotificationType8 = NotificationType8;
-      var NotificationType9 = class extends AbstractMessageSignature {
-        constructor(method) {
-          super(method, 9);
-        }
-      };
-      exports2.NotificationType9 = NotificationType9;
-      var Message;
-      (function(Message2) {
-        function isRequest(message) {
-          const candidate = message;
-          return candidate && is.string(candidate.method) && (is.string(candidate.id) || is.number(candidate.id));
-        }
-        Message2.isRequest = isRequest;
-        function isNotification(message) {
-          const candidate = message;
-          return candidate && is.string(candidate.method) && message.id === void 0;
-        }
-        Message2.isNotification = isNotification;
-        function isResponse(message) {
-          const candidate = message;
-          return candidate && (candidate.result !== void 0 || !!candidate.error) && (is.string(candidate.id) || is.number(candidate.id) || candidate.id === null);
-        }
-        Message2.isResponse = isResponse;
-      })(Message = exports2.Message || (exports2.Message = {}));
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/linkedMap.js
-  var require_linkedMap2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/linkedMap.js"(exports2) {
-      "use strict";
-      var _a;
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.LRUCache = exports2.LinkedMap = exports2.Touch = void 0;
-      var Touch;
-      (function(Touch2) {
-        Touch2.None = 0;
-        Touch2.First = 1;
-        Touch2.AsOld = Touch2.First;
-        Touch2.Last = 2;
-        Touch2.AsNew = Touch2.Last;
-      })(Touch = exports2.Touch || (exports2.Touch = {}));
-      var LinkedMap = class {
-        constructor() {
-          this[_a] = "LinkedMap";
-          this._map = /* @__PURE__ */ new Map();
-          this._head = void 0;
-          this._tail = void 0;
-          this._size = 0;
-          this._state = 0;
-        }
-        clear() {
-          this._map.clear();
-          this._head = void 0;
-          this._tail = void 0;
-          this._size = 0;
-          this._state++;
-        }
-        isEmpty() {
-          return !this._head && !this._tail;
-        }
-        get size() {
-          return this._size;
-        }
-        get first() {
-          return this._head?.value;
-        }
-        get last() {
-          return this._tail?.value;
-        }
-        has(key) {
-          return this._map.has(key);
-        }
-        get(key, touch = Touch.None) {
-          const item = this._map.get(key);
-          if (!item) {
-            return void 0;
-          }
-          if (touch !== Touch.None) {
-            this.touch(item, touch);
-          }
-          return item.value;
-        }
-        set(key, value, touch = Touch.None) {
-          let item = this._map.get(key);
-          if (item) {
-            item.value = value;
-            if (touch !== Touch.None) {
-              this.touch(item, touch);
-            }
+        getAllElements() {
+          if (this.outerScope) {
+            return this.elements.concat(this.outerScope.getAllElements());
           } else {
-            item = { key, value, next: void 0, previous: void 0 };
-            switch (touch) {
-              case Touch.None:
-                this.addItemLast(item);
-                break;
-              case Touch.First:
-                this.addItemFirst(item);
-                break;
-              case Touch.Last:
-                this.addItemLast(item);
-                break;
-              default:
-                this.addItemLast(item);
-                break;
-            }
-            this._map.set(key, item);
-            this._size++;
+            return this.elements;
           }
-          return this;
         }
-        delete(key) {
-          return !!this.remove(key);
-        }
-        remove(key) {
-          const item = this._map.get(key);
-          if (!item) {
-            return void 0;
-          }
-          this._map.delete(key);
-          this.removeItem(item);
-          this._size--;
-          return item.value;
-        }
-        shift() {
-          if (!this._head && !this._tail) {
-            return void 0;
-          }
-          if (!this._head || !this._tail) {
-            throw new Error("Invalid list");
-          }
-          const item = this._head;
-          this._map.delete(item.key);
-          this.removeItem(item);
-          this._size--;
-          return item.value;
-        }
-        forEach(callbackfn, thisArg) {
-          const state = this._state;
-          let current = this._head;
-          while (current) {
-            if (thisArg) {
-              callbackfn.bind(thisArg)(current.value, current.key, this);
-            } else {
-              callbackfn(current.value, current.key, this);
-            }
-            if (this._state !== state) {
-              throw new Error(`LinkedMap got modified during iteration.`);
-            }
-            current = current.next;
-          }
-        }
-        keys() {
-          const state = this._state;
-          let current = this._head;
-          const iterator = {
-            [Symbol.iterator]: () => {
-              return iterator;
-            },
-            next: () => {
-              if (this._state !== state) {
-                throw new Error(`LinkedMap got modified during iteration.`);
-              }
-              if (current) {
-                const result = { value: current.key, done: false };
-                current = current.next;
-                return result;
-              } else {
-                return { value: void 0, done: true };
-              }
-            }
-          };
-          return iterator;
-        }
-        values() {
-          const state = this._state;
-          let current = this._head;
-          const iterator = {
-            [Symbol.iterator]: () => {
-              return iterator;
-            },
-            next: () => {
-              if (this._state !== state) {
-                throw new Error(`LinkedMap got modified during iteration.`);
-              }
-              if (current) {
-                const result = { value: current.value, done: false };
-                current = current.next;
-                return result;
-              } else {
-                return { value: void 0, done: true };
-              }
-            }
-          };
-          return iterator;
-        }
-        entries() {
-          const state = this._state;
-          let current = this._head;
-          const iterator = {
-            [Symbol.iterator]: () => {
-              return iterator;
-            },
-            next: () => {
-              if (this._state !== state) {
-                throw new Error(`LinkedMap got modified during iteration.`);
-              }
-              if (current) {
-                const result = { value: [current.key, current.value], done: false };
-                current = current.next;
-                return result;
-              } else {
-                return { value: void 0, done: true };
-              }
-            }
-          };
-          return iterator;
-        }
-        [(_a = Symbol.toStringTag, Symbol.iterator)]() {
-          return this.entries();
-        }
-        trimOld(newSize) {
-          if (newSize >= this.size) {
-            return;
-          }
-          if (newSize === 0) {
-            this.clear();
-            return;
-          }
-          let current = this._head;
-          let currentSize = this.size;
-          while (current && currentSize > newSize) {
-            this._map.delete(current.key);
-            current = current.next;
-            currentSize--;
-          }
-          this._head = current;
-          this._size = currentSize;
-          if (current) {
-            current.previous = void 0;
-          }
-          this._state++;
-        }
-        addItemFirst(item) {
-          if (!this._head && !this._tail) {
-            this._tail = item;
-          } else if (!this._head) {
-            throw new Error("Invalid list");
-          } else {
-            item.next = this._head;
-            this._head.previous = item;
-          }
-          this._head = item;
-          this._state++;
-        }
-        addItemLast(item) {
-          if (!this._head && !this._tail) {
-            this._head = item;
-          } else if (!this._tail) {
-            throw new Error("Invalid list");
-          } else {
-            item.previous = this._tail;
-            this._tail.next = item;
-          }
-          this._tail = item;
-          this._state++;
-        }
-        removeItem(item) {
-          if (item === this._head && item === this._tail) {
-            this._head = void 0;
-            this._tail = void 0;
-          } else if (item === this._head) {
-            if (!item.next) {
-              throw new Error("Invalid list");
-            }
-            item.next.previous = void 0;
-            this._head = item.next;
-          } else if (item === this._tail) {
-            if (!item.previous) {
-              throw new Error("Invalid list");
-            }
-            item.previous.next = void 0;
-            this._tail = item.previous;
-          } else {
-            const next = item.next;
-            const previous = item.previous;
-            if (!next || !previous) {
-              throw new Error("Invalid list");
-            }
-            next.previous = previous;
-            previous.next = next;
-          }
-          item.next = void 0;
-          item.previous = void 0;
-          this._state++;
-        }
-        touch(item, touch) {
-          if (!this._head || !this._tail) {
-            throw new Error("Invalid list");
-          }
-          if (touch !== Touch.First && touch !== Touch.Last) {
-            return;
-          }
-          if (touch === Touch.First) {
-            if (item === this._head) {
-              return;
-            }
-            const next = item.next;
-            const previous = item.previous;
-            if (item === this._tail) {
-              previous.next = void 0;
-              this._tail = previous;
-            } else {
-              next.previous = previous;
-              previous.next = next;
-            }
-            item.previous = void 0;
-            item.next = this._head;
-            this._head.previous = item;
-            this._head = item;
-            this._state++;
-          } else if (touch === Touch.Last) {
-            if (item === this._tail) {
-              return;
-            }
-            const next = item.next;
-            const previous = item.previous;
-            if (item === this._head) {
-              next.previous = void 0;
-              this._head = next;
-            } else {
-              next.previous = previous;
-              previous.next = next;
-            }
-            item.next = void 0;
-            item.previous = this._tail;
-            this._tail.next = item;
-            this._tail = item;
-            this._state++;
-          }
-        }
-        toJSON() {
-          const data = [];
-          this.forEach((value, key) => {
-            data.push([key, value]);
-          });
-          return data;
-        }
-        fromJSON(data) {
-          this.clear();
-          for (const [key, value] of data) {
-            this.set(key, value);
-          }
-        }
-      };
-      exports2.LinkedMap = LinkedMap;
-      var LRUCache = class extends LinkedMap {
-        constructor(limit, ratio = 1) {
-          super();
-          this._limit = limit;
-          this._ratio = Math.min(Math.max(0, ratio), 1);
-        }
-        get limit() {
-          return this._limit;
-        }
-        set limit(limit) {
-          this._limit = limit;
-          this.checkTrim();
-        }
-        get ratio() {
-          return this._ratio;
-        }
-        set ratio(ratio) {
-          this._ratio = Math.min(Math.max(0, ratio), 1);
-          this.checkTrim();
-        }
-        get(key, touch = Touch.AsNew) {
-          return super.get(key, touch);
-        }
-        peek(key) {
-          return super.get(key, Touch.None);
-        }
-        set(key, value) {
-          super.set(key, value, Touch.Last);
-          this.checkTrim();
-          return this;
-        }
-        checkTrim() {
-          if (this.size > this._limit) {
-            this.trimOld(Math.round(this._limit * this._ratio));
-          }
-        }
-      };
-      exports2.LRUCache = LRUCache;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/disposable.js
-  var require_disposable2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/disposable.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.Disposable = void 0;
-      var Disposable;
-      (function(Disposable2) {
-        function create(func) {
-          return {
-            dispose: func
-          };
-        }
-        Disposable2.create = create;
-      })(Disposable = exports2.Disposable || (exports2.Disposable = {}));
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/ral.js
-  var require_ral2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/ral.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      var _ral;
-      function RAL() {
-        if (_ral === void 0) {
-          throw new Error(`No runtime abstraction layer installed`);
-        }
-        return _ral;
-      }
-      (function(RAL2) {
-        function install(ral) {
-          if (ral === void 0) {
-            throw new Error(`No runtime abstraction layer provided`);
-          }
-          _ral = ral;
-        }
-        RAL2.install = install;
-      })(RAL || (RAL = {}));
-      exports2.default = RAL;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/events.js
-  var require_events2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/events.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.Emitter = exports2.Event = void 0;
-      var ral_1 = require_ral2();
-      var Event;
-      (function(Event2) {
-        const _disposable = { dispose() {
-        } };
-        Event2.None = function() {
-          return _disposable;
-        };
-      })(Event = exports2.Event || (exports2.Event = {}));
-      var CallbackList = class {
-        add(callback, context = null, bucket) {
-          if (!this._callbacks) {
-            this._callbacks = [];
-            this._contexts = [];
-          }
-          this._callbacks.push(callback);
-          this._contexts.push(context);
-          if (Array.isArray(bucket)) {
-            bucket.push({ dispose: () => this.remove(callback, context) });
-          }
-        }
-        remove(callback, context = null) {
-          if (!this._callbacks) {
-            return;
-          }
-          let foundCallbackWithDifferentContext = false;
-          for (let i = 0, len = this._callbacks.length; i < len; i++) {
-            if (this._callbacks[i] === callback) {
-              if (this._contexts[i] === context) {
-                this._callbacks.splice(i, 1);
-                this._contexts.splice(i, 1);
-                return;
-              } else {
-                foundCallbackWithDifferentContext = true;
-              }
-            }
-          }
-          if (foundCallbackWithDifferentContext) {
-            throw new Error("When adding a listener with a context, you should remove it with the same context");
-          }
-        }
-        invoke(...args) {
-          if (!this._callbacks) {
-            return [];
-          }
-          const ret = [], callbacks = this._callbacks.slice(0), contexts = this._contexts.slice(0);
-          for (let i = 0, len = callbacks.length; i < len; i++) {
-            try {
-              ret.push(callbacks[i].apply(contexts[i], args));
-            } catch (e) {
-              (0, ral_1.default)().console.error(e);
-            }
-          }
-          return ret;
-        }
-        isEmpty() {
-          return !this._callbacks || this._callbacks.length === 0;
-        }
-        dispose() {
-          this._callbacks = void 0;
-          this._contexts = void 0;
-        }
-      };
-      var Emitter = class {
-        constructor(_options) {
-          this._options = _options;
-        }
-        /**
-         * For the public to allow to subscribe
-         * to events from this Emitter
-         */
-        get event() {
-          if (!this._event) {
-            this._event = (listener, thisArgs, disposables) => {
-              if (!this._callbacks) {
-                this._callbacks = new CallbackList();
-              }
-              if (this._options && this._options.onFirstListenerAdd && this._callbacks.isEmpty()) {
-                this._options.onFirstListenerAdd(this);
-              }
-              this._callbacks.add(listener, thisArgs);
-              const result = {
-                dispose: () => {
-                  if (!this._callbacks) {
-                    return;
-                  }
-                  this._callbacks.remove(listener, thisArgs);
-                  result.dispose = Emitter._noop;
-                  if (this._options && this._options.onLastListenerRemove && this._callbacks.isEmpty()) {
-                    this._options.onLastListenerRemove(this);
-                  }
-                }
-              };
-              if (Array.isArray(disposables)) {
-                disposables.push(result);
-              }
-              return result;
-            };
-          }
-          return this._event;
-        }
-        /**
-         * To be kept private to fire an event to
-         * subscribers
-         */
-        fire(event) {
-          if (this._callbacks) {
-            this._callbacks.invoke.call(this._callbacks, event);
-          }
-        }
-        dispose() {
-          if (this._callbacks) {
-            this._callbacks.dispose();
-            this._callbacks = void 0;
-          }
-        }
-      };
-      exports2.Emitter = Emitter;
-      Emitter._noop = function() {
-      };
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/cancellation.js
-  var require_cancellation2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/cancellation.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.CancellationTokenSource = exports2.CancellationToken = void 0;
-      var ral_1 = require_ral2();
-      var Is = require_is4();
-      var events_1 = require_events2();
-      var CancellationToken;
-      (function(CancellationToken2) {
-        CancellationToken2.None = Object.freeze({
-          isCancellationRequested: false,
-          onCancellationRequested: events_1.Event.None
-        });
-        CancellationToken2.Cancelled = Object.freeze({
-          isCancellationRequested: true,
-          onCancellationRequested: events_1.Event.None
-        });
-        function is(value) {
-          const candidate = value;
-          return candidate && (candidate === CancellationToken2.None || candidate === CancellationToken2.Cancelled || Is.boolean(candidate.isCancellationRequested) && !!candidate.onCancellationRequested);
-        }
-        CancellationToken2.is = is;
-      })(CancellationToken = exports2.CancellationToken || (exports2.CancellationToken = {}));
-      var shortcutEvent = Object.freeze(function(callback, context) {
-        const handle = (0, ral_1.default)().timer.setTimeout(callback.bind(context), 0);
-        return { dispose() {
-          handle.dispose();
-        } };
-      });
-      var MutableToken = class {
-        constructor() {
-          this._isCancelled = false;
-        }
-        cancel() {
-          if (!this._isCancelled) {
-            this._isCancelled = true;
-            if (this._emitter) {
-              this._emitter.fire(void 0);
-              this.dispose();
-            }
-          }
-        }
-        get isCancellationRequested() {
-          return this._isCancelled;
-        }
-        get onCancellationRequested() {
-          if (this._isCancelled) {
-            return shortcutEvent;
-          }
-          if (!this._emitter) {
-            this._emitter = new events_1.Emitter();
-          }
-          return this._emitter.event;
-        }
-        dispose() {
-          if (this._emitter) {
-            this._emitter.dispose();
-            this._emitter = void 0;
-          }
-        }
-      };
-      var CancellationTokenSource = class {
-        get token() {
-          if (!this._token) {
-            this._token = new MutableToken();
-          }
-          return this._token;
-        }
-        cancel() {
-          if (!this._token) {
-            this._token = CancellationToken.Cancelled;
-          } else {
-            this._token.cancel();
-          }
-        }
-        dispose() {
-          if (!this._token) {
-            this._token = CancellationToken.None;
-          } else if (this._token instanceof MutableToken) {
-            this._token.dispose();
-          }
-        }
-      };
-      exports2.CancellationTokenSource = CancellationTokenSource;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/sharedArrayCancellation.js
-  var require_sharedArrayCancellation = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/sharedArrayCancellation.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.SharedArrayReceiverStrategy = exports2.SharedArraySenderStrategy = void 0;
-      var cancellation_1 = require_cancellation2();
-      var CancellationState;
-      (function(CancellationState2) {
-        CancellationState2.Continue = 0;
-        CancellationState2.Cancelled = 1;
-      })(CancellationState || (CancellationState = {}));
-      var SharedArraySenderStrategy = class {
-        constructor() {
-          this.buffers = /* @__PURE__ */ new Map();
-        }
-        enableCancellation(request) {
-          if (request.id === null) {
-            return;
-          }
-          const buffer = new SharedArrayBuffer(4);
-          const data = new Int32Array(buffer, 0, 1);
-          data[0] = CancellationState.Continue;
-          this.buffers.set(request.id, buffer);
-          request.$cancellationData = buffer;
-        }
-        async sendCancellation(_conn, id) {
-          const buffer = this.buffers.get(id);
-          if (buffer === void 0) {
-            return;
-          }
-          const data = new Int32Array(buffer, 0, 1);
-          Atomics.store(data, 0, CancellationState.Cancelled);
-        }
-        cleanup(id) {
-          this.buffers.delete(id);
-        }
-        dispose() {
-          this.buffers.clear();
-        }
-      };
-      exports2.SharedArraySenderStrategy = SharedArraySenderStrategy;
-      var SharedArrayBufferCancellationToken = class {
-        constructor(buffer) {
-          this.data = new Int32Array(buffer, 0, 1);
-        }
-        get isCancellationRequested() {
-          return Atomics.load(this.data, 0) === CancellationState.Cancelled;
-        }
-        get onCancellationRequested() {
-          throw new Error(`Cancellation over SharedArrayBuffer doesn't support cancellation events`);
-        }
-      };
-      var SharedArrayBufferCancellationTokenSource = class {
-        constructor(buffer) {
-          this.token = new SharedArrayBufferCancellationToken(buffer);
-        }
-        cancel() {
-        }
-        dispose() {
-        }
-      };
-      var SharedArrayReceiverStrategy = class {
-        constructor() {
-          this.kind = "request";
-        }
-        createCancellationTokenSource(request) {
-          const buffer = request.$cancellationData;
-          if (buffer === void 0) {
-            return new cancellation_1.CancellationTokenSource();
-          }
-          return new SharedArrayBufferCancellationTokenSource(buffer);
-        }
-      };
-      exports2.SharedArrayReceiverStrategy = SharedArrayReceiverStrategy;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/semaphore.js
-  var require_semaphore2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/semaphore.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.Semaphore = void 0;
-      var ral_1 = require_ral2();
-      var Semaphore = class {
-        constructor(capacity = 1) {
-          if (capacity <= 0) {
-            throw new Error("Capacity must be greater than 0");
+        getElement(name) {
+          const local = this.caseInsensitive ? this.elements.find((e) => e.name.toLowerCase() === name.toLowerCase()) : this.elements.find((e) => e.name === name);
+          if (local) {
+            return local;
           }
-          this._capacity = capacity;
-          this._active = 0;
-          this._waiting = [];
-        }
-        lock(thunk) {
-          return new Promise((resolve, reject) => {
-            this._waiting.push({ thunk, resolve, reject });
-            this.runNext();
-          });
-        }
-        get active() {
-          return this._active;
-        }
-        runNext() {
-          if (this._waiting.length === 0 || this._active === this._capacity) {
-            return;
-          }
-          (0, ral_1.default)().timer.setImmediate(() => this.doRunNext());
-        }
-        doRunNext() {
-          if (this._waiting.length === 0 || this._active === this._capacity) {
-            return;
-          }
-          const next = this._waiting.shift();
-          this._active++;
-          if (this._active > this._capacity) {
-            throw new Error(`To many thunks active`);
-          }
-          try {
-            const result = next.thunk();
-            if (result instanceof Promise) {
-              result.then((value) => {
-                this._active--;
-                next.resolve(value);
-                this.runNext();
-              }, (err) => {
-                this._active--;
-                next.reject(err);
-                this.runNext();
-              });
-            } else {
-              this._active--;
-              next.resolve(result);
-              this.runNext();
-            }
-          } catch (err) {
-            this._active--;
-            next.reject(err);
-            this.runNext();
-          }
-        }
-      };
-      exports2.Semaphore = Semaphore;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/messageReader.js
-  var require_messageReader2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/messageReader.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.ReadableStreamMessageReader = exports2.AbstractMessageReader = exports2.MessageReader = void 0;
-      var ral_1 = require_ral2();
-      var Is = require_is4();
-      var events_1 = require_events2();
-      var semaphore_1 = require_semaphore2();
-      var MessageReader;
-      (function(MessageReader2) {
-        function is(value) {
-          let candidate = value;
-          return candidate && Is.func(candidate.listen) && Is.func(candidate.dispose) && Is.func(candidate.onError) && Is.func(candidate.onClose) && Is.func(candidate.onPartialMessage);
-        }
-        MessageReader2.is = is;
-      })(MessageReader = exports2.MessageReader || (exports2.MessageReader = {}));
-      var AbstractMessageReader = class {
-        constructor() {
-          this.errorEmitter = new events_1.Emitter();
-          this.closeEmitter = new events_1.Emitter();
-          this.partialMessageEmitter = new events_1.Emitter();
-        }
-        dispose() {
-          this.errorEmitter.dispose();
-          this.closeEmitter.dispose();
-        }
-        get onError() {
-          return this.errorEmitter.event;
-        }
-        fireError(error) {
-          this.errorEmitter.fire(this.asError(error));
-        }
-        get onClose() {
-          return this.closeEmitter.event;
-        }
-        fireClose() {
-          this.closeEmitter.fire(void 0);
-        }
-        get onPartialMessage() {
-          return this.partialMessageEmitter.event;
-        }
-        firePartialMessage(info) {
-          this.partialMessageEmitter.fire(info);
-        }
-        asError(error) {
-          if (error instanceof Error) {
-            return error;
-          } else {
-            return new Error(`Reader received error. Reason: ${Is.string(error.message) ? error.message : "unknown"}`);
-          }
-        }
-      };
-      exports2.AbstractMessageReader = AbstractMessageReader;
-      var ResolvedMessageReaderOptions;
-      (function(ResolvedMessageReaderOptions2) {
-        function fromOptions(options) {
-          let charset;
-          let result;
-          let contentDecoder;
-          const contentDecoders = /* @__PURE__ */ new Map();
-          let contentTypeDecoder;
-          const contentTypeDecoders = /* @__PURE__ */ new Map();
-          if (options === void 0 || typeof options === "string") {
-            charset = options ?? "utf-8";
-          } else {
-            charset = options.charset ?? "utf-8";
-            if (options.contentDecoder !== void 0) {
-              contentDecoder = options.contentDecoder;
-              contentDecoders.set(contentDecoder.name, contentDecoder);
-            }
-            if (options.contentDecoders !== void 0) {
-              for (const decoder of options.contentDecoders) {
-                contentDecoders.set(decoder.name, decoder);
-              }
-            }
-            if (options.contentTypeDecoder !== void 0) {
-              contentTypeDecoder = options.contentTypeDecoder;
-              contentTypeDecoders.set(contentTypeDecoder.name, contentTypeDecoder);
-            }
-            if (options.contentTypeDecoders !== void 0) {
-              for (const decoder of options.contentTypeDecoders) {
-                contentTypeDecoders.set(decoder.name, decoder);
-              }
-            }
-          }
-          if (contentTypeDecoder === void 0) {
-            contentTypeDecoder = (0, ral_1.default)().applicationJson.decoder;
-            contentTypeDecoders.set(contentTypeDecoder.name, contentTypeDecoder);
-          }
-          return { charset, contentDecoder, contentDecoders, contentTypeDecoder, contentTypeDecoders };
-        }
-        ResolvedMessageReaderOptions2.fromOptions = fromOptions;
-      })(ResolvedMessageReaderOptions || (ResolvedMessageReaderOptions = {}));
-      var ReadableStreamMessageReader = class extends AbstractMessageReader {
-        constructor(readable, options) {
-          super();
-          this.readable = readable;
-          this.options = ResolvedMessageReaderOptions.fromOptions(options);
-          this.buffer = (0, ral_1.default)().messageBuffer.create(this.options.charset);
-          this._partialMessageTimeout = 1e4;
-          this.nextMessageLength = -1;
-          this.messageToken = 0;
-          this.readSemaphore = new semaphore_1.Semaphore(1);
-        }
-        set partialMessageTimeout(timeout) {
-          this._partialMessageTimeout = timeout;
-        }
-        get partialMessageTimeout() {
-          return this._partialMessageTimeout;
-        }
-        listen(callback) {
-          this.nextMessageLength = -1;
-          this.messageToken = 0;
-          this.partialMessageTimer = void 0;
-          this.callback = callback;
-          const result = this.readable.onData((data) => {
-            this.onData(data);
-          });
-          this.readable.onError((error) => this.fireError(error));
-          this.readable.onClose(() => this.fireClose());
-          return result;
-        }
-        onData(data) {
-          this.buffer.append(data);
-          while (true) {
-            if (this.nextMessageLength === -1) {
-              const headers = this.buffer.tryReadHeaders(true);
-              if (!headers) {
-                return;
-              }
-              const contentLength = headers.get("content-length");
-              if (!contentLength) {
-                this.fireError(new Error("Header must provide a Content-Length property."));
-                return;
-              }
-              const length = parseInt(contentLength);
-              if (isNaN(length)) {
-                this.fireError(new Error("Content-Length value must be a number."));
-                return;
-              }
-              this.nextMessageLength = length;
-            }
-            const body = this.buffer.tryReadBody(this.nextMessageLength);
-            if (body === void 0) {
-              this.setPartialMessageTimer();
-              return;
-            }
-            this.clearPartialMessageTimer();
-            this.nextMessageLength = -1;
-            this.readSemaphore.lock(async () => {
-              const bytes = this.options.contentDecoder !== void 0 ? await this.options.contentDecoder.decode(body) : body;
-              const message = await this.options.contentTypeDecoder.decode(bytes, this.options);
-              this.callback(message);
-            }).catch((error) => {
-              this.fireError(error);
-            });
-          }
-        }
-        clearPartialMessageTimer() {
-          if (this.partialMessageTimer) {
-            this.partialMessageTimer.dispose();
-            this.partialMessageTimer = void 0;
-          }
-        }
-        setPartialMessageTimer() {
-          this.clearPartialMessageTimer();
-          if (this._partialMessageTimeout <= 0) {
-            return;
-          }
-          this.partialMessageTimer = (0, ral_1.default)().timer.setTimeout((token, timeout) => {
-            this.partialMessageTimer = void 0;
-            if (token === this.messageToken) {
-              this.firePartialMessage({ messageToken: token, waitingTime: timeout });
-              this.setPartialMessageTimer();
-            }
-          }, this._partialMessageTimeout, this.messageToken, this._partialMessageTimeout);
-        }
-      };
-      exports2.ReadableStreamMessageReader = ReadableStreamMessageReader;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/messageWriter.js
-  var require_messageWriter2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/messageWriter.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.WriteableStreamMessageWriter = exports2.AbstractMessageWriter = exports2.MessageWriter = void 0;
-      var ral_1 = require_ral2();
-      var Is = require_is4();
-      var semaphore_1 = require_semaphore2();
-      var events_1 = require_events2();
-      var ContentLength = "Content-Length: ";
-      var CRLF = "\r\n";
-      var MessageWriter;
-      (function(MessageWriter2) {
-        function is(value) {
-          let candidate = value;
-          return candidate && Is.func(candidate.dispose) && Is.func(candidate.onClose) && Is.func(candidate.onError) && Is.func(candidate.write);
-        }
-        MessageWriter2.is = is;
-      })(MessageWriter = exports2.MessageWriter || (exports2.MessageWriter = {}));
-      var AbstractMessageWriter = class {
-        constructor() {
-          this.errorEmitter = new events_1.Emitter();
-          this.closeEmitter = new events_1.Emitter();
-        }
-        dispose() {
-          this.errorEmitter.dispose();
-          this.closeEmitter.dispose();
-        }
-        get onError() {
-          return this.errorEmitter.event;
-        }
-        fireError(error, message, count) {
-          this.errorEmitter.fire([this.asError(error), message, count]);
-        }
-        get onClose() {
-          return this.closeEmitter.event;
-        }
-        fireClose() {
-          this.closeEmitter.fire(void 0);
-        }
-        asError(error) {
-          if (error instanceof Error) {
-            return error;
-          } else {
-            return new Error(`Writer received error. Reason: ${Is.string(error.message) ? error.message : "unknown"}`);
-          }
-        }
-      };
-      exports2.AbstractMessageWriter = AbstractMessageWriter;
-      var ResolvedMessageWriterOptions;
-      (function(ResolvedMessageWriterOptions2) {
-        function fromOptions(options) {
-          if (options === void 0 || typeof options === "string") {
-            return { charset: options ?? "utf-8", contentTypeEncoder: (0, ral_1.default)().applicationJson.encoder };
-          } else {
-            return { charset: options.charset ?? "utf-8", contentEncoder: options.contentEncoder, contentTypeEncoder: options.contentTypeEncoder ?? (0, ral_1.default)().applicationJson.encoder };
-          }
-        }
-        ResolvedMessageWriterOptions2.fromOptions = fromOptions;
-      })(ResolvedMessageWriterOptions || (ResolvedMessageWriterOptions = {}));
-      var WriteableStreamMessageWriter = class extends AbstractMessageWriter {
-        constructor(writable, options) {
-          super();
-          this.writable = writable;
-          this.options = ResolvedMessageWriterOptions.fromOptions(options);
-          this.errorCount = 0;
-          this.writeSemaphore = new semaphore_1.Semaphore(1);
-          this.writable.onError((error) => this.fireError(error));
-          this.writable.onClose(() => this.fireClose());
-        }
-        async write(msg) {
-          return this.writeSemaphore.lock(async () => {
-            const payload = this.options.contentTypeEncoder.encode(msg, this.options).then((buffer) => {
-              if (this.options.contentEncoder !== void 0) {
-                return this.options.contentEncoder.encode(buffer);
-              } else {
-                return buffer;
-              }
-            });
-            return payload.then((buffer) => {
-              const headers = [];
-              headers.push(ContentLength, buffer.byteLength.toString(), CRLF);
-              headers.push(CRLF);
-              return this.doWrite(msg, headers, buffer);
-            }, (error) => {
-              this.fireError(error);
-              throw error;
-            });
-          });
-        }
-        async doWrite(msg, headers, data) {
-          try {
-            await this.writable.write(headers.join(""), "ascii");
-            return this.writable.write(data);
-          } catch (error) {
-            this.handleError(error, msg);
-            return Promise.reject(error);
-          }
-        }
-        handleError(error, msg) {
-          this.errorCount++;
-          this.fireError(error, msg, this.errorCount);
-        }
-        end() {
-          this.writable.end();
-        }
-      };
-      exports2.WriteableStreamMessageWriter = WriteableStreamMessageWriter;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/messageBuffer.js
-  var require_messageBuffer2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/messageBuffer.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.AbstractMessageBuffer = void 0;
-      var CR = 13;
-      var LF = 10;
-      var CRLF = "\r\n";
-      var AbstractMessageBuffer = class {
-        constructor(encoding = "utf-8") {
-          this._encoding = encoding;
-          this._chunks = [];
-          this._totalLength = 0;
-        }
-        get encoding() {
-          return this._encoding;
-        }
-        append(chunk) {
-          const toAppend = typeof chunk === "string" ? this.fromString(chunk, this._encoding) : chunk;
-          this._chunks.push(toAppend);
-          this._totalLength += toAppend.byteLength;
-        }
-        tryReadHeaders(lowerCaseKeys = false) {
-          if (this._chunks.length === 0) {
-            return void 0;
-          }
-          let state = 0;
-          let chunkIndex = 0;
-          let offset = 0;
-          let chunkBytesRead = 0;
-          row:
-            while (chunkIndex < this._chunks.length) {
-              const chunk = this._chunks[chunkIndex];
-              offset = 0;
-              column:
-                while (offset < chunk.length) {
-                  const value = chunk[offset];
-                  switch (value) {
-                    case CR:
-                      switch (state) {
-                        case 0:
-                          state = 1;
-                          break;
-                        case 2:
-                          state = 3;
-                          break;
-                        default:
-                          state = 0;
-                      }
-                      break;
-                    case LF:
-                      switch (state) {
-                        case 1:
-                          state = 2;
-                          break;
-                        case 3:
-                          state = 4;
-                          offset++;
-                          break row;
-                        default:
-                          state = 0;
-                      }
-                      break;
-                    default:
-                      state = 0;
-                  }
-                  offset++;
-                }
-              chunkBytesRead += chunk.byteLength;
-              chunkIndex++;
-            }
-          if (state !== 4) {
-            return void 0;
-          }
-          const buffer = this._read(chunkBytesRead + offset);
-          const result = /* @__PURE__ */ new Map();
-          const headers = this.toString(buffer, "ascii").split(CRLF);
-          if (headers.length < 2) {
-            return result;
-          }
-          for (let i = 0; i < headers.length - 2; i++) {
-            const header = headers[i];
-            const index = header.indexOf(":");
-            if (index === -1) {
-              throw new Error("Message header must separate key and value using :");
-            }
-            const key = header.substr(0, index);
-            const value = header.substr(index + 1).trim();
-            result.set(lowerCaseKeys ? key.toLowerCase() : key, value);
-          }
-          return result;
-        }
-        tryReadBody(length) {
-          if (this._totalLength < length) {
-            return void 0;
-          }
-          return this._read(length);
-        }
-        get numberOfBytes() {
-          return this._totalLength;
-        }
-        _read(byteCount) {
-          if (byteCount === 0) {
-            return this.emptyBuffer();
-          }
-          if (byteCount > this._totalLength) {
-            throw new Error(`Cannot read so many bytes!`);
-          }
-          if (this._chunks[0].byteLength === byteCount) {
-            const chunk = this._chunks[0];
-            this._chunks.shift();
-            this._totalLength -= byteCount;
-            return this.asNative(chunk);
-          }
-          if (this._chunks[0].byteLength > byteCount) {
-            const chunk = this._chunks[0];
-            const result2 = this.asNative(chunk, byteCount);
-            this._chunks[0] = chunk.slice(byteCount);
-            this._totalLength -= byteCount;
-            return result2;
-          }
-          const result = this.allocNative(byteCount);
-          let resultOffset = 0;
-          let chunkIndex = 0;
-          while (byteCount > 0) {
-            const chunk = this._chunks[chunkIndex];
-            if (chunk.byteLength > byteCount) {
-              const chunkPart = chunk.slice(0, byteCount);
-              result.set(chunkPart, resultOffset);
-              resultOffset += byteCount;
-              this._chunks[chunkIndex] = chunk.slice(byteCount);
-              this._totalLength -= byteCount;
-              byteCount -= byteCount;
-            } else {
-              result.set(chunk, resultOffset);
-              resultOffset += chunk.byteLength;
-              this._chunks.shift();
-              this._totalLength -= chunk.byteLength;
-              byteCount -= chunk.byteLength;
-            }
-          }
-          return result;
-        }
-      };
-      exports2.AbstractMessageBuffer = AbstractMessageBuffer;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/connection.js
-  var require_connection3 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/connection.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.createMessageConnection = exports2.ConnectionOptions = exports2.MessageStrategy = exports2.CancellationStrategy = exports2.CancellationSenderStrategy = exports2.CancellationReceiverStrategy = exports2.RequestCancellationReceiverStrategy = exports2.IdCancellationReceiverStrategy = exports2.ConnectionStrategy = exports2.ConnectionError = exports2.ConnectionErrors = exports2.LogTraceNotification = exports2.SetTraceNotification = exports2.TraceFormat = exports2.TraceValues = exports2.Trace = exports2.NullLogger = exports2.ProgressType = exports2.ProgressToken = void 0;
-      var ral_1 = require_ral2();
-      var Is = require_is4();
-      var messages_1 = require_messages3();
-      var linkedMap_1 = require_linkedMap2();
-      var events_1 = require_events2();
-      var cancellation_1 = require_cancellation2();
-      var CancelNotification;
-      (function(CancelNotification2) {
-        CancelNotification2.type = new messages_1.NotificationType("$/cancelRequest");
-      })(CancelNotification || (CancelNotification = {}));
-      var ProgressToken;
-      (function(ProgressToken2) {
-        function is(value) {
-          return typeof value === "string" || typeof value === "number";
-        }
-        ProgressToken2.is = is;
-      })(ProgressToken = exports2.ProgressToken || (exports2.ProgressToken = {}));
-      var ProgressNotification;
-      (function(ProgressNotification2) {
-        ProgressNotification2.type = new messages_1.NotificationType("$/progress");
-      })(ProgressNotification || (ProgressNotification = {}));
-      var ProgressType = class {
-        constructor() {
-        }
-      };
-      exports2.ProgressType = ProgressType;
-      var StarRequestHandler;
-      (function(StarRequestHandler2) {
-        function is(value) {
-          return Is.func(value);
-        }
-        StarRequestHandler2.is = is;
-      })(StarRequestHandler || (StarRequestHandler = {}));
-      exports2.NullLogger = Object.freeze({
-        error: () => {
-        },
-        warn: () => {
-        },
-        info: () => {
-        },
-        log: () => {
-        }
-      });
-      var Trace;
-      (function(Trace2) {
-        Trace2[Trace2["Off"] = 0] = "Off";
-        Trace2[Trace2["Messages"] = 1] = "Messages";
-        Trace2[Trace2["Compact"] = 2] = "Compact";
-        Trace2[Trace2["Verbose"] = 3] = "Verbose";
-      })(Trace = exports2.Trace || (exports2.Trace = {}));
-      var TraceValues;
-      (function(TraceValues2) {
-        TraceValues2.Off = "off";
-        TraceValues2.Messages = "messages";
-        TraceValues2.Compact = "compact";
-        TraceValues2.Verbose = "verbose";
-      })(TraceValues = exports2.TraceValues || (exports2.TraceValues = {}));
-      (function(Trace2) {
-        function fromString(value) {
-          if (!Is.string(value)) {
-            return Trace2.Off;
-          }
-          value = value.toLowerCase();
-          switch (value) {
-            case "off":
-              return Trace2.Off;
-            case "messages":
-              return Trace2.Messages;
-            case "compact":
-              return Trace2.Compact;
-            case "verbose":
-              return Trace2.Verbose;
-            default:
-              return Trace2.Off;
+          if (this.outerScope) {
+            return this.outerScope.getElement(name);
           }
-        }
-        Trace2.fromString = fromString;
-        function toString(value) {
-          switch (value) {
-            case Trace2.Off:
-              return "off";
-            case Trace2.Messages:
-              return "messages";
-            case Trace2.Compact:
-              return "compact";
-            case Trace2.Verbose:
-              return "verbose";
-            default:
-              return "off";
-          }
-        }
-        Trace2.toString = toString;
-      })(Trace = exports2.Trace || (exports2.Trace = {}));
-      var TraceFormat;
-      (function(TraceFormat2) {
-        TraceFormat2["Text"] = "text";
-        TraceFormat2["JSON"] = "json";
-      })(TraceFormat = exports2.TraceFormat || (exports2.TraceFormat = {}));
-      (function(TraceFormat2) {
-        function fromString(value) {
-          if (!Is.string(value)) {
-            return TraceFormat2.Text;
-          }
-          value = value.toLowerCase();
-          if (value === "json") {
-            return TraceFormat2.JSON;
-          } else {
-            return TraceFormat2.Text;
-          }
-        }
-        TraceFormat2.fromString = fromString;
-      })(TraceFormat = exports2.TraceFormat || (exports2.TraceFormat = {}));
-      var SetTraceNotification;
-      (function(SetTraceNotification2) {
-        SetTraceNotification2.type = new messages_1.NotificationType("$/setTrace");
-      })(SetTraceNotification = exports2.SetTraceNotification || (exports2.SetTraceNotification = {}));
-      var LogTraceNotification;
-      (function(LogTraceNotification2) {
-        LogTraceNotification2.type = new messages_1.NotificationType("$/logTrace");
-      })(LogTraceNotification = exports2.LogTraceNotification || (exports2.LogTraceNotification = {}));
-      var ConnectionErrors;
-      (function(ConnectionErrors2) {
-        ConnectionErrors2[ConnectionErrors2["Closed"] = 1] = "Closed";
-        ConnectionErrors2[ConnectionErrors2["Disposed"] = 2] = "Disposed";
-        ConnectionErrors2[ConnectionErrors2["AlreadyListening"] = 3] = "AlreadyListening";
-      })(ConnectionErrors = exports2.ConnectionErrors || (exports2.ConnectionErrors = {}));
-      var ConnectionError = class extends Error {
-        constructor(code, message) {
-          super(message);
-          this.code = code;
-          Object.setPrototypeOf(this, ConnectionError.prototype);
-        }
-      };
-      exports2.ConnectionError = ConnectionError;
-      var ConnectionStrategy;
-      (function(ConnectionStrategy2) {
-        function is(value) {
-          const candidate = value;
-          return candidate && Is.func(candidate.cancelUndispatched);
-        }
-        ConnectionStrategy2.is = is;
-      })(ConnectionStrategy = exports2.ConnectionStrategy || (exports2.ConnectionStrategy = {}));
-      var IdCancellationReceiverStrategy;
-      (function(IdCancellationReceiverStrategy2) {
-        function is(value) {
-          const candidate = value;
-          return candidate && (candidate.kind === void 0 || candidate.kind === "id") && Is.func(candidate.createCancellationTokenSource) && (candidate.dispose === void 0 || Is.func(candidate.dispose));
-        }
-        IdCancellationReceiverStrategy2.is = is;
-      })(IdCancellationReceiverStrategy = exports2.IdCancellationReceiverStrategy || (exports2.IdCancellationReceiverStrategy = {}));
-      var RequestCancellationReceiverStrategy;
-      (function(RequestCancellationReceiverStrategy2) {
-        function is(value) {
-          const candidate = value;
-          return candidate && candidate.kind === "request" && Is.func(candidate.createCancellationTokenSource) && (candidate.dispose === void 0 || Is.func(candidate.dispose));
-        }
-        RequestCancellationReceiverStrategy2.is = is;
-      })(RequestCancellationReceiverStrategy = exports2.RequestCancellationReceiverStrategy || (exports2.RequestCancellationReceiverStrategy = {}));
-      var CancellationReceiverStrategy;
-      (function(CancellationReceiverStrategy2) {
-        CancellationReceiverStrategy2.Message = Object.freeze({
-          createCancellationTokenSource(_) {
-            return new cancellation_1.CancellationTokenSource();
-          }
-        });
-        function is(value) {
-          return IdCancellationReceiverStrategy.is(value) || RequestCancellationReceiverStrategy.is(value);
-        }
-        CancellationReceiverStrategy2.is = is;
-      })(CancellationReceiverStrategy = exports2.CancellationReceiverStrategy || (exports2.CancellationReceiverStrategy = {}));
-      var CancellationSenderStrategy;
-      (function(CancellationSenderStrategy2) {
-        CancellationSenderStrategy2.Message = Object.freeze({
-          sendCancellation(conn, id) {
-            return conn.sendNotification(CancelNotification.type, { id });
-          },
-          cleanup(_) {
-          }
-        });
-        function is(value) {
-          const candidate = value;
-          return candidate && Is.func(candidate.sendCancellation) && Is.func(candidate.cleanup);
-        }
-        CancellationSenderStrategy2.is = is;
-      })(CancellationSenderStrategy = exports2.CancellationSenderStrategy || (exports2.CancellationSenderStrategy = {}));
-      var CancellationStrategy;
-      (function(CancellationStrategy2) {
-        CancellationStrategy2.Message = Object.freeze({
-          receiver: CancellationReceiverStrategy.Message,
-          sender: CancellationSenderStrategy.Message
-        });
-        function is(value) {
-          const candidate = value;
-          return candidate && CancellationReceiverStrategy.is(candidate.receiver) && CancellationSenderStrategy.is(candidate.sender);
-        }
-        CancellationStrategy2.is = is;
-      })(CancellationStrategy = exports2.CancellationStrategy || (exports2.CancellationStrategy = {}));
-      var MessageStrategy;
-      (function(MessageStrategy2) {
-        function is(value) {
-          const candidate = value;
-          return candidate && Is.func(candidate.handleMessage);
-        }
-        MessageStrategy2.is = is;
-      })(MessageStrategy = exports2.MessageStrategy || (exports2.MessageStrategy = {}));
-      var ConnectionOptions;
-      (function(ConnectionOptions2) {
-        function is(value) {
-          const candidate = value;
-          return candidate && (CancellationStrategy.is(candidate.cancellationStrategy) || ConnectionStrategy.is(candidate.connectionStrategy) || MessageStrategy.is(candidate.messageStrategy));
-        }
-        ConnectionOptions2.is = is;
-      })(ConnectionOptions = exports2.ConnectionOptions || (exports2.ConnectionOptions = {}));
-      var ConnectionState;
-      (function(ConnectionState2) {
-        ConnectionState2[ConnectionState2["New"] = 1] = "New";
-        ConnectionState2[ConnectionState2["Listening"] = 2] = "Listening";
-        ConnectionState2[ConnectionState2["Closed"] = 3] = "Closed";
-        ConnectionState2[ConnectionState2["Disposed"] = 4] = "Disposed";
-      })(ConnectionState || (ConnectionState = {}));
-      function createMessageConnection(messageReader2, messageWriter2, _logger, options) {
-        const logger = _logger !== void 0 ? _logger : exports2.NullLogger;
-        let sequenceNumber = 0;
-        let notificationSequenceNumber = 0;
-        let unknownResponseSequenceNumber = 0;
-        const version = "2.0";
-        let starRequestHandler = void 0;
-        const requestHandlers = /* @__PURE__ */ new Map();
-        let starNotificationHandler = void 0;
-        const notificationHandlers = /* @__PURE__ */ new Map();
-        const progressHandlers = /* @__PURE__ */ new Map();
-        let timer;
-        let messageQueue = new linkedMap_1.LinkedMap();
-        let responsePromises = /* @__PURE__ */ new Map();
-        let knownCanceledRequests = /* @__PURE__ */ new Set();
-        let requestTokens = /* @__PURE__ */ new Map();
-        let trace = Trace.Off;
-        let traceFormat = TraceFormat.Text;
-        let tracer;
-        let state = ConnectionState.New;
-        const errorEmitter = new events_1.Emitter();
-        const closeEmitter = new events_1.Emitter();
-        const unhandledNotificationEmitter = new events_1.Emitter();
-        const unhandledProgressEmitter = new events_1.Emitter();
-        const disposeEmitter = new events_1.Emitter();
-        const cancellationStrategy = options && options.cancellationStrategy ? options.cancellationStrategy : CancellationStrategy.Message;
-        function createRequestQueueKey(id) {
-          if (id === null) {
-            throw new Error(`Can't send requests with id null since the response can't be correlated.`);
-          }
-          return "req-" + id.toString();
-        }
-        function createResponseQueueKey(id) {
-          if (id === null) {
-            return "res-unknown-" + (++unknownResponseSequenceNumber).toString();
-          } else {
-            return "res-" + id.toString();
-          }
-        }
-        function createNotificationQueueKey() {
-          return "not-" + (++notificationSequenceNumber).toString();
-        }
-        function addMessageToQueue(queue, message) {
-          if (messages_1.Message.isRequest(message)) {
-            queue.set(createRequestQueueKey(message.id), message);
-          } else if (messages_1.Message.isResponse(message)) {
-            queue.set(createResponseQueueKey(message.id), message);
-          } else {
-            queue.set(createNotificationQueueKey(), message);
-          }
-        }
-        function cancelUndispatched(_message) {
           return void 0;
         }
-        function isListening() {
-          return state === ConnectionState.Listening;
+      };
+      exports2.StreamScope = StreamScope;
+      var MapScope = class {
+        constructor(elements, outerScope, options) {
+          var _a;
+          this.elements = /* @__PURE__ */ new Map();
+          this.caseInsensitive = (_a = options === null || options === void 0 ? void 0 : options.caseInsensitive) !== null && _a !== void 0 ? _a : false;
+          for (const element of elements) {
+            const name = this.caseInsensitive ? element.name.toLowerCase() : element.name;
+            this.elements.set(name, element);
+          }
+          this.outerScope = outerScope;
         }
-        function isClosed() {
-          return state === ConnectionState.Closed;
+        getElement(name) {
+          const localName = this.caseInsensitive ? name.toLowerCase() : name;
+          const local = this.elements.get(localName);
+          if (local) {
+            return local;
+          }
+          if (this.outerScope) {
+            return this.outerScope.getElement(name);
+          }
+          return void 0;
         }
-        function isDisposed() {
-          return state === ConnectionState.Disposed;
-        }
-        function closeHandler() {
-          if (state === ConnectionState.New || state === ConnectionState.Listening) {
-            state = ConnectionState.Closed;
-            closeEmitter.fire(void 0);
+        getAllElements() {
+          let elementStream = (0, stream_1.stream)(this.elements.values());
+          if (this.outerScope) {
+            elementStream = elementStream.concat(this.outerScope.getAllElements());
           }
-        }
-        function readErrorHandler(error) {
-          errorEmitter.fire([error, void 0, void 0]);
-        }
-        function writeErrorHandler(data) {
-          errorEmitter.fire(data);
-        }
-        messageReader2.onClose(closeHandler);
-        messageReader2.onError(readErrorHandler);
-        messageWriter2.onClose(closeHandler);
-        messageWriter2.onError(writeErrorHandler);
-        function triggerMessageQueue() {
-          if (timer || messageQueue.size === 0) {
-            return;
-          }
-          timer = (0, ral_1.default)().timer.setImmediate(() => {
-            timer = void 0;
-            processMessageQueue();
-          });
-        }
-        function handleMessage(message) {
-          if (messages_1.Message.isRequest(message)) {
-            handleRequest(message);
-          } else if (messages_1.Message.isNotification(message)) {
-            handleNotification(message);
-          } else if (messages_1.Message.isResponse(message)) {
-            handleResponse(message);
-          } else {
-            handleInvalidMessage(message);
-          }
-        }
-        function processMessageQueue() {
-          if (messageQueue.size === 0) {
-            return;
-          }
-          const message = messageQueue.shift();
-          try {
-            const messageStrategy = options?.messageStrategy;
-            if (MessageStrategy.is(messageStrategy)) {
-              messageStrategy.handleMessage(message, handleMessage);
-            } else {
-              handleMessage(message);
-            }
-          } finally {
-            triggerMessageQueue();
-          }
-        }
-        const callback = (message) => {
-          try {
-            if (messages_1.Message.isNotification(message) && message.method === CancelNotification.type.method) {
-              const cancelId = message.params.id;
-              const key = createRequestQueueKey(cancelId);
-              const toCancel = messageQueue.get(key);
-              if (messages_1.Message.isRequest(toCancel)) {
-                const strategy = options?.connectionStrategy;
-                const response = strategy && strategy.cancelUndispatched ? strategy.cancelUndispatched(toCancel, cancelUndispatched) : cancelUndispatched(toCancel);
-                if (response && (response.error !== void 0 || response.result !== void 0)) {
-                  messageQueue.delete(key);
-                  requestTokens.delete(cancelId);
-                  response.id = toCancel.id;
-                  traceSendingResponse(response, message.method, Date.now());
-                  messageWriter2.write(response).catch(() => logger.error(`Sending response for canceled message failed.`));
-                  return;
-                }
-              }
-              const cancellationToken = requestTokens.get(cancelId);
-              if (cancellationToken !== void 0) {
-                cancellationToken.cancel();
-                traceReceivedNotification(message);
-                return;
-              } else {
-                knownCanceledRequests.add(cancelId);
-              }
-            }
-            addMessageToQueue(messageQueue, message);
-          } finally {
-            triggerMessageQueue();
-          }
-        };
-        function handleRequest(requestMessage) {
-          if (isDisposed()) {
-            return;
-          }
-          function reply(resultOrError, method, startTime2) {
-            const message = {
-              jsonrpc: version,
-              id: requestMessage.id
-            };
-            if (resultOrError instanceof messages_1.ResponseError) {
-              message.error = resultOrError.toJson();
-            } else {
-              message.result = resultOrError === void 0 ? null : resultOrError;
-            }
-            traceSendingResponse(message, method, startTime2);
-            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
-          }
-          function replyError(error, method, startTime2) {
-            const message = {
-              jsonrpc: version,
-              id: requestMessage.id,
-              error: error.toJson()
-            };
-            traceSendingResponse(message, method, startTime2);
-            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
-          }
-          function replySuccess(result, method, startTime2) {
-            if (result === void 0) {
-              result = null;
-            }
-            const message = {
-              jsonrpc: version,
-              id: requestMessage.id,
-              result
-            };
-            traceSendingResponse(message, method, startTime2);
-            messageWriter2.write(message).catch(() => logger.error(`Sending response failed.`));
-          }
-          traceReceivedRequest(requestMessage);
-          const element = requestHandlers.get(requestMessage.method);
-          let type;
-          let requestHandler;
-          if (element) {
-            type = element.type;
-            requestHandler = element.handler;
-          }
-          const startTime = Date.now();
-          if (requestHandler || starRequestHandler) {
-            const tokenKey = requestMessage.id ?? String(Date.now());
-            const cancellationSource = IdCancellationReceiverStrategy.is(cancellationStrategy.receiver) ? cancellationStrategy.receiver.createCancellationTokenSource(tokenKey) : cancellationStrategy.receiver.createCancellationTokenSource(requestMessage);
-            if (requestMessage.id !== null && knownCanceledRequests.has(requestMessage.id)) {
-              cancellationSource.cancel();
-            }
-            if (requestMessage.id !== null) {
-              requestTokens.set(tokenKey, cancellationSource);
-            }
-            try {
-              let handlerResult;
-              if (requestHandler) {
-                if (requestMessage.params === void 0) {
-                  if (type !== void 0 && type.numberOfParams !== 0) {
-                    replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InvalidParams, `Request ${requestMessage.method} defines ${type.numberOfParams} params but received none.`), requestMessage.method, startTime);
-                    return;
-                  }
-                  handlerResult = requestHandler(cancellationSource.token);
-                } else if (Array.isArray(requestMessage.params)) {
-                  if (type !== void 0 && type.parameterStructures === messages_1.ParameterStructures.byName) {
-                    replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InvalidParams, `Request ${requestMessage.method} defines parameters by name but received parameters by position`), requestMessage.method, startTime);
-                    return;
-                  }
-                  handlerResult = requestHandler(...requestMessage.params, cancellationSource.token);
-                } else {
-                  if (type !== void 0 && type.parameterStructures === messages_1.ParameterStructures.byPosition) {
-                    replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InvalidParams, `Request ${requestMessage.method} defines parameters by position but received parameters by name`), requestMessage.method, startTime);
-                    return;
-                  }
-                  handlerResult = requestHandler(requestMessage.params, cancellationSource.token);
-                }
-              } else if (starRequestHandler) {
-                handlerResult = starRequestHandler(requestMessage.method, requestMessage.params, cancellationSource.token);
-              }
-              const promise = handlerResult;
-              if (!handlerResult) {
-                requestTokens.delete(tokenKey);
-                replySuccess(handlerResult, requestMessage.method, startTime);
-              } else if (promise.then) {
-                promise.then((resultOrError) => {
-                  requestTokens.delete(tokenKey);
-                  reply(resultOrError, requestMessage.method, startTime);
-                }, (error) => {
-                  requestTokens.delete(tokenKey);
-                  if (error instanceof messages_1.ResponseError) {
-                    replyError(error, requestMessage.method, startTime);
-                  } else if (error && Is.string(error.message)) {
-                    replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed with message: ${error.message}`), requestMessage.method, startTime);
-                  } else {
-                    replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed unexpectedly without providing any details.`), requestMessage.method, startTime);
-                  }
-                });
-              } else {
-                requestTokens.delete(tokenKey);
-                reply(handlerResult, requestMessage.method, startTime);
-              }
-            } catch (error) {
-              requestTokens.delete(tokenKey);
-              if (error instanceof messages_1.ResponseError) {
-                reply(error, requestMessage.method, startTime);
-              } else if (error && Is.string(error.message)) {
-                replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed with message: ${error.message}`), requestMessage.method, startTime);
-              } else {
-                replyError(new messages_1.ResponseError(messages_1.ErrorCodes.InternalError, `Request ${requestMessage.method} failed unexpectedly without providing any details.`), requestMessage.method, startTime);
-              }
-            }
-          } else {
-            replyError(new messages_1.ResponseError(messages_1.ErrorCodes.MethodNotFound, `Unhandled method ${requestMessage.method}`), requestMessage.method, startTime);
-          }
-        }
-        function handleResponse(responseMessage) {
-          if (isDisposed()) {
-            return;
-          }
-          if (responseMessage.id === null) {
-            if (responseMessage.error) {
-              logger.error(`Received response message without id: Error is: 
-${JSON.stringify(responseMessage.error, void 0, 4)}`);
-            } else {
-              logger.error(`Received response message without id. No further error information provided.`);
-            }
-          } else {
-            const key = responseMessage.id;
-            const responsePromise = responsePromises.get(key);
-            traceReceivedResponse(responseMessage, responsePromise);
-            if (responsePromise !== void 0) {
-              responsePromises.delete(key);
-              try {
-                if (responseMessage.error) {
-                  const error = responseMessage.error;
-                  responsePromise.reject(new messages_1.ResponseError(error.code, error.message, error.data));
-                } else if (responseMessage.result !== void 0) {
-                  responsePromise.resolve(responseMessage.result);
-                } else {
-                  throw new Error("Should never happen.");
-                }
-              } catch (error) {
-                if (error.message) {
-                  logger.error(`Response handler '${responsePromise.method}' failed with message: ${error.message}`);
-                } else {
-                  logger.error(`Response handler '${responsePromise.method}' failed unexpectedly.`);
-                }
-              }
-            }
-          }
-        }
-        function handleNotification(message) {
-          if (isDisposed()) {
-            return;
-          }
-          let type = void 0;
-          let notificationHandler;
-          if (message.method === CancelNotification.type.method) {
-            const cancelId = message.params.id;
-            knownCanceledRequests.delete(cancelId);
-            traceReceivedNotification(message);
-            return;
-          } else {
-            const element = notificationHandlers.get(message.method);
-            if (element) {
-              notificationHandler = element.handler;
-              type = element.type;
-            }
-          }
-          if (notificationHandler || starNotificationHandler) {
-            try {
-              traceReceivedNotification(message);
-              if (notificationHandler) {
-                if (message.params === void 0) {
-                  if (type !== void 0) {
-                    if (type.numberOfParams !== 0 && type.parameterStructures !== messages_1.ParameterStructures.byName) {
-                      logger.error(`Notification ${message.method} defines ${type.numberOfParams} params but received none.`);
-                    }
-                  }
-                  notificationHandler();
-                } else if (Array.isArray(message.params)) {
-                  const params = message.params;
-                  if (message.method === ProgressNotification.type.method && params.length === 2 && ProgressToken.is(params[0])) {
-                    notificationHandler({ token: params[0], value: params[1] });
-                  } else {
-                    if (type !== void 0) {
-                      if (type.parameterStructures === messages_1.ParameterStructures.byName) {
-                        logger.error(`Notification ${message.method} defines parameters by name but received parameters by position`);
-                      }
-                      if (type.numberOfParams !== message.params.length) {
-                        logger.error(`Notification ${message.method} defines ${type.numberOfParams} params but received ${params.length} arguments`);
-                      }
-                    }
-                    notificationHandler(...params);
-                  }
-                } else {
-                  if (type !== void 0 && type.parameterStructures === messages_1.ParameterStructures.byPosition) {
-                    logger.error(`Notification ${message.method} defines parameters by position but received parameters by name`);
-                  }
-                  notificationHandler(message.params);
-                }
-              } else if (starNotificationHandler) {
-                starNotificationHandler(message.method, message.params);
-              }
-            } catch (error) {
-              if (error.message) {
-                logger.error(`Notification handler '${message.method}' failed with message: ${error.message}`);
-              } else {
-                logger.error(`Notification handler '${message.method}' failed unexpectedly.`);
-              }
-            }
-          } else {
-            unhandledNotificationEmitter.fire(message);
-          }
-        }
-        function handleInvalidMessage(message) {
-          if (!message) {
-            logger.error("Received empty message.");
-            return;
-          }
-          logger.error(`Received message which is neither a response nor a notification message:
-${JSON.stringify(message, null, 4)}`);
-          const responseMessage = message;
-          if (Is.string(responseMessage.id) || Is.number(responseMessage.id)) {
-            const key = responseMessage.id;
-            const responseHandler = responsePromises.get(key);
-            if (responseHandler) {
-              responseHandler.reject(new Error("The received response has neither a result nor an error property."));
-            }
-          }
-        }
-        function stringifyTrace(params) {
-          if (params === void 0 || params === null) {
-            return void 0;
-          }
-          switch (trace) {
-            case Trace.Verbose:
-              return JSON.stringify(params, null, 4);
-            case Trace.Compact:
-              return JSON.stringify(params);
-            default:
-              return void 0;
-          }
-        }
-        function traceSendingRequest(message) {
-          if (trace === Trace.Off || !tracer) {
-            return;
-          }
-          if (traceFormat === TraceFormat.Text) {
-            let data = void 0;
-            if ((trace === Trace.Verbose || trace === Trace.Compact) && message.params) {
-              data = `Params: ${stringifyTrace(message.params)}
-
-`;
-            }
-            tracer.log(`Sending request '${message.method} - (${message.id})'.`, data);
-          } else {
-            logLSPMessage("send-request", message);
-          }
-        }
-        function traceSendingNotification(message) {
-          if (trace === Trace.Off || !tracer) {
-            return;
-          }
-          if (traceFormat === TraceFormat.Text) {
-            let data = void 0;
-            if (trace === Trace.Verbose || trace === Trace.Compact) {
-              if (message.params) {
-                data = `Params: ${stringifyTrace(message.params)}
-
-`;
-              } else {
-                data = "No parameters provided.\n\n";
-              }
-            }
-            tracer.log(`Sending notification '${message.method}'.`, data);
-          } else {
-            logLSPMessage("send-notification", message);
-          }
-        }
-        function traceSendingResponse(message, method, startTime) {
-          if (trace === Trace.Off || !tracer) {
-            return;
-          }
-          if (traceFormat === TraceFormat.Text) {
-            let data = void 0;
-            if (trace === Trace.Verbose || trace === Trace.Compact) {
-              if (message.error && message.error.data) {
-                data = `Error data: ${stringifyTrace(message.error.data)}
-
-`;
-              } else {
-                if (message.result) {
-                  data = `Result: ${stringifyTrace(message.result)}
-
-`;
-                } else if (message.error === void 0) {
-                  data = "No result returned.\n\n";
-                }
-              }
-            }
-            tracer.log(`Sending response '${method} - (${message.id})'. Processing request took ${Date.now() - startTime}ms`, data);
-          } else {
-            logLSPMessage("send-response", message);
-          }
-        }
-        function traceReceivedRequest(message) {
-          if (trace === Trace.Off || !tracer) {
-            return;
-          }
-          if (traceFormat === TraceFormat.Text) {
-            let data = void 0;
-            if ((trace === Trace.Verbose || trace === Trace.Compact) && message.params) {
-              data = `Params: ${stringifyTrace(message.params)}
-
-`;
-            }
-            tracer.log(`Received request '${message.method} - (${message.id})'.`, data);
-          } else {
-            logLSPMessage("receive-request", message);
-          }
-        }
-        function traceReceivedNotification(message) {
-          if (trace === Trace.Off || !tracer || message.method === LogTraceNotification.type.method) {
-            return;
-          }
-          if (traceFormat === TraceFormat.Text) {
-            let data = void 0;
-            if (trace === Trace.Verbose || trace === Trace.Compact) {
-              if (message.params) {
-                data = `Params: ${stringifyTrace(message.params)}
-
-`;
-              } else {
-                data = "No parameters provided.\n\n";
-              }
-            }
-            tracer.log(`Received notification '${message.method}'.`, data);
-          } else {
-            logLSPMessage("receive-notification", message);
-          }
-        }
-        function traceReceivedResponse(message, responsePromise) {
-          if (trace === Trace.Off || !tracer) {
-            return;
-          }
-          if (traceFormat === TraceFormat.Text) {
-            let data = void 0;
-            if (trace === Trace.Verbose || trace === Trace.Compact) {
-              if (message.error && message.error.data) {
-                data = `Error data: ${stringifyTrace(message.error.data)}
-
-`;
-              } else {
-                if (message.result) {
-                  data = `Result: ${stringifyTrace(message.result)}
-
-`;
-                } else if (message.error === void 0) {
-                  data = "No result returned.\n\n";
-                }
-              }
-            }
-            if (responsePromise) {
-              const error = message.error ? ` Request failed: ${message.error.message} (${message.error.code}).` : "";
-              tracer.log(`Received response '${responsePromise.method} - (${message.id})' in ${Date.now() - responsePromise.timerStart}ms.${error}`, data);
-            } else {
-              tracer.log(`Received response ${message.id} without active response promise.`, data);
-            }
-          } else {
-            logLSPMessage("receive-response", message);
-          }
-        }
-        function logLSPMessage(type, message) {
-          if (!tracer || trace === Trace.Off) {
-            return;
-          }
-          const lspMessage = {
-            isLSPMessage: true,
-            type,
-            message,
-            timestamp: Date.now()
-          };
-          tracer.log(lspMessage);
-        }
-        function throwIfClosedOrDisposed() {
-          if (isClosed()) {
-            throw new ConnectionError(ConnectionErrors.Closed, "Connection is closed.");
-          }
-          if (isDisposed()) {
-            throw new ConnectionError(ConnectionErrors.Disposed, "Connection is disposed.");
-          }
-        }
-        function throwIfListening() {
-          if (isListening()) {
-            throw new ConnectionError(ConnectionErrors.AlreadyListening, "Connection is already listening");
-          }
-        }
-        function throwIfNotListening() {
-          if (!isListening()) {
-            throw new Error("Call listen() first.");
-          }
-        }
-        function undefinedToNull(param) {
-          if (param === void 0) {
-            return null;
-          } else {
-            return param;
-          }
-        }
-        function nullToUndefined(param) {
-          if (param === null) {
-            return void 0;
-          } else {
-            return param;
-          }
-        }
-        function isNamedParam(param) {
-          return param !== void 0 && param !== null && !Array.isArray(param) && typeof param === "object";
-        }
-        function computeSingleParam(parameterStructures, param) {
-          switch (parameterStructures) {
-            case messages_1.ParameterStructures.auto:
-              if (isNamedParam(param)) {
-                return nullToUndefined(param);
-              } else {
-                return [undefinedToNull(param)];
-              }
-            case messages_1.ParameterStructures.byName:
-              if (!isNamedParam(param)) {
-                throw new Error(`Received parameters by name but param is not an object literal.`);
-              }
-              return nullToUndefined(param);
-            case messages_1.ParameterStructures.byPosition:
-              return [undefinedToNull(param)];
-            default:
-              throw new Error(`Unknown parameter structure ${parameterStructures.toString()}`);
-          }
-        }
-        function computeMessageParams(type, params) {
-          let result;
-          const numberOfParams = type.numberOfParams;
-          switch (numberOfParams) {
-            case 0:
-              result = void 0;
-              break;
-            case 1:
-              result = computeSingleParam(type.parameterStructures, params[0]);
-              break;
-            default:
-              result = [];
-              for (let i = 0; i < params.length && i < numberOfParams; i++) {
-                result.push(undefinedToNull(params[i]));
-              }
-              if (params.length < numberOfParams) {
-                for (let i = params.length; i < numberOfParams; i++) {
-                  result.push(null);
-                }
-              }
-              break;
-          }
-          return result;
-        }
-        const connection2 = {
-          sendNotification: (type, ...args) => {
-            throwIfClosedOrDisposed();
-            let method;
-            let messageParams;
-            if (Is.string(type)) {
-              method = type;
-              const first = args[0];
-              let paramStart = 0;
-              let parameterStructures = messages_1.ParameterStructures.auto;
-              if (messages_1.ParameterStructures.is(first)) {
-                paramStart = 1;
-                parameterStructures = first;
-              }
-              let paramEnd = args.length;
-              const numberOfParams = paramEnd - paramStart;
-              switch (numberOfParams) {
-                case 0:
-                  messageParams = void 0;
-                  break;
-                case 1:
-                  messageParams = computeSingleParam(parameterStructures, args[paramStart]);
-                  break;
-                default:
-                  if (parameterStructures === messages_1.ParameterStructures.byName) {
-                    throw new Error(`Received ${numberOfParams} parameters for 'by Name' notification parameter structure.`);
-                  }
-                  messageParams = args.slice(paramStart, paramEnd).map((value) => undefinedToNull(value));
-                  break;
-              }
-            } else {
-              const params = args;
-              method = type.method;
-              messageParams = computeMessageParams(type, params);
-            }
-            const notificationMessage = {
-              jsonrpc: version,
-              method,
-              params: messageParams
-            };
-            traceSendingNotification(notificationMessage);
-            return messageWriter2.write(notificationMessage).catch((error) => {
-              logger.error(`Sending notification failed.`);
-              throw error;
-            });
-          },
-          onNotification: (type, handler) => {
-            throwIfClosedOrDisposed();
-            let method;
-            if (Is.func(type)) {
-              starNotificationHandler = type;
-            } else if (handler) {
-              if (Is.string(type)) {
-                method = type;
-                notificationHandlers.set(type, { type: void 0, handler });
-              } else {
-                method = type.method;
-                notificationHandlers.set(type.method, { type, handler });
-              }
-            }
-            return {
-              dispose: () => {
-                if (method !== void 0) {
-                  notificationHandlers.delete(method);
-                } else {
-                  starNotificationHandler = void 0;
-                }
-              }
-            };
-          },
-          onProgress: (_type, token, handler) => {
-            if (progressHandlers.has(token)) {
-              throw new Error(`Progress handler for token ${token} already registered`);
-            }
-            progressHandlers.set(token, handler);
-            return {
-              dispose: () => {
-                progressHandlers.delete(token);
-              }
-            };
-          },
-          sendProgress: (_type, token, value) => {
-            return connection2.sendNotification(ProgressNotification.type, { token, value });
-          },
-          onUnhandledProgress: unhandledProgressEmitter.event,
-          sendRequest: (type, ...args) => {
-            throwIfClosedOrDisposed();
-            throwIfNotListening();
-            let method;
-            let messageParams;
-            let token = void 0;
-            if (Is.string(type)) {
-              method = type;
-              const first = args[0];
-              const last = args[args.length - 1];
-              let paramStart = 0;
-              let parameterStructures = messages_1.ParameterStructures.auto;
-              if (messages_1.ParameterStructures.is(first)) {
-                paramStart = 1;
-                parameterStructures = first;
-              }
-              let paramEnd = args.length;
-              if (cancellation_1.CancellationToken.is(last)) {
-                paramEnd = paramEnd - 1;
-                token = last;
-              }
-              const numberOfParams = paramEnd - paramStart;
-              switch (numberOfParams) {
-                case 0:
-                  messageParams = void 0;
-                  break;
-                case 1:
-                  messageParams = computeSingleParam(parameterStructures, args[paramStart]);
-                  break;
-                default:
-                  if (parameterStructures === messages_1.ParameterStructures.byName) {
-                    throw new Error(`Received ${numberOfParams} parameters for 'by Name' request parameter structure.`);
-                  }
-                  messageParams = args.slice(paramStart, paramEnd).map((value) => undefinedToNull(value));
-                  break;
-              }
-            } else {
-              const params = args;
-              method = type.method;
-              messageParams = computeMessageParams(type, params);
-              const numberOfParams = type.numberOfParams;
-              token = cancellation_1.CancellationToken.is(params[numberOfParams]) ? params[numberOfParams] : void 0;
-            }
-            const id = sequenceNumber++;
-            let disposable;
-            if (token) {
-              disposable = token.onCancellationRequested(() => {
-                const p = cancellationStrategy.sender.sendCancellation(connection2, id);
-                if (p === void 0) {
-                  logger.log(`Received no promise from cancellation strategy when cancelling id ${id}`);
-                  return Promise.resolve();
-                } else {
-                  return p.catch(() => {
-                    logger.log(`Sending cancellation messages for id ${id} failed`);
-                  });
-                }
-              });
-            }
-            const requestMessage = {
-              jsonrpc: version,
-              id,
-              method,
-              params: messageParams
-            };
-            traceSendingRequest(requestMessage);
-            if (typeof cancellationStrategy.sender.enableCancellation === "function") {
-              cancellationStrategy.sender.enableCancellation(requestMessage);
-            }
-            return new Promise(async (resolve, reject) => {
-              const resolveWithCleanup = (r) => {
-                resolve(r);
-                cancellationStrategy.sender.cleanup(id);
-                disposable?.dispose();
-              };
-              const rejectWithCleanup = (r) => {
-                reject(r);
-                cancellationStrategy.sender.cleanup(id);
-                disposable?.dispose();
-              };
-              const responsePromise = { method, timerStart: Date.now(), resolve: resolveWithCleanup, reject: rejectWithCleanup };
-              try {
-                await messageWriter2.write(requestMessage);
-                responsePromises.set(id, responsePromise);
-              } catch (error) {
-                logger.error(`Sending request failed.`);
-                responsePromise.reject(new messages_1.ResponseError(messages_1.ErrorCodes.MessageWriteError, error.message ? error.message : "Unknown reason"));
-                throw error;
-              }
-            });
-          },
-          onRequest: (type, handler) => {
-            throwIfClosedOrDisposed();
-            let method = null;
-            if (StarRequestHandler.is(type)) {
-              method = void 0;
-              starRequestHandler = type;
-            } else if (Is.string(type)) {
-              method = null;
-              if (handler !== void 0) {
-                method = type;
-                requestHandlers.set(type, { handler, type: void 0 });
-              }
-            } else {
-              if (handler !== void 0) {
-                method = type.method;
-                requestHandlers.set(type.method, { type, handler });
-              }
-            }
-            return {
-              dispose: () => {
-                if (method === null) {
-                  return;
-                }
-                if (method !== void 0) {
-                  requestHandlers.delete(method);
-                } else {
-                  starRequestHandler = void 0;
-                }
-              }
-            };
-          },
-          hasPendingResponse: () => {
-            return responsePromises.size > 0;
-          },
-          trace: async (_value, _tracer, sendNotificationOrTraceOptions) => {
-            let _sendNotification = false;
-            let _traceFormat = TraceFormat.Text;
-            if (sendNotificationOrTraceOptions !== void 0) {
-              if (Is.boolean(sendNotificationOrTraceOptions)) {
-                _sendNotification = sendNotificationOrTraceOptions;
-              } else {
-                _sendNotification = sendNotificationOrTraceOptions.sendNotification || false;
-                _traceFormat = sendNotificationOrTraceOptions.traceFormat || TraceFormat.Text;
-              }
-            }
-            trace = _value;
-            traceFormat = _traceFormat;
-            if (trace === Trace.Off) {
-              tracer = void 0;
-            } else {
-              tracer = _tracer;
-            }
-            if (_sendNotification && !isClosed() && !isDisposed()) {
-              await connection2.sendNotification(SetTraceNotification.type, { value: Trace.toString(_value) });
-            }
-          },
-          onError: errorEmitter.event,
-          onClose: closeEmitter.event,
-          onUnhandledNotification: unhandledNotificationEmitter.event,
-          onDispose: disposeEmitter.event,
-          end: () => {
-            messageWriter2.end();
-          },
-          dispose: () => {
-            if (isDisposed()) {
-              return;
-            }
-            state = ConnectionState.Disposed;
-            disposeEmitter.fire(void 0);
-            const error = new messages_1.ResponseError(messages_1.ErrorCodes.PendingResponseRejected, "Pending response rejected since connection got disposed");
-            for (const promise of responsePromises.values()) {
-              promise.reject(error);
-            }
-            responsePromises = /* @__PURE__ */ new Map();
-            requestTokens = /* @__PURE__ */ new Map();
-            knownCanceledRequests = /* @__PURE__ */ new Set();
-            messageQueue = new linkedMap_1.LinkedMap();
-            if (Is.func(messageWriter2.dispose)) {
-              messageWriter2.dispose();
-            }
-            if (Is.func(messageReader2.dispose)) {
-              messageReader2.dispose();
-            }
-          },
-          listen: () => {
-            throwIfClosedOrDisposed();
-            throwIfListening();
-            state = ConnectionState.Listening;
-            messageReader2.listen(callback);
-          },
-          inspect: () => {
-            (0, ral_1.default)().console.log("inspect");
-          }
-        };
-        connection2.onNotification(LogTraceNotification.type, (params) => {
-          if (trace === Trace.Off || !tracer) {
-            return;
-          }
-          const verbose = trace === Trace.Verbose || trace === Trace.Compact;
-          tracer.log(params.message, verbose ? params.verbose : void 0);
-        });
-        connection2.onNotification(ProgressNotification.type, (params) => {
-          const handler = progressHandlers.get(params.token);
-          if (handler) {
-            handler(params.value);
-          } else {
-            unhandledProgressEmitter.fire(params);
-          }
-        });
-        return connection2;
-      }
-      exports2.createMessageConnection = createMessageConnection;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/common/api.js
-  var require_api4 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/common/api.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.ProgressType = exports2.ProgressToken = exports2.createMessageConnection = exports2.NullLogger = exports2.ConnectionOptions = exports2.ConnectionStrategy = exports2.AbstractMessageBuffer = exports2.WriteableStreamMessageWriter = exports2.AbstractMessageWriter = exports2.MessageWriter = exports2.ReadableStreamMessageReader = exports2.AbstractMessageReader = exports2.MessageReader = exports2.SharedArrayReceiverStrategy = exports2.SharedArraySenderStrategy = exports2.CancellationToken = exports2.CancellationTokenSource = exports2.Emitter = exports2.Event = exports2.Disposable = exports2.LRUCache = exports2.Touch = exports2.LinkedMap = exports2.ParameterStructures = exports2.NotificationType9 = exports2.NotificationType8 = exports2.NotificationType7 = exports2.NotificationType6 = exports2.NotificationType5 = exports2.NotificationType4 = exports2.NotificationType3 = exports2.NotificationType2 = exports2.NotificationType1 = exports2.NotificationType0 = exports2.NotificationType = exports2.ErrorCodes = exports2.ResponseError = exports2.RequestType9 = exports2.RequestType8 = exports2.RequestType7 = exports2.RequestType6 = exports2.RequestType5 = exports2.RequestType4 = exports2.RequestType3 = exports2.RequestType2 = exports2.RequestType1 = exports2.RequestType0 = exports2.RequestType = exports2.Message = exports2.RAL = void 0;
-      exports2.MessageStrategy = exports2.CancellationStrategy = exports2.CancellationSenderStrategy = exports2.CancellationReceiverStrategy = exports2.ConnectionError = exports2.ConnectionErrors = exports2.LogTraceNotification = exports2.SetTraceNotification = exports2.TraceFormat = exports2.TraceValues = exports2.Trace = void 0;
-      var messages_1 = require_messages3();
-      Object.defineProperty(exports2, "Message", { enumerable: true, get: function() {
-        return messages_1.Message;
-      } });
-      Object.defineProperty(exports2, "RequestType", { enumerable: true, get: function() {
-        return messages_1.RequestType;
-      } });
-      Object.defineProperty(exports2, "RequestType0", { enumerable: true, get: function() {
-        return messages_1.RequestType0;
-      } });
-      Object.defineProperty(exports2, "RequestType1", { enumerable: true, get: function() {
-        return messages_1.RequestType1;
-      } });
-      Object.defineProperty(exports2, "RequestType2", { enumerable: true, get: function() {
-        return messages_1.RequestType2;
-      } });
-      Object.defineProperty(exports2, "RequestType3", { enumerable: true, get: function() {
-        return messages_1.RequestType3;
-      } });
-      Object.defineProperty(exports2, "RequestType4", { enumerable: true, get: function() {
-        return messages_1.RequestType4;
-      } });
-      Object.defineProperty(exports2, "RequestType5", { enumerable: true, get: function() {
-        return messages_1.RequestType5;
-      } });
-      Object.defineProperty(exports2, "RequestType6", { enumerable: true, get: function() {
-        return messages_1.RequestType6;
-      } });
-      Object.defineProperty(exports2, "RequestType7", { enumerable: true, get: function() {
-        return messages_1.RequestType7;
-      } });
-      Object.defineProperty(exports2, "RequestType8", { enumerable: true, get: function() {
-        return messages_1.RequestType8;
-      } });
-      Object.defineProperty(exports2, "RequestType9", { enumerable: true, get: function() {
-        return messages_1.RequestType9;
-      } });
-      Object.defineProperty(exports2, "ResponseError", { enumerable: true, get: function() {
-        return messages_1.ResponseError;
-      } });
-      Object.defineProperty(exports2, "ErrorCodes", { enumerable: true, get: function() {
-        return messages_1.ErrorCodes;
-      } });
-      Object.defineProperty(exports2, "NotificationType", { enumerable: true, get: function() {
-        return messages_1.NotificationType;
-      } });
-      Object.defineProperty(exports2, "NotificationType0", { enumerable: true, get: function() {
-        return messages_1.NotificationType0;
-      } });
-      Object.defineProperty(exports2, "NotificationType1", { enumerable: true, get: function() {
-        return messages_1.NotificationType1;
-      } });
-      Object.defineProperty(exports2, "NotificationType2", { enumerable: true, get: function() {
-        return messages_1.NotificationType2;
-      } });
-      Object.defineProperty(exports2, "NotificationType3", { enumerable: true, get: function() {
-        return messages_1.NotificationType3;
-      } });
-      Object.defineProperty(exports2, "NotificationType4", { enumerable: true, get: function() {
-        return messages_1.NotificationType4;
-      } });
-      Object.defineProperty(exports2, "NotificationType5", { enumerable: true, get: function() {
-        return messages_1.NotificationType5;
-      } });
-      Object.defineProperty(exports2, "NotificationType6", { enumerable: true, get: function() {
-        return messages_1.NotificationType6;
-      } });
-      Object.defineProperty(exports2, "NotificationType7", { enumerable: true, get: function() {
-        return messages_1.NotificationType7;
-      } });
-      Object.defineProperty(exports2, "NotificationType8", { enumerable: true, get: function() {
-        return messages_1.NotificationType8;
-      } });
-      Object.defineProperty(exports2, "NotificationType9", { enumerable: true, get: function() {
-        return messages_1.NotificationType9;
-      } });
-      Object.defineProperty(exports2, "ParameterStructures", { enumerable: true, get: function() {
-        return messages_1.ParameterStructures;
-      } });
-      var linkedMap_1 = require_linkedMap2();
-      Object.defineProperty(exports2, "LinkedMap", { enumerable: true, get: function() {
-        return linkedMap_1.LinkedMap;
-      } });
-      Object.defineProperty(exports2, "LRUCache", { enumerable: true, get: function() {
-        return linkedMap_1.LRUCache;
-      } });
-      Object.defineProperty(exports2, "Touch", { enumerable: true, get: function() {
-        return linkedMap_1.Touch;
-      } });
-      var disposable_1 = require_disposable2();
-      Object.defineProperty(exports2, "Disposable", { enumerable: true, get: function() {
-        return disposable_1.Disposable;
-      } });
-      var events_1 = require_events2();
-      Object.defineProperty(exports2, "Event", { enumerable: true, get: function() {
-        return events_1.Event;
-      } });
-      Object.defineProperty(exports2, "Emitter", { enumerable: true, get: function() {
-        return events_1.Emitter;
-      } });
-      var cancellation_1 = require_cancellation2();
-      Object.defineProperty(exports2, "CancellationTokenSource", { enumerable: true, get: function() {
-        return cancellation_1.CancellationTokenSource;
-      } });
-      Object.defineProperty(exports2, "CancellationToken", { enumerable: true, get: function() {
-        return cancellation_1.CancellationToken;
-      } });
-      var sharedArrayCancellation_1 = require_sharedArrayCancellation();
-      Object.defineProperty(exports2, "SharedArraySenderStrategy", { enumerable: true, get: function() {
-        return sharedArrayCancellation_1.SharedArraySenderStrategy;
-      } });
-      Object.defineProperty(exports2, "SharedArrayReceiverStrategy", { enumerable: true, get: function() {
-        return sharedArrayCancellation_1.SharedArrayReceiverStrategy;
-      } });
-      var messageReader_1 = require_messageReader2();
-      Object.defineProperty(exports2, "MessageReader", { enumerable: true, get: function() {
-        return messageReader_1.MessageReader;
-      } });
-      Object.defineProperty(exports2, "AbstractMessageReader", { enumerable: true, get: function() {
-        return messageReader_1.AbstractMessageReader;
-      } });
-      Object.defineProperty(exports2, "ReadableStreamMessageReader", { enumerable: true, get: function() {
-        return messageReader_1.ReadableStreamMessageReader;
-      } });
-      var messageWriter_1 = require_messageWriter2();
-      Object.defineProperty(exports2, "MessageWriter", { enumerable: true, get: function() {
-        return messageWriter_1.MessageWriter;
-      } });
-      Object.defineProperty(exports2, "AbstractMessageWriter", { enumerable: true, get: function() {
-        return messageWriter_1.AbstractMessageWriter;
-      } });
-      Object.defineProperty(exports2, "WriteableStreamMessageWriter", { enumerable: true, get: function() {
-        return messageWriter_1.WriteableStreamMessageWriter;
-      } });
-      var messageBuffer_1 = require_messageBuffer2();
-      Object.defineProperty(exports2, "AbstractMessageBuffer", { enumerable: true, get: function() {
-        return messageBuffer_1.AbstractMessageBuffer;
-      } });
-      var connection_1 = require_connection3();
-      Object.defineProperty(exports2, "ConnectionStrategy", { enumerable: true, get: function() {
-        return connection_1.ConnectionStrategy;
-      } });
-      Object.defineProperty(exports2, "ConnectionOptions", { enumerable: true, get: function() {
-        return connection_1.ConnectionOptions;
-      } });
-      Object.defineProperty(exports2, "NullLogger", { enumerable: true, get: function() {
-        return connection_1.NullLogger;
-      } });
-      Object.defineProperty(exports2, "createMessageConnection", { enumerable: true, get: function() {
-        return connection_1.createMessageConnection;
-      } });
-      Object.defineProperty(exports2, "ProgressToken", { enumerable: true, get: function() {
-        return connection_1.ProgressToken;
-      } });
-      Object.defineProperty(exports2, "ProgressType", { enumerable: true, get: function() {
-        return connection_1.ProgressType;
-      } });
-      Object.defineProperty(exports2, "Trace", { enumerable: true, get: function() {
-        return connection_1.Trace;
-      } });
-      Object.defineProperty(exports2, "TraceValues", { enumerable: true, get: function() {
-        return connection_1.TraceValues;
-      } });
-      Object.defineProperty(exports2, "TraceFormat", { enumerable: true, get: function() {
-        return connection_1.TraceFormat;
-      } });
-      Object.defineProperty(exports2, "SetTraceNotification", { enumerable: true, get: function() {
-        return connection_1.SetTraceNotification;
-      } });
-      Object.defineProperty(exports2, "LogTraceNotification", { enumerable: true, get: function() {
-        return connection_1.LogTraceNotification;
-      } });
-      Object.defineProperty(exports2, "ConnectionErrors", { enumerable: true, get: function() {
-        return connection_1.ConnectionErrors;
-      } });
-      Object.defineProperty(exports2, "ConnectionError", { enumerable: true, get: function() {
-        return connection_1.ConnectionError;
-      } });
-      Object.defineProperty(exports2, "CancellationReceiverStrategy", { enumerable: true, get: function() {
-        return connection_1.CancellationReceiverStrategy;
-      } });
-      Object.defineProperty(exports2, "CancellationSenderStrategy", { enumerable: true, get: function() {
-        return connection_1.CancellationSenderStrategy;
-      } });
-      Object.defineProperty(exports2, "CancellationStrategy", { enumerable: true, get: function() {
-        return connection_1.CancellationStrategy;
-      } });
-      Object.defineProperty(exports2, "MessageStrategy", { enumerable: true, get: function() {
-        return connection_1.MessageStrategy;
-      } });
-      var ral_1 = require_ral2();
-      exports2.RAL = ral_1.default;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/browser/ril.js
-  var require_ril2 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/browser/ril.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      var api_1 = require_api4();
-      var MessageBuffer = class extends api_1.AbstractMessageBuffer {
-        constructor(encoding = "utf-8") {
-          super(encoding);
-          this.asciiDecoder = new TextDecoder("ascii");
-        }
-        emptyBuffer() {
-          return MessageBuffer.emptyBuffer;
-        }
-        fromString(value, _encoding) {
-          return new TextEncoder().encode(value);
-        }
-        toString(value, encoding) {
-          if (encoding === "ascii") {
-            return this.asciiDecoder.decode(value);
-          } else {
-            return new TextDecoder(encoding).decode(value);
-          }
-        }
-        asNative(buffer, length) {
-          if (length === void 0) {
-            return buffer;
-          } else {
-            return buffer.slice(0, length);
-          }
-        }
-        allocNative(length) {
-          return new Uint8Array(length);
+          return elementStream;
         }
       };
-      MessageBuffer.emptyBuffer = new Uint8Array(0);
-      var ReadableStreamWrapper = class {
-        constructor(socket) {
-          this.socket = socket;
-          this._onData = new api_1.Emitter();
-          this._messageListener = (event) => {
-            const blob = event.data;
-            blob.arrayBuffer().then((buffer) => {
-              this._onData.fire(new Uint8Array(buffer));
-            }, () => {
-              (0, api_1.RAL)().console.error(`Converting blob to array buffer failed.`);
-            });
-          };
-          this.socket.addEventListener("message", this._messageListener);
-        }
-        onClose(listener) {
-          this.socket.addEventListener("close", listener);
-          return api_1.Disposable.create(() => this.socket.removeEventListener("close", listener));
-        }
-        onError(listener) {
-          this.socket.addEventListener("error", listener);
-          return api_1.Disposable.create(() => this.socket.removeEventListener("error", listener));
-        }
-        onEnd(listener) {
-          this.socket.addEventListener("end", listener);
-          return api_1.Disposable.create(() => this.socket.removeEventListener("end", listener));
-        }
-        onData(listener) {
-          return this._onData.event(listener);
+      exports2.MapScope = MapScope;
+      exports2.EMPTY_SCOPE = {
+        getElement() {
+          return void 0;
+        },
+        getAllElements() {
+          return stream_1.EMPTY_STREAM;
         }
       };
-      var WritableStreamWrapper = class {
-        constructor(socket) {
-          this.socket = socket;
-        }
-        onClose(listener) {
-          this.socket.addEventListener("close", listener);
-          return api_1.Disposable.create(() => this.socket.removeEventListener("close", listener));
-        }
-        onError(listener) {
-          this.socket.addEventListener("error", listener);
-          return api_1.Disposable.create(() => this.socket.removeEventListener("error", listener));
-        }
-        onEnd(listener) {
-          this.socket.addEventListener("end", listener);
-          return api_1.Disposable.create(() => this.socket.removeEventListener("end", listener));
-        }
-        write(data, encoding) {
-          if (typeof data === "string") {
-            if (encoding !== void 0 && encoding !== "utf-8") {
-              throw new Error(`In a Browser environments only utf-8 text encoding is supported. But got encoding: ${encoding}`);
-            }
-            this.socket.send(data);
-          } else {
-            this.socket.send(data);
-          }
-          return Promise.resolve();
-        }
-        end() {
-          this.socket.close();
-        }
-      };
-      var _textEncoder = new TextEncoder();
-      var _ril = Object.freeze({
-        messageBuffer: Object.freeze({
-          create: (encoding) => new MessageBuffer(encoding)
-        }),
-        applicationJson: Object.freeze({
-          encoder: Object.freeze({
-            name: "application/json",
-            encode: (msg, options) => {
-              if (options.charset !== "utf-8") {
-                throw new Error(`In a Browser environments only utf-8 text encoding is supported. But got encoding: ${options.charset}`);
-              }
-              return Promise.resolve(_textEncoder.encode(JSON.stringify(msg, void 0, 0)));
-            }
-          }),
-          decoder: Object.freeze({
-            name: "application/json",
-            decode: (buffer, options) => {
-              if (!(buffer instanceof Uint8Array)) {
-                throw new Error(`In a Browser environments only Uint8Arrays are supported.`);
-              }
-              return Promise.resolve(JSON.parse(new TextDecoder(options.charset).decode(buffer)));
-            }
-          })
-        }),
-        stream: Object.freeze({
-          asReadableStream: (socket) => new ReadableStreamWrapper(socket),
-          asWritableStream: (socket) => new WritableStreamWrapper(socket)
-        }),
-        console,
-        timer: Object.freeze({
-          setTimeout(callback, ms, ...args) {
-            const handle = setTimeout(callback, ms, ...args);
-            return { dispose: () => clearTimeout(handle) };
-          },
-          setImmediate(callback, ...args) {
-            const handle = setTimeout(callback, 0, ...args);
-            return { dispose: () => clearTimeout(handle) };
-          },
-          setInterval(callback, ms, ...args) {
-            const handle = setInterval(callback, ms, ...args);
-            return { dispose: () => clearInterval(handle) };
-          }
-        })
-      });
-      function RIL() {
-        return _ril;
-      }
-      (function(RIL2) {
-        function install() {
-          api_1.RAL.install(_ril);
-        }
-        RIL2.install = install;
-      })(RIL || (RIL = {}));
-      exports2.default = RIL;
-    }
-  });
-
-  // ../../node_modules/vscode-jsonrpc/lib/browser/main.js
-  var require_main6 = __commonJS({
-    "../../node_modules/vscode-jsonrpc/lib/browser/main.js"(exports2) {
-      "use strict";
-      var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-          desc = { enumerable: true, get: function() {
-            return m[k];
-          } };
-        }
-        Object.defineProperty(o, k2, desc);
-      } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        o[k2] = m[k];
-      });
-      var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
-            __createBinding(exports3, m, p);
-      };
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.createMessageConnection = exports2.BrowserMessageWriter = exports2.BrowserMessageReader = void 0;
-      var ril_1 = require_ril2();
-      ril_1.default.install();
-      var api_1 = require_api4();
-      __exportStar(require_api4(), exports2);
-      var BrowserMessageReader2 = class extends api_1.AbstractMessageReader {
-        constructor(port) {
-          super();
-          this._onData = new api_1.Emitter();
-          this._messageListener = (event) => {
-            this._onData.fire(event.data);
-          };
-          port.addEventListener("error", (event) => this.fireError(event));
-          port.onmessage = this._messageListener;
-        }
-        listen(callback) {
-          return this._onData.event(callback);
-        }
-      };
-      exports2.BrowserMessageReader = BrowserMessageReader2;
-      var BrowserMessageWriter2 = class extends api_1.AbstractMessageWriter {
-        constructor(port) {
-          super();
-          this.port = port;
-          this.errorCount = 0;
-          port.addEventListener("error", (event) => this.fireError(event));
-        }
-        write(msg) {
-          try {
-            this.port.postMessage(msg);
-            return Promise.resolve();
-          } catch (error) {
-            this.handleError(error, msg);
-            return Promise.reject(error);
-          }
-        }
-        handleError(error, msg) {
-          this.errorCount++;
-          this.fireError(error, msg, this.errorCount);
-        }
-        end() {
-        }
-      };
-      exports2.BrowserMessageWriter = BrowserMessageWriter2;
-      function createMessageConnection(reader, writer, logger, options) {
-        if (logger === void 0) {
-          logger = api_1.NullLogger;
-        }
-        if (api_1.ConnectionStrategy.is(options)) {
-          options = { connectionStrategy: options };
-        }
-        return (0, api_1.createMessageConnection)(reader, writer, logger, options);
-      }
-      exports2.createMessageConnection = createMessageConnection;
     }
   });
 
@@ -21335,7 +18449,7 @@ ${JSON.stringify(message, null, 4)}`);
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.Deferred = exports2.MutexLock = exports2.interruptAndCheck = exports2.isOperationCancelled = exports2.OperationCancelled = exports2.setInterruptionPeriod = exports2.startCancelableOperation = exports2.delayNextTick = void 0;
-      var vscode_jsonrpc_1 = require_main6();
+      var vscode_jsonrpc_1 = require_main();
       function delayNextTick() {
         return new Promise((resolve) => {
           if (typeof setImmediate === "undefined") {
@@ -21424,7 +18538,7 @@ ${JSON.stringify(message, null, 4)}`);
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.DefaultScopeComputation = void 0;
-      var vscode_jsonrpc_1 = require_main6();
+      var vscode_jsonrpc_1 = require_main();
       var ast_util_1 = require_ast_util();
       var collections_1 = require_collections();
       var promise_util_1 = require_promise_util();
@@ -21495,53 +18609,161 @@ ${JSON.stringify(message, null, 4)}`);
     }
   });
 
+  // ../../node_modules/langium/lib/utils/caching.js
+  var require_caching = __commonJS({
+    "../../node_modules/langium/lib/utils/caching.js"(exports2) {
+      "use strict";
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      exports2.WorkspaceCache = exports2.DocumentCache = exports2.ContextCache = exports2.SimpleCache = exports2.DisposableCache = void 0;
+      var DisposableCache = class {
+        constructor() {
+          this.toDispose = [];
+          this.isDisposed = false;
+        }
+        onDispose(disposable) {
+          this.toDispose.push(disposable);
+        }
+        dispose() {
+          this.throwIfDisposed();
+          this.clear();
+          this.isDisposed = true;
+          this.toDispose.forEach((disposable) => disposable.dispose());
+        }
+        throwIfDisposed() {
+          if (this.isDisposed) {
+            throw new Error("This cache has already been disposed");
+          }
+        }
+      };
+      exports2.DisposableCache = DisposableCache;
+      var SimpleCache = class extends DisposableCache {
+        constructor() {
+          super(...arguments);
+          this.cache = /* @__PURE__ */ new Map();
+        }
+        has(key) {
+          this.throwIfDisposed();
+          return this.cache.has(key);
+        }
+        set(key, value) {
+          this.throwIfDisposed();
+          this.cache.set(key, value);
+        }
+        get(key, provider) {
+          this.throwIfDisposed();
+          if (this.cache.has(key)) {
+            return this.cache.get(key);
+          } else if (provider) {
+            const value = provider();
+            this.cache.set(key, value);
+            return value;
+          } else {
+            return void 0;
+          }
+        }
+        delete(key) {
+          this.throwIfDisposed();
+          return this.cache.delete(key);
+        }
+        clear() {
+          this.throwIfDisposed();
+          this.cache.clear();
+        }
+      };
+      exports2.SimpleCache = SimpleCache;
+      var ContextCache = class extends DisposableCache {
+        constructor(converter) {
+          super();
+          this.cache = /* @__PURE__ */ new Map();
+          this.converter = converter !== null && converter !== void 0 ? converter : (value) => value;
+        }
+        has(contextKey, key) {
+          this.throwIfDisposed();
+          return this.cacheForContext(contextKey).has(key);
+        }
+        set(contextKey, key, value) {
+          this.throwIfDisposed();
+          this.cacheForContext(contextKey).set(key, value);
+        }
+        get(contextKey, key, provider) {
+          this.throwIfDisposed();
+          const contextCache = this.cacheForContext(contextKey);
+          if (contextCache.has(key)) {
+            return contextCache.get(key);
+          } else if (provider) {
+            const value = provider();
+            contextCache.set(key, value);
+            return value;
+          } else {
+            return void 0;
+          }
+        }
+        delete(contextKey, key) {
+          this.throwIfDisposed();
+          return this.cacheForContext(contextKey).delete(key);
+        }
+        clear(contextKey) {
+          this.throwIfDisposed();
+          if (contextKey) {
+            const mapKey = this.converter(contextKey);
+            this.cache.delete(mapKey);
+          } else {
+            this.cache.clear();
+          }
+        }
+        cacheForContext(contextKey) {
+          const mapKey = this.converter(contextKey);
+          let documentCache = this.cache.get(mapKey);
+          if (!documentCache) {
+            documentCache = /* @__PURE__ */ new Map();
+            this.cache.set(mapKey, documentCache);
+          }
+          return documentCache;
+        }
+      };
+      exports2.ContextCache = ContextCache;
+      var DocumentCache = class extends ContextCache {
+        constructor(sharedServices) {
+          super((uri) => uri.toString());
+          this.onDispose(sharedServices.workspace.DocumentBuilder.onUpdate((changed, deleted) => {
+            const allUris = changed.concat(deleted);
+            for (const uri of allUris) {
+              this.clear(uri);
+            }
+          }));
+        }
+      };
+      exports2.DocumentCache = DocumentCache;
+      var WorkspaceCache = class extends SimpleCache {
+        constructor(sharedServices) {
+          super();
+          this.onDispose(sharedServices.workspace.DocumentBuilder.onUpdate(() => {
+            this.clear();
+          }));
+        }
+      };
+      exports2.WorkspaceCache = WorkspaceCache;
+    }
+  });
+
   // ../../node_modules/langium/lib/references/scope-provider.js
   var require_scope_provider = __commonJS({
     "../../node_modules/langium/lib/references/scope-provider.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.DefaultScopeProvider = exports2.EMPTY_SCOPE = exports2.StreamScope = void 0;
+      exports2.DefaultScopeProvider = void 0;
+      var scope_1 = require_scope();
       var ast_util_1 = require_ast_util();
       var stream_1 = require_stream();
-      var StreamScope = class {
-        constructor(elements, outerScope, options) {
-          this.elements = elements;
-          this.outerScope = outerScope;
-          this.caseInsensitive = options === null || options === void 0 ? void 0 : options.caseInsensitive;
-        }
-        getAllElements() {
-          if (this.outerScope) {
-            return this.elements.concat(this.outerScope.getAllElements());
-          } else {
-            return this.elements;
-          }
-        }
-        getElement(name) {
-          const local = this.caseInsensitive ? this.elements.find((e) => e.name.toLowerCase() === name.toLowerCase()) : this.elements.find((e) => e.name === name);
-          if (local) {
-            return local;
-          }
-          if (this.outerScope) {
-            return this.outerScope.getElement(name);
-          }
-          return void 0;
-        }
-      };
-      exports2.StreamScope = StreamScope;
-      exports2.EMPTY_SCOPE = {
-        getElement() {
-          return void 0;
-        },
-        getAllElements() {
-          return stream_1.EMPTY_STREAM;
-        }
-      };
+      var scope_2 = require_scope();
+      var caching_1 = require_caching();
       var DefaultScopeProvider = class {
         constructor(services) {
           this.reflection = services.shared.AstReflection;
           this.nameProvider = services.references.NameProvider;
           this.descriptions = services.workspace.AstNodeDescriptionProvider;
           this.indexManager = services.shared.workspace.IndexManager;
+          this.globalScopeCache = new caching_1.WorkspaceCache(services.shared);
         }
         getScope(context) {
           const scopes = [];
@@ -21567,7 +18789,7 @@ ${JSON.stringify(message, null, 4)}`);
          * Create a scope for the given collection of AST node descriptions.
          */
         createScope(elements, outerScope, options) {
-          return new StreamScope((0, stream_1.stream)(elements), outerScope, options);
+          return new scope_2.StreamScope((0, stream_1.stream)(elements), outerScope, options);
         }
         /**
          * Create a scope for the given collection of AST nodes, which need to be transformed into respective
@@ -21581,45 +18803,16 @@ ${JSON.stringify(message, null, 4)}`);
             }
             return void 0;
           }).nonNullable();
-          return new StreamScope(s, outerScope, options);
+          return new scope_2.StreamScope(s, outerScope, options);
         }
         /**
          * Create a global scope filtered for the given reference type.
          */
         getGlobalScope(referenceType, _context) {
-          return new StreamScope(this.indexManager.allElements(referenceType));
+          return this.globalScopeCache.get(referenceType, () => new scope_1.MapScope(this.indexManager.allElements(referenceType)));
         }
       };
       exports2.DefaultScopeProvider = DefaultScopeProvider;
-    }
-  });
-
-  // ../../node_modules/langium/lib/utils/uri-util.js
-  var require_uri_util = __commonJS({
-    "../../node_modules/langium/lib/utils/uri-util.js"(exports2) {
-      "use strict";
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.relativeURI = exports2.equalURI = void 0;
-      function equalURI(a, b) {
-        return (a === null || a === void 0 ? void 0 : a.toString()) === (b === null || b === void 0 ? void 0 : b.toString());
-      }
-      exports2.equalURI = equalURI;
-      function relativeURI(from, to) {
-        const fromPath = from.path;
-        const toPath = to.path;
-        const fromParts = fromPath.split("/").filter((e) => e.length > 0);
-        const toParts = toPath.split("/").filter((e) => e.length > 0);
-        let i = 0;
-        for (; i < fromParts.length; i++) {
-          if (fromParts[i] !== toParts[i]) {
-            break;
-          }
-        }
-        const backPart = "../".repeat(fromParts.length - i);
-        const toPart = toParts.slice(i).join("/");
-        return backPart + toPart;
-      }
-      exports2.relativeURI = relativeURI;
     }
   });
 
@@ -21629,17 +18822,18 @@ ${JSON.stringify(message, null, 4)}`);
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.LangiumGrammarScopeComputation = exports2.LangiumGrammarScopeProvider = void 0;
+      var scope_1 = require_scope();
       var scope_computation_1 = require_scope_computation();
       var scope_provider_1 = require_scope_provider();
       var ast_util_1 = require_ast_util();
       var cst_util_1 = require_cst_util();
       var stream_1 = require_stream();
-      var uri_util_1 = require_uri_util();
       var ast_1 = require_ast();
       var internal_grammar_util_1 = require_internal_grammar_util();
       var LangiumGrammarScopeProvider = class extends scope_provider_1.DefaultScopeProvider {
         constructor(services) {
           super(services);
+          this.langiumDocuments = services.shared.workspace.LangiumDocuments;
         }
         getScope(context) {
           const referenceType = this.reflection.getReferenceType(context);
@@ -21669,14 +18863,30 @@ ${JSON.stringify(message, null, 4)}`);
         getGlobalScope(referenceType, context) {
           const grammar2 = (0, ast_util_1.getContainerOfType)(context.container, ast_1.isGrammar);
           if (!grammar2) {
-            return scope_provider_1.EMPTY_SCOPE;
+            return scope_1.EMPTY_SCOPE;
           }
-          const importedUris = (0, stream_1.stream)(grammar2.imports).map(internal_grammar_util_1.resolveImportUri).nonNullable();
-          let importedElements = this.indexManager.allElements(referenceType).filter((des) => importedUris.some((importedUri) => (0, uri_util_1.equalURI)(des.documentUri, importedUri)));
+          const importedUris = /* @__PURE__ */ new Set();
+          this.gatherImports(grammar2, importedUris);
+          let importedElements = this.indexManager.allElements(referenceType, importedUris);
           if (referenceType === ast_1.AbstractType) {
             importedElements = importedElements.filter((des) => des.type === ast_1.Interface || des.type === ast_1.Type);
           }
-          return new scope_provider_1.StreamScope(importedElements);
+          return new scope_1.MapScope(importedElements);
+        }
+        gatherImports(grammar2, importedUris) {
+          for (const imp0rt of grammar2.imports) {
+            const uri = (0, internal_grammar_util_1.resolveImportUri)(imp0rt);
+            if (uri && !importedUris.has(uri.toString())) {
+              importedUris.add(uri.toString());
+              if (this.langiumDocuments.hasDocument(uri)) {
+                const importedDocument = this.langiumDocuments.getOrCreateDocument(uri);
+                const rootNode = importedDocument.parseResult.value;
+                if ((0, ast_1.isGrammar)(rootNode)) {
+                  this.gatherImports(rootNode, importedUris);
+                }
+              }
+            }
+          }
         }
       };
       exports2.LangiumGrammarScopeProvider = LangiumGrammarScopeProvider;
@@ -21737,12 +18947,17 @@ ${JSON.stringify(message, null, 4)}`);
           }
         }
         createInterfaceDescription(node, name, document = (0, ast_util_1.getDocument)(node)) {
-          var _a;
-          const nameNode = (_a = this.nameProvider.getNameNode(node)) !== null && _a !== void 0 ? _a : node.$cstNode;
+          let nameNodeSegment;
+          const nameSegmentGetter = () => {
+            var _a;
+            return nameNodeSegment !== null && nameNodeSegment !== void 0 ? nameNodeSegment : nameNodeSegment = (0, cst_util_1.toDocumentSegment)((_a = this.nameProvider.getNameNode(node)) !== null && _a !== void 0 ? _a : node.$cstNode);
+          };
           return {
             node,
             name,
-            nameSegment: (0, cst_util_1.toDocumentSegment)(nameNode),
+            get nameSegment() {
+              return nameSegmentGetter();
+            },
             selectionSegment: (0, cst_util_1.toDocumentSegment)(node.$cstNode),
             type: "Interface",
             documentUri: document.uri,
@@ -21866,7 +19081,11 @@ ${JSON.stringify(message, null, 4)}`);
             validator.checkCrossReferenceToTypeUnion
           ],
           SimpleType: validator.checkFragmentsInTypes,
-          ReferenceType: validator.checkReferenceTypeUnion
+          ReferenceType: validator.checkReferenceTypeUnion,
+          RegexToken: [
+            validator.checkInvalidRegexFlags,
+            validator.checkDirectlyUsedRegexFlags
+          ]
         };
         registry.register(checks, validator);
       }
@@ -22135,6 +19354,67 @@ ${JSON.stringify(message, null, 4)}`);
             }
           } catch (_a) {
           }
+        }
+        checkInvalidRegexFlags(token, accept) {
+          const regex = token.regex;
+          if (regex) {
+            const slashIndex = regex.lastIndexOf("/");
+            const flags = regex.substring(slashIndex + 1);
+            const unsupportedFlags = "gmy";
+            const supportedFlags = "isu";
+            const allFlags = unsupportedFlags + supportedFlags;
+            const errorFlags = /* @__PURE__ */ new Set();
+            const warningFlags = /* @__PURE__ */ new Set();
+            for (let i = 0; i < flags.length; i++) {
+              const flag = flags.charAt(i);
+              if (!allFlags.includes(flag)) {
+                errorFlags.add(flag);
+              } else if (unsupportedFlags.includes(flag)) {
+                warningFlags.add(flag);
+              }
+            }
+            const range = this.getFlagRange(token);
+            if (range) {
+              if (errorFlags.size > 0) {
+                accept("error", `'${Array.from(errorFlags).join("")}' ${errorFlags.size > 1 ? "are" : "is"} not valid regular expression flag${errorFlags.size > 1 ? "s" : ""}.`, {
+                  node: token,
+                  range
+                });
+              } else if (warningFlags.size > 0) {
+                accept("warning", `'${Array.from(warningFlags).join("")}' regular expression flag${warningFlags.size > 1 ? "s" : ""} will be ignored by Langium.`, {
+                  node: token,
+                  range
+                });
+              }
+            }
+          }
+        }
+        checkDirectlyUsedRegexFlags(token, accept) {
+          if (!ast.isTerminalRule(token.$container)) {
+            const range = this.getFlagRange(token);
+            if (range) {
+              accept("warning", "Regular expression flags are only applied if the terminal is not a composition", {
+                node: token,
+                range
+              });
+            }
+          }
+        }
+        getFlagRange(token) {
+          const regexCstNode = (0, grammar_util_1.findNodeForProperty)(token.$cstNode, "regex");
+          if (!regexCstNode || !token.regex) {
+            return void 0;
+          }
+          const regex = token.regex;
+          const slashIndex = regex.lastIndexOf("/") + 1;
+          const range = {
+            start: {
+              line: regexCstNode.range.end.line,
+              character: regexCstNode.range.end.character - regex.length + slashIndex
+            },
+            end: regexCstNode.range.end
+          };
+          return range;
         }
         checkUsedHiddenTerminalRule(ruleCall, accept) {
           const parentRule = (0, ast_util_1.getContainerOfType)(ruleCall, (n) => ast.isTerminalRule(n) || ast.isParserRule(n));
@@ -22422,12 +19702,21 @@ ${JSON.stringify(message, null, 4)}`);
         }
         checkCrossRefNameAssignment(reference, accept) {
           if (!reference.terminal && reference.type.ref && !(0, grammar_util_1.findNameAssignment)(reference.type.ref)) {
-            accept("error", "Cannot infer terminal or data type rule for cross reference.", { node: reference, property: "type" });
+            accept("error", "Cannot infer terminal or data type rule for cross-reference.", { node: reference, property: "type" });
           }
         }
         checkCrossRefTerminalType(reference, accept) {
-          if (ast.isRuleCall(reference.terminal) && ast.isParserRule(reference.terminal.rule.ref) && !(0, internal_grammar_util_1.isDataTypeRule)(reference.terminal.rule.ref)) {
-            accept("error", "Parser rules cannot be used for cross references.", { node: reference.terminal, property: "rule" });
+          var _a;
+          const refTerminal = reference.terminal;
+          if (ast.isRuleCall(refTerminal)) {
+            const rule = refTerminal.rule.ref;
+            if (ast.isParserRule(rule) && !(0, internal_grammar_util_1.isDataTypeRule)(rule)) {
+              accept("error", "Parser rules cannot be used for cross-references.", { node: refTerminal, property: "rule" });
+            } else if (ast.isParserRule(rule) && !(0, internal_grammar_util_1.isStringType)(rule)) {
+              accept("error", "Data type rules for cross-references must be of type string.", { node: refTerminal, property: "rule" });
+            } else if (ast.isTerminalRule(rule) && ((_a = rule.type) === null || _a === void 0 ? void 0 : _a.name) && rule.type.name !== "string") {
+              accept("error", "Terminal rules for cross-references must be of type string.", { node: refTerminal, property: "rule" });
+            }
           }
         }
         checkCrossRefType(reference, accept) {
@@ -22459,7 +19748,7 @@ ${JSON.stringify(message, null, 4)}`);
           if (type && ast.isParserRule(type.ref) && !(0, internal_grammar_util_1.isDataTypeRule)(type.ref) && (type.ref.returnType || type.ref.inferredType)) {
             const typeName = (0, internal_grammar_util_1.getTypeNameWithoutError)(type.ref);
             if (typeName) {
-              return `Use the rule type '${typeName}' instead of the typed rule name '${type.ref.name}' for cross references.`;
+              return `Use the rule type '${typeName}' instead of the typed rule name '${type.ref.name}' for cross-references.`;
             }
           }
           return void 0;
@@ -22570,6 +19859,35 @@ ${JSON.stringify(message, null, 4)}`);
         });
         return Array.from(new Set(errors));
       }
+    }
+  });
+
+  // ../../node_modules/langium/lib/utils/uri-util.js
+  var require_uri_util = __commonJS({
+    "../../node_modules/langium/lib/utils/uri-util.js"(exports2) {
+      "use strict";
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      exports2.relativeURI = exports2.equalURI = void 0;
+      function equalURI(a, b) {
+        return (a === null || a === void 0 ? void 0 : a.toString()) === (b === null || b === void 0 ? void 0 : b.toString());
+      }
+      exports2.equalURI = equalURI;
+      function relativeURI(from, to) {
+        const fromPath = typeof from === "string" ? from : from.path;
+        const toPath = typeof to === "string" ? to : to.path;
+        const fromParts = fromPath.split("/").filter((e) => e.length > 0);
+        const toParts = toPath.split("/").filter((e) => e.length > 0);
+        let i = 0;
+        for (; i < fromParts.length; i++) {
+          if (fromParts[i] !== toParts[i]) {
+            break;
+          }
+        }
+        const backPart = "../".repeat(fromParts.length - i);
+        const toPart = toParts.slice(i).join("/");
+        return backPart + toPart;
+      }
+      exports2.relativeURI = relativeURI;
     }
   });
 
@@ -24784,7 +22102,7 @@ ${suffix}`
               new: false
             }, ownIndex + 1, cardinalities, visited, plus));
           }
-          if (features.every((e) => (0, internal_grammar_util_1.isOptionalCardinality)(e.feature.cardinality) || (0, internal_grammar_util_1.isOptionalCardinality)(cardinalities.get(e.feature)) || plus.has(e.feature))) {
+          if (features.every((e) => (0, internal_grammar_util_1.isOptionalCardinality)(e.feature.cardinality, e.feature) || (0, internal_grammar_util_1.isOptionalCardinality)(cardinalities.get(e.feature)) || plus.has(e.feature))) {
             features.push(...findNextFeaturesInternal({
               next: {
                 feature: parent,
@@ -24878,7 +22196,7 @@ ${suffix}`
             visited,
             plus
           }));
-          if (!(0, internal_grammar_util_1.isOptionalCardinality)((_a = firstFeature.feature.cardinality) !== null && _a !== void 0 ? _a : cardinalities.get(firstFeature.feature))) {
+          if (!(0, internal_grammar_util_1.isOptionalCardinality)((_a = firstFeature.feature.cardinality) !== null && _a !== void 0 ? _a : cardinalities.get(firstFeature.feature), firstFeature.feature)) {
             break;
           }
         }
@@ -24912,7 +22230,7 @@ ${suffix}`
           for (const nextFeature of allNextFeatures) {
             newStacks.push([...stack, nextFeature]);
           }
-          if (!allNextFeatures.every((e) => (0, internal_grammar_util_1.isOptionalCardinality)(e.feature.cardinality) || (0, internal_grammar_util_1.isOptionalCardinality)(cardinalities.get(e.feature)))) {
+          if (!allNextFeatures.every((e) => (0, internal_grammar_util_1.isOptionalCardinality)(e.feature.cardinality, e.feature) || (0, internal_grammar_util_1.isOptionalCardinality)(cardinalities.get(e.feature)))) {
             break;
           }
         }
@@ -24947,7 +22265,7 @@ ${suffix}`
           const ruleFeatures = findFirstFeatures(rule.definition);
           return ruleFeatures.some((e) => featureMatches(e.feature, token));
         } else if (ast.isTerminalRule(rule)) {
-          return new RegExp((0, internal_grammar_util_1.terminalRegex)(rule)).test(token.image);
+          return (0, internal_grammar_util_1.terminalRegex)(rule).test(token.image);
         } else {
           return false;
         }
@@ -25022,59 +22340,20 @@ ${suffix}`
           this.grammar = services.Grammar;
           this.completionParser = services.parser.CompletionParser;
           this.nameProvider = services.references.NameProvider;
+          this.lexer = services.parser.Lexer;
+          this.nodeKindProvider = services.shared.lsp.NodeKindProvider;
+          this.fuzzyMatcher = services.shared.lsp.FuzzyMatcher;
           this.grammarConfig = services.parser.GrammarConfig;
         }
         async getCompletion(document, params) {
-          var _a, _b;
-          const root = document.parseResult.value;
-          const cst = root.$cstNode;
-          if (!cst) {
-            return void 0;
-          }
           const items = [];
-          const textDocument = document.textDocument;
-          const text = textDocument.getText();
-          const offset = textDocument.offsetAt(params.position);
-          const acceptor = (value) => {
-            const completionItem = this.fillCompletionItem(textDocument, offset, value);
+          const contexts = this.buildContexts(document, params.position);
+          const acceptor = (context, value) => {
+            const completionItem = this.fillCompletionItem(context, value);
             if (completionItem) {
               items.push(completionItem);
             }
           };
-          const lastTokenOffset = this.backtrackToAnyToken(text, offset);
-          const astNode = (_a = (0, cst_util_1.findLeafNodeAtOffset)(cst, lastTokenOffset)) === null || _a === void 0 ? void 0 : _a.element;
-          const context = {
-            document,
-            textDocument,
-            node: astNode,
-            offset,
-            position: params.position
-          };
-          if (!astNode) {
-            const parserRule = (0, grammar_util_1.getEntryRule)(this.grammar);
-            await this.completionForRule(context, parserRule, acceptor);
-            return vscode_languageserver_1.CompletionList.create(this.deduplicateItems(items), true);
-          }
-          const contexts = [context];
-          if (lastTokenOffset === offset && lastTokenOffset > 0) {
-            const previousAstNode = (_b = (0, cst_util_1.findLeafNodeAtOffset)(cst, lastTokenOffset - 1)) === null || _b === void 0 ? void 0 : _b.element;
-            if (previousAstNode !== astNode) {
-              contexts.push({
-                document,
-                textDocument,
-                node: previousAstNode,
-                offset,
-                position: params.position
-              });
-            }
-          }
-          const parserStart = this.backtrackToTokenStart(text, offset);
-          const beforeFeatures = this.findFeaturesAt(textDocument, parserStart);
-          let afterFeatures = [];
-          const reparse = this.canReparse() && offset !== parserStart;
-          if (reparse) {
-            afterFeatures = this.findFeaturesAt(textDocument, offset);
-          }
           const distinctionFunction = (element) => {
             if (ast.isKeyword(element.feature)) {
               return element.feature.value;
@@ -25082,9 +22361,13 @@ ${suffix}`
               return element.feature;
             }
           };
-          await Promise.all((0, stream_1.stream)(beforeFeatures).distinct(distinctionFunction).map((e) => this.completionForContexts(contexts, e, acceptor)));
-          if (reparse) {
-            await Promise.all((0, stream_1.stream)(afterFeatures).exclude(beforeFeatures, distinctionFunction).distinct(distinctionFunction).map((e) => this.completionForContexts(contexts, e, acceptor)));
+          const completedFeatures = [];
+          for (const context of contexts) {
+            await Promise.all((0, stream_1.stream)(context.features).distinct(distinctionFunction).exclude(completedFeatures).map((e) => this.completionFor(context, e, acceptor)));
+            completedFeatures.push(...context.features);
+            if (!this.continueCompletion(items)) {
+              break;
+            }
           }
           return vscode_languageserver_1.CompletionList.create(this.deduplicateItems(items), true);
         }
@@ -25092,19 +22375,10 @@ ${suffix}`
          * The completion algorithm could yield the same reference/keyword multiple times.
          *
          * This methods deduplicates these items afterwards before returning to the client.
-         * Unique items are identified as a combination of `kind`, `label` and `detail`
+         * Unique items are identified as a combination of `kind`, `label` and `detail`.
          */
         deduplicateItems(items) {
           return (0, stream_1.stream)(items).distinct((item) => `${item.kind}_${item.label}_${item.detail}`).toArray();
-        }
-        /**
-         * Determines whether the completion parser will reparse the input at the point of completion.
-         * By default, this returns `false`, indicating that the completion will only look for completion results starting from the token at the cursor position.
-         * Override this and return `true` to indicate that the completion should parse the input a second time.
-         * This might add some missing completions at the cost at parsing the input twice.
-         */
-        canReparse() {
-          return false;
         }
         findFeaturesAt(document, offset) {
           const text = document.getText({
@@ -25131,36 +22405,116 @@ ${suffix}`
           const features = (0, follow_element_computation_1.findNextFeatures)([parserResult.elementStack.map((feature) => ({ feature }))], leftoverTokens);
           return features;
         }
-        backtrackToAnyToken(text, offset) {
-          if (offset >= text.length) {
-            offset = text.length - 1;
+        *buildContexts(document, position) {
+          var _a, _b, _c, _d, _e;
+          const cst = document.parseResult.value.$cstNode;
+          if (!cst) {
+            return;
           }
-          while (offset > 0 && /\s/.test(text.charAt(offset))) {
-            offset--;
+          const textDocument = document.textDocument;
+          const text = textDocument.getText();
+          const offset = textDocument.offsetAt(position);
+          const partialContext = {
+            document,
+            textDocument,
+            offset,
+            position
+          };
+          const dataTypeRuleOffsets = this.findDataTypeRuleStart(cst, offset);
+          if (dataTypeRuleOffsets) {
+            const [ruleStart, ruleEnd] = dataTypeRuleOffsets;
+            const parentNode = (_a = (0, cst_util_1.findLeafNodeAtOffset)(cst, ruleStart)) === null || _a === void 0 ? void 0 : _a.element;
+            const previousTokenFeatures = this.findFeaturesAt(textDocument, ruleStart);
+            yield Object.assign(Object.assign({}, partialContext), { node: parentNode, tokenOffset: ruleStart, tokenEndOffset: ruleEnd, features: previousTokenFeatures });
           }
-          return offset;
+          const { nextTokenStart, nextTokenEnd, previousTokenStart, previousTokenEnd } = this.backtrackToAnyToken(text, offset);
+          let astNode;
+          if (previousTokenStart !== void 0 && previousTokenEnd !== void 0 && previousTokenEnd === offset) {
+            astNode = (_b = (0, cst_util_1.findLeafNodeAtOffset)(cst, previousTokenStart)) === null || _b === void 0 ? void 0 : _b.element;
+            const previousTokenFeatures = this.findFeaturesAt(textDocument, previousTokenStart);
+            yield Object.assign(Object.assign({}, partialContext), { node: astNode, tokenOffset: previousTokenStart, tokenEndOffset: previousTokenEnd, features: previousTokenFeatures });
+          }
+          astNode = (_d = (_c = (0, cst_util_1.findLeafNodeAtOffset)(cst, nextTokenStart)) === null || _c === void 0 ? void 0 : _c.element) !== null && _d !== void 0 ? _d : previousTokenStart === void 0 ? void 0 : (_e = (0, cst_util_1.findLeafNodeAtOffset)(cst, previousTokenStart)) === null || _e === void 0 ? void 0 : _e.element;
+          if (!astNode) {
+            const parserRule = (0, grammar_util_1.getEntryRule)(this.grammar);
+            const firstFeatures = (0, follow_element_computation_1.findFirstFeatures)(parserRule.definition);
+            yield Object.assign(Object.assign({}, partialContext), { tokenOffset: nextTokenStart, tokenEndOffset: nextTokenEnd, features: firstFeatures });
+          } else {
+            const nextTokenFeatures = this.findFeaturesAt(textDocument, nextTokenStart);
+            yield Object.assign(Object.assign({}, partialContext), { node: astNode, tokenOffset: nextTokenStart, tokenEndOffset: nextTokenEnd, features: nextTokenFeatures });
+          }
         }
-        backtrackToTokenStart(text, offset) {
-          if (offset < 1) {
-            return offset;
+        findDataTypeRuleStart(cst, offset) {
+          var _a, _b;
+          let containerNode = (0, cst_util_1.findDeclarationNodeAtOffset)(cst, offset, this.grammarConfig.nameRegexp);
+          let isDataTypeNode = Boolean((_a = (0, ast_util_1.getContainerOfType)(containerNode === null || containerNode === void 0 ? void 0 : containerNode.feature, ast.isParserRule)) === null || _a === void 0 ? void 0 : _a.dataType);
+          if (isDataTypeNode) {
+            while (isDataTypeNode) {
+              containerNode = containerNode === null || containerNode === void 0 ? void 0 : containerNode.parent;
+              isDataTypeNode = Boolean((_b = (0, ast_util_1.getContainerOfType)(containerNode === null || containerNode === void 0 ? void 0 : containerNode.feature, ast.isParserRule)) === null || _b === void 0 ? void 0 : _b.dataType);
+            }
+            if (containerNode) {
+              return [containerNode.offset, containerNode.end];
+            }
           }
-          const wordRegex = this.grammarConfig.nameRegexp;
-          let lastCharacter = text.charAt(offset - 1);
-          while (offset > 0 && wordRegex.test(lastCharacter)) {
-            offset--;
-            lastCharacter = text.charAt(offset - 1);
+          return void 0;
+        }
+        /**
+         * Indicates whether the completion should continue to process the next completion context.
+         *
+         * The default implementation continues the completion only if there are currently no proposed completion items.
+         */
+        continueCompletion(items) {
+          return items.length === 0;
+        }
+        /**
+         * This method returns two sets of token offset information.
+         *
+         * The `nextToken*` offsets are related to the token at the cursor position.
+         * If there is none, both offsets are simply set to `offset`.
+         *
+         * The `previousToken*` offsets are related to the last token before the current token at the cursor position.
+         * They are `undefined`, if there is no token before the cursor position.
+         */
+        backtrackToAnyToken(text, offset) {
+          const tokens = this.lexer.tokenize(text).tokens;
+          if (tokens.length === 0) {
+            return {
+              nextTokenStart: offset,
+              nextTokenEnd: offset
+            };
           }
-          return offset;
+          let previousToken;
+          for (const token of tokens) {
+            if (token.startOffset >= offset) {
+              return {
+                nextTokenStart: offset,
+                nextTokenEnd: offset,
+                previousTokenStart: previousToken ? previousToken.startOffset : void 0,
+                previousTokenEnd: previousToken ? previousToken.endOffset + 1 : void 0
+              };
+            }
+            if (token.endOffset >= offset) {
+              return {
+                nextTokenStart: token.startOffset,
+                nextTokenEnd: token.endOffset + 1,
+                previousTokenStart: previousToken ? previousToken.startOffset : void 0,
+                previousTokenEnd: previousToken ? previousToken.endOffset + 1 : void 0
+              };
+            }
+            previousToken = token;
+          }
+          return {
+            nextTokenStart: offset,
+            nextTokenEnd: offset,
+            previousTokenStart: previousToken ? previousToken.startOffset : void 0,
+            previousTokenEnd: previousToken ? previousToken.endOffset + 1 : void 0
+          };
         }
         async completionForRule(context, rule, acceptor) {
           if (ast.isParserRule(rule)) {
             const firstFeatures = (0, follow_element_computation_1.findFirstFeatures)(rule.definition);
             await Promise.all(firstFeatures.map((next) => this.completionFor(context, next, acceptor)));
-          }
-        }
-        async completionForContexts(contexts, next, acceptor) {
-          for (const context of contexts) {
-            await this.completionFor(context, next, acceptor);
           }
         }
         completionFor(context, next, acceptor) {
@@ -25194,7 +22548,7 @@ ${suffix}`
               const duplicateStore = /* @__PURE__ */ new Set();
               scope.getAllElements().forEach((e) => {
                 if (!duplicateStore.has(e.name) && this.filterCrossReference(e)) {
-                  acceptor(this.createReferenceCompletionItem(e));
+                  acceptor(context, this.createReferenceCompletionItem(e));
                   duplicateStore.add(e.name);
                 }
               });
@@ -25205,7 +22559,7 @@ ${suffix}`
         }
         /**
          * Override this method to change how reference completion items are created.
-         * Most notably useful to change the `kind` property which indicates which icon to display on the client.
+         * To change the `kind` of a completion item, override the `NodeKindProvider` service instead.
          *
          * @param nodeDescription The description of a reference candidate
          * @returns A partial completion item
@@ -25213,7 +22567,7 @@ ${suffix}`
         createReferenceCompletionItem(nodeDescription) {
           return {
             nodeDescription,
-            kind: vscode_languageserver_1.CompletionItemKind.Reference,
+            kind: this.nodeKindProvider.getCompletionItemKind(nodeDescription),
             detail: nodeDescription.type,
             sortText: "0"
           };
@@ -25225,14 +22579,14 @@ ${suffix}`
           if (!keyword.value.match(/[\w]/)) {
             return;
           }
-          acceptor({
+          acceptor(context, {
             label: keyword.value,
             kind: vscode_languageserver_1.CompletionItemKind.Keyword,
             detail: "Keyword",
             sortText: "1"
           });
         }
-        fillCompletionItem(document, offset, item) {
+        fillCompletionItem(context, item) {
           var _a, _b;
           let label;
           if (typeof item.label === "string") {
@@ -25256,7 +22610,7 @@ ${suffix}`
           } else {
             insertText = label;
           }
-          const textEdit = (_b = item.textEdit) !== null && _b !== void 0 ? _b : this.buildCompletionTextEdit(document, offset, label, insertText);
+          const textEdit = (_b = item.textEdit) !== null && _b !== void 0 ? _b : this.buildCompletionTextEdit(context, label, insertText);
           if (!textEdit) {
             return void 0;
           }
@@ -25282,13 +22636,12 @@ ${suffix}`
           };
           return completionItem;
         }
-        buildCompletionTextEdit(document, offset, label, newText) {
-          const content = document.getText();
-          const tokenStart = this.backtrackToTokenStart(content, offset);
-          const identifier = content.substring(tokenStart, offset);
-          if (this.charactersFuzzyMatch(identifier, label)) {
-            const start = document.positionAt(tokenStart);
-            const end = document.positionAt(offset);
+        buildCompletionTextEdit(context, label, newText) {
+          const content = context.textDocument.getText();
+          const identifier = content.substring(context.tokenOffset, context.offset);
+          if (this.fuzzyMatcher.match(identifier, label)) {
+            const start = context.textDocument.positionAt(context.tokenOffset);
+            const end = context.position;
             return {
               newText,
               range: {
@@ -25300,52 +22653,8 @@ ${suffix}`
             return void 0;
           }
         }
-        isWordCharacterAt(content, index) {
-          return this.grammarConfig.nameRegexp.test(content.charAt(index));
-        }
-        charactersFuzzyMatch(existingValue, completionValue) {
-          if (existingValue.length === 0) {
-            return true;
-          }
-          completionValue = completionValue.toLowerCase();
-          let matchedFirstCharacter = false;
-          let previous;
-          let character = 0;
-          const len = completionValue.length;
-          for (let i = 0; i < len; i++) {
-            const strChar = completionValue.charCodeAt(i);
-            const testChar = existingValue.charCodeAt(character);
-            if (strChar === testChar || this.toUpperCharCode(strChar) === this.toUpperCharCode(testChar)) {
-              matchedFirstCharacter || (matchedFirstCharacter = previous === void 0 || // Beginning of word
-              this.isWordTransition(previous, strChar));
-              if (matchedFirstCharacter) {
-                character++;
-              }
-              if (character === existingValue.length) {
-                return true;
-              }
-            }
-            previous = strChar;
-          }
-          return false;
-        }
-        isWordTransition(previous, current) {
-          return a <= previous && previous <= z && A <= current && current <= Z || // camelCase transition
-          previous === _ && current !== _;
-        }
-        toUpperCharCode(charCode) {
-          if (a <= charCode && charCode <= z) {
-            return charCode - 32;
-          }
-          return charCode;
-        }
       };
       exports2.DefaultCompletionProvider = DefaultCompletionProvider;
-      var a = "a".charCodeAt(0);
-      var z = "z".charCodeAt(0);
-      var A = "A".charCodeAt(0);
-      var Z = "Z".charCodeAt(0);
-      var _ = "_".charCodeAt(0);
     }
   });
 
@@ -25546,11 +22855,11 @@ ${suffix}`
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.DefaultDocumentSymbolProvider = void 0;
-      var vscode_languageserver_1 = require_main4();
       var ast_util_1 = require_ast_util();
       var DefaultDocumentSymbolProvider = class {
         constructor(services) {
           this.nameProvider = services.references.NameProvider;
+          this.nodeKindProvider = services.shared.lsp.NodeKindProvider;
         }
         getSymbols(document) {
           return this.getSymbol(document, document.parseResult.value);
@@ -25561,7 +22870,7 @@ ${suffix}`
           if (nameNode && node) {
             const name = this.nameProvider.getName(astNode);
             return [{
-              kind: this.getSymbolKind(astNode.$type),
+              kind: this.nodeKindProvider.getSymbolKind(astNode),
               name: name !== null && name !== void 0 ? name : nameNode.text,
               range: node.range,
               selectionRange: nameNode.range,
@@ -25581,10 +22890,6 @@ ${suffix}`
             return children;
           }
           return void 0;
-        }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        getSymbolKind(type) {
-          return vscode_languageserver_1.SymbolKind.Field;
         }
       };
       exports2.DefaultDocumentSymbolProvider = DefaultDocumentSymbolProvider;
@@ -25619,6 +22924,59 @@ ${suffix}`
         }
       };
       exports2.AbstractExecuteCommandHandler = AbstractExecuteCommandHandler;
+    }
+  });
+
+  // ../../node_modules/langium/lib/lsp/fuzzy-matcher.js
+  var require_fuzzy_matcher = __commonJS({
+    "../../node_modules/langium/lib/lsp/fuzzy-matcher.js"(exports2) {
+      "use strict";
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      exports2.DefaultFuzzyMatcher = void 0;
+      var DefaultFuzzyMatcher = class {
+        match(query, text) {
+          if (query.length === 0) {
+            return true;
+          }
+          text = text.toLowerCase();
+          let matchedFirstCharacter = false;
+          let previous;
+          let character = 0;
+          const len = text.length;
+          for (let i = 0; i < len; i++) {
+            const strChar = text.charCodeAt(i);
+            const testChar = query.charCodeAt(character);
+            if (strChar === testChar || this.toUpperCharCode(strChar) === this.toUpperCharCode(testChar)) {
+              matchedFirstCharacter || (matchedFirstCharacter = previous === void 0 || // Beginning of word
+              this.isWordTransition(previous, strChar));
+              if (matchedFirstCharacter) {
+                character++;
+              }
+              if (character === query.length) {
+                return true;
+              }
+            }
+            previous = strChar;
+          }
+          return false;
+        }
+        isWordTransition(previous, current) {
+          return a <= previous && previous <= z && A <= current && current <= Z || // camelCase transition
+          previous === _ && current !== _;
+        }
+        toUpperCharCode(charCode) {
+          if (a <= charCode && charCode <= z) {
+            return charCode - 32;
+          }
+          return charCode;
+        }
+      };
+      exports2.DefaultFuzzyMatcher = DefaultFuzzyMatcher;
+      var a = "a".charCodeAt(0);
+      var z = "z".charCodeAt(0);
+      var A = "A".charCodeAt(0);
+      var Z = "Z".charCodeAt(0);
+      var _ = "_".charCodeAt(0);
     }
   });
 
@@ -25735,7 +23093,7 @@ ${suffix}`
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.DefaultLangiumDocuments = exports2.DefaultLangiumDocumentFactory = exports2.DocumentState = void 0;
-      var vscode_languageserver_textdocument_1 = require_main5();
+      var vscode_languageserver_textdocument_1 = (init_main(), __toCommonJS(main_exports));
       var vscode_uri_1 = require_umd();
       var stream_1 = require_stream();
       var DocumentState2;
@@ -25957,7 +23315,7 @@ ${suffix}`
     "../../node_modules/langium/lib/lsp/language-server.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.createRequestHandler = exports2.createServerRequestHandler = exports2.createCallHierarchyRequestHandler = exports2.addCallHierarchyHandler = exports2.addCodeLensHandler = exports2.addSignatureHelpHandler = exports2.addDocumentLinkHandler = exports2.addExecuteCommandHandler = exports2.addConfigurationChangeHandler = exports2.addSemanticTokenHandler = exports2.addInlayHintHandler = exports2.addRenameHandler = exports2.addFormattingHandler = exports2.addFoldingRangeHandler = exports2.addHoverHandler = exports2.addDocumentHighlightsHandler = exports2.addGoToDeclarationHandler = exports2.addGoToImplementationHandler = exports2.addGoToTypeDefinitionHandler = exports2.addGotoDefinitionHandler = exports2.addDocumentSymbolHandler = exports2.addCodeActionHandler = exports2.addFindReferencesHandler = exports2.addCompletionHandler = exports2.addDiagnosticsHandler = exports2.addDocumentsHandler = exports2.startLanguageServer = exports2.DefaultLanguageServer = void 0;
+      exports2.createRequestHandler = exports2.createServerRequestHandler = exports2.createCallHierarchyRequestHandler = exports2.addCallHierarchyHandler = exports2.addWorkspaceSymbolHandler = exports2.addCodeLensHandler = exports2.addSignatureHelpHandler = exports2.addDocumentLinkHandler = exports2.addExecuteCommandHandler = exports2.addConfigurationChangeHandler = exports2.addSemanticTokenHandler = exports2.addInlayHintHandler = exports2.addRenameHandler = exports2.addFormattingHandler = exports2.addFoldingRangeHandler = exports2.addHoverHandler = exports2.addDocumentHighlightsHandler = exports2.addGoToDeclarationHandler = exports2.addGoToImplementationHandler = exports2.addGoToTypeDefinitionHandler = exports2.addGotoDefinitionHandler = exports2.addDocumentSymbolHandler = exports2.addCodeActionHandler = exports2.addFindReferencesHandler = exports2.addCompletionHandler = exports2.addDiagnosticsHandler = exports2.addDocumentsHandler = exports2.startLanguageServer = exports2.DefaultLanguageServer = void 0;
       var vscode_languageserver_1 = require_main4();
       var vscode_uri_1 = require_umd();
       var dependency_injection_1 = require_dependency_injection();
@@ -26029,6 +23387,7 @@ ${suffix}`
           const codeLensProvider = this.services.lsp.CodeLensProvider;
           const hasDeclarationProvider = this.hasService((e) => e.lsp.DeclarationProvider);
           const inlayHintProvider = this.services.lsp.InlayHintProvider;
+          const workspaceSymbolProvider = this.services.lsp.WorkspaceSymbolProvider;
           const result = {
             capabilities: {
               workspace: {
@@ -26062,7 +23421,8 @@ ${suffix}`
               documentLinkProvider: documentLinkProvider ? { resolveProvider: Boolean(documentLinkProvider.resolveDocumentLink) } : void 0,
               codeLensProvider: codeLensProvider ? { resolveProvider: Boolean(codeLensProvider.resolveCodeLens) } : void 0,
               declarationProvider: hasDeclarationProvider,
-              inlayHintProvider: inlayHintProvider ? { resolveProvider: Boolean(inlayHintProvider.resolveInlayHint) } : void 0
+              inlayHintProvider: inlayHintProvider ? { resolveProvider: Boolean(inlayHintProvider.resolveInlayHint) } : void 0,
+              workspaceSymbolProvider: workspaceSymbolProvider ? { resolveProvider: Boolean(workspaceSymbolProvider.resolveSymbol) } : void 0
             }
           };
           return result;
@@ -26101,6 +23461,7 @@ ${suffix}`
         addDocumentLinkHandler(connection2, services);
         addConfigurationChangeHandler(connection2, services);
         addGoToDeclarationHandler(connection2, services);
+        addWorkspaceSymbolHandler(connection2, services);
         connection2.onInitialize((params) => {
           return services.lsp.LanguageServer.initialize(params);
         });
@@ -26362,6 +23723,30 @@ ${suffix}`
         }
       }
       exports2.addCodeLensHandler = addCodeLensHandler;
+      function addWorkspaceSymbolHandler(connection2, services) {
+        var _a;
+        const workspaceSymbolProvider = services.lsp.WorkspaceSymbolProvider;
+        if (workspaceSymbolProvider) {
+          connection2.onWorkspaceSymbol(async (params, token) => {
+            try {
+              return await workspaceSymbolProvider.getSymbols(params, token);
+            } catch (err) {
+              return responseError(err);
+            }
+          });
+          const resolveWorkspaceSymbol = (_a = workspaceSymbolProvider.resolveSymbol) === null || _a === void 0 ? void 0 : _a.bind(workspaceSymbolProvider);
+          if (resolveWorkspaceSymbol) {
+            connection2.onWorkspaceSymbolResolve(async (workspaceSymbol, token) => {
+              try {
+                return await resolveWorkspaceSymbol(workspaceSymbol, token);
+              } catch (err) {
+                return responseError(err);
+              }
+            });
+          }
+        }
+      }
+      exports2.addWorkspaceSymbolHandler = addWorkspaceSymbolHandler;
       function addCallHierarchyHandler(connection2, services) {
         connection2.languages.callHierarchy.onPrepare(createServerRequestHandler((services2, document, params, cancelToken) => {
           var _a;
@@ -26457,6 +23842,25 @@ ${suffix}`
         }
         throw err;
       }
+    }
+  });
+
+  // ../../node_modules/langium/lib/lsp/node-kind-provider.js
+  var require_node_kind_provider = __commonJS({
+    "../../node_modules/langium/lib/lsp/node-kind-provider.js"(exports2) {
+      "use strict";
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      exports2.DefaultNodeKindProvider = void 0;
+      var vscode_languageserver_1 = require_main4();
+      var DefaultNodeKindProvider = class {
+        getSymbolKind() {
+          return vscode_languageserver_1.SymbolKind.Field;
+        }
+        getCompletionItemKind() {
+          return vscode_languageserver_1.CompletionItemKind.Reference;
+        }
+      };
+      exports2.DefaultNodeKindProvider = DefaultNodeKindProvider;
     }
   });
 
@@ -26597,6 +24001,54 @@ ${suffix}`
     }
   });
 
+  // ../../node_modules/langium/lib/lsp/workspace-symbol-provider.js
+  var require_workspace_symbol_provider = __commonJS({
+    "../../node_modules/langium/lib/lsp/workspace-symbol-provider.js"(exports2) {
+      "use strict";
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      exports2.DefaultWorkspaceSymbolProvider = void 0;
+      var vscode_languageserver_1 = require_main4();
+      var promise_util_1 = require_promise_util();
+      var DefaultWorkspaceSymbolProvider = class {
+        constructor(services) {
+          this.indexManager = services.workspace.IndexManager;
+          this.nodeKindProvider = services.lsp.NodeKindProvider;
+          this.fuzzyMatcher = services.lsp.FuzzyMatcher;
+        }
+        async getSymbols(params, cancelToken = vscode_languageserver_1.CancellationToken.None) {
+          const workspaceSymbols = [];
+          const query = params.query.toLowerCase();
+          for (const description of this.indexManager.allElements()) {
+            await (0, promise_util_1.interruptAndCheck)(cancelToken);
+            if (this.fuzzyMatcher.match(query, description.name)) {
+              const symbol = this.getWorkspaceSymbol(description);
+              if (symbol) {
+                workspaceSymbols.push(symbol);
+              }
+            }
+          }
+          return workspaceSymbols;
+        }
+        getWorkspaceSymbol(astDescription) {
+          const nameSegment = astDescription.nameSegment;
+          if (nameSegment) {
+            return {
+              kind: this.nodeKindProvider.getSymbolKind(astDescription),
+              name: astDescription.name,
+              location: {
+                range: nameSegment.range,
+                uri: astDescription.documentUri.toString()
+              }
+            };
+          } else {
+            return void 0;
+          }
+        }
+      };
+      exports2.DefaultWorkspaceSymbolProvider = DefaultWorkspaceSymbolProvider;
+    }
+  });
+
   // ../../node_modules/langium/lib/lsp/index.js
   var require_lsp = __commonJS({
     "../../node_modules/langium/lib/lsp/index.js"(exports2) {
@@ -26635,15 +24087,18 @@ ${suffix}`
       __exportStar(require_execute_command_handler(), exports2);
       __exportStar(require_folding_range_provider(), exports2);
       __exportStar(require_formatter(), exports2);
+      __exportStar(require_fuzzy_matcher(), exports2);
       __exportStar(require_hover_provider(), exports2);
       __exportStar(require_implementation_provider(), exports2);
       __exportStar(require_inlay_hint_provider(), exports2);
       __exportStar(require_language_server(), exports2);
+      __exportStar(require_node_kind_provider(), exports2);
       __exportStar(require_references_provider(), exports2);
       __exportStar(require_rename_provider(), exports2);
       __exportStar(require_semantic_token_provider(), exports2);
       __exportStar(require_signature_help_provider(), exports2);
       __exportStar(require_type_provider(), exports2);
+      __exportStar(require_workspace_symbol_provider(), exports2);
     }
   });
 
@@ -26946,12 +24401,28 @@ ${suffix}`
           Grammar: [
             typesValidator.checkDeclaredTypesConsistency,
             typesValidator.checkDeclaredAndInferredTypesConsistency
+          ],
+          Interface: [
+            typesValidator.checkCyclicInterface
+          ],
+          Type: [
+            typesValidator.checkCyclicType
           ]
         };
         registry.register(checks, typesValidator);
       }
       exports2.registerTypeValidationChecks = registerTypeValidationChecks;
       var LangiumGrammarTypesValidator = class {
+        checkCyclicType(type, accept) {
+          if (isCyclicType(type, /* @__PURE__ */ new Set())) {
+            accept("error", `Type alias '${type.name}' circularly references itself.`, { node: type, property: "name" });
+          }
+        }
+        checkCyclicInterface(type, accept) {
+          if (isCyclicType(type, /* @__PURE__ */ new Set())) {
+            accept("error", `Type '${type.name}' recursively references itself as a base type.`, { node: type, property: "name" });
+          }
+        }
         checkDeclaredTypesConsistency(grammar2, accept) {
           var _a;
           const validationResources = (_a = grammar2.$document) === null || _a === void 0 ? void 0 : _a.validationResources;
@@ -26986,6 +24457,29 @@ ${suffix}`
         }
       };
       exports2.LangiumGrammarTypesValidator = LangiumGrammarTypesValidator;
+      function isCyclicType(type, visited) {
+        var _a;
+        if (visited.has(type)) {
+          return true;
+        }
+        visited.add(type);
+        if (ast.isType(type)) {
+          return isCyclicType(type.type, visited);
+        } else if (ast.isInterface(type)) {
+          return type.superTypes.some((t) => t.ref && isCyclicType(t.ref, new Set(visited)));
+        } else if (ast.isSimpleType(type)) {
+          if ((_a = type.typeRef) === null || _a === void 0 ? void 0 : _a.ref) {
+            return isCyclicType(type.typeRef.ref, visited);
+          }
+        } else if (ast.isReferenceType(type)) {
+          return isCyclicType(type.referenceType, visited);
+        } else if (ast.isArrayType(type)) {
+          return isCyclicType(type.elementType, visited);
+        } else if (ast.isUnionType(type)) {
+          return type.types.some((t) => isCyclicType(t, new Set(visited)));
+        }
+        return false;
+      }
       function validateInferredInterface(inferredInterface, accept) {
         inferredInterface.properties.forEach((prop) => {
           var _a;
@@ -27135,7 +24629,7 @@ ${suffix}`
             const foundTypeAsStr = (0, types_1.propertyTypeToString)(foundProp.type, "DeclaredType");
             const expectedTypeAsStr = (0, types_1.propertyTypeToString)(expectedProp.type, "DeclaredType");
             const typeAlternativesErrors = (0, types_1.isTypeAssignable)(matchingProp(foundProp.type), expectedProp.type);
-            if (!typeAlternativesErrors) {
+            if (!typeAlternativesErrors && expectedTypeAsStr !== "unknown") {
               const errorMsgPrefix = `The assigned type '${foundTypeAsStr}' is not compatible with the declared property '${name}' of type '${expectedTypeAsStr}'.`;
               applyErrorToProperties(foundProp.astNodes, errorMsgPrefix);
             }
@@ -27163,6 +24657,86 @@ ${suffix}`
     }
   });
 
+  // ../../node_modules/langium/lib/grammar/lsp/grammar-completion-provider.js
+  var require_grammar_completion_provider = __commonJS({
+    "../../node_modules/langium/lib/grammar/lsp/grammar-completion-provider.js"(exports2) {
+      "use strict";
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      exports2.LangiumGrammarCompletionProvider = void 0;
+      var vscode_languageserver_types_1 = require_main2();
+      var completion_provider_1 = require_completion_provider();
+      var ast_util_1 = require_ast_util();
+      var uri_util_1 = require_uri_util();
+      var ast_1 = require_ast();
+      var vscode_uri_1 = require_umd();
+      var LangiumGrammarCompletionProvider = class extends completion_provider_1.DefaultCompletionProvider {
+        constructor(services) {
+          super(services);
+          this.documents = () => services.shared.workspace.LangiumDocuments;
+        }
+        completionFor(context, next, acceptor) {
+          const assignment = (0, ast_util_1.getContainerOfType)(next.feature, ast_1.isAssignment);
+          if ((assignment === null || assignment === void 0 ? void 0 : assignment.feature) === "path") {
+            this.completeImportPath(context, acceptor);
+          } else {
+            return super.completionFor(context, next, acceptor);
+          }
+        }
+        completeImportPath(context, acceptor) {
+          const text = context.textDocument.getText();
+          const existingText = text.substring(context.tokenOffset, context.offset);
+          let allPaths = this.getAllFiles(context.document);
+          let range = {
+            start: context.position,
+            end: context.position
+          };
+          if (existingText.length > 0) {
+            const existingPath = existingText.substring(1);
+            allPaths = allPaths.filter((path) => path.startsWith(existingPath));
+            const start = context.textDocument.positionAt(context.tokenOffset + 1);
+            const end = context.textDocument.positionAt(context.tokenEndOffset - 1);
+            range = {
+              start,
+              end
+            };
+          }
+          for (const path of allPaths) {
+            const delimiter = existingText.length > 0 ? "" : '"';
+            const completionValue = `${delimiter}${path}${delimiter}`;
+            acceptor(context, {
+              label: path,
+              textEdit: {
+                newText: completionValue,
+                range
+              },
+              kind: vscode_languageserver_types_1.CompletionItemKind.File,
+              sortText: "0"
+            });
+          }
+        }
+        getAllFiles(document) {
+          const documents = this.documents().all;
+          const uri = document.uri.toString();
+          const dirname = vscode_uri_1.Utils.dirname(document.uri).toString();
+          const paths = [];
+          for (const doc of documents) {
+            if (!(0, uri_util_1.equalURI)(doc.uri, uri)) {
+              const docUri = doc.uri.toString();
+              const uriWithoutExt = docUri.substring(0, docUri.length - vscode_uri_1.Utils.extname(doc.uri).length);
+              let relativePath = (0, uri_util_1.relativeURI)(dirname, uriWithoutExt);
+              if (!relativePath.startsWith(".")) {
+                relativePath = `./${relativePath}`;
+              }
+              paths.push(relativePath);
+            }
+          }
+          return paths;
+        }
+      };
+      exports2.LangiumGrammarCompletionProvider = LangiumGrammarCompletionProvider;
+    }
+  });
+
   // ../../node_modules/langium/lib/grammar/langium-grammar-module.js
   var require_langium_grammar_module = __commonJS({
     "../../node_modules/langium/lib/grammar/langium-grammar-module.js"(exports2) {
@@ -27186,6 +24760,7 @@ ${suffix}`
       var types_validator_1 = require_types_validator();
       var promise_util_1 = require_promise_util();
       var documents_1 = require_documents();
+      var grammar_completion_provider_1 = require_grammar_completion_provider();
       exports2.LangiumGrammarModule = {
         validation: {
           LangiumGrammarValidator: (services) => new validator_1.LangiumGrammarValidator(services),
@@ -27198,7 +24773,8 @@ ${suffix}`
           SemanticTokenProvider: (services) => new grammar_semantic_tokens_1.LangiumGrammarSemanticTokenProvider(services),
           Formatter: () => new grammar_formatter_1.LangiumGrammarFormatter(),
           DefinitionProvider: (services) => new grammar_definition_1.LangiumGrammarDefinitionProvider(services),
-          CallHierarchyProvider: (services) => new grammar_call_hierarchy_1.LangiumGrammarCallHierarchyProvider(services)
+          CallHierarchyProvider: (services) => new grammar_call_hierarchy_1.LangiumGrammarCallHierarchyProvider(services),
+          CompletionProvider: (services) => new grammar_completion_provider_1.LangiumGrammarCompletionProvider(services)
         },
         references: {
           ScopeComputation: (services) => new grammar_scope_1.LangiumGrammarScopeComputation(services),
@@ -27353,7 +24929,7 @@ ${suffix}`
       }
       exports2.getCrossReferenceTerminal = getCrossReferenceTerminal;
       function isCommentTerminal(terminalRule) {
-        return terminalRule.hidden && !" ".match((0, internal_grammar_util_1.terminalRegex)(terminalRule));
+        return terminalRule.hidden && !(0, internal_grammar_util_1.terminalRegex)(terminalRule).test(" ");
       }
       exports2.isCommentTerminal = isCommentTerminal;
       function findNodesForProperty(node, property) {
@@ -30460,7 +28036,7 @@ ${suffix}`
   });
 
   // ../../node_modules/@chevrotain/utils/lib/src/api.js
-  var require_api5 = __commonJS({
+  var require_api4 = __commonJS({
     "../../node_modules/@chevrotain/utils/lib/src/api.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
@@ -31582,7 +29158,7 @@ ${suffix}`
   });
 
   // ../../node_modules/@chevrotain/gast/lib/src/api.js
-  var require_api6 = __commonJS({
+  var require_api5 = __commonJS({
     "../../node_modules/@chevrotain/gast/lib/src/api.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
@@ -31655,7 +29231,7 @@ ${suffix}`
       exports2.RestWalker = void 0;
       var drop_1 = __importDefault(require_drop());
       var forEach_1 = __importDefault(require_forEach());
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       var RestWalker = (
         /** @class */
         function() {
@@ -31930,8 +29506,8 @@ ${suffix}`
       var flatten_1 = __importDefault(require_flatten());
       var uniq_1 = __importDefault(require_uniq());
       var map_1 = __importDefault(require_map());
-      var gast_1 = require_api6();
-      var gast_2 = require_api6();
+      var gast_1 = require_api5();
+      var gast_2 = require_api5();
       function first(prod) {
         if (prod instanceof gast_1.NonTerminal) {
           return first(prod.referencedRule);
@@ -32022,7 +29598,7 @@ ${suffix}`
       var forEach_1 = __importDefault(require_forEach());
       var assign_1 = __importDefault(require_assign());
       var constants_1 = require_constants();
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       var ResyncFollowsWalker = (
         /** @class */
         function(_super) {
@@ -32487,7 +30063,7 @@ ${suffix}`
       var find_1 = __importDefault(require_find());
       var values_1 = __importDefault(require_values());
       var includes_1 = __importDefault(require_includes());
-      var utils_1 = require_api5();
+      var utils_1 = require_api4();
       var reg_exp_parser_1 = require_reg_exp_parser();
       var lexer_1 = require_lexer();
       var complementErrorMessage = "Complement Sets are not supported for first char optimization";
@@ -32751,7 +30327,7 @@ ${suffix}`
       var defaults_1 = __importDefault(require_defaults());
       var reduce_1 = __importDefault(require_reduce());
       var includes_1 = __importDefault(require_includes());
-      var utils_1 = require_api5();
+      var utils_1 = require_api4();
       var reg_exp_1 = require_reg_exp();
       var reg_exp_parser_1 = require_reg_exp_parser();
       var PATTERN = "PATTERN";
@@ -33672,7 +31248,7 @@ ${suffix}`
       var assign_1 = __importDefault(require_assign());
       var reduce_1 = __importDefault(require_reduce());
       var clone_1 = __importDefault(require_clone());
-      var utils_1 = require_api5();
+      var utils_1 = require_api4();
       var tokens_1 = require_tokens();
       var lexer_errors_public_1 = require_lexer_errors_public();
       var reg_exp_parser_1 = require_reg_exp_parser();
@@ -34342,8 +31918,8 @@ ${suffix}`
       var first_1 = __importDefault(require_first2());
       var map_1 = __importDefault(require_map());
       var reduce_1 = __importDefault(require_reduce());
-      var gast_1 = require_api6();
-      var gast_2 = require_api6();
+      var gast_1 = require_api5();
+      var gast_2 = require_api5();
       exports2.defaultParserErrorProvider = {
         buildMismatchTokenMessage: function(_a) {
           var expected = _a.expected, actual = _a.actual, previous = _a.previous, ruleName = _a.ruleName;
@@ -34529,7 +32105,7 @@ ${suffix}`
       var parser_1 = require_parser();
       var forEach_1 = __importDefault(require_forEach());
       var values_1 = __importDefault(require_values());
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       function resolveGrammar(topLevels, errMsgProvider) {
         var refResolver = new GastRefResolverVisitor(topLevels, errMsgProvider);
         refResolver.resolveRefs();
@@ -34708,7 +32284,7 @@ ${suffix}`
       var forEach_1 = __importDefault(require_forEach());
       var clone_1 = __importDefault(require_clone());
       var first_2 = require_first();
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       var AbstractNextPossibleTokensWalker = (
         /** @class */
         function(_super) {
@@ -35226,8 +32802,8 @@ ${suffix}`
       var interpreter_1 = require_interpreter();
       var rest_1 = require_rest();
       var tokens_1 = require_tokens();
-      var gast_1 = require_api6();
-      var gast_2 = require_api6();
+      var gast_1 = require_api5();
+      var gast_2 = require_api5();
       var PROD_TYPE;
       (function(PROD_TYPE2) {
         PROD_TYPE2[PROD_TYPE2["OPTION"] = 0] = "OPTION";
@@ -35697,11 +33273,11 @@ ${suffix}`
       var flatMap_1 = __importDefault(require_flatMap());
       var clone_1 = __importDefault(require_clone());
       var parser_1 = require_parser();
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       var lookahead_1 = require_lookahead();
       var interpreter_1 = require_interpreter();
-      var gast_2 = require_api6();
-      var gast_3 = require_api6();
+      var gast_2 = require_api5();
+      var gast_3 = require_api5();
       var dropRight_1 = __importDefault(require_dropRight());
       var compact_1 = __importDefault(require_compact());
       var tokens_1 = require_tokens();
@@ -36744,8 +34320,8 @@ ${suffix}`
       var has_1 = __importDefault(require_has());
       var parser_1 = require_parser();
       var keys_1 = require_keys2();
-      var gast_1 = require_api6();
-      var gast_2 = require_api6();
+      var gast_1 = require_api5();
+      var gast_2 = require_api5();
       var llk_lookahead_1 = require_llk_lookahead();
       var LooksAhead = (
         /** @class */
@@ -37324,7 +34900,7 @@ ${suffix}`
       var parser_1 = require_parser();
       var errors_public_1 = require_errors_public();
       var checks_1 = require_checks();
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       var RecognizerApi = (
         /** @class */
         function() {
@@ -38270,7 +35846,7 @@ ${suffix}`
       var forEach_1 = __importDefault(require_forEach());
       var isFunction_1 = __importDefault(require_isFunction());
       var has_1 = __importDefault(require_has());
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       var lexer_public_1 = require_lexer_public();
       var tokens_1 = require_tokens();
       var tokens_public_1 = require_tokens_public();
@@ -38559,7 +36135,7 @@ ${suffix}`
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.PerformanceTracer = void 0;
       var has_1 = __importDefault(require_has());
-      var utils_1 = require_api5();
+      var utils_1 = require_api4();
       var parser_1 = require_parser();
       var PerformanceTracer = (
         /** @class */
@@ -38665,7 +36241,7 @@ ${suffix}`
       var values_1 = __importDefault(require_values());
       var has_1 = __importDefault(require_has());
       var clone_1 = __importDefault(require_clone());
-      var utils_1 = require_api5();
+      var utils_1 = require_api4();
       var follow_1 = require_follow();
       var tokens_public_1 = require_tokens_public();
       var errors_public_1 = require_errors_public();
@@ -38904,7 +36480,7 @@ ${suffix}`
       };
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.buildModel = void 0;
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       var map_1 = __importDefault(require_map());
       var flatten_1 = __importDefault(require_flatten());
       var values_1 = __importDefault(require_values());
@@ -39225,7 +36801,7 @@ ${suffix}`
   });
 
   // ../../node_modules/@chevrotain/cst-dts-gen/lib/src/api.js
-  var require_api7 = __commonJS({
+  var require_api6 = __commonJS({
     "../../node_modules/@chevrotain/cst-dts-gen/lib/src/api.js"(exports2) {
       "use strict";
       var __assign = exports2 && exports2.__assign || function() {
@@ -39279,7 +36855,7 @@ ${suffix}`
   });
 
   // ../../node_modules/chevrotain/lib/src/api.js
-  var require_api8 = __commonJS({
+  var require_api7 = __commonJS({
     "../../node_modules/chevrotain/lib/src/api.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
@@ -39359,7 +36935,7 @@ ${suffix}`
       Object.defineProperty(exports2, "defaultLexerErrorProvider", { enumerable: true, get: function() {
         return lexer_errors_public_1.defaultLexerErrorProvider;
       } });
-      var gast_1 = require_api6();
+      var gast_1 = require_api5();
       Object.defineProperty(exports2, "Alternation", { enumerable: true, get: function() {
         return gast_1.Alternation;
       } });
@@ -39390,7 +36966,7 @@ ${suffix}`
       Object.defineProperty(exports2, "Terminal", { enumerable: true, get: function() {
         return gast_1.Terminal;
       } });
-      var gast_2 = require_api6();
+      var gast_2 = require_api5();
       Object.defineProperty(exports2, "serializeGrammar", { enumerable: true, get: function() {
         return gast_2.serializeGrammar;
       } });
@@ -39400,7 +36976,7 @@ ${suffix}`
       Object.defineProperty(exports2, "GAstVisitor", { enumerable: true, get: function() {
         return gast_2.GAstVisitor;
       } });
-      var cst_dts_gen_1 = require_api7();
+      var cst_dts_gen_1 = require_api6();
       Object.defineProperty(exports2, "generateCstDts", { enumerable: true, get: function() {
         return cst_dts_gen_1.generateCstDts;
       } });
@@ -39436,7 +37012,7 @@ ${suffix}`
       exports2.createATN = exports2.RuleTransition = exports2.EpsilonTransition = exports2.AtomTransition = exports2.AbstractTransition = exports2.ATN_LOOP_END = exports2.ATN_PLUS_LOOP_BACK = exports2.ATN_STAR_LOOP_ENTRY = exports2.ATN_STAR_LOOP_BACK = exports2.ATN_BLOCK_END = exports2.ATN_RULE_STOP = exports2.ATN_TOKEN_START = exports2.ATN_STAR_BLOCK_START = exports2.ATN_PLUS_BLOCK_START = exports2.ATN_RULE_START = exports2.ATN_BASIC = exports2.ATN_INVALID_TYPE = exports2.buildATNKey = void 0;
       var map_1 = __importDefault(require_map());
       var filter_1 = __importDefault(require_filter());
-      var chevrotain_1 = require_api8();
+      var chevrotain_1 = require_api7();
       function buildATNKey(rule, type, occurrence) {
         return `${rule.name}_${type}_${occurrence}`;
       }
@@ -39926,7 +37502,7 @@ ${suffix}`
       };
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.LLStarLookaheadStrategy = void 0;
-      var chevrotain_1 = require_api8();
+      var chevrotain_1 = require_api7();
       var atn_1 = require_atn();
       var dfa_1 = require_dfa();
       var min_1 = __importDefault(require_min());
@@ -40687,8 +38263,8 @@ For Further details.`;
     "../../node_modules/langium/lib/parser/langium-parser.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.LangiumCompletionParser = exports2.LangiumParserErrorMessageProvider = exports2.LangiumParser = exports2.AbstractLangiumParser = exports2.DatatypeSymbol = void 0;
-      var chevrotain_1 = require_api8();
+      exports2.LangiumCompletionParser = exports2.LangiumParserErrorMessageProvider = exports2.AbstractParserErrorMessageProvider = exports2.LangiumParser = exports2.AbstractLangiumParser = exports2.DatatypeSymbol = void 0;
+      var chevrotain_1 = require_api7();
       var chevrotain_allstar_1 = require_lib();
       var ast_1 = require_ast();
       var internal_grammar_util_1 = require_internal_grammar_util();
@@ -40705,7 +38281,7 @@ For Further details.`;
           this._unorderedGroups = /* @__PURE__ */ new Map();
           this.lexer = services.parser.Lexer;
           const tokens = this.lexer.definition;
-          this.wrapper = new ChevrotainWrapper(tokens, services.parser.ParserConfig);
+          this.wrapper = new ChevrotainWrapper(tokens, Object.assign(Object.assign({}, services.parser.ParserConfig), { errorMessageProvider: services.parser.ParserErrorMessageProvider }));
         }
         alternatives(idx, choices) {
           this.wrapper.wrapOr(idx, choices);
@@ -40932,19 +38508,28 @@ For Further details.`;
         }
       };
       exports2.LangiumParser = LangiumParser;
-      var LangiumParserErrorMessageProvider = class {
-        buildMismatchTokenMessage({ expected, actual }) {
-          const expectedMsg = expected.LABEL ? "`" + expected.LABEL + "`" : expected.name.endsWith(":KW") ? `keyword '${expected.name.substring(0, expected.name.length - 3)}'` : `token of type '${expected.name}'`;
-          return `Expecting ${expectedMsg} but found \`${actual.image}\`.`;
+      var AbstractParserErrorMessageProvider = class {
+        buildMismatchTokenMessage(options) {
+          return chevrotain_1.defaultParserErrorProvider.buildMismatchTokenMessage(options);
         }
-        buildNotAllInputParsedMessage({ firstRedundant }) {
-          return `Expecting end of file but found \`${firstRedundant.image}\`.`;
+        buildNotAllInputParsedMessage(options) {
+          return chevrotain_1.defaultParserErrorProvider.buildNotAllInputParsedMessage(options);
         }
         buildNoViableAltMessage(options) {
           return chevrotain_1.defaultParserErrorProvider.buildNoViableAltMessage(options);
         }
         buildEarlyExitMessage(options) {
           return chevrotain_1.defaultParserErrorProvider.buildEarlyExitMessage(options);
+        }
+      };
+      exports2.AbstractParserErrorMessageProvider = AbstractParserErrorMessageProvider;
+      var LangiumParserErrorMessageProvider = class extends AbstractParserErrorMessageProvider {
+        buildMismatchTokenMessage({ expected, actual }) {
+          const expectedMsg = expected.LABEL ? "`" + expected.LABEL + "`" : expected.name.endsWith(":KW") ? `keyword '${expected.name.substring(0, expected.name.length - 3)}'` : `token of type '${expected.name}'`;
+          return `Expecting ${expectedMsg} but found \`${actual.image}\`.`;
+        }
+        buildNotAllInputParsedMessage({ firstRedundant }) {
+          return `Expecting end of file but found \`${firstRedundant.image}\`.`;
         }
       };
       exports2.LangiumParserErrorMessageProvider = LangiumParserErrorMessageProvider;
@@ -41109,7 +38694,7 @@ For Further details.`;
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.createParser = void 0;
-      var chevrotain_1 = require_api8();
+      var chevrotain_1 = require_api7();
       var ast_1 = require_ast();
       var errors_1 = require_errors();
       var stream_1 = require_stream();
@@ -41488,7 +39073,7 @@ For Further details.`;
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.DefaultTokenBuilder = void 0;
-      var chevrotain_1 = require_api8();
+      var chevrotain_1 = require_api7();
       var ast_1 = require_ast();
       var internal_grammar_util_1 = require_internal_grammar_util();
       var ast_util_1 = require_ast_util();
@@ -41515,11 +39100,24 @@ For Further details.`;
         }
         buildTerminalToken(terminal) {
           const regex = (0, internal_grammar_util_1.terminalRegex)(terminal);
-          const token = { name: terminal.name, PATTERN: new RegExp(regex) };
+          const pattern = regex.flags.includes("u") ? this.regexPatternFunction(regex) : regex;
+          const token = {
+            name: terminal.name,
+            PATTERN: pattern,
+            LINE_BREAKS: true
+          };
           if (terminal.hidden) {
             token.GROUP = (0, regex_util_1.isWhitespaceRegExp)(regex) ? chevrotain_1.Lexer.SKIPPED : "hidden";
           }
           return token;
+        }
+        regexPatternFunction(regex) {
+          const stickyRegex = new RegExp(regex, regex.flags + "y");
+          return (text, offset) => {
+            stickyRegex.lastIndex = offset;
+            const execResult = stickyRegex.exec(text);
+            return execResult;
+          };
         }
         buildKeywordTokens(rules, terminalTokens, options) {
           return rules.filter(ast_1.isParserRule).flatMap((rule) => (0, ast_util_1.streamAllContents)(rule).filter(ast_1.isKeyword)).distinct((e) => e.value).toArray().sort((a, b) => b.value.length - a.value.length).map((keyword) => this.buildKeywordToken(keyword, terminalTokens, Boolean(options === null || options === void 0 ? void 0 : options.caseInsensitive)));
@@ -41553,7 +39151,7 @@ For Further details.`;
     "../../node_modules/langium/lib/parser/value-converter.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.convertBoolean = exports2.convertNumber = exports2.convertDate = exports2.convertBigint = exports2.convertInt = exports2.convertID = exports2.convertRegexLiteral = exports2.convertString = exports2.DefaultValueConverter = void 0;
+      exports2.convertBoolean = exports2.convertNumber = exports2.convertDate = exports2.convertBigint = exports2.convertInt = exports2.convertID = exports2.convertString = exports2.DefaultValueConverter = void 0;
       var ast_1 = require_ast();
       var internal_grammar_util_1 = require_internal_grammar_util();
       var grammar_util_1 = require_grammar_util();
@@ -41582,8 +39180,6 @@ For Further details.`;
               return convertString(input);
             case "ID":
               return convertID(input);
-            case "REGEXLITERAL":
-              return convertRegexLiteral(input);
           }
           switch ((_a = (0, internal_grammar_util_1.getRuleType)(rule)) === null || _a === void 0 ? void 0 : _a.toLowerCase()) {
             case "number":
@@ -41634,10 +39230,6 @@ For Further details.`;
             return char;
         }
       }
-      function convertRegexLiteral(input) {
-        return input.substring(1, input.length - 1);
-      }
-      exports2.convertRegexLiteral = convertRegexLiteral;
       function convertID(input) {
         if (input.charAt(0) === "^") {
           return input.substring(1);
@@ -41803,10 +39395,14 @@ For Further details.`;
     "../../node_modules/langium/lib/serializer/json-serializer.js"(exports2) {
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
-      exports2.DefaultJsonSerializer = void 0;
+      exports2.DefaultJsonSerializer = exports2.isAstNodeWithComment = void 0;
       var syntax_tree_1 = require_syntax_tree();
       var ast_util_1 = require_ast_util();
       var grammar_util_1 = require_grammar_util();
+      function isAstNodeWithComment(node) {
+        return typeof node.$comment === "string";
+      }
+      exports2.isAstNodeWithComment = isAstNodeWithComment;
       function isIntermediateReference(obj) {
         return typeof obj === "object" && !!obj && ("$ref" in obj || "$error" in obj);
       }
@@ -41815,6 +39411,7 @@ For Further details.`;
           this.ignoreProperties = /* @__PURE__ */ new Set(["$container", "$containerProperty", "$containerIndex", "$document", "$cstNode"]);
           this.astNodeLocator = services.workspace.AstNodeLocator;
           this.nameProvider = services.references.NameProvider;
+          this.commentProvider = services.documentation.CommentProvider;
         }
         serialize(node, options) {
           const specificReplacer = options === null || options === void 0 ? void 0 : options.replacer;
@@ -41827,7 +39424,7 @@ For Further details.`;
           this.linkNode(root, root);
           return root;
         }
-        replacer(key, value, { refText, sourceText, textRegions } = {}) {
+        replacer(key, value, { refText, sourceText, textRegions, comments } = {}) {
           var _a, _b, _c;
           if (this.ignoreProperties.has(key)) {
             return void 0;
@@ -41859,6 +39456,10 @@ For Further details.`;
             if (sourceText && !key && (0, syntax_tree_1.isAstNode)(value)) {
               astNode !== null && astNode !== void 0 ? astNode : astNode = Object.assign({}, value);
               astNode.$sourceText = (_c = value.$cstNode) === null || _c === void 0 ? void 0 : _c.text;
+            }
+            if (comments && (0, syntax_tree_1.isAstNode)(value)) {
+              astNode !== null && astNode !== void 0 ? astNode : astNode = Object.assign({}, value);
+              astNode.$comment = this.commentProvider.getComment(value);
             }
             return astNode !== null && astNode !== void 0 ? astNode : value;
           }
@@ -42073,17 +39674,22 @@ For Further details.`;
           this.nameProvider = services.references.NameProvider;
         }
         createDescription(node, name, document = (0, ast_util_1.getDocument)(node)) {
-          var _a;
           name !== null && name !== void 0 ? name : name = this.nameProvider.getName(node);
           const path = this.astNodeLocator.getAstNodePath(node);
           if (!name) {
             throw new Error(`Node at path ${path} has no name.`);
           }
-          const nameNode = (_a = this.nameProvider.getNameNode(node)) !== null && _a !== void 0 ? _a : node.$cstNode;
+          let nameNodeSegment;
+          const nameSegmentGetter = () => {
+            var _a;
+            return nameNodeSegment !== null && nameNodeSegment !== void 0 ? nameNodeSegment : nameNodeSegment = (0, cst_util_1.toDocumentSegment)((_a = this.nameProvider.getNameNode(node)) !== null && _a !== void 0 ? _a : node.$cstNode);
+          };
           return {
             node,
             name,
-            nameSegment: (0, cst_util_1.toDocumentSegment)(nameNode),
+            get nameSegment() {
+              return nameSegmentGetter();
+            },
             selectionSegment: (0, cst_util_1.toDocumentSegment)(node.$cstNode),
             type: node.$type,
             documentUri: document.uri,
@@ -42395,14 +40001,15 @@ For Further details.`;
       var stream_1 = require_stream();
       var uri_util_1 = require_uri_util();
       var documents_1 = require_documents();
+      var caching_1 = require_caching();
       var DefaultIndexManager = class {
         constructor(services) {
           this.simpleIndex = /* @__PURE__ */ new Map();
+          this.simpleTypeIndex = new caching_1.ContextCache();
           this.referenceIndex = /* @__PURE__ */ new Map();
-          this.globalScopeCache = /* @__PURE__ */ new Map();
+          this.documents = services.workspace.LangiumDocuments;
           this.serviceRegistry = services.ServiceRegistry;
           this.astReflection = services.AstReflection;
-          this.langiumDocuments = () => services.workspace.LangiumDocuments;
         }
         findAllReferences(targetNode, astNodePath) {
           const targetDocUri = (0, ast_util_1.getDocument)(targetNode).uri;
@@ -42416,35 +40023,42 @@ For Further details.`;
           });
           return (0, stream_1.stream)(result);
         }
-        allElements(nodeType = "") {
-          if (!this.globalScopeCache.has("")) {
-            this.globalScopeCache.set("", Array.from(this.simpleIndex.values()).flat());
+        allElements(nodeType, uris) {
+          let documentUris = (0, stream_1.stream)(this.simpleIndex.keys());
+          if (uris) {
+            documentUris = documentUris.filter((uri) => !uris || uris.has(uri));
           }
-          const cached = this.globalScopeCache.get(nodeType);
-          if (cached) {
-            return (0, stream_1.stream)(cached);
-          } else {
-            const elements = this.globalScopeCache.get("").filter((e) => this.astReflection.isSubtype(e.type, nodeType));
-            this.globalScopeCache.set(nodeType, elements);
-            return (0, stream_1.stream)(elements);
+          return documentUris.map((uri) => this.getFileDescriptions(uri, nodeType)).flat();
+        }
+        getFileDescriptions(uri, nodeType) {
+          var _a;
+          if (!nodeType) {
+            return (_a = this.simpleIndex.get(uri)) !== null && _a !== void 0 ? _a : [];
           }
+          const descriptions = this.simpleTypeIndex.get(uri, nodeType, () => {
+            var _a2;
+            const allFileDescriptions = (_a2 = this.simpleIndex.get(uri)) !== null && _a2 !== void 0 ? _a2 : [];
+            return allFileDescriptions.filter((e) => this.astReflection.isSubtype(e.type, nodeType));
+          });
+          return descriptions;
         }
         remove(uris) {
           for (const uri of uris) {
             const uriString = uri.toString();
             this.simpleIndex.delete(uriString);
+            this.simpleTypeIndex.clear(uriString);
             this.referenceIndex.delete(uriString);
-            this.globalScopeCache.clear();
           }
         }
         async updateContent(document, cancelToken = vscode_languageserver_1.CancellationToken.None) {
-          this.globalScopeCache.clear();
           const services = this.serviceRegistry.getServices(document.uri);
           const exports3 = await services.references.ScopeComputation.computeExports(document, cancelToken);
           for (const data of exports3) {
             data.node = void 0;
           }
-          this.simpleIndex.set(document.uri.toString(), exports3);
+          const uri = document.uri.toString();
+          this.simpleIndex.set(uri, exports3);
+          this.simpleTypeIndex.clear(uri);
           document.state = documents_1.DocumentState.IndexedContent;
         }
         async updateReferences(document, cancelToken = vscode_languageserver_1.CancellationToken.None) {
@@ -42454,7 +40068,7 @@ For Further details.`;
           document.state = documents_1.DocumentState.IndexedReferences;
         }
         getAffectedDocuments(uris) {
-          return this.langiumDocuments().all.filter((e) => {
+          return this.documents.all.filter((e) => {
             if (uris.some((uri) => (0, uri_util_1.equalURI)(e.uri, uri))) {
               return false;
             }
@@ -42588,7 +40202,7 @@ For Further details.`;
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.isTokenTypeDictionary = exports2.isIMultiModeLexerDefinition = exports2.isTokenTypeArray = exports2.DefaultLexer = void 0;
-      var chevrotain_1 = require_api8();
+      var chevrotain_1 = require_api7();
       var DefaultLexer = class {
         constructor(services) {
           const tokens = services.parser.TokenBuilder.buildTokens(services.Grammar, {
@@ -42596,7 +40210,9 @@ For Further details.`;
           });
           this.tokenTypes = this.toTokenTypeDictionary(tokens);
           const lexerTokens = isTokenTypeDictionary(tokens) ? Object.values(tokens) : tokens;
-          this.chevrotainLexer = new chevrotain_1.Lexer(lexerTokens);
+          this.chevrotainLexer = new chevrotain_1.Lexer(lexerTokens, {
+            positionTracking: "full"
+          });
         }
         get definition() {
           return this.tokenTypes;
@@ -43122,19 +40738,17 @@ ${content}`;
       "use strict";
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.JSDocDocumentationProvider = void 0;
-      var syntax_tree_1 = require_syntax_tree();
       var ast_util_1 = require_ast_util();
-      var cst_util_1 = require_cst_util();
       var jsdoc_1 = require_jsdoc();
       var JSDocDocumentationProvider = class {
         constructor(services) {
           this.indexManager = services.shared.workspace.IndexManager;
-          this.grammarConfig = services.parser.GrammarConfig;
+          this.commentProvider = services.documentation.CommentProvider;
         }
         getDocumentation(node) {
-          const lastNode = (0, cst_util_1.findCommentNode)(node.$cstNode, this.grammarConfig.multilineCommentRules);
-          if ((0, syntax_tree_1.isLeafCstNode)(lastNode) && (0, jsdoc_1.isJSDoc)(lastNode)) {
-            const parsedJSDoc = (0, jsdoc_1.parseJSDoc)(lastNode);
+          const comment = this.commentProvider.getComment(node);
+          if (comment && (0, jsdoc_1.isJSDoc)(comment)) {
+            const parsedJSDoc = (0, jsdoc_1.parseJSDoc)(comment);
             return parsedJSDoc.toMarkdown({
               renderLink: (link, display) => {
                 return this.documentationLinkRenderer(node, link, display);
@@ -43211,6 +40825,59 @@ ${content}`;
     }
   });
 
+  // ../../node_modules/langium/lib/serializer/index.js
+  var require_serializer = __commonJS({
+    "../../node_modules/langium/lib/serializer/index.js"(exports2) {
+      "use strict";
+      var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+        if (k2 === void 0)
+          k2 = k;
+        var desc = Object.getOwnPropertyDescriptor(m, k);
+        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+          desc = { enumerable: true, get: function() {
+            return m[k];
+          } };
+        }
+        Object.defineProperty(o, k2, desc);
+      } : function(o, m, k, k2) {
+        if (k2 === void 0)
+          k2 = k;
+        o[k2] = m[k];
+      });
+      var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+        for (var p in m)
+          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+            __createBinding(exports3, m, p);
+      };
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      __exportStar(require_json_serializer(), exports2);
+    }
+  });
+
+  // ../../node_modules/langium/lib/documentation/comment-provider.js
+  var require_comment_provider = __commonJS({
+    "../../node_modules/langium/lib/documentation/comment-provider.js"(exports2) {
+      "use strict";
+      Object.defineProperty(exports2, "__esModule", { value: true });
+      exports2.DefaultCommentProvider = void 0;
+      var serializer_1 = require_serializer();
+      var cst_util_1 = require_cst_util();
+      var DefaultCommentProvider = class {
+        constructor(services) {
+          this.grammarConfig = () => services.parser.GrammarConfig;
+        }
+        getComment(node) {
+          var _a;
+          if ((0, serializer_1.isAstNodeWithComment)(node)) {
+            return node.$comment;
+          }
+          return (_a = (0, cst_util_1.findCommentNode)(node.$cstNode, this.grammarConfig().multilineCommentRules)) === null || _a === void 0 ? void 0 : _a.text;
+        }
+      };
+      exports2.DefaultCommentProvider = DefaultCommentProvider;
+    }
+  });
+
   // ../../node_modules/langium/lib/default-module.js
   var require_default_module = __commonJS({
     "../../node_modules/langium/lib/default-module.js"(exports2) {
@@ -43218,18 +40885,21 @@ ${content}`;
       Object.defineProperty(exports2, "__esModule", { value: true });
       exports2.createDefaultSharedModule = exports2.createDefaultModule = void 0;
       var vscode_languageserver_1 = require_main4();
-      var vscode_languageserver_textdocument_1 = require_main5();
+      var vscode_languageserver_textdocument_1 = (init_main(), __toCommonJS(main_exports));
       var grammar_config_1 = require_grammar_config();
       var completion_parser_builder_1 = require_completion_parser_builder();
       var completion_provider_1 = require_completion_provider();
       var document_highlight_provider_1 = require_document_highlight_provider();
       var document_symbol_provider_1 = require_document_symbol_provider();
       var folding_range_provider_1 = require_folding_range_provider();
+      var fuzzy_matcher_1 = require_fuzzy_matcher();
       var definition_provider_1 = require_definition_provider();
       var hover_provider_1 = require_hover_provider();
       var language_server_1 = require_language_server();
+      var node_kind_provider_1 = require_node_kind_provider();
       var references_provider_1 = require_references_provider();
       var rename_provider_1 = require_rename_provider();
+      var workspace_symbol_provider_1 = require_workspace_symbol_provider();
       var langium_parser_builder_1 = require_langium_parser_builder();
       var token_builder_1 = require_token_builder();
       var value_converter_1 = require_value_converter();
@@ -43252,9 +40922,12 @@ ${content}`;
       var workspace_manager_1 = require_workspace_manager();
       var lexer_1 = require_lexer2();
       var documentation_1 = require_documentation();
+      var comment_provider_1 = require_comment_provider();
+      var langium_parser_1 = require_langium_parser();
       function createDefaultModule(context) {
         return {
           documentation: {
+            CommentProvider: (services) => new comment_provider_1.DefaultCommentProvider(services),
             DocumentationProvider: (services) => new documentation_1.JSDocDocumentationProvider(services)
           },
           parser: {
@@ -43263,7 +40936,8 @@ ${content}`;
             CompletionParser: (services) => (0, completion_parser_builder_1.createCompletionParser)(services),
             ValueConverter: () => new value_converter_1.DefaultValueConverter(),
             TokenBuilder: () => new token_builder_1.DefaultTokenBuilder(),
-            Lexer: (services) => new lexer_1.DefaultLexer(services)
+            Lexer: (services) => new lexer_1.DefaultLexer(services),
+            ParserErrorMessageProvider: () => new langium_parser_1.LangiumParserErrorMessageProvider()
           },
           lsp: {
             CompletionProvider: (services) => new completion_provider_1.DefaultCompletionProvider(services),
@@ -43303,7 +40977,10 @@ ${content}`;
           ServiceRegistry: () => new service_registry_1.DefaultServiceRegistry(),
           lsp: {
             Connection: () => context.connection,
-            LanguageServer: (services) => new language_server_1.DefaultLanguageServer(services)
+            LanguageServer: (services) => new language_server_1.DefaultLanguageServer(services),
+            WorkspaceSymbolProvider: (services) => new workspace_symbol_provider_1.DefaultWorkspaceSymbolProvider(services),
+            NodeKindProvider: () => new node_kind_provider_1.DefaultNodeKindProvider(),
+            FuzzyMatcher: () => new fuzzy_matcher_1.DefaultFuzzyMatcher()
           },
           workspace: {
             LangiumDocuments: (services) => new documents_1.DefaultLangiumDocuments(services),
@@ -43532,37 +41209,9 @@ ${content}`;
       __exportStar(require_linker(), exports2);
       __exportStar(require_name_provider(), exports2);
       __exportStar(require_references(), exports2);
+      __exportStar(require_scope(), exports2);
       __exportStar(require_scope_computation(), exports2);
       __exportStar(require_scope_provider(), exports2);
-    }
-  });
-
-  // ../../node_modules/langium/lib/serializer/index.js
-  var require_serializer = __commonJS({
-    "../../node_modules/langium/lib/serializer/index.js"(exports2) {
-      "use strict";
-      var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-          desc = { enumerable: true, get: function() {
-            return m[k];
-          } };
-        }
-        Object.defineProperty(o, k2, desc);
-      } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        o[k2] = m[k];
-      });
-      var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
-            __createBinding(exports3, m, p);
-      };
-      Object.defineProperty(exports2, "__esModule", { value: true });
-      __exportStar(require_json_serializer(), exports2);
     }
   });
 
@@ -43592,6 +41241,7 @@ ${content}`;
       };
       Object.defineProperty(exports2, "__esModule", { value: true });
       __exportStar(require_ast_util(), exports2);
+      __exportStar(require_caching(), exports2);
       __exportStar(require_collections(), exports2);
       __exportStar(require_cst_util(), exports2);
       __exportStar(require_errors(), exports2);
