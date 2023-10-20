@@ -8,7 +8,9 @@ import { DocumentState, startLanguageServer, EmptyFileSystem, createLangiumGramm
 import { BrowserMessageReader, BrowserMessageWriter, createConnection, NotificationType, Diagnostic } from 'vscode-languageserver/browser';
 
 /* browser specific setup code */
+// eslint-disable-next-line no-restricted-globals
 const messageReader = new BrowserMessageReader(self);
+// eslint-disable-next-line no-restricted-globals
 const messageWriter = new BrowserMessageWriter(self);
 
 const connection = createConnection(messageReader, messageWriter);

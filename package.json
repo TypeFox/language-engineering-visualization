@@ -1,7 +1,16 @@
 {
-    "name": "visuallangium",
+    "name": "language-engineering-visualization",
     "private": true,
+    "scripts": {
+        "build": "npm run build --workspaces",
+        "start": "npm run start --workspaces",
+        "clean": "npm run clean --workspaces",
+        "watch": "npm run watch --workspaces"
+    },
     "workspaces": [
         "packages/*"
-    ]
+    ],
+    "devDependencies": {
+        "shx": "^0.3.4"
+    }
 }

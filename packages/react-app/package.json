@@ -1,5 +1,5 @@
 {
-  "name": "@visuallangium/reactapp",
+  "name": "@language-engineering-visualization/reactapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,7 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@typefox/monaco-editor-react": "1.0.0",
-    "@visuallangium/langium-hat": "file:../langium-hat",
+    "langium-ast-helper": "file:../langium-ast-helper",
     "graphlib-dot": "^0.6.4",
     "graphviz-react": "^1.2.5",
     "langium": "^1.2.0",
@@ -18,8 +18,7 @@
     "react-graph-vis": "^1.0.7",
     "react-scripts": "5.0.1",
     "vscode-languageclient": "~8.0.2",
-    "vscode-languageserver": "~8.0.2",
-    "web-vitals": "^2.1.4"
+    "vscode-languageserver": "~8.0.2"
   },
   "volta": {
     "node": "18.16.0",
@@ -29,8 +28,10 @@
     "start": "react-scripts start",
     "build:langium": "esbuild ./src/langium-worker.ts --bundle --format=iife --outfile=./public/ls/langiumServerWorker.js",
     "build": "npm run build:langium && react-scripts build",
+    "clean": "shx rm -rf ./public/ls/langiumServerWorker.js build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch": "npm run build"
   },
   "eslintConfig": {
     "extends": [

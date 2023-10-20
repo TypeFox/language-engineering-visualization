@@ -1,0 +1,7 @@
+# CHANGELOG
+
+## 0.0.1
+
+- Initial release
+- Provides `deserializeAST` helper, as well as convenient converters to general `Graph` and `TreeMap` data structures.
+- Some additional Langium helper types are included as well.
