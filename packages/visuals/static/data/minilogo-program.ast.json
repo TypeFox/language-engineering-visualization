@@ -1,0 +1,3298 @@
+{
+    "$type": "Model",
+    "defs": [
+        {
+            "$type": "Def",
+            "body": [
+                {
+                    "$type": "Move",
+                    "ex": {
+                        "$type": "Ref",
+                        "val": {
+                            "$ref": "#/defs@0/params@0"
+                        },
+                        "$textRegion": {
+                            "offset": 206,
+                            "end": 207,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 9,
+                                    "line": 11
+                                },
+                                "end": {
+                                    "character": 10,
+                                    "line": 11
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 206,
+                                        "end": 207,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 9,
+                                                "line": 11
+                                            },
+                                            "end": {
+                                                "character": 10,
+                                                "line": 11
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "ey": {
+                        "$type": "Ref",
+                        "val": {
+                            "$ref": "#/defs@0/params@1"
+                        },
+                        "$textRegion": {
+                            "offset": 209,
+                            "end": 210,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 12,
+                                    "line": 11
+                                },
+                                "end": {
+                                    "character": 13,
+                                    "line": 11
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 209,
+                                        "end": 210,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 12,
+                                                "line": 11
+                                            },
+                                            "end": {
+                                                "character": 13,
+                                                "line": 11
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "$textRegion": {
+                        "offset": 200,
+                        "end": 212,
+                        "length": 12,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 11
+                            },
+                            "end": {
+                                "character": 15,
+                                "line": 11
+                            }
+                        },
+                        "assignments": {
+                            "ex": [
+                                {
+                                    "offset": 206,
+                                    "end": 207,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 9,
+                                            "line": 11
+                                        },
+                                        "end": {
+                                            "character": 10,
+                                            "line": 11
+                                        }
+                                    }
+                                }
+                            ],
+                            "ey": [
+                                {
+                                    "offset": 209,
+                                    "end": 210,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 12,
+                                            "line": 11
+                                        },
+                                        "end": {
+                                            "character": 13,
+                                            "line": 11
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Pen",
+                    "mode": "down",
+                    "$textRegion": {
+                        "offset": 217,
+                        "end": 226,
+                        "length": 9,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 13
+                            },
+                            "end": {
+                                "character": 12,
+                                "line": 13
+                            }
+                        },
+                        "assignments": {
+                            "mode": [
+                                {
+                                    "offset": 221,
+                                    "end": 225,
+                                    "length": 4,
+                                    "range": {
+                                        "start": {
+                                            "character": 7,
+                                            "line": 13
+                                        },
+                                        "end": {
+                                            "character": 11,
+                                            "line": 13
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Move",
+                    "ex": {
+                        "$type": "Ref",
+                        "val": {
+                            "$ref": "#/defs@0/params@2"
+                        },
+                        "$textRegion": {
+                            "offset": 236,
+                            "end": 241,
+                            "length": 5,
+                            "range": {
+                                "start": {
+                                    "character": 8,
+                                    "line": 15
+                                },
+                                "end": {
+                                    "character": 13,
+                                    "line": 15
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 236,
+                                        "end": 241,
+                                        "length": 5,
+                                        "range": {
+                                            "start": {
+                                                "character": 8,
+                                                "line": 15
+                                            },
+                                            "end": {
+                                                "character": 13,
+                                                "line": 15
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "ey": {
+                        "$type": "Lit",
+                        "val": 0,
+                        "$textRegion": {
+                            "offset": 242,
+                            "end": 243,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 14,
+                                    "line": 15
+                                },
+                                "end": {
+                                    "character": 15,
+                                    "line": 15
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 242,
+                                        "end": 243,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 14,
+                                                "line": 15
+                                            },
+                                            "end": {
+                                                "character": 15,
+                                                "line": 15
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "$textRegion": {
+                        "offset": 231,
+                        "end": 244,
+                        "length": 13,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 15
+                            },
+                            "end": {
+                                "character": 16,
+                                "line": 15
+                            }
+                        },
+                        "assignments": {
+                            "ex": [
+                                {
+                                    "offset": 236,
+                                    "end": 241,
+                                    "length": 5,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 15
+                                        },
+                                        "end": {
+                                            "character": 13,
+                                            "line": 15
+                                        }
+                                    }
+                                }
+                            ],
+                            "ey": [
+                                {
+                                    "offset": 242,
+                                    "end": 243,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 14,
+                                            "line": 15
+                                        },
+                                        "end": {
+                                            "character": 15,
+                                            "line": 15
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Move",
+                    "ex": {
+                        "$type": "Lit",
+                        "val": 0,
+                        "$textRegion": {
+                            "offset": 253,
+                            "end": 254,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 8,
+                                    "line": 16
+                                },
+                                "end": {
+                                    "character": 9,
+                                    "line": 16
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 253,
+                                        "end": 254,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 8,
+                                                "line": 16
+                                            },
+                                            "end": {
+                                                "character": 9,
+                                                "line": 16
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "ey": {
+                        "$type": "Ref",
+                        "val": {
+                            "$ref": "#/defs@0/params@2"
+                        },
+                        "$textRegion": {
+                            "offset": 255,
+                            "end": 260,
+                            "length": 5,
+                            "range": {
+                                "start": {
+                                    "character": 10,
+                                    "line": 16
+                                },
+                                "end": {
+                                    "character": 15,
+                                    "line": 16
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 255,
+                                        "end": 260,
+                                        "length": 5,
+                                        "range": {
+                                            "start": {
+                                                "character": 10,
+                                                "line": 16
+                                            },
+                                            "end": {
+                                                "character": 15,
+                                                "line": 16
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "$textRegion": {
+                        "offset": 248,
+                        "end": 261,
+                        "length": 13,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 16
+                            },
+                            "end": {
+                                "character": 16,
+                                "line": 16
+                            }
+                        },
+                        "assignments": {
+                            "ex": [
+                                {
+                                    "offset": 253,
+                                    "end": 254,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 16
+                                        },
+                                        "end": {
+                                            "character": 9,
+                                            "line": 16
+                                        }
+                                    }
+                                }
+                            ],
+                            "ey": [
+                                {
+                                    "offset": 255,
+                                    "end": 260,
+                                    "length": 5,
+                                    "range": {
+                                        "start": {
+                                            "character": 10,
+                                            "line": 16
+                                        },
+                                        "end": {
+                                            "character": 15,
+                                            "line": 16
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Move",
+                    "ex": {
+                        "$type": "BinExpr",
+                        "e1": {
+                            "$type": "Lit",
+                            "val": -1,
+                            "$textRegion": {
+                                "offset": 270,
+                                "end": 272,
+                                "length": 2,
+                                "range": {
+                                    "start": {
+                                        "character": 8,
+                                        "line": 17
+                                    },
+                                    "end": {
+                                        "character": 10,
+                                        "line": 17
+                                    }
+                                },
+                                "assignments": {
+                                    "val": [
+                                        {
+                                            "offset": 270,
+                                            "end": 272,
+                                            "length": 2,
+                                            "range": {
+                                                "start": {
+                                                    "character": 8,
+                                                    "line": 17
+                                                },
+                                                "end": {
+                                                    "character": 10,
+                                                    "line": 17
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "op": "*",
+                        "e2": {
+                            "$type": "Ref",
+                            "val": {
+                                "$ref": "#/defs@0/params@2"
+                            },
+                            "$textRegion": {
+                                "offset": 275,
+                                "end": 280,
+                                "length": 5,
+                                "range": {
+                                    "start": {
+                                        "character": 13,
+                                        "line": 17
+                                    },
+                                    "end": {
+                                        "character": 18,
+                                        "line": 17
+                                    }
+                                },
+                                "assignments": {
+                                    "val": [
+                                        {
+                                            "offset": 275,
+                                            "end": 280,
+                                            "length": 5,
+                                            "range": {
+                                                "start": {
+                                                    "character": 13,
+                                                    "line": 17
+                                                },
+                                                "end": {
+                                                    "character": 18,
+                                                    "line": 17
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "$textRegion": {
+                            "offset": 270,
+                            "end": 280,
+                            "length": 10,
+                            "range": {
+                                "start": {
+                                    "character": 8,
+                                    "line": 17
+                                },
+                                "end": {
+                                    "character": 18,
+                                    "line": 17
+                                }
+                            },
+                            "assignments": {
+                                "op": [
+                                    {
+                                        "offset": 273,
+                                        "end": 274,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 11,
+                                                "line": 17
+                                            },
+                                            "end": {
+                                                "character": 12,
+                                                "line": 17
+                                            }
+                                        }
+                                    }
+                                ],
+                                "e2": [
+                                    {
+                                        "offset": 275,
+                                        "end": 280,
+                                        "length": 5,
+                                        "range": {
+                                            "start": {
+                                                "character": 13,
+                                                "line": 17
+                                            },
+                                            "end": {
+                                                "character": 18,
+                                                "line": 17
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "ey": {
+                        "$type": "Lit",
+                        "val": 0,
+                        "$textRegion": {
+                            "offset": 281,
+                            "end": 282,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 19,
+                                    "line": 17
+                                },
+                                "end": {
+                                    "character": 20,
+                                    "line": 17
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 281,
+                                        "end": 282,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 19,
+                                                "line": 17
+                                            },
+                                            "end": {
+                                                "character": 20,
+                                                "line": 17
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "$textRegion": {
+                        "offset": 265,
+                        "end": 283,
+                        "length": 18,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 17
+                            },
+                            "end": {
+                                "character": 21,
+                                "line": 17
+                            }
+                        },
+                        "assignments": {
+                            "ex": [
+                                {
+                                    "offset": 270,
+                                    "end": 280,
+                                    "length": 10,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 17
+                                        },
+                                        "end": {
+                                            "character": 18,
+                                            "line": 17
+                                        }
+                                    }
+                                }
+                            ],
+                            "ey": [
+                                {
+                                    "offset": 281,
+                                    "end": 282,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 19,
+                                            "line": 17
+                                        },
+                                        "end": {
+                                            "character": 20,
+                                            "line": 17
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Move",
+                    "ex": {
+                        "$type": "Lit",
+                        "val": 0,
+                        "$textRegion": {
+                            "offset": 292,
+                            "end": 293,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 8,
+                                    "line": 18
+                                },
+                                "end": {
+                                    "character": 9,
+                                    "line": 18
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 292,
+                                        "end": 293,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 8,
+                                                "line": 18
+                                            },
+                                            "end": {
+                                                "character": 9,
+                                                "line": 18
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "ey": {
+                        "$type": "BinExpr",
+                        "e1": {
+                            "$type": "Lit",
+                            "val": -1,
+                            "$textRegion": {
+                                "offset": 294,
+                                "end": 296,
+                                "length": 2,
+                                "range": {
+                                    "start": {
+                                        "character": 10,
+                                        "line": 18
+                                    },
+                                    "end": {
+                                        "character": 12,
+                                        "line": 18
+                                    }
+                                },
+                                "assignments": {
+                                    "val": [
+                                        {
+                                            "offset": 294,
+                                            "end": 296,
+                                            "length": 2,
+                                            "range": {
+                                                "start": {
+                                                    "character": 10,
+                                                    "line": 18
+                                                },
+                                                "end": {
+                                                    "character": 12,
+                                                    "line": 18
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "op": "*",
+                        "e2": {
+                            "$type": "Ref",
+                            "val": {
+                                "$ref": "#/defs@0/params@2"
+                            },
+                            "$textRegion": {
+                                "offset": 299,
+                                "end": 304,
+                                "length": 5,
+                                "range": {
+                                    "start": {
+                                        "character": 15,
+                                        "line": 18
+                                    },
+                                    "end": {
+                                        "character": 20,
+                                        "line": 18
+                                    }
+                                },
+                                "assignments": {
+                                    "val": [
+                                        {
+                                            "offset": 299,
+                                            "end": 304,
+                                            "length": 5,
+                                            "range": {
+                                                "start": {
+                                                    "character": 15,
+                                                    "line": 18
+                                                },
+                                                "end": {
+                                                    "character": 20,
+                                                    "line": 18
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "$textRegion": {
+                            "offset": 294,
+                            "end": 304,
+                            "length": 10,
+                            "range": {
+                                "start": {
+                                    "character": 10,
+                                    "line": 18
+                                },
+                                "end": {
+                                    "character": 20,
+                                    "line": 18
+                                }
+                            },
+                            "assignments": {
+                                "op": [
+                                    {
+                                        "offset": 297,
+                                        "end": 298,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 13,
+                                                "line": 18
+                                            },
+                                            "end": {
+                                                "character": 14,
+                                                "line": 18
+                                            }
+                                        }
+                                    }
+                                ],
+                                "e2": [
+                                    {
+                                        "offset": 299,
+                                        "end": 304,
+                                        "length": 5,
+                                        "range": {
+                                            "start": {
+                                                "character": 15,
+                                                "line": 18
+                                            },
+                                            "end": {
+                                                "character": 20,
+                                                "line": 18
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "$textRegion": {
+                        "offset": 287,
+                        "end": 305,
+                        "length": 18,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 18
+                            },
+                            "end": {
+                                "character": 21,
+                                "line": 18
+                            }
+                        },
+                        "assignments": {
+                            "ex": [
+                                {
+                                    "offset": 292,
+                                    "end": 293,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 18
+                                        },
+                                        "end": {
+                                            "character": 9,
+                                            "line": 18
+                                        }
+                                    }
+                                }
+                            ],
+                            "ey": [
+                                {
+                                    "offset": 294,
+                                    "end": 304,
+                                    "length": 10,
+                                    "range": {
+                                        "start": {
+                                            "character": 10,
+                                            "line": 18
+                                        },
+                                        "end": {
+                                            "character": 20,
+                                            "line": 18
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Pen",
+                    "mode": "up",
+                    "$textRegion": {
+                        "offset": 309,
+                        "end": 316,
+                        "length": 7,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 19
+                            },
+                            "end": {
+                                "character": 10,
+                                "line": 19
+                            }
+                        },
+                        "assignments": {
+                            "mode": [
+                                {
+                                    "offset": 313,
+                                    "end": 315,
+                                    "length": 2,
+                                    "range": {
+                                        "start": {
+                                            "character": 7,
+                                            "line": 19
+                                        },
+                                        "end": {
+                                            "character": 9,
+                                            "line": 19
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Move",
+                    "ex": {
+                        "$type": "NegExpr",
+                        "ne": {
+                            "$type": "Ref",
+                            "val": {
+                                "$ref": "#/defs@0/params@0"
+                            },
+                            "$textRegion": {
+                                "offset": 327,
+                                "end": 328,
+                                "length": 1,
+                                "range": {
+                                    "start": {
+                                        "character": 9,
+                                        "line": 21
+                                    },
+                                    "end": {
+                                        "character": 10,
+                                        "line": 21
+                                    }
+                                },
+                                "assignments": {
+                                    "val": [
+                                        {
+                                            "offset": 327,
+                                            "end": 328,
+                                            "length": 1,
+                                            "range": {
+                                                "start": {
+                                                    "character": 9,
+                                                    "line": 21
+                                                },
+                                                "end": {
+                                                    "character": 10,
+                                                    "line": 21
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "$textRegion": {
+                            "offset": 326,
+                            "end": 328,
+                            "length": 2,
+                            "range": {
+                                "start": {
+                                    "character": 8,
+                                    "line": 21
+                                },
+                                "end": {
+                                    "character": 10,
+                                    "line": 21
+                                }
+                            },
+                            "assignments": {
+                                "ne": [
+                                    {
+                                        "offset": 327,
+                                        "end": 328,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 9,
+                                                "line": 21
+                                            },
+                                            "end": {
+                                                "character": 10,
+                                                "line": 21
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "ey": {
+                        "$type": "NegExpr",
+                        "ne": {
+                            "$type": "Ref",
+                            "val": {
+                                "$ref": "#/defs@0/params@1"
+                            },
+                            "$textRegion": {
+                                "offset": 330,
+                                "end": 331,
+                                "length": 1,
+                                "range": {
+                                    "start": {
+                                        "character": 12,
+                                        "line": 21
+                                    },
+                                    "end": {
+                                        "character": 13,
+                                        "line": 21
+                                    }
+                                },
+                                "assignments": {
+                                    "val": [
+                                        {
+                                            "offset": 330,
+                                            "end": 331,
+                                            "length": 1,
+                                            "range": {
+                                                "start": {
+                                                    "character": 12,
+                                                    "line": 21
+                                                },
+                                                "end": {
+                                                    "character": 13,
+                                                    "line": 21
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "$textRegion": {
+                            "offset": 329,
+                            "end": 331,
+                            "length": 2,
+                            "range": {
+                                "start": {
+                                    "character": 11,
+                                    "line": 21
+                                },
+                                "end": {
+                                    "character": 13,
+                                    "line": 21
+                                }
+                            },
+                            "assignments": {
+                                "ne": [
+                                    {
+                                        "offset": 330,
+                                        "end": 331,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 12,
+                                                "line": 21
+                                            },
+                                            "end": {
+                                                "character": 13,
+                                                "line": 21
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "$textRegion": {
+                        "offset": 321,
+                        "end": 332,
+                        "length": 11,
+                        "range": {
+                            "start": {
+                                "character": 3,
+                                "line": 21
+                            },
+                            "end": {
+                                "character": 14,
+                                "line": 21
+                            }
+                        },
+                        "assignments": {
+                            "ex": [
+                                {
+                                    "offset": 326,
+                                    "end": 328,
+                                    "length": 2,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 21
+                                        },
+                                        "end": {
+                                            "character": 10,
+                                            "line": 21
+                                        }
+                                    }
+                                }
+                            ],
+                            "ey": [
+                                {
+                                    "offset": 329,
+                                    "end": 331,
+                                    "length": 2,
+                                    "range": {
+                                        "start": {
+                                            "character": 11,
+                                            "line": 21
+                                        },
+                                        "end": {
+                                            "character": 13,
+                                            "line": 21
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "name": "square",
+            "params": [
+                {
+                    "$type": "Param",
+                    "name": "x",
+                    "$textRegion": {
+                        "offset": 181,
+                        "end": 182,
+                        "length": 1,
+                        "range": {
+                            "start": {
+                                "character": 11,
+                                "line": 9
+                            },
+                            "end": {
+                                "character": 12,
+                                "line": 9
+                            }
+                        },
+                        "assignments": {
+                            "name": [
+                                {
+                                    "offset": 181,
+                                    "end": 182,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 11,
+                                            "line": 9
+                                        },
+                                        "end": {
+                                            "character": 12,
+                                            "line": 9
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Param",
+                    "name": "y",
+                    "$textRegion": {
+                        "offset": 184,
+                        "end": 185,
+                        "length": 1,
+                        "range": {
+                            "start": {
+                                "character": 14,
+                                "line": 9
+                            },
+                            "end": {
+                                "character": 15,
+                                "line": 9
+                            }
+                        },
+                        "assignments": {
+                            "name": [
+                                {
+                                    "offset": 184,
+                                    "end": 185,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 14,
+                                            "line": 9
+                                        },
+                                        "end": {
+                                            "character": 15,
+                                            "line": 9
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Param",
+                    "name": "scale",
+                    "$textRegion": {
+                        "offset": 187,
+                        "end": 192,
+                        "length": 5,
+                        "range": {
+                            "start": {
+                                "character": 17,
+                                "line": 9
+                            },
+                            "end": {
+                                "character": 22,
+                                "line": 9
+                            }
+                        },
+                        "assignments": {
+                            "name": [
+                                {
+                                    "offset": 187,
+                                    "end": 192,
+                                    "length": 5,
+                                    "range": {
+                                        "start": {
+                                            "character": 17,
+                                            "line": 9
+                                        },
+                                        "end": {
+                                            "character": 22,
+                                            "line": 9
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "$textRegion": {
+                "offset": 170,
+                "end": 334,
+                "length": 164,
+                "range": {
+                    "start": {
+                        "character": 0,
+                        "line": 9
+                    },
+                    "end": {
+                        "character": 1,
+                        "line": 22
+                    }
+                },
+                "assignments": {
+                    "body": [
+                        {
+                            "offset": 200,
+                            "end": 212,
+                            "length": 12,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 11
+                                },
+                                "end": {
+                                    "character": 15,
+                                    "line": 11
+                                }
+                            }
+                        },
+                        {
+                            "offset": 217,
+                            "end": 226,
+                            "length": 9,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 13
+                                },
+                                "end": {
+                                    "character": 12,
+                                    "line": 13
+                                }
+                            }
+                        },
+                        {
+                            "offset": 231,
+                            "end": 244,
+                            "length": 13,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 15
+                                },
+                                "end": {
+                                    "character": 16,
+                                    "line": 15
+                                }
+                            }
+                        },
+                        {
+                            "offset": 248,
+                            "end": 261,
+                            "length": 13,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 16
+                                },
+                                "end": {
+                                    "character": 16,
+                                    "line": 16
+                                }
+                            }
+                        },
+                        {
+                            "offset": 265,
+                            "end": 283,
+                            "length": 18,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 17
+                                },
+                                "end": {
+                                    "character": 21,
+                                    "line": 17
+                                }
+                            }
+                        },
+                        {
+                            "offset": 287,
+                            "end": 305,
+                            "length": 18,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 18
+                                },
+                                "end": {
+                                    "character": 21,
+                                    "line": 18
+                                }
+                            }
+                        },
+                        {
+                            "offset": 309,
+                            "end": 316,
+                            "length": 7,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 19
+                                },
+                                "end": {
+                                    "character": 10,
+                                    "line": 19
+                                }
+                            }
+                        },
+                        {
+                            "offset": 321,
+                            "end": 332,
+                            "length": 11,
+                            "range": {
+                                "start": {
+                                    "character": 3,
+                                    "line": 21
+                                },
+                                "end": {
+                                    "character": 14,
+                                    "line": 21
+                                }
+                            }
+                        }
+                    ],
+                    "name": [
+                        {
+                            "offset": 174,
+                            "end": 180,
+                            "length": 6,
+                            "range": {
+                                "start": {
+                                    "character": 4,
+                                    "line": 9
+                                },
+                                "end": {
+                                    "character": 10,
+                                    "line": 9
+                                }
+                            }
+                        }
+                    ],
+                    "params": [
+                        {
+                            "offset": 181,
+                            "end": 182,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 11,
+                                    "line": 9
+                                },
+                                "end": {
+                                    "character": 12,
+                                    "line": 9
+                                }
+                            }
+                        },
+                        {
+                            "offset": 184,
+                            "end": 185,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 14,
+                                    "line": 9
+                                },
+                                "end": {
+                                    "character": 15,
+                                    "line": 9
+                                }
+                            }
+                        },
+                        {
+                            "offset": 187,
+                            "end": 192,
+                            "length": 5,
+                            "range": {
+                                "start": {
+                                    "character": 17,
+                                    "line": 9
+                                },
+                                "end": {
+                                    "character": 22,
+                                    "line": 9
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "stmts": [
+        {
+            "$type": "Macro",
+            "def": {
+                "$ref": "#/defs@0"
+            },
+            "args": [
+                {
+                    "$type": "Lit",
+                    "val": 100,
+                    "$textRegion": {
+                        "offset": 343,
+                        "end": 346,
+                        "length": 3,
+                        "range": {
+                            "start": {
+                                "character": 7,
+                                "line": 24
+                            },
+                            "end": {
+                                "character": 10,
+                                "line": 24
+                            }
+                        },
+                        "assignments": {
+                            "val": [
+                                {
+                                    "offset": 343,
+                                    "end": 346,
+                                    "length": 3,
+                                    "range": {
+                                        "start": {
+                                            "character": 7,
+                                            "line": 24
+                                        },
+                                        "end": {
+                                            "character": 10,
+                                            "line": 24
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Lit",
+                    "val": 100,
+                    "$textRegion": {
+                        "offset": 347,
+                        "end": 350,
+                        "length": 3,
+                        "range": {
+                            "start": {
+                                "character": 11,
+                                "line": 24
+                            },
+                            "end": {
+                                "character": 14,
+                                "line": 24
+                            }
+                        },
+                        "assignments": {
+                            "val": [
+                                {
+                                    "offset": 347,
+                                    "end": 350,
+                                    "length": 3,
+                                    "range": {
+                                        "start": {
+                                            "character": 11,
+                                            "line": 24
+                                        },
+                                        "end": {
+                                            "character": 14,
+                                            "line": 24
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "$type": "Lit",
+                    "val": 300,
+                    "$textRegion": {
+                        "offset": 351,
+                        "end": 354,
+                        "length": 3,
+                        "range": {
+                            "start": {
+                                "character": 15,
+                                "line": 24
+                            },
+                            "end": {
+                                "character": 18,
+                                "line": 24
+                            }
+                        },
+                        "assignments": {
+                            "val": [
+                                {
+                                    "offset": 351,
+                                    "end": 354,
+                                    "length": 3,
+                                    "range": {
+                                        "start": {
+                                            "character": 15,
+                                            "line": 24
+                                        },
+                                        "end": {
+                                            "character": 18,
+                                            "line": 24
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "$textRegion": {
+                "offset": 336,
+                "end": 355,
+                "length": 19,
+                "range": {
+                    "start": {
+                        "character": 0,
+                        "line": 24
+                    },
+                    "end": {
+                        "character": 19,
+                        "line": 24
+                    }
+                },
+                "assignments": {
+                    "def": [
+                        {
+                            "offset": 336,
+                            "end": 342,
+                            "length": 6,
+                            "range": {
+                                "start": {
+                                    "character": 0,
+                                    "line": 24
+                                },
+                                "end": {
+                                    "character": 6,
+                                    "line": 24
+                                }
+                            }
+                        }
+                    ],
+                    "args": [
+                        {
+                            "offset": 343,
+                            "end": 346,
+                            "length": 3,
+                            "range": {
+                                "start": {
+                                    "character": 7,
+                                    "line": 24
+                                },
+                                "end": {
+                                    "character": 10,
+                                    "line": 24
+                                }
+                            }
+                        },
+                        {
+                            "offset": 347,
+                            "end": 350,
+                            "length": 3,
+                            "range": {
+                                "start": {
+                                    "character": 11,
+                                    "line": 24
+                                },
+                                "end": {
+                                    "character": 14,
+                                    "line": 24
+                                }
+                            }
+                        },
+                        {
+                            "offset": 351,
+                            "end": 354,
+                            "length": 3,
+                            "range": {
+                                "start": {
+                                    "character": 15,
+                                    "line": 24
+                                },
+                                "end": {
+                                    "character": 18,
+                                    "line": 24
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "$type": "Move",
+            "ex": {
+                "$type": "Lit",
+                "val": 100,
+                "$textRegion": {
+                    "offset": 362,
+                    "end": 365,
+                    "length": 3,
+                    "range": {
+                        "start": {
+                            "character": 5,
+                            "line": 26
+                        },
+                        "end": {
+                            "character": 8,
+                            "line": 26
+                        }
+                    },
+                    "assignments": {
+                        "val": [
+                            {
+                                "offset": 362,
+                                "end": 365,
+                                "length": 3,
+                                "range": {
+                                    "start": {
+                                        "character": 5,
+                                        "line": 26
+                                    },
+                                    "end": {
+                                        "character": 8,
+                                        "line": 26
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "ey": {
+                "$type": "Lit",
+                "val": 100,
+                "$textRegion": {
+                    "offset": 366,
+                    "end": 369,
+                    "length": 3,
+                    "range": {
+                        "start": {
+                            "character": 9,
+                            "line": 26
+                        },
+                        "end": {
+                            "character": 12,
+                            "line": 26
+                        }
+                    },
+                    "assignments": {
+                        "val": [
+                            {
+                                "offset": 366,
+                                "end": 369,
+                                "length": 3,
+                                "range": {
+                                    "start": {
+                                        "character": 9,
+                                        "line": 26
+                                    },
+                                    "end": {
+                                        "character": 12,
+                                        "line": 26
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "$textRegion": {
+                "offset": 357,
+                "end": 370,
+                "length": 13,
+                "range": {
+                    "start": {
+                        "character": 0,
+                        "line": 26
+                    },
+                    "end": {
+                        "character": 13,
+                        "line": 26
+                    }
+                },
+                "assignments": {
+                    "ex": [
+                        {
+                            "offset": 362,
+                            "end": 365,
+                            "length": 3,
+                            "range": {
+                                "start": {
+                                    "character": 5,
+                                    "line": 26
+                                },
+                                "end": {
+                                    "character": 8,
+                                    "line": 26
+                                }
+                            }
+                        }
+                    ],
+                    "ey": [
+                        {
+                            "offset": 366,
+                            "end": 369,
+                            "length": 3,
+                            "range": {
+                                "start": {
+                                    "character": 9,
+                                    "line": 26
+                                },
+                                "end": {
+                                    "character": 12,
+                                    "line": 26
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "$type": "For",
+            "body": [
+                {
+                    "$type": "For",
+                    "body": [
+                        {
+                            "$type": "Color",
+                            "r": {
+                                "$type": "BinExpr",
+                                "e1": {
+                                    "$type": "Ref",
+                                    "val": {
+                                        "$ref": "#/stmts@2/var"
+                                    },
+                                    "$textRegion": {
+                                        "offset": 535,
+                                        "end": 536,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 14,
+                                                "line": 32
+                                            },
+                                            "end": {
+                                                "character": 15,
+                                                "line": 32
+                                            }
+                                        },
+                                        "assignments": {
+                                            "val": [
+                                                {
+                                                    "offset": 535,
+                                                    "end": 536,
+                                                    "length": 1,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 14,
+                                                            "line": 32
+                                                        },
+                                                        "end": {
+                                                            "character": 15,
+                                                            "line": 32
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "op": "*",
+                                "e2": {
+                                    "$type": "Lit",
+                                    "val": 30,
+                                    "$textRegion": {
+                                        "offset": 537,
+                                        "end": 539,
+                                        "length": 2,
+                                        "range": {
+                                            "start": {
+                                                "character": 16,
+                                                "line": 32
+                                            },
+                                            "end": {
+                                                "character": 18,
+                                                "line": 32
+                                            }
+                                        },
+                                        "assignments": {
+                                            "val": [
+                                                {
+                                                    "offset": 537,
+                                                    "end": 539,
+                                                    "length": 2,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 16,
+                                                            "line": 32
+                                                        },
+                                                        "end": {
+                                                            "character": 18,
+                                                            "line": 32
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "$textRegion": {
+                                    "offset": 535,
+                                    "end": 539,
+                                    "length": 4,
+                                    "range": {
+                                        "start": {
+                                            "character": 14,
+                                            "line": 32
+                                        },
+                                        "end": {
+                                            "character": 18,
+                                            "line": 32
+                                        }
+                                    },
+                                    "assignments": {
+                                        "op": [
+                                            {
+                                                "offset": 536,
+                                                "end": 537,
+                                                "length": 1,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 15,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 16,
+                                                        "line": 32
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "e2": [
+                                            {
+                                                "offset": 537,
+                                                "end": 539,
+                                                "length": 2,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 16,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 18,
+                                                        "line": 32
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "g": {
+                                "$type": "BinExpr",
+                                "e1": {
+                                    "$type": "Ref",
+                                    "val": {
+                                        "$ref": "#/stmts@2/body@0/var"
+                                    },
+                                    "$textRegion": {
+                                        "offset": 541,
+                                        "end": 542,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 20,
+                                                "line": 32
+                                            },
+                                            "end": {
+                                                "character": 21,
+                                                "line": 32
+                                            }
+                                        },
+                                        "assignments": {
+                                            "val": [
+                                                {
+                                                    "offset": 541,
+                                                    "end": 542,
+                                                    "length": 1,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 20,
+                                                            "line": 32
+                                                        },
+                                                        "end": {
+                                                            "character": 21,
+                                                            "line": 32
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "op": "*",
+                                "e2": {
+                                    "$type": "Lit",
+                                    "val": 30,
+                                    "$textRegion": {
+                                        "offset": 543,
+                                        "end": 545,
+                                        "length": 2,
+                                        "range": {
+                                            "start": {
+                                                "character": 22,
+                                                "line": 32
+                                            },
+                                            "end": {
+                                                "character": 24,
+                                                "line": 32
+                                            }
+                                        },
+                                        "assignments": {
+                                            "val": [
+                                                {
+                                                    "offset": 543,
+                                                    "end": 545,
+                                                    "length": 2,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 22,
+                                                            "line": 32
+                                                        },
+                                                        "end": {
+                                                            "character": 24,
+                                                            "line": 32
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "$textRegion": {
+                                    "offset": 541,
+                                    "end": 545,
+                                    "length": 4,
+                                    "range": {
+                                        "start": {
+                                            "character": 20,
+                                            "line": 32
+                                        },
+                                        "end": {
+                                            "character": 24,
+                                            "line": 32
+                                        }
+                                    },
+                                    "assignments": {
+                                        "op": [
+                                            {
+                                                "offset": 542,
+                                                "end": 543,
+                                                "length": 1,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 21,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 22,
+                                                        "line": 32
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "e2": [
+                                            {
+                                                "offset": 543,
+                                                "end": 545,
+                                                "length": 2,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 22,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 24,
+                                                        "line": 32
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "b": {
+                                "$type": "BinExpr",
+                                "e1": {
+                                    "$type": "Group",
+                                    "ge": {
+                                        "$type": "BinExpr",
+                                        "e1": {
+                                            "$type": "Ref",
+                                            "val": {
+                                                "$ref": "#/stmts@2/var"
+                                            },
+                                            "$textRegion": {
+                                                "offset": 548,
+                                                "end": 549,
+                                                "length": 1,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 27,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 28,
+                                                        "line": 32
+                                                    }
+                                                },
+                                                "assignments": {
+                                                    "val": [
+                                                        {
+                                                            "offset": 548,
+                                                            "end": 549,
+                                                            "length": 1,
+                                                            "range": {
+                                                                "start": {
+                                                                    "character": 27,
+                                                                    "line": 32
+                                                                },
+                                                                "end": {
+                                                                    "character": 28,
+                                                                    "line": 32
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "op": "+",
+                                        "e2": {
+                                            "$type": "Ref",
+                                            "val": {
+                                                "$ref": "#/stmts@2/body@0/var"
+                                            },
+                                            "$textRegion": {
+                                                "offset": 552,
+                                                "end": 553,
+                                                "length": 1,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 31,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 32,
+                                                        "line": 32
+                                                    }
+                                                },
+                                                "assignments": {
+                                                    "val": [
+                                                        {
+                                                            "offset": 552,
+                                                            "end": 553,
+                                                            "length": 1,
+                                                            "range": {
+                                                                "start": {
+                                                                    "character": 31,
+                                                                    "line": 32
+                                                                },
+                                                                "end": {
+                                                                    "character": 32,
+                                                                    "line": 32
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "$textRegion": {
+                                            "offset": 548,
+                                            "end": 553,
+                                            "length": 5,
+                                            "range": {
+                                                "start": {
+                                                    "character": 27,
+                                                    "line": 32
+                                                },
+                                                "end": {
+                                                    "character": 32,
+                                                    "line": 32
+                                                }
+                                            },
+                                            "assignments": {
+                                                "op": [
+                                                    {
+                                                        "offset": 550,
+                                                        "end": 551,
+                                                        "length": 1,
+                                                        "range": {
+                                                            "start": {
+                                                                "character": 29,
+                                                                "line": 32
+                                                            },
+                                                            "end": {
+                                                                "character": 30,
+                                                                "line": 32
+                                                            }
+                                                        }
+                                                    }
+                                                ],
+                                                "e2": [
+                                                    {
+                                                        "offset": 552,
+                                                        "end": 553,
+                                                        "length": 1,
+                                                        "range": {
+                                                            "start": {
+                                                                "character": 31,
+                                                                "line": 32
+                                                            },
+                                                            "end": {
+                                                                "character": 32,
+                                                                "line": 32
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "$textRegion": {
+                                        "offset": 547,
+                                        "end": 554,
+                                        "length": 7,
+                                        "range": {
+                                            "start": {
+                                                "character": 26,
+                                                "line": 32
+                                            },
+                                            "end": {
+                                                "character": 33,
+                                                "line": 32
+                                            }
+                                        },
+                                        "assignments": {
+                                            "ge": [
+                                                {
+                                                    "offset": 548,
+                                                    "end": 553,
+                                                    "length": 5,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 27,
+                                                            "line": 32
+                                                        },
+                                                        "end": {
+                                                            "character": 32,
+                                                            "line": 32
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "op": "*",
+                                "e2": {
+                                    "$type": "Lit",
+                                    "val": 30,
+                                    "$textRegion": {
+                                        "offset": 557,
+                                        "end": 559,
+                                        "length": 2,
+                                        "range": {
+                                            "start": {
+                                                "character": 36,
+                                                "line": 32
+                                            },
+                                            "end": {
+                                                "character": 38,
+                                                "line": 32
+                                            }
+                                        },
+                                        "assignments": {
+                                            "val": [
+                                                {
+                                                    "offset": 557,
+                                                    "end": 559,
+                                                    "length": 2,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 36,
+                                                            "line": 32
+                                                        },
+                                                        "end": {
+                                                            "character": 38,
+                                                            "line": 32
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "$textRegion": {
+                                    "offset": 547,
+                                    "end": 559,
+                                    "length": 12,
+                                    "range": {
+                                        "start": {
+                                            "character": 26,
+                                            "line": 32
+                                        },
+                                        "end": {
+                                            "character": 38,
+                                            "line": 32
+                                        }
+                                    },
+                                    "assignments": {
+                                        "op": [
+                                            {
+                                                "offset": 555,
+                                                "end": 556,
+                                                "length": 1,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 34,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 35,
+                                                        "line": 32
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "e2": [
+                                            {
+                                                "offset": 557,
+                                                "end": 559,
+                                                "length": 2,
+                                                "range": {
+                                                    "start": {
+                                                        "character": 36,
+                                                        "line": 32
+                                                    },
+                                                    "end": {
+                                                        "character": 38,
+                                                        "line": 32
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "$textRegion": {
+                                "offset": 529,
+                                "end": 560,
+                                "length": 31,
+                                "range": {
+                                    "start": {
+                                        "character": 8,
+                                        "line": 32
+                                    },
+                                    "end": {
+                                        "character": 39,
+                                        "line": 32
+                                    }
+                                },
+                                "assignments": {
+                                    "r": [
+                                        {
+                                            "offset": 535,
+                                            "end": 539,
+                                            "length": 4,
+                                            "range": {
+                                                "start": {
+                                                    "character": 14,
+                                                    "line": 32
+                                                },
+                                                "end": {
+                                                    "character": 18,
+                                                    "line": 32
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "g": [
+                                        {
+                                            "offset": 541,
+                                            "end": 545,
+                                            "length": 4,
+                                            "range": {
+                                                "start": {
+                                                    "character": 20,
+                                                    "line": 32
+                                                },
+                                                "end": {
+                                                    "character": 24,
+                                                    "line": 32
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "b": [
+                                        {
+                                            "offset": 547,
+                                            "end": 559,
+                                            "length": 12,
+                                            "range": {
+                                                "start": {
+                                                    "character": 26,
+                                                    "line": 32
+                                                },
+                                                "end": {
+                                                    "character": 38,
+                                                    "line": 32
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "$type": "Macro",
+                            "def": {
+                                "$ref": "#/defs@0"
+                            },
+                            "args": [
+                                {
+                                    "$type": "BinExpr",
+                                    "e1": {
+                                        "$type": "Ref",
+                                        "val": {
+                                            "$ref": "#/stmts@2/var"
+                                        },
+                                        "$textRegion": {
+                                            "offset": 576,
+                                            "end": 577,
+                                            "length": 1,
+                                            "range": {
+                                                "start": {
+                                                    "character": 15,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 16,
+                                                    "line": 33
+                                                }
+                                            },
+                                            "assignments": {
+                                                "val": [
+                                                    {
+                                                        "offset": 576,
+                                                        "end": 577,
+                                                        "length": 1,
+                                                        "range": {
+                                                            "start": {
+                                                                "character": 15,
+                                                                "line": 33
+                                                            },
+                                                            "end": {
+                                                                "character": 16,
+                                                                "line": 33
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "op": "*",
+                                    "e2": {
+                                        "$type": "Lit",
+                                        "val": 30,
+                                        "$textRegion": {
+                                            "offset": 580,
+                                            "end": 582,
+                                            "length": 2,
+                                            "range": {
+                                                "start": {
+                                                    "character": 19,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 21,
+                                                    "line": 33
+                                                }
+                                            },
+                                            "assignments": {
+                                                "val": [
+                                                    {
+                                                        "offset": 580,
+                                                        "end": 582,
+                                                        "length": 2,
+                                                        "range": {
+                                                            "start": {
+                                                                "character": 19,
+                                                                "line": 33
+                                                            },
+                                                            "end": {
+                                                                "character": 21,
+                                                                "line": 33
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "$textRegion": {
+                                        "offset": 576,
+                                        "end": 582,
+                                        "length": 6,
+                                        "range": {
+                                            "start": {
+                                                "character": 15,
+                                                "line": 33
+                                            },
+                                            "end": {
+                                                "character": 21,
+                                                "line": 33
+                                            }
+                                        },
+                                        "assignments": {
+                                            "op": [
+                                                {
+                                                    "offset": 578,
+                                                    "end": 579,
+                                                    "length": 1,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 17,
+                                                            "line": 33
+                                                        },
+                                                        "end": {
+                                                            "character": 18,
+                                                            "line": 33
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "e2": [
+                                                {
+                                                    "offset": 580,
+                                                    "end": 582,
+                                                    "length": 2,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 19,
+                                                            "line": 33
+                                                        },
+                                                        "end": {
+                                                            "character": 21,
+                                                            "line": 33
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "BinExpr",
+                                    "e1": {
+                                        "$type": "Ref",
+                                        "val": {
+                                            "$ref": "#/stmts@2/body@0/var"
+                                        },
+                                        "$textRegion": {
+                                            "offset": 584,
+                                            "end": 585,
+                                            "length": 1,
+                                            "range": {
+                                                "start": {
+                                                    "character": 23,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 24,
+                                                    "line": 33
+                                                }
+                                            },
+                                            "assignments": {
+                                                "val": [
+                                                    {
+                                                        "offset": 584,
+                                                        "end": 585,
+                                                        "length": 1,
+                                                        "range": {
+                                                            "start": {
+                                                                "character": 23,
+                                                                "line": 33
+                                                            },
+                                                            "end": {
+                                                                "character": 24,
+                                                                "line": 33
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "op": "*",
+                                    "e2": {
+                                        "$type": "Lit",
+                                        "val": 30,
+                                        "$textRegion": {
+                                            "offset": 588,
+                                            "end": 590,
+                                            "length": 2,
+                                            "range": {
+                                                "start": {
+                                                    "character": 27,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 29,
+                                                    "line": 33
+                                                }
+                                            },
+                                            "assignments": {
+                                                "val": [
+                                                    {
+                                                        "offset": 588,
+                                                        "end": 590,
+                                                        "length": 2,
+                                                        "range": {
+                                                            "start": {
+                                                                "character": 27,
+                                                                "line": 33
+                                                            },
+                                                            "end": {
+                                                                "character": 29,
+                                                                "line": 33
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "$textRegion": {
+                                        "offset": 584,
+                                        "end": 590,
+                                        "length": 6,
+                                        "range": {
+                                            "start": {
+                                                "character": 23,
+                                                "line": 33
+                                            },
+                                            "end": {
+                                                "character": 29,
+                                                "line": 33
+                                            }
+                                        },
+                                        "assignments": {
+                                            "op": [
+                                                {
+                                                    "offset": 586,
+                                                    "end": 587,
+                                                    "length": 1,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 25,
+                                                            "line": 33
+                                                        },
+                                                        "end": {
+                                                            "character": 26,
+                                                            "line": 33
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "e2": [
+                                                {
+                                                    "offset": 588,
+                                                    "end": 590,
+                                                    "length": 2,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 27,
+                                                            "line": 33
+                                                        },
+                                                        "end": {
+                                                            "character": 29,
+                                                            "line": 33
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "Lit",
+                                    "val": 30,
+                                    "$textRegion": {
+                                        "offset": 592,
+                                        "end": 594,
+                                        "length": 2,
+                                        "range": {
+                                            "start": {
+                                                "character": 31,
+                                                "line": 33
+                                            },
+                                            "end": {
+                                                "character": 33,
+                                                "line": 33
+                                            }
+                                        },
+                                        "assignments": {
+                                            "val": [
+                                                {
+                                                    "offset": 592,
+                                                    "end": 594,
+                                                    "length": 2,
+                                                    "range": {
+                                                        "start": {
+                                                            "character": 31,
+                                                            "line": 33
+                                                        },
+                                                        "end": {
+                                                            "character": 33,
+                                                            "line": 33
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ],
+                            "$textRegion": {
+                                "offset": 569,
+                                "end": 595,
+                                "length": 26,
+                                "range": {
+                                    "start": {
+                                        "character": 8,
+                                        "line": 33
+                                    },
+                                    "end": {
+                                        "character": 34,
+                                        "line": 33
+                                    }
+                                },
+                                "assignments": {
+                                    "def": [
+                                        {
+                                            "offset": 569,
+                                            "end": 575,
+                                            "length": 6,
+                                            "range": {
+                                                "start": {
+                                                    "character": 8,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 14,
+                                                    "line": 33
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "args": [
+                                        {
+                                            "offset": 576,
+                                            "end": 582,
+                                            "length": 6,
+                                            "range": {
+                                                "start": {
+                                                    "character": 15,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 21,
+                                                    "line": 33
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "offset": 584,
+                                            "end": 590,
+                                            "length": 6,
+                                            "range": {
+                                                "start": {
+                                                    "character": 23,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 29,
+                                                    "line": 33
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "offset": 592,
+                                            "end": 594,
+                                            "length": 2,
+                                            "range": {
+                                                "start": {
+                                                    "character": 31,
+                                                    "line": 33
+                                                },
+                                                "end": {
+                                                    "character": 33,
+                                                    "line": 33
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "var": {
+                        "$type": "Param",
+                        "name": "y",
+                        "$textRegion": {
+                            "offset": 444,
+                            "end": 445,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 8,
+                                    "line": 30
+                                },
+                                "end": {
+                                    "character": 9,
+                                    "line": 30
+                                }
+                            },
+                            "assignments": {
+                                "name": [
+                                    {
+                                        "offset": 444,
+                                        "end": 445,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 8,
+                                                "line": 30
+                                            },
+                                            "end": {
+                                                "character": 9,
+                                                "line": 30
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "e1": {
+                        "$type": "Lit",
+                        "val": 0,
+                        "$textRegion": {
+                            "offset": 448,
+                            "end": 449,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 12,
+                                    "line": 30
+                                },
+                                "end": {
+                                    "character": 13,
+                                    "line": 30
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 448,
+                                        "end": 449,
+                                        "length": 1,
+                                        "range": {
+                                            "start": {
+                                                "character": 12,
+                                                "line": 30
+                                            },
+                                            "end": {
+                                                "character": 13,
+                                                "line": 30
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "e2": {
+                        "$type": "Lit",
+                        "val": 10,
+                        "$textRegion": {
+                            "offset": 453,
+                            "end": 455,
+                            "length": 2,
+                            "range": {
+                                "start": {
+                                    "character": 17,
+                                    "line": 30
+                                },
+                                "end": {
+                                    "character": 19,
+                                    "line": 30
+                                }
+                            },
+                            "assignments": {
+                                "val": [
+                                    {
+                                        "offset": 453,
+                                        "end": 455,
+                                        "length": 2,
+                                        "range": {
+                                            "start": {
+                                                "character": 17,
+                                                "line": 30
+                                            },
+                                            "end": {
+                                                "character": 19,
+                                                "line": 30
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "$textRegion": {
+                        "offset": 440,
+                        "end": 601,
+                        "length": 161,
+                        "range": {
+                            "start": {
+                                "character": 4,
+                                "line": 30
+                            },
+                            "end": {
+                                "character": 5,
+                                "line": 34
+                            }
+                        },
+                        "assignments": {
+                            "body": [
+                                {
+                                    "offset": 529,
+                                    "end": 560,
+                                    "length": 31,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 32
+                                        },
+                                        "end": {
+                                            "character": 39,
+                                            "line": 32
+                                        }
+                                    }
+                                },
+                                {
+                                    "offset": 569,
+                                    "end": 595,
+                                    "length": 26,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 33
+                                        },
+                                        "end": {
+                                            "character": 34,
+                                            "line": 33
+                                        }
+                                    }
+                                }
+                            ],
+                            "var": [
+                                {
+                                    "offset": 444,
+                                    "end": 445,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 8,
+                                            "line": 30
+                                        },
+                                        "end": {
+                                            "character": 9,
+                                            "line": 30
+                                        }
+                                    }
+                                }
+                            ],
+                            "e1": [
+                                {
+                                    "offset": 448,
+                                    "end": 449,
+                                    "length": 1,
+                                    "range": {
+                                        "start": {
+                                            "character": 12,
+                                            "line": 30
+                                        },
+                                        "end": {
+                                            "character": 13,
+                                            "line": 30
+                                        }
+                                    }
+                                }
+                            ],
+                            "e2": [
+                                {
+                                    "offset": 453,
+                                    "end": 455,
+                                    "length": 2,
+                                    "range": {
+                                        "start": {
+                                            "character": 17,
+                                            "line": 30
+                                        },
+                                        "end": {
+                                            "character": 19,
+                                            "line": 30
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "var": {
+                "$type": "Param",
+                "name": "x",
+                "$textRegion": {
+                    "offset": 422,
+                    "end": 423,
+                    "length": 1,
+                    "range": {
+                        "start": {
+                            "character": 4,
+                            "line": 29
+                        },
+                        "end": {
+                            "character": 5,
+                            "line": 29
+                        }
+                    },
+                    "assignments": {
+                        "name": [
+                            {
+                                "offset": 422,
+                                "end": 423,
+                                "length": 1,
+                                "range": {
+                                    "start": {
+                                        "character": 4,
+                                        "line": 29
+                                    },
+                                    "end": {
+                                        "character": 5,
+                                        "line": 29
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "e1": {
+                "$type": "Lit",
+                "val": 0,
+                "$textRegion": {
+                    "offset": 426,
+                    "end": 427,
+                    "length": 1,
+                    "range": {
+                        "start": {
+                            "character": 8,
+                            "line": 29
+                        },
+                        "end": {
+                            "character": 9,
+                            "line": 29
+                        }
+                    },
+                    "assignments": {
+                        "val": [
+                            {
+                                "offset": 426,
+                                "end": 427,
+                                "length": 1,
+                                "range": {
+                                    "start": {
+                                        "character": 8,
+                                        "line": 29
+                                    },
+                                    "end": {
+                                        "character": 9,
+                                        "line": 29
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "e2": {
+                "$type": "Lit",
+                "val": 10,
+                "$textRegion": {
+                    "offset": 431,
+                    "end": 433,
+                    "length": 2,
+                    "range": {
+                        "start": {
+                            "character": 13,
+                            "line": 29
+                        },
+                        "end": {
+                            "character": 15,
+                            "line": 29
+                        }
+                    },
+                    "assignments": {
+                        "val": [
+                            {
+                                "offset": 431,
+                                "end": 433,
+                                "length": 2,
+                                "range": {
+                                    "start": {
+                                        "character": 13,
+                                        "line": 29
+                                    },
+                                    "end": {
+                                        "character": 15,
+                                        "line": 29
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "$textRegion": {
+                "offset": 418,
+                "end": 603,
+                "length": 185,
+                "range": {
+                    "start": {
+                        "character": 0,
+                        "line": 29
+                    },
+                    "end": {
+                        "character": 1,
+                        "line": 35
+                    }
+                },
+                "assignments": {
+                    "body": [
+                        {
+                            "offset": 440,
+                            "end": 601,
+                            "length": 161,
+                            "range": {
+                                "start": {
+                                    "character": 4,
+                                    "line": 30
+                                },
+                                "end": {
+                                    "character": 5,
+                                    "line": 34
+                                }
+                            }
+                        }
+                    ],
+                    "var": [
+                        {
+                            "offset": 422,
+                            "end": 423,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 4,
+                                    "line": 29
+                                },
+                                "end": {
+                                    "character": 5,
+                                    "line": 29
+                                }
+                            }
+                        }
+                    ],
+                    "e1": [
+                        {
+                            "offset": 426,
+                            "end": 427,
+                            "length": 1,
+                            "range": {
+                                "start": {
+                                    "character": 8,
+                                    "line": 29
+                                },
+                                "end": {
+                                    "character": 9,
+                                    "line": 29
+                                }
+                            }
+                        }
+                    ],
+                    "e2": [
+                        {
+                            "offset": 431,
+                            "end": 433,
+                            "length": 2,
+                            "range": {
+                                "start": {
+                                    "character": 13,
+                                    "line": 29
+                                },
+                                "end": {
+                                    "character": 15,
+                                    "line": 29
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "$textRegion": {
+        "offset": 170,
+        "end": 603,
+        "length": 433,
+        "range": {
+            "start": {
+                "character": 0,
+                "line": 9
+            },
+            "end": {
+                "character": 1,
+                "line": 35
+            }
+        },
+        "assignments": {
+            "defs": [
+                {
+                    "offset": 170,
+                    "end": 334,
+                    "length": 164,
+                    "range": {
+                        "start": {
+                            "character": 0,
+                            "line": 9
+                        },
+                        "end": {
+                            "character": 1,
+                            "line": 22
+                        }
+                    }
+                }
+            ],
+            "stmts": [
+                {
+                    "offset": 336,
+                    "end": 355,
+                    "length": 19,
+                    "range": {
+                        "start": {
+                            "character": 0,
+                            "line": 24
+                        },
+                        "end": {
+                            "character": 19,
+                            "line": 24
+                        }
+                    }
+                },
+                {
+                    "offset": 357,
+                    "end": 370,
+                    "length": 13,
+                    "range": {
+                        "start": {
+                            "character": 0,
+                            "line": 26
+                        },
+                        "end": {
+                            "character": 13,
+                            "line": 26
+                        }
+                    }
+                },
+                {
+                    "offset": 418,
+                    "end": 603,
+                    "length": 185,
+                    "range": {
+                        "start": {
+                            "character": 0,
+                            "line": 29
+                        },
+                        "end": {
+                            "character": 1,
+                            "line": 35
+                        }
+                    }
+                }
+            ]
+        },
+        "documentURI": "file:///Users/bwilson/TypeFox/langium-minilogo/examples/test.logo"
+    },
+    "$sourceText": "def square(x, y, scale) {\n\n   move( x, y )\n\n   pen(down)\n\n   move(scale,0)\n   move(0,scale)\n   move(-1 * scale,0)\n   move(0,-1 * scale)\n   pen(up)\n\n   move(-x,-y)\n}\n\nsquare(100,100,300)\n\nmove(100,100)\n\n// draw a 10x10 grid of squares as an example\nfor x = 0 to 10 {\n    for y = 0 to 10 {\n        // call the square routine with a provided x & y start\n        color(x*30, y*30, (x + y) * 30)\n        square(x * 30, y * 30, 30)\n    }\n}"
+}

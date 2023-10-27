@@ -1,0 +1,24 @@
+{
+  "name": "visuals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "volta": {
+    "node": "18.16.0",
+    "npm": "9.6.6"
+  },
+  "scripts": {
+    "build": "tsc && esbuild dist/index.js --bundle --minify --sourcemap --target=es2017 --outfile=static/bundle.js",
+    "clean": "shx rm -rf ./dist",
+    "serve": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/three": "^0.157.2",
+    "3d-force-graph": "^1.73.0",
+    "esbuild": "^0.19.5",
+    "express": "^4.18.2"
+  }
+}
