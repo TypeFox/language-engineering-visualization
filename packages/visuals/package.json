@@ -20,5 +20,8 @@
     "3d-force-graph": "^1.73.0",
     "esbuild": "^0.19.5",
     "express": "^4.18.2"
+  },
+  "dependencies": {
+    
   }
 }
