@@ -15,6 +15,14 @@ h2 {
     display: inline-block;
 }
 
+#node-summary {
+    position: absolute;
+    z-index: 1;
+    text-align: left;
+    padding: 8px;
+    background: #0006;
+}
+
 a {
     color: rgb(112, 102, 255);
     transition: 0.3s;

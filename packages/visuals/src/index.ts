@@ -16,7 +16,8 @@ async function setup(data: string, elementId: string, graphType: string) {
     const gData = {
         nodes: graph.nodes.map(node => ({
             id: (node as unknown as { $__dotID: string }).$__dotID,
-            nodeType: node.$type
+            nodeType: node.$type,
+            node
         })),
         links: graph.edges.map(edge => ({
                 source: (edge.from as unknown as { $__dotID: string }).$__dotID,
@@ -28,6 +29,8 @@ async function setup(data: string, elementId: string, graphType: string) {
 
     const elm = document.getElementById(elementId) as HTMLElement;
     const isFullView = elm.getAttribute('full');
+
+    const nodeSummaryElm = document.getElementById('node-summary') as HTMLElement | null;
 
     let width = 500;
     let height = 400;
@@ -54,8 +57,8 @@ async function setup(data: string, elementId: string, graphType: string) {
         // .nodeAutoColorBy('nodeType')
         .nodeColor(node => toHex((node as any).nodeType))
 
-        // labels on nodes
-        .nodeLabel(node => (node as any).nodeType)
+        // labels on nodes are names or types, in that order
+        .nodeLabel(node => (node as any).node.name ? (node as any).node.name : (node as any).nodeType)
 
         // on click handler
         // .onNodeClick(node => alert('Clicked: ' + (node as any).nodeType))
@@ -73,23 +76,6 @@ async function setup(data: string, elementId: string, graphType: string) {
         .showNavInfo(true)
         .cameraPosition({ z: distance })
 
-        // reset positional on click handler
-        .onNodeClick((node: any) => {
-            // Aim at node from outside it
-            const distance = 200;
-            const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
-
-            const newPos = node.x || node.y || node.z
-                ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }
-                : { x: 0, y: 0, z: distance }; // special case if node is in (0,0,0)
-
-            Graph.cameraPosition(
-                newPos, // new position
-                node, // lookAt ({ x, y, z })
-                1000  // ms transition duration
-            );
-        })
-
         .graphData(gData);
 
     // resize once done w/ the layout
@@ -97,8 +83,11 @@ async function setup(data: string, elementId: string, graphType: string) {
 
     // textual nodes
     if (isFullView) {
+        // reset positional on click handler
+        Graph.onNodeClick(selectNode);
+
         Graph.nodeThreeObject(node => {
-            const sprite = new SpriteText((node as any).nodeType);
+            const sprite = new SpriteText((node as any).node.name ? (node as any).node.name : (node as any).nodeType);
             sprite.material.depthWrite = false; // make sprite background transparent
             sprite.color = toHex((node as any).nodeType);
             sprite.textHeight = 8;
@@ -117,8 +106,94 @@ async function setup(data: string, elementId: string, graphType: string) {
         angle += Math.PI / 300;
         }, 10);
     }
-}
 
+    // select an arbitrary node
+    function selectNode(node: any) {
+        // Aim at node from outside it
+        const distance = 200;
+        const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+        node.selected = true;
+        
+        if (nodeSummaryElm) {
+            // populate info about this element
+            const coreNode = node.node as AstNode;
+            const properties = Object.getOwnPropertyNames(coreNode);
+            const filtered = properties.filter(p => p !== '$type' && p !== '$__dotID');
+
+            // collect all parents
+            let parentLinks = [];
+            let parent = coreNode.$container as (AstNode & { $__dotID: string, name?: string }) | undefined;
+            while (parent) {
+                if (parent) {
+                    const index: number = parentLinks.length + 1;
+                    parentLinks.unshift(`<a href='#' onclick='jumpTo(${parent.$__dotID})'>${index}: ${parent.name ? parent.name : parent.$type}</a><br/>`);
+                }
+                parent = parent.$container as (AstNode & { $__dotID: string }) | undefined;
+            }
+
+            nodeSummaryElm.innerHTML = parentLinks.join('') + node.nodeType + '<ul>' + filtered.map(p => {
+                if (p === '$containerProperty' && coreNode['$containerProperty']) {
+                    return `<li>${p}: ${coreNode['$containerProperty']}</li>`;
+                } else if (p === '$containerIndex' && coreNode['$containerIndex']) {
+                    return `<li>${p}: ${coreNode['$containerIndex']}</li>`;
+                } else if (p === '$container' && coreNode['$container']) {
+                    return `<li>${p}: ${coreNode.$container?.$type}</li>`;
+                } else {
+                    const v = (coreNode as any)[p];
+                    if (v !== undefined) {
+                        if (typeof v !== 'object') {
+                            // non-object
+                            return `<li>${p}: ${v}</li>`;
+                        } else if (Array.isArray(v)) {
+                            if (v.length) {
+                                // array
+                                return `<li>${p}: Array[${v.length}]</li>`;
+                            } else {
+                                return '';
+                            }
+                        } else {
+                            // object, show type if present
+                            if (v.$type) {
+                                return `<li>${p}: ${v.$type}</li>`;
+                            } else if (p === 'rule') {
+                                // ref to rule, show its name 
+                                return `<li>${p}: ${v?.ref?.name ?? '...'}</li>`;
+                            } else {
+                                if (p === 'imports') {
+                                    console.dir(v);
+                                }
+                                // otherwise just show the key
+                                return `<li>${p}: ...</li>`;
+                            }
+                        }
+                    }
+                }
+            }).join('') + '</ul>';
+        }
+    
+        const newPos = node.x || node.y || node.z
+            ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }
+            : { x: 0, y: 0, z: distance }; // special case if node is in (0,0,0)
+    
+        Graph.cameraPosition(
+            newPos, // new position
+            node, // lookAt ({ x, y, z })
+            1000  // ms transition duration
+        );
+    }
+    
+    // jump to an arbitrary node by its id
+    function jumpTo(nodeId: string) {
+        // find this node
+        const node = gData.nodes.find(n => n.id === nodeId);
+        
+        // jump to it
+        if (node) {
+            selectNode(node);
+        }
+    }
+    (window as any).jumpTo = jumpTo;
+}
 
 /**
  * Produces an arbitrary (but deterministic) hex string from a given input string.
@@ -186,3 +261,4 @@ setup('domainmodel-grammar.ast.json', 'graph-domainmodel', graphType);
 setup('statemachine-grammar.ast.json', 'graph-statemachine', graphType);
 setup('langium-grammar.ast.json', 'graph-langium', graphType);
 setup('lox-grammar.ast.json', 'graph-lox', graphType);
+setup('requirements-grammar.ast.json', 'graph-requirements', graphType);
