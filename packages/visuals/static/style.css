@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 30px;
+}
+
+.container {
+    display: inline-block;
+}
+
+a {
+    color: rgb(112, 102, 255);
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #6cf;
+}

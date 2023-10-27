@@ -1,8 +1,8 @@
 import { AstNode, convertASTtoGraph, deserializeAST } from 'langium-ast-helper';
 import ForceGraph3D from '3d-force-graph';
-// import SpriteText from 'three-spritetext';
+import SpriteText from 'three-spritetext';
 
-async function setup(data: string, elementId: string) {
+async function setup(data: string, elementId: string, graphType: string) {
     // fetch a serialized AST that we already generated
     const serializedAst = await fetch('http://localhost:3000/data/' + data).then(response => response.text());
 
@@ -13,12 +13,10 @@ async function setup(data: string, elementId: string) {
     const graph = convertASTtoGraph(ast);
 
     // graph constructed from this AST
-    // let val = 1;
     const gData = {
         nodes: graph.nodes.map(node => ({
             id: (node as unknown as { $__dotID: string }).$__dotID,
-            nodeType: node.$type,
-            // nodeValue: val++
+            nodeType: node.$type
         })),
         links: graph.edges.map(edge => ({
                 source: (edge.from as unknown as { $__dotID: string }).$__dotID,
@@ -28,19 +26,33 @@ async function setup(data: string, elementId: string) {
 
     const distance = 1400;
 
+    const elm = document.getElementById(elementId) as HTMLElement;
+    const isFullView = elm.getAttribute('full');
+
+    let width = 500;
+    let height = 400;
+    let spinning = true;
+    
+    if (isFullView) {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        spinning = false;
+    }
+
     // produce a graph visualization
     const Graph = ForceGraph3D()
-        (document.getElementById(elementId) as HTMLElement)
+        (elm)
 
         // top-down tree layout
-        .dagMode('td')
+        .dagMode(graphType as any)
 
         // constrain
-        .width(500)
-        .height(400)
+        .width(width)
+        .height(height)
 
         // auto color of nodes
-        .nodeAutoColorBy('nodeType')
+        // .nodeAutoColorBy('nodeType')
+        .nodeColor(node => toHex((node as any).nodeType))
 
         // labels on nodes
         .nodeLabel(node => (node as any).nodeType)
@@ -56,15 +68,6 @@ async function setup(data: string, elementId: string) {
         // .linkDirectionalParticles(2)
         // .linkDirectionalParticleWidth(0.8)
         // .linkDirectionalParticleSpeed(0.006)
-
-        // textual nodes
-        // .nodeThreeObject(node => {
-        //     const sprite = new SpriteText((node as any).nodeType);
-        //     sprite.material.depthWrite = false; // make sprite background transparent
-        //     // sprite.color = '#fff';
-        //     sprite.textHeight = 8;
-        //     return sprite;
-        // })
 
         // orbiting camera
         .showNavInfo(true)
@@ -89,25 +92,97 @@ async function setup(data: string, elementId: string) {
 
         .graphData(gData);
 
-        // // resize once done w/ the layout
-        // Graph.onEngineStop(() => Graph.zoomToFit(400));
+    // resize once done w/ the layout
+    // Graph.onEngineStop(() => Graph.zoomToFit(400));
+
+    // textual nodes
+    if (isFullView) {
+        Graph.nodeThreeObject(node => {
+            const sprite = new SpriteText((node as any).nodeType);
+            sprite.material.depthWrite = false; // make sprite background transparent
+            sprite.color = toHex((node as any).nodeType);
+            sprite.textHeight = 8;
+            return sprite;
+        });
+    }
+
+    if (spinning) {
+        // orbiting camera calculation
+        let angle = 0;
+        setInterval(() => {
+        Graph.cameraPosition({
+            x: distance * Math.sin(angle),
+            z: distance * Math.cos(angle)
+        });
+        angle += Math.PI / 300;
+        }, 10);
+    }
+}
 
 
-    // orbiting camera calculation
-    let angle = 0;
-    setInterval(() => {
-      Graph.cameraPosition({
-        x: distance * Math.sin(angle),
-        z: distance * Math.cos(angle)
-      });
-      angle += Math.PI / 300;
-    }, 10);
+/**
+ * Produces an arbitrary (but deterministic) hex string from a given input string.
+ * Used to map a given AST node to some color
+ * 
+ * @param v Value to convert to a hex color string
+ * @returns A hex color string, #xxxxxx
+ */
+function toHex(v: string): string {
+    let hash = toHash(v);
+    let rand = sfc32(hash, hash >> 2, hash << 2, hash & hash);
+    // get 6 random characters
+    let hex = '#';
+    for (let i = 0; i < 6; i++) {
+        hex += Math.floor(rand() * 100000 % 10);
+    }
+    return hex;
+}
+
+/**
+ * SFC32 (Simple Fast Counter PRNG)
+ * Produces a seeded function that returns pseudo-random numbers
+ *
+ * @param a 1st byte of seed
+ * @param b 2nd byte of seed
+ * @param c 3rd byte of seed
+ * @param d 4th byte of seed
+ * @returns A pseudo-random function generator, seeded using the given values
+ */
+function sfc32(a: number, b: number, c: number, d: number): () => number {
+    return function() {
+      // right shift assign all values
+      a >>>= 0; b >>>= 0; c >>>= 0; d >>>= 0;
+      let t = (a + b) | 0;
+      a = b ^ b >>> 9;
+      b = c + (c << 3) | 0;
+      c = c << 21 | c >>> 11;
+      d = d + 1 | 0;
+      t = t + d | 0;
+      c = c + t | 0;
+      return (t >>> 0) / 4294967296;
+    }
+}
+
+/**
+ * Produces a simple hash code for a given string
+ * 
+ * @param v String to convert to a hash code
+ * @returns Numeric hash code
+ */
+function toHash(v: string): number {
+    let hash = 0;
+    for (let i = 0; i < v.length; i++) {
+        const n = v.codePointAt(i) as number;
+        hash = (hash << 2) - hash + n;
+    }
+    return hash;
 }
 
 // set this up for each of the data entries we have
-setup('minilogo-grammar.ast.json', 'graph-1');
-setup('arithmetics-grammar.ast.json', 'graph-2');
-setup('domainmodel-grammar.ast.json', 'graph-3');
-setup('statemachine-grammar.ast.json', 'graph-4');
-setup('langium-grammar.ast.json', 'graph-5');
-setup('lox-grammar.ast.json', 'graph-6');
+const graphType = 'td';
+setup('minilogo-grammar.ast.json', 'graph-minilogo', graphType);
+setup('arithmetics-grammar.ast.json', 'graph-arithmetics', graphType);
+setup('domainmodel-grammar.ast.json', 'graph-domainmodel', graphType);
+setup('statemachine-grammar.ast.json', 'graph-statemachine', graphType);
+setup('langium-grammar.ast.json', 'graph-langium', graphType);
+setup('lox-grammar.ast.json', 'graph-lox', graphType);
