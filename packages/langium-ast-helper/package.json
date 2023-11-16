@@ -1,17 +1,18 @@
 {
     "name": "langium-ast-helper",
-    "version": "0.1.0",
+    "version": "0.1.1",
+    "repository": "TypeFox/language-engineering-visualization/tree/main/packages/langium-ast-helper",
     "author": {
-        "name": "TypeFox",
-        "url": "https://typefox.io",
+        "name": "TypeFox GmbH",
+        "url": "https://www.typefox.io",
         "email": "benjamin.wilson@typefox.io"
     },
     "keywords": [
         "langium",
+        "ast",
+        "helper",
         "language",
-        "engineering",
-        "data",
-        "structures"
+        "engineering"
     ],
     "volta": {
         "node": "18.16.0",
